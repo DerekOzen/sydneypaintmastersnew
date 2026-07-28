@@ -270,5 +270,21 @@
     "createdAt": "2026-07-28T11:54:09.068Z",
     "createdBy": "derek",
     "category": "Locations"
+  },
+  {
+    "id": "pg-19",
+    "path": "/nsw/painter-burwood",
+    "type": "location",
+    "title": "Painter Burwood",
+    "seoTitle": "Painter Burwood, Inner West Homes | Sydney Paintmasters",
+    "seoDescription": "Burwood 2134 painter for Federation homes, apartments and shopfronts across the Inner West. Fixed-price quotes, tidy work. Call 0423 019 087.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": null,
+    "status": "published",
+    "updatedAt": "2026-07-28T11:59:34.861Z",
+    "updatedBy": "derek",
+    "createdAt": "2026-07-28T11:59:34.861Z",
+    "createdBy": "derek"
   }
 ]
