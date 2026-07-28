@@ -265,9 +265,10 @@
     "headerPartId": "header-1",
     "footerPartId": null,
     "status": "published",
-    "updatedAt": "2026-07-28T11:36:28.956Z",
+    "updatedAt": "2026-07-28T11:36:41.746Z",
     "updatedBy": "derek",
     "createdAt": "2026-07-28T11:36:28.956Z",
-    "createdBy": "derek"
+    "createdBy": "derek",
+    "category": "Locations"
   }
 ]
