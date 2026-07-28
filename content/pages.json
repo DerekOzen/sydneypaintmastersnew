@@ -16,5 +16,21 @@
     "createdBy": "derek",
     "isHome": true,
     "category": "Home"
+  },
+  {
+    "id": "pg-2",
+    "path": "/about-us",
+    "type": "page",
+    "title": "About Us",
+    "seoTitle": "About Sydney Paintmasters - 20+ Years Painting Sydney",
+    "seoDescription": "Meet Sydney Paintmasters: a small, licensed, in-house crew with 20+ years painting Sydney homes and businesses. Honest advice, quality that lasts.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": "footer-1",
+    "status": "draft",
+    "updatedAt": "2026-07-28T10:18:40.501Z",
+    "updatedBy": "derek",
+    "createdAt": "2026-07-28T10:18:40.501Z",
+    "createdBy": "derek"
   }
 ]
