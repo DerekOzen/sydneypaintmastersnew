@@ -134,5 +134,21 @@
     "createdAt": "2026-07-28T11:06:37.781Z",
     "createdBy": "derek",
     "category": "Services"
+  },
+  {
+    "id": "pg-9",
+    "path": "/interior-painting",
+    "type": "service",
+    "title": "Interior Painting",
+    "seoTitle": "Interior Painting Sydney, Walls & Trim | Sydney Paintmasters",
+    "seoDescription": "Refresh your interiors with Sydney Paintmasters: walls, ceilings, trims and feature walls, low-odour and tidy. Book a free fixed-price quote today.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": "footer-1",
+    "status": "published",
+    "updatedAt": "2026-07-28T11:08:41.099Z",
+    "updatedBy": "derek",
+    "createdAt": "2026-07-28T11:08:41.099Z",
+    "createdBy": "derek"
   }
 ]
