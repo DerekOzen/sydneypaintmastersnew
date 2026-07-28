@@ -440,5 +440,21 @@
     "createdAt": "2026-07-28T12:47:09.585Z",
     "createdBy": "derek",
     "category": "Locations"
+  },
+  {
+    "id": "pg-29",
+    "path": "/nsw/painter-north-sydney",
+    "type": "page",
+    "title": "Painter North Sydney",
+    "seoTitle": "North Sydney Painters - Apartments | Sydney Paintmasters",
+    "seoDescription": "North Sydney 2060 painter for apartments, offices and commercial spaces, with after-hours options to suit tenants. Get a free fixed-price quote.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": null,
+    "status": "published",
+    "updatedAt": "2026-07-28T12:50:39.481Z",
+    "updatedBy": "derek",
+    "createdAt": "2026-07-28T12:50:39.481Z",
+    "createdBy": "derek"
   }
 ]
