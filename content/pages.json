@@ -287,5 +287,21 @@
     "createdAt": "2026-07-28T11:59:34.861Z",
     "createdBy": "derek",
     "category": "Locations"
+  },
+  {
+    "id": "pg-20",
+    "path": "/nsw/painter-coogee",
+    "type": "location",
+    "title": "Painter Coogee",
+    "seoTitle": "Coogee Beachside Painters - Free Quote | Sydney Paintmasters",
+    "seoDescription": "Painter in Coogee 2034 for coastal houses, units and strata blocks, with beach-grade coatings that resist salt and sun. Get a free fixed-price quote.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": null,
+    "status": "published",
+    "updatedAt": "2026-07-28T12:15:52.987Z",
+    "updatedBy": "derek",
+    "createdAt": "2026-07-28T12:15:52.987Z",
+    "createdBy": "derek"
   }
 ]
