@@ -457,5 +457,21 @@
     "createdAt": "2026-07-28T12:50:39.481Z",
     "createdBy": "derek",
     "category": "Locations"
+  },
+  {
+    "id": "pg-30",
+    "path": "/nsw/painter-palm-beach",
+    "type": "page",
+    "title": "Painter Palm Beach",
+    "seoTitle": "Palm Beach Painters - Beachfront Homes | Sydney Paintmasters",
+    "seoDescription": "Painter in Palm Beach 2108 for prestige beachfront and Pittwater homes, coated for tough coastal exposure. Licensed and insured. Free quote.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": null,
+    "status": "published",
+    "updatedAt": "2026-07-28T12:52:08.836Z",
+    "updatedBy": "derek",
+    "createdAt": "2026-07-28T12:52:08.836Z",
+    "createdBy": "derek"
   }
 ]
