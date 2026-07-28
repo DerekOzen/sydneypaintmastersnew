@@ -253,5 +253,21 @@
     "createdAt": "2026-07-28T11:35:04.352Z",
     "createdBy": "derek",
     "category": "Locations"
+  },
+  {
+    "id": "pg-16",
+    "path": "/nsw//painter-alexandria",
+    "type": "location",
+    "title": "Painter Alexandria",
+    "seoTitle": "Alexandria Painters, Inner-City Homes | Sydney Paintmasters",
+    "seoDescription": "Painter in Alexandria 2015 for terraces, warehouse conversions and apartments. Licensed, insured, fixed-price quotes, no call-out fee. Call 0423 019 087.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": null,
+    "status": "published",
+    "updatedAt": "2026-07-28T11:36:28.956Z",
+    "updatedBy": "derek",
+    "createdAt": "2026-07-28T11:36:28.956Z",
+    "createdBy": "derek"
   }
 ]
