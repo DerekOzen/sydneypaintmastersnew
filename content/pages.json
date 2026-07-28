@@ -202,5 +202,21 @@
     "createdAt": "2026-07-28T11:23:42.054Z",
     "createdBy": "derek",
     "category": "Services"
+  },
+  {
+    "id": "pg-13",
+    "path": "/roof-painting",
+    "type": "service",
+    "title": "Roof Painting",
+    "seoTitle": "Roof Painting Sydney, Colorbond & Tile | Sydney Paintmasters",
+    "seoDescription": "Roof painting and restoration in Sydney: cleaning, sealing and recoating for Colorbond and tile roofs. Boost kerb appeal. Call 0423 019 087.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": "footer-1",
+    "status": "published",
+    "updatedAt": "2026-07-28T11:25:45.979Z",
+    "updatedBy": "derek",
+    "createdAt": "2026-07-28T11:25:45.979Z",
+    "createdBy": "derek"
   }
 ]
