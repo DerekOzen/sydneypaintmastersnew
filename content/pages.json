@@ -423,5 +423,21 @@
     "createdAt": "2026-07-28T12:44:39.546Z",
     "createdBy": "derek",
     "category": "Locations"
+  },
+  {
+    "id": "pg-28",
+    "path": "/nsw//painter-northern-beaches",
+    "type": "location",
+    "title": "Painter Northern Beaches",
+    "seoTitle": "Painter Northern Beaches, Coastal | Sydney Paintmasters",
+    "seoDescription": "Northern Beaches painter for coastal homes, units and strata from Manly to Palm Beach, using weather-grade systems. Free quote. Call 0423 019 087.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": null,
+    "status": "published",
+    "updatedAt": "2026-07-28T12:47:09.585Z",
+    "updatedBy": "derek",
+    "createdAt": "2026-07-28T12:47:09.585Z",
+    "createdBy": "derek"
   }
 ]
