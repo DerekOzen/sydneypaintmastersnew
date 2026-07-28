@@ -253,5 +253,21 @@
     "createdAt": "2026-07-28T11:52:20.030Z",
     "createdBy": "derek",
     "category": "Locations"
+  },
+  {
+    "id": "pg-18",
+    "path": "/nsw/painter-bronte",
+    "type": "location",
+    "title": "Painter Bronte",
+    "seoTitle": "Bronte Painters - Coastal & Heritage | Sydney Paintmasters",
+    "seoDescription": "Careful painting for Bronte's heritage and beachside homes, prepped for salt air and finished to last. Licensed and insured. Book a free quote.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": null,
+    "status": "published",
+    "updatedAt": "2026-07-28T11:54:09.068Z",
+    "updatedBy": "derek",
+    "createdAt": "2026-07-28T11:54:09.068Z",
+    "createdBy": "derek"
   }
 ]
