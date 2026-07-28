@@ -66,5 +66,21 @@
     "createdAt": "2026-07-28T10:26:27.564Z",
     "createdBy": "derek",
     "category": "Contact"
+  },
+  {
+    "id": "pg-5",
+    "path": "/epoxy-flooring",
+    "type": "service",
+    "title": "Epoxy Flooring",
+    "seoTitle": "Epoxy Flooring Sydney - Garage Floors | Sydney Paintmasters",
+    "seoDescription": "Hard-wearing epoxy floor coatings for Sydney garages, warehouses and commercial floors. Flake, solid and industrial finishes. Get a free quote.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": "footer-1",
+    "status": "published",
+    "updatedAt": "2026-07-28T10:58:05.506Z",
+    "updatedBy": "derek",
+    "createdAt": "2026-07-28T10:58:05.506Z",
+    "createdBy": "derek"
   }
 ]
