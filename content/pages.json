@@ -33,5 +33,21 @@
     "createdAt": "2026-07-28T10:18:40.501Z",
     "createdBy": "derek",
     "category": "About"
+  },
+  {
+    "id": "pg-3",
+    "path": "/commercial-painting",
+    "type": "service",
+    "title": "Commercial Painting",
+    "seoTitle": "Commercial Painters Sydney, Retail | Sydney Paintmasters",
+    "seoDescription": "Commercial painting in Sydney for shops, offices and retail, with flexible timing so trade keeps moving. Licensed, insured, fixed-price quotes.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": "footer-1",
+    "status": "draft",
+    "updatedAt": "2026-07-28T10:19:37.090Z",
+    "updatedBy": "derek",
+    "createdAt": "2026-07-28T10:19:37.090Z",
+    "createdBy": "derek"
   }
 ]
