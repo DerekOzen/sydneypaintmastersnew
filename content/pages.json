@@ -507,5 +507,21 @@
     "createdAt": "2026-07-28T12:58:30.675Z",
     "createdBy": "derek",
     "category": "Locations"
+  },
+  {
+    "id": "pg-33",
+    "path": "/thank-you",
+    "type": "page",
+    "title": "Thank You",
+    "seoTitle": "Thank You - Sydney Paint Masters",
+    "seoDescription": "Thank you for contacting Sydney Paint Masters. One of our support staff will respond to your enquiry shortly.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": "footer-1",
+    "status": "published",
+    "updatedAt": "2026-07-28T21:49:01.857Z",
+    "updatedBy": "derek",
+    "createdAt": "2026-07-28T21:49:01.857Z",
+    "createdBy": "derek"
   }
 ]
