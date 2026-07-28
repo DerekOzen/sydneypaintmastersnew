@@ -1,0 +1,14 @@
+# Cloudflare Pages cache rules
+# HTML pages: never cache — always fetch the freshest version so edits appear instantly.
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Next.js build assets have content-hashed filenames (they change name when the
+# content changes), so they are safe to cache forever. This keeps the site fast
+# while the HTML above stays always-fresh.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images and other static files: cache for 1 hour.
+/images/*
+  Cache-Control: public, max-age=3600, must-revalidate

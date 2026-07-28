@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+
+<html lang="en-AU"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Registered NDIS Provider and Disability Support Services | Ahsan Care</title>
+<meta name="description" content="Registered NDIS provider delivering in-home care, community participation and nursing support across Melbourne and Sydney. Interpreter first, and nobody signs on the first visit.">
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#00AE97; --teal-dark:#009182; --blue:#066AAB; --blue-dark:#05548a;
+    --ink:#303640; --ink-soft:#48505c; --muted:#7C8491; --line:#E1E5EA;
+    --bg:#F2F3F5; --bg-soft:#E9FBF7; --white:#fff; --purple:#7A2A82; --gold:#f5a623;
+    --radius:16px; --pill:40px; --maxw:1180px; --shadow:0 10px 30px rgba(20,40,60,.08);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:'Rubik',system-ui,Arial,sans-serif;color:var(--ink);background:var(--white);line-height:1.6;font-size:17px}
+  h1,h2,h3,h4{line-height:1.2;margin:0 0 .5em;color:var(--ink);font-weight:700}
+  h1{font-size:clamp(30px,4.4vw,50px);font-weight:800;letter-spacing:-.5px}
+  h2{font-size:clamp(24px,3vw,34px);font-weight:700}
+  h3{font-size:19px}
+  p{margin:0 0 1em}
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--teal);color:#fff;border:2px solid var(--teal);border-radius:var(--pill);padding:13px 26px;font-weight:600;font-size:16px;cursor:pointer;transition:.15s;text-decoration:none}
+  .btn:hover{background:var(--teal-dark);border-color:var(--teal-dark);text-decoration:none;color:#fff}
+  .btn.blue{background:var(--blue);border-color:var(--blue)}
+  .btn.blue:hover{background:var(--blue-dark);border-color:var(--blue-dark)}
+  .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}
+  .btn.ghost:hover{background:rgba(255,255,255,.14);color:#fff}
+  .btn.outline{background:#fff;color:var(--blue);border-color:var(--blue)}
+  .btn.outline:hover{background:var(--blue);color:#fff}
+  .btn.sm{padding:9px 18px;font-size:14px}
+  .eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal-dark);margin-bottom:10px}
+  section{padding:60px 0}
+  .center{text-align:center;max-width:760px;margin:0 auto 34px}
+  /* utility */
+  .util{background:var(--ink);color:#cdd3db;font-size:13.5px}
+  .util .wrap{display:flex;flex-wrap:wrap;gap:8px 22px;align-items:center;padding:9px 22px}
+  .util a{color:#fff;font-weight:500}.util .sep{color:#59616e}.util .right{margin-left:auto;color:#a7efe4}
+  /* header */
+  header{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line)}
+  .hd{display:flex;align-items:center;gap:20px;padding:12px 22px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .mark{width:46px;height:46px;border-radius:50%;background:conic-gradient(from 210deg,var(--blue),var(--teal));position:relative;flex:none}
+  .mark::after{content:"";position:absolute;inset:9px;border-radius:50%;background:#fff}
+  .mark::before{content:"";position:absolute;inset:15px;border-radius:50%;border:3px solid var(--teal);border-top-color:var(--blue);z-index:1}
+  .brand b{font-size:22px;color:var(--ink);font-weight:700}.brand b span{color:var(--teal)}
+  .ndisbadge{background:var(--purple);color:#fff;border-radius:10px;padding:6px 10px;font-size:10.5px;font-weight:700;line-height:1.15;display:flex;gap:6px;align-items:center}
+  .ndisbadge .heart{font-size:15px;color:#ff5a8a}
+  nav.main{display:flex;gap:22px;margin-left:8px;flex-wrap:wrap}
+  nav.main a{color:var(--ink);font-weight:500;font-size:15.5px}
+  nav.main a.active{color:var(--teal-dark);font-weight:700}
+  .hd .cta{margin-left:auto;display:flex;gap:8px;align-items:center}
+  .callpill{display:flex;flex-direction:column;background:var(--teal);color:#fff;border-radius:var(--pill);padding:7px 16px;font-size:12px;font-weight:700;line-height:1.2;text-decoration:none}
+  .callpill small{font-weight:500;opacity:.9;font-size:10.5px;letter-spacing:.5px}
+  .callpill:hover{background:var(--teal-dark);color:#fff;text-decoration:none}
+  .callpill.blue{background:var(--blue)}.callpill.blue:hover{background:var(--blue-dark)}
+  .burger{display:none;font-size:26px;background:none;border:0;color:var(--ink);cursor:pointer}
+  /* hero */
+  .hero{position:relative;background:linear-gradient(120deg,#22303c,#2c4a52);color:#fff;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(1100px 500px at 15% 0%,rgba(0,174,151,.28),transparent 60%),radial-gradient(900px 500px at 100% 100%,rgba(6,106,171,.35),transparent 55%);z-index:0}
+  .hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1.25fr .9fr;gap:40px;padding:56px 22px 62px;align-items:center}
+  .hero h1{color:#fff}
+  .hook{font-size:19px;font-weight:500;border-left:4px solid var(--teal);padding-left:16px;margin:18px 0;color:#eaf6f4;font-style:italic}
+  .hero p.sub{color:#d4dde2;font-size:18px}
+  .herobtns{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 18px}
+  .facts{display:flex;flex-wrap:wrap;gap:8px}
+  .fact{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:var(--pill);padding:7px 14px;font-size:13.5px;font-weight:500;color:#eafcf8}
+  .fact b{color:#fff}
+  .enq{background:#fff;color:var(--ink);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px}
+  .enq h3{color:var(--ink);font-size:22px;margin-bottom:4px}
+  .enq p{font-size:13.5px;color:var(--muted);margin-bottom:14px}
+  .enq label{display:block;font-size:12.5px;font-weight:600;color:var(--ink-soft);margin:10px 0 4px}
+  .enq input,.enq select,.enq textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px 12px;font-family:inherit;font-size:15px;background:#fbfcfd}
+  .enq textarea{min-height:60px;resize:vertical}
+  .enq .btn{width:100%;justify-content:center;margin-top:14px}
+  .enq .assure{font-size:12px;color:var(--muted);text-align:center;margin-top:10px}
+  /* trust bar */
+  .trust{background:var(--bg);border-bottom:1px solid var(--line)}
+  .trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:24px 22px}
+  .trust .item{display:flex;gap:12px;align-items:flex-start}
+  .trust .ic{width:40px;height:40px;border-radius:10px;background:var(--bg-soft);color:var(--teal-dark);display:flex;align-items:center;justify-content:center;font-size:20px;flex:none}
+  .trust .item b{display:block;font-size:15px}.trust .item span{font-size:13px;color:var(--muted)}
+  /* registered (moved up, prominent) */
+  .reg{background:#fff}
+  .regbox{display:grid;grid-template-columns:.8fr 1.4fr;gap:30px;align-items:center;background:linear-gradient(120deg,#f6f0fa,#eef6ff);border:1px solid #e4d6ee;border-radius:var(--radius);padding:32px}
+  .regvisual{background:var(--purple);color:#fff;border-radius:14px;padding:26px;text-align:center}
+  .regvisual .heart{color:#ff7aa2;font-size:30px}
+  .regvisual b{display:block;font-size:22px;margin-top:6px}
+  .regvisual .no{font-size:13px;opacity:.9;margin-top:8px}
+  .regbox .num{font-size:15px;font-weight:700;color:var(--blue);margin:6px 0 12px}
+  .reg .verify{display:flex;gap:10px;flex-wrap:wrap}
+  /* stats row */
+  .stats{background:var(--bg)}
+  .statrow{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 14px;text-align:center}
+  .stat .ic{font-size:24px;color:var(--teal-dark)}
+  .stat b{display:block;font-size:15px;margin-top:6px}
+  .stat span{font-size:12.5px;color:var(--muted)}
+  /* city cards */
+  .cities{background:#fff}
+  .citygrid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .city{border:1px solid var(--line);border-radius:var(--radius);padding:26px;background:linear-gradient(180deg,#fff,#fafcfd);transition:.15s;overflow:hidden}
+  .city:hover{box-shadow:var(--shadow);transform:translateY(-2px)}
+  .city .pin{display:inline-block;background:var(--bg-soft);color:var(--teal-dark);font-weight:700;font-size:12.5px;border-radius:var(--pill);padding:5px 12px;margin-bottom:12px}
+  .city h3{font-size:23px}.city .subs{color:var(--muted);font-size:14px;margin:8px 0 16px}
+  .city .row{display:flex;gap:10px;flex-wrap:wrap}
+  /* services (richer cards) */
+  .services{background:var(--bg)}
+  .svcgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  .svc{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column}
+  .svc .top{display:flex;gap:14px;align-items:flex-start}
+  .svc .ic{width:48px;height:48px;border-radius:12px;background:var(--bg-soft);color:var(--teal-dark);display:flex;align-items:center;justify-content:center;font-size:24px;flex:none}
+  .svc h3{margin-bottom:4px}.svc h3 a{color:var(--ink)}
+  .svc p{font-size:14.5px;color:var(--ink-soft);margin:0 0 10px}
+  .svc ul{list-style:none;padding:0;margin:0 0 14px}
+  .svc li{font-size:13.5px;color:var(--ink-soft);padding:3px 0 3px 22px;position:relative}
+  .svc li::before{content:"✓";position:absolute;left:0;color:var(--teal-dark);font-weight:800}
+  .svc .foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .svc .learn{font-weight:700;color:var(--blue)}
+  /* who we help */
+  .who{background:#fff}
+  .whogrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .whocard{border:1px solid var(--line);border-radius:12px;padding:16px 18px;display:flex;gap:10px;align-items:center;font-weight:600}
+  .whocard .tick{width:26px;height:26px;border-radius:50%;background:var(--bg-soft);color:var(--teal-dark);display:flex;align-items:center;justify-content:center;font-weight:800;flex:none}
+  .whocard small{display:block;font-weight:400;color:var(--muted);font-size:12.5px}
+  /* why */
+  .why{background:var(--bg)}
+  .whygrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:8px}
+  .whycard{border:1px solid var(--line);border-radius:14px;padding:20px;background:#fff}
+  .whycard .ic{font-size:26px;margin-bottom:8px}
+  .whycard h3{font-size:16.5px}.whycard p{font-size:14px;color:var(--muted);margin:0}
+  /* reviews */
+  .reviews{background:#fff}
+  .grev{display:inline-flex;align-items:center;gap:12px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px 20px;margin-bottom:26px}
+  .grev .g{font-weight:700;font-size:15px}
+  .grev .score{font-size:26px;font-weight:800;color:var(--ink)}
+  .stars{color:var(--gold);letter-spacing:2px;font-size:16px}
+  .revgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .rev{border:1px solid var(--line);border-radius:14px;padding:20px;background:#fff;position:relative}
+  .rev .stars{font-size:15px}
+  .rev p{font-size:14.5px;color:var(--ink-soft);margin:10px 0}
+  .rev .who{font-size:13px;font-weight:600;color:var(--ink)}
+  .rev .who span{font-weight:400;color:var(--muted)}
+  .rev .type{position:absolute;top:16px;right:16px;font-size:10.5px;font-weight:700;color:var(--teal-dark);background:var(--bg-soft);border-radius:6px;padding:2px 8px}
+  .sampletag{text-align:center;font-size:12.5px;color:var(--muted);margin-top:16px;font-style:italic}
+  /* team */
+  .team{background:var(--bg)}
+  .teamgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .member{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+  .member .ph{width:88px;height:88px;border-radius:50%;margin:0 auto 12px;background:radial-gradient(circle at 50% 35%,#cfe8e3,#a9d5cd);border:3px solid #fff;box-shadow:0 3px 10px rgba(0,0,0,.08)}
+  .member h3{font-size:16.5px;margin-bottom:2px}
+  .member .role{font-size:13px;color:var(--teal-dark);font-weight:600}
+  .member p{font-size:13px;color:var(--muted);margin:8px 0 0}
+  /* process */
+  .process{background:#fff}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:8px}
+  .step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}
+  .step .n{width:38px;height:38px;border-radius:50%;background:var(--teal);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+  .step h3{font-size:16.5px}.step p{font-size:14px;color:var(--muted);margin:0}
+  /* commitments */
+  .commit{background:var(--bg)}
+  .commitgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:8px}
+  .cbox{border-radius:var(--radius);padding:26px}
+  .cbox.do{background:var(--bg-soft);border:1px solid #bfe9e0}
+  .cbox.dont{background:#fdeeee;border:1px solid #f4cfce}
+  .cbox h3{font-size:18px}.cbox.do h3{color:var(--teal-dark)}.cbox.dont h3{color:#bd3b34}
+  .cbox ul{list-style:none;padding:0;margin:0}
+  .cbox li{padding:7px 0 7px 30px;position:relative;font-size:15px}
+  .cbox.do li::before{content:"✓";position:absolute;left:0;color:var(--teal-dark);font-weight:800}
+  .cbox.dont li::before{content:"✕";position:absolute;left:0;color:#bd3b34;font-weight:800}
+  /* areas */
+  .areas{background:#fff}
+  .areacol h3{font-size:17px;margin-top:14px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .chip{background:#fff;border:1px solid var(--line);border-radius:var(--pill);padding:7px 14px;font-size:14px;color:var(--ink-soft)}
+  .chip:hover{border-color:var(--teal);color:var(--teal-dark)}
+  /* faq */
+  .faq{background:var(--bg)}
+  .acc{background:#fff;border:1px solid var(--line);border-radius:12px;margin:10px 0;overflow:hidden}
+  .acc summary{cursor:pointer;padding:16px 20px;font-weight:600;font-size:16.5px;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
+  .acc summary::-webkit-details-marker{display:none}
+  .acc summary .pl{color:var(--teal);font-weight:800;font-size:22px;transition:.2s}
+  .acc[open] summary .pl{transform:rotate(45deg)}
+  .acc .body{padding:0 20px 18px;color:var(--ink-soft);font-size:15.5px}
+  /* final */
+  .final{background:linear-gradient(120deg,var(--teal),var(--blue));color:#fff;text-align:center}
+  .final h2{color:#fff}.final p{color:#eafcf8;max-width:640px;margin:0 auto 22px;font-size:18px}
+  .final .btn.outline{background:#fff;color:var(--blue);border-color:#fff}
+  .final .btn.ghost{border-color:#fff}
+  /* footer */
+  footer{background:var(--ink);color:#aeb6c1;font-size:14.5px;padding:52px 0 26px}
+  footer h4{color:#fff;font-size:15px;letter-spacing:.5px;margin-bottom:14px}
+  .fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr 1.1fr;gap:26px}
+  footer a{color:#cdd4dd;display:block;padding:4px 0}
+  footer a:hover{color:#fff}
+  .fbadge{display:inline-flex;gap:8px;align-items:center;background:var(--purple);color:#fff;border-radius:10px;padding:8px 12px;font-size:11px;font-weight:700;margin-top:12px}
+  .fbot{border-top:1px solid #3a424e;margin-top:30px;padding-top:18px;color:#8b94a1;font-size:13px}
+  /* sticky CTA (desktop + mobile) */
+  .stickycta{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--ink);color:#fff;transform:translateY(110%);transition:transform .25s;box-shadow:0 -6px 20px rgba(0,0,0,.18)}
+  .stickycta.show{transform:translateY(0)}
+  .stickycta .in{max-width:var(--maxw);margin:0 auto;display:flex;align-items:center;gap:12px;padding:10px 22px}
+  .stickycta b{font-size:15px}
+  .stickycta .sp{flex:1}
+  .stickycta a{display:inline-flex;align-items:center;gap:6px;border-radius:var(--pill);padding:9px 16px;font-weight:700;font-size:14px;text-decoration:none}
+  .stickycta a.mel{background:var(--teal);color:#fff}
+  .stickycta a.syd{background:var(--blue);color:#fff}
+  .stickycta a.enq{background:#fff;color:var(--ink)}
+  /* responsive */
+  @media(max-width:960px){
+    .hero .wrap{grid-template-columns:1fr;gap:26px;padding:44px 22px}
+    .trust .wrap,.statrow{grid-template-columns:1fr 1fr}
+    .whygrid,.steps,.teamgrid{grid-template-columns:1fr 1fr}
+    .regbox{grid-template-columns:1fr}
+    .whogrid{grid-template-columns:1fr 1fr}
+    .revgrid{grid-template-columns:1fr}
+    .fgrid{grid-template-columns:1fr 1fr}
+    nav.main,.hd .cta{display:none}.burger{display:block;margin-left:auto}
+  }
+  @media(max-width:640px){
+    section{padding:44px 0}
+    .citygrid,.svcgrid,.commitgrid{grid-template-columns:1fr}
+    .trust .wrap,.statrow,.whygrid,.steps,.teamgrid,.whogrid,.fgrid{grid-template-columns:1fr}
+    .util .wrap{font-size:12px}
+    .stickycta .in{flex-wrap:wrap;gap:8px;padding:10px 14px}
+    .stickycta b{width:100%;text-align:center;font-size:13px}
+    .stickycta a{flex:1;justify-content:center}
+    body{padding-bottom:70px}
+  }
+</style>
+</head>
+<body>
+
+<!-- UTILITY BAR -->
+<div class="util"><div class="wrap">
+  <span>Registered NDIS provider · No. 4-L7JCZ6S</span>
+  <span class="sep">|</span>
+  <a href="tel:0433650084">Melbourne 0433 650 084</a>
+  <a href="tel:0416623317">Sydney 0416 623 317</a>
+  <span class="right">Interpreter first, before you sign anything</span>
+</div></div>
+
+<!-- HEADER -->
+<header><div class="hd">
+  <a class="brand" href="#"><span class="mark"></span><b>ahsan<span>care</span></b></a>
+  <div class="ndisbadge"><span class="heart">♥</span><span>REGISTERED<br>NDIS PROVIDER</span></div>
+  <nav class="main">
+    
+  </nav>
+  <div class="cta">
+    <a class="callpill" href="tel:0433650084"><small>MELBOURNE</small>0433 650 084</a>
+    <a class="callpill blue" href="tel:0416623317"><small>SYDNEY</small>0416 623 317</a>
+  </div>
+  <button class="burger" aria-label="Menu">☰</button>
+</div></header>
+
+<!-- 1. HERO -->
+<div class="hero"><div class="wrap">
+  <div>
+    <h1>Trusted Registered NDIS Provider for Disability Support Services</h1>
+    <p class="hook">A service agreement you have not read is not an agreement. It is a signature. We put an interpreter on the call before anything gets signed.</p>
+    <p class="sub">Person-centred in-home care, community participation and nursing support, delivered by a local team in each city. Registered, screened workers, and routines that hold.</p>
+    <div class="herobtns">
+      <a class="btn" href="#cities">Find your city</a>
+      <a class="btn ghost" href="#contact">Ask a question</a>
+    </div>
+    <div class="facts">
+      <span class="fact"><b>Registered</b> · No. 4-L7JCZ6S</span>
+      <span class="fact">Mon to Fri, 9am to 5pm</span>
+      <span class="fact">Interpreter arranged and paid by us</span>
+      <span class="fact">Nobody signs on the first visit</span>
+    </div>
+  </div>
+  <div class="enq" id="contact">
+    <h3>Ask a question</h3>
+    <p>We will call you back, Monday to Friday.</p>
+    <form onsubmit="return false">
+      <label for="n">Your name</label><input id="n" type="text" autocomplete="name">
+      <label for="p">Phone</label><input id="p" type="tel" autocomplete="tel">
+      <label for="e">Email</label><input id="e" type="email" autocomplete="email">
+      <label for="s">Suburb</label><input id="s" type="text">
+      <label for="sv">What do you need help with</label>
+      <select id="sv"><option>Not sure yet</option><option>Assist Personal Activities</option><option>Household Tasks</option><option>Participation and Community</option><option>Nursing Care</option></select>
+      <label for="m">Anything you want us to know</label><textarea id="m"></textarea>
+      <button class="btn" type="submit">Request a call back</button>
+      <div class="assure">Or call Melbourne 0433 650 084 · Sydney 0416 623 317</div>
+    </form>
+  </div>
+</div></div>
+
+<!-- 2. TRUST BAR -->
+<div class="trust"><div class="wrap">
+  <div class="item"><div class="ic">✓</div><div><b>NDIS registered</b><span>Verify us on the NDIS Commission register.</span></div></div>
+  <div class="item"><div class="ic">🛡</div><div><b>Screened workers</b><span>Worker screening, First Aid, CPR and police checks.</span></div></div>
+  <div class="item"><div class="ic">🗣</div><div><b>Interpreter first</b><span>Arranged and paid by us, before anything is signed.</span></div></div>
+  <div class="item"><div class="ic">📄</div><div><b>You keep the paperwork</b><span>A copy of every document stays with you.</span></div></div>
+</div></div>
+
+<!-- 3. REGISTERED NDIS PROVIDER (moved up) -->
+<section class="reg" id="registered">
+  <div class="wrap">
+    <div class="regbox">
+      <div class="regvisual"><div class="heart">♥</div><b>Registered<br>NDIS Provider</b><div class="no">Provider No. 4-L7JCZ6S</div></div>
+      <div>
+        <span class="eyebrow">Are we actually registered? Yes.</span>
+        <h2 style="margin-bottom:10px">A registered NDIS provider you can verify</h2>
+        <p>Registered status is a real checkpoint. It means we are listed publicly and held to the NDIS quality and safeguards framework, so your supports are delivered by qualified, screened people. Keep our details on hand so your coordinator, plan manager or family can confirm they are speaking with the right provider.</p>
+        <p class="num">NDIS Provider Number: 4-L7JCZ6S</p>
+        <div class="verify">
+          <a class="btn outline sm" href="https://www.ndiscommission.gov.au/provider-registration">Verify on the NDIS Commission</a>
+          <a class="btn outline sm" href="https://www.ndis.gov.au/participants/working-providers/find-registered-provider">Find a registered provider</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3b. STATS / WHY FAMILIES TRUST -->
+<section class="stats" style="padding-top:0">
+  <div class="wrap">
+    <div class="statrow">
+      <div class="stat"><div class="ic">✔</div><b>Registered provider</b><span>NDIS quality and safeguards</span></div>
+      <div class="stat"><div class="ic">📍</div><b>Local teams</b><span>Melbourne and Sydney</span></div>
+      <div class="stat"><div class="ic">🗣</div><b>Multilingual staff</b><span>Interpreter arranged for you</span></div>
+      <div class="stat"><div class="ic">⏱</div><b>Fast response</b><span>Call back Mon to Fri</span></div>
+      <div class="stat"><div class="ic">🎓</div><b>Qualified workers</b><span>Screened and trained</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. CHOOSE YOUR CITY -->
+<section class="cities" id="cities">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Two cities, local teams</span>
+      <h2>Where do you need support?</h2>
+      <p style="color:var(--muted)">Choose your city and we will show you the suburbs we cover, the local team, and the number that reaches them.</p>
+    </div>
+    <div class="citygrid">
+      <div class="city">
+        <span class="pin">📍 Melbourne, VIC</span>
+        <h3>NDIS Provider Melbourne</h3>
+        <p class="subs">Brimbank, Wyndham, Melton, Maribyrnong, Sunshine, Werribee and surrounding suburbs.</p>
+        <div class="row"><a class="btn" href="/vic/ndis-provider-melbourne/">View Melbourne</a><a class="btn outline" href="tel:0433650084">Call 0433 650 084</a></div>
+      </div>
+      <div class="city">
+        <span class="pin">📍 Sydney, NSW</span>
+        <h3>NDIS Provider Sydney</h3>
+        <p class="subs">Cumberland, Parramatta, Canterbury Bankstown, Liverpool, Blacktown and Greater Sydney.</p>
+        <div class="row"><a class="btn blue" href="/nsw/ndis-provider-sydney/">View Sydney</a><a class="btn outline" href="tel:0416623317">Call 0416 623 317</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. SERVICES OVERVIEW (richer cards) -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Core supports</span>
+      <h2>Disability support, the four we do</h2>
+      <p style="color:var(--muted)">We keep our scope honest. Four core supports, each delivered the way your household actually runs.</p>
+    </div>
+    <div class="svcgrid">
+      <div class="svc">
+        <div class="top"><div class="ic">🤝</div><div><h3><a href="/ndis-assist-personal-activities/">NDIS Assist Personal Activities</a></h3><p>Showering, dressing and the start of the day, done with dignity.</p></div></div>
+        <ul><li>Worker gender agreed before anyone arrives</li><li>Consistent, matched support workers</li><li>Routines set around your day</li></ul>
+        <div class="foot"><span class="learn">Learn more →</span><a class="btn sm" href="#contact">Enquire</a></div>
+      </div>
+      <div class="svc">
+        <div class="top"><div class="ic">🧺</div><div><h3><a href="/ndis-household-tasks/">NDIS Household Tasks</a></h3><p>Kitchen, laundry, floors and the bins, the way your home runs.</p></div></div>
+        <ul><li>Inside work is ours</li><li>Ladders and roofs are a licensed trade, we say so</li><li>Agreed tasks, agreed frequency</li></ul>
+        <div class="foot"><span class="learn">Learn more →</span><a class="btn sm" href="#contact">Enquire</a></div>
+      </div>
+      <div class="svc">
+        <div class="top"><div class="ic">🚌</div><div><h3><a href="/ndis-participation-community/">NDIS Community Participation</a></h3><p>Getting out, staying connected, building confidence.</p></div></div>
+        <ul><li>Shops, appointments and social outings</li><li>A place of worship on the right day</li><li>Planned around real transport</li></ul>
+        <div class="foot"><span class="learn">Learn more →</span><a class="btn sm" href="#contact">Enquire</a></div>
+      </div>
+      <div class="svc">
+        <div class="top"><div class="ic">🩺</div><div><h3><a href="/ndis-nursing-care/">NDIS Nursing Care</a></h3><p>Clinical care at home, where it is funded and appropriate.</p></div></div>
+        <ul><li>Delivered to the documented plan</li><li>Qualified nursing staff</li><li>Coordinated with your health team</li></ul>
+        <div class="foot"><span class="learn">Learn more →</span><a class="btn sm" href="#contact">Enquire</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5b. WHO WE HELP -->
+<section class="who">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow">Who we help</span><h2>Support for participants, families and plans of every kind</h2></div>
+    <div class="whogrid">
+      <div class="whocard"><span class="tick">✓</span><div>Adults<small>Daily living and independence</small></div></div>
+      <div class="whocard"><span class="tick">✓</span><div>Children<small>Support that fits the family</small></div></div>
+      <div class="whocard"><span class="tick">✓</span><div>Families and carers<small>Clear communication, real respite</small></div></div>
+      <div class="whocard"><span class="tick">✓</span><div>Self-managed<small>You choose and direct supports</small></div></div>
+      <div class="whocard"><span class="tick">✓</span><div>Plan-managed<small>We invoice your plan manager</small></div></div>
+      <div class="whocard"><span class="tick">✓</span><div>NDIA-managed<small>Registered, so you are covered</small></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. WHY CHOOSE US -->
+<section class="why" id="about">
+  <div class="wrap">
+    <div class="center" style="margin-bottom:6px">
+      <span class="eyebrow">Why families choose us</span>
+      <h2>Matching a worker is the easy half</h2>
+      <p style="color:var(--ink-soft)">Plenty of providers find a support worker who speaks your language, and that matters. The harder half is everything on paper: the agreement, the rates, the notice period, the plan documents you are asked to sign in a meeting. We handle both, and we read the paperwork with you.</p>
+    </div>
+    <div class="whygrid">
+      <div class="whycard"><div class="ic">🗣</div><h3>Interpreter first</h3><p>Arranged and paid by us before anything is signed.</p></div>
+      <div class="whycard"><div class="ic">📝</div><h3>Nobody signs on day one</h3><p>You get time, and a copy, to read at home.</p></div>
+      <div class="whycard"><div class="ic">🧭</div><h3>We say what we do not do</h3><p>Inside work is ours. Roof and ladder work is a licensed trade.</p></div>
+      <div class="whycard"><div class="ic">📍</div><h3>Real local knowledge</h3><p>Teams that know the transport, housing and services in each area.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. REVIEWS & TESTIMONIALS (sample layout) -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">What people say</span>
+      <h2>Reviews and participant stories</h2>
+    </div>
+    <div style="text-align:center">
+      <div class="grev">
+        <span class="stars">★★★★★</span>
+        <span class="score">[X.X]</span>
+        <span class="g">Google Rating<br><span style="font-weight:400;color:var(--muted);font-size:13px">Based on [N] reviews</span></span>
+      </div>
+    </div>
+    <div class="revgrid">
+      <div class="rev"><span class="type">Participant</span><div class="stars">★★★★★</div><p>"They arranged an interpreter for our first meeting and read the whole agreement with my mum. Nothing was rushed, and we took it home to think about."</p><div class="who">Sample review <span>· Melbourne</span></div></div>
+      <div class="rev"><span class="type">Parent</span><div class="stars">★★★★★</div><p>"The same support workers turn up each week, which has made a huge difference to my son's routine and confidence."</p><div class="who">Sample review <span>· Sydney</span></div></div>
+      <div class="rev"><span class="type">Support coordinator</span><div class="stars">★★★★★</div><p>"Clear notes, quick to respond, and honest about what sits inside their scope. Easy to place participants with."</p><div class="who">Sample review <span>· Greater Sydney</span></div></div>
+    </div>
+    <p class="sampletag">Sample layout. To be populated with real, verified Google reviews and participant stories before launch. Placeholder rating and count shown in [brackets].</p>
+  </div>
+</section>
+
+<!-- 8. MEET THE TEAM (sample) -->
+<section class="team">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow">The people behind your support</span><h2>Meet your support team</h2></div>
+    <div class="teamgrid">
+      <div class="member"><div class="ph"></div><h3>[Founder name]</h3><div class="role">Founder and Director</div><p>Sets the interpreter-first standard across both cities.</p></div>
+      <div class="member"><div class="ph"></div><h3>[Coordinator name]</h3><div class="role">Care Coordinator</div><p>Matches workers and keeps routines consistent.</p></div>
+      <div class="member"><div class="ph"></div><h3>[Nurse name]</h3><div class="role">Registered Nurse</div><p>Oversees clinical and nursing supports.</p></div>
+      <div class="member"><div class="ph"></div><h3>Support workers</h3><div class="role">Screened and trained</div><p>Worker screening, First Aid, CPR and police checks.</p></div>
+    </div>
+    <p class="sampletag">Sample layout. Replace with real team names, roles and photos to strengthen EEAT and trust.</p>
+  </div>
+</section>
+
+<!-- 9. GETTING STARTED -->
+<section class="process" id="getting-started">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Getting started</span>
+      <h2>Getting started with Ahsan Care</h2>
+      <p style="color:var(--ink-soft)">Four simple steps, and nobody signs on the first visit.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Contact us</h3><p>Call your city or ask for a call back. We listen in your language and arrange an interpreter if you need one.</p></div>
+      <div class="step"><div class="n">2</div><h3>Discuss your needs</h3><p>We talk through your goals and funding, and look at the home and routine before we quote anything.</p></div>
+      <div class="step"><div class="n">3</div><h3>Meet your support worker</h3><p>We introduce a matched worker and read the agreement with you. You keep a copy, and nobody signs on the spot.</p></div>
+      <div class="step"><div class="n">4</div><h3>Start receiving support</h3><p>Your worker starts on the day you agreed, with routines that hold.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. COMMITMENTS -->
+<section class="commit">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow">Our commitments</span><h2>Language and paperwork, in plain terms</h2></div>
+    <div class="commitgrid">
+      <div class="cbox do"><h3>We will</h3><ul>
+        <li>Arrange and pay for the interpreter</li>
+        <li>Leave every document with you to keep</li>
+        <li>Read the agreement aloud if you ask</li>
+        <li>Tell you plainly what is in scope and what is not</li>
+      </ul></div>
+      <div class="cbox dont"><h3>We will never</h3><ul>
+        <li>Use a child to interpret</li>
+        <li>Rush a signature in the first meeting</li>
+        <li>Bury conditions in English only</li>
+        <li>Quote roof or ladder work as ours</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. AREAS WE SERVE -->
+<section class="areas">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow">Coverage</span><h2>Areas we serve</h2>
+      <p style="color:var(--muted)">We provide local support across metropolitan Melbourne and Greater Sydney, with dedicated teams familiar with each community. If your suburb is not listed, call and ask, coverage depends on where workers are available.</p></div>
+    <div class="citygrid">
+      <div class="areacol">
+        <h3>Melbourne, VIC</h3>
+        <div class="chips"><a class="chip" href="/vic/ndis-provider-melbourne/">Brimbank</a><a class="chip" href="/vic/ndis-provider-melbourne/">Wyndham</a><a class="chip" href="/vic/ndis-provider-melbourne/">Melton</a><a class="chip" href="/vic/ndis-provider-melbourne/">Maribyrnong</a><a class="chip" href="/vic/ndis-provider-melbourne/">Sunshine</a><a class="chip" href="/vic/ndis-provider-melbourne/">Werribee</a><a class="chip" href="/vic/ndis-provider-melbourne/">St Albans</a><a class="chip" href="/vic/ndis-provider-melbourne/">Southbank</a></div>
+      </div>
+      <div class="areacol">
+        <h3>Sydney, NSW</h3>
+        <div class="chips"><a class="chip" href="/nsw/ndis-provider-sydney/">Cumberland</a><a class="chip" href="/nsw/ndis-provider-sydney/">Parramatta</a><a class="chip" href="/nsw/ndis-provider-sydney/">Bankstown</a><a class="chip" href="/nsw/ndis-provider-sydney/">Liverpool</a><a class="chip" href="/nsw/ndis-provider-sydney/">Blacktown</a><a class="chip" href="/nsw/ndis-provider-sydney/">Fairfield</a><a class="chip" href="/nsw/ndis-provider-sydney/">Auburn</a><a class="chip" href="/nsw/ndis-provider-sydney/">Penrith</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="center"><span class="eyebrow">Answered without the jargon</span><h2>Frequently asked questions</h2></div>
+    <details class="acc" open=""><summary>What does a registered NDIS provider actually do? <span class="pl">+</span></summary><div class="body">A registered provider delivers supports under the NDIS quality and safeguards framework and can be verified publicly. The day-to-day job is practical: match the right worker, set routines that work in your home, and keep supports aligned to your plan goals.</div></details>
+    <details class="acc"><summary>Do you support both Melbourne and Sydney? <span class="pl">+</span></summary><div class="body">Yes. We have a local team in each city. Coverage depends on your suburb and the times you need. Tell us your suburb and preferred windows and we will confirm whether there is a match for consistent, ongoing support.</div></details>
+    <details class="acc"><summary>Will you arrange an interpreter? <span class="pl">+</span></summary><div class="body">Yes, and we pay for it. The interpreter is on the call before anything is signed, so the agreement and plan documents are understood, not just the spoken conversation.</div></details>
+    <details class="acc"><summary>Do I have to sign at the first meeting? <span class="pl">+</span></summary><div class="body">No. Nobody signs on the first visit. We read the agreement with you, leave a copy, and give you time to decide at home.</div></details>
+    <details class="acc"><summary>Do you offer in-home care and community participation? <span class="pl">+</span></summary><div class="body">Yes. Our core supports are Assist Personal Activities, Household Tasks, Community Participation, and Nursing Care where it is funded and appropriate. We keep scope honest rather than claiming everything.</div></details>
+  </div>
+</section>
+
+<!-- 13. FINAL CTA -->
+<section class="final">
+  <div class="wrap">
+    <h2>Talk to the team in your city</h2>
+    <p>Tell us your suburb, the supports you need most, and the times that matter to your household. We will confirm the next step and how worker matching works.</p>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a class="btn outline" href="tel:0433650084">Call Melbourne 0433 650 084</a>
+      <a class="btn outline" href="tel:0416623317">Call Sydney 0416 623 317</a>
+      <a class="btn ghost" href="#contact">Ask a question</a>
+    </div>
+  </div>
+</section>
+
+<!-- 14. FOOTER -->
+<footer><div class="wrap">
+  <div class="fgrid">
+    <div>
+      <a class="brand" href="#" style="margin-bottom:10px"><span class="mark"></span><b style="color:#fff">ahsan<span style="color:var(--teal)">care</span></b></a>
+      <p>Registered NDIS provider delivering in-home care, community participation and nursing support across Melbourne and Sydney.</p>
+      <span class="fbadge"><span style="color:#ff7aa2">♥</span> REGISTERED NDIS PROVIDER · 4-L7JCZ6S</span>
+    </div>
+    <div><h4>Services</h4>
+      <a href="/ndis-assist-personal-activities/">Assist Personal Activities</a>
+      <a href="/ndis-household-tasks/">Household Tasks</a>
+      <a href="/ndis-participation-community/">Community Participation</a>
+      <a href="/ndis-nursing-care/">Nursing Care</a>
+    </div>
+    <div><h4>Company</h4>
+      <a href="/about/">About Us</a>
+      <a href="/vic/ndis-provider-melbourne/">NDIS Provider Melbourne</a>
+      <a href="/nsw/ndis-provider-sydney/">NDIS Provider Sydney</a>
+      <a href="#reviews">Reviews</a>
+      <a href="/careers/">Careers <span style="color:#8b94a1">(coming soon)</span></a>
+      <a href="/referral/">Referral form</a>
+    </div>
+    <div><h4>Support and policies</h4>
+      <a href="/contact/">Emergency contacts</a>
+      <a href="/feedback-complaints/">Feedback and complaints</a>
+      <a href="/privacy-policy-2/">Privacy policy</a>
+      <a href="/accessibility/">Accessibility</a>
+    </div>
+    <div><h4>Contact and NDIS</h4>
+      <a href="tel:0433650084">Melbourne 0433 650 084</a>
+      <a href="tel:0416623317">Sydney 0416 623 317</a>
+      <a href="https://www.ndis.gov.au/">NDIS official website</a>
+      <a href="https://www.ndiscommission.gov.au/">NDIS Commission</a>
+      <span style="display:block;padding-top:6px;color:#8b94a1">Mon to Fri, 9am to 5pm</span>
+    </div>
+  </div>
+  <div class="fbot">Acknowledgement of Country · We acknowledge the Traditional Custodians of the lands on which we work, and pay respect to Elders past and present. · Sitemap · © 2026 Ahsan Care Provider</div>
+</div></footer>
+
+<!-- STICKY CTA (desktop + mobile) -->
+<div class="stickycta" id="stickycta">
+  <div class="in">
+    <b>Need support?</b>
+    <span class="sp"></span>
+    <a class="mel" href="tel:0433650084">☎ Melbourne</a>
+    <a class="syd" href="tel:0416623317">☎ Sydney</a>
+    <a class="enq" href="#contact">Enquire now</a>
+  </div>
+</div>
+
+<script>
+  // reveal sticky CTA after hero
+  var sc=document.getElementById('stickycta');
+  function onScroll(){ if(window.scrollY>640){sc.classList.add('show')}else{sc.classList.remove('show')} }
+  window.addEventListener('scroll',onScroll,{passive:true}); onScroll();
+</script>
+
+
+</body></html>
