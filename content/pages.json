@@ -219,5 +219,21 @@
     "createdAt": "2026-07-28T11:25:45.979Z",
     "createdBy": "derek",
     "category": "Services"
+  },
+  {
+    "id": "pg-14",
+    "path": "/strata-painting",
+    "type": "service",
+    "title": "Strata Painting",
+    "seoTitle": "Strata Painters Sydney, Low-Disruption | Sydney Paintmasters",
+    "seoDescription": "Strata and unit-block painting across Sydney: common areas, facades and balconies, scheduled around residents. Free quote for your building today.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": "footer-1",
+    "status": "published",
+    "updatedAt": "2026-07-28T11:32:04.495Z",
+    "updatedBy": "derek",
+    "createdAt": "2026-07-28T11:32:04.495Z",
+    "createdBy": "derek"
   }
 ]
