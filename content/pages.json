@@ -321,5 +321,21 @@
     "createdAt": "2026-07-28T12:19:58.421Z",
     "createdBy": "derek",
     "category": "Locations"
+  },
+  {
+    "id": "pg-22",
+    "path": "/nsw/painter-hunters-hill",
+    "type": "location",
+    "title": "Painter Hunters Hill",
+    "seoTitle": "Hunters Hill Heritage Painters | Sydney Paintmasters",
+    "seoDescription": "Sensitive painting for Hunters Hill's sandstone and heritage riverside homes, prepped and finished with care. Free fixed-price quote today.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": null,
+    "status": "published",
+    "updatedAt": "2026-07-28T12:23:25.146Z",
+    "updatedBy": "derek",
+    "createdAt": "2026-07-28T12:23:25.146Z",
+    "createdBy": "derek"
   }
 ]
