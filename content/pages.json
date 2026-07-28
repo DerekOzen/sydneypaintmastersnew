@@ -270,5 +270,21 @@
     "createdAt": "2026-07-28T11:36:28.956Z",
     "createdBy": "derek",
     "category": "Locations"
+  },
+  {
+    "id": "pg-17",
+    "path": "/nsw/painter-bondi",
+    "type": "location",
+    "title": "Painter Bondi",
+    "seoTitle": "Painter Bondi - Coastal Specialists | Sydney Paintmasters",
+    "seoDescription": "Bondi 2026 painter for coastal homes, Art Deco units and strata, using salt-resistant systems built for beachfront weather. Free fixed-price quote.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": null,
+    "status": "published",
+    "updatedAt": "2026-07-28T11:52:20.030Z",
+    "updatedBy": "derek",
+    "createdAt": "2026-07-28T11:52:20.030Z",
+    "createdBy": "derek"
   }
 ]
