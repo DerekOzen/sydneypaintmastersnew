@@ -95,9 +95,10 @@
     "headerPartId": "header-1",
     "footerPartId": "footer-1",
     "status": "published",
-    "updatedAt": "2026-07-28T11:03:37.522Z",
+    "updatedAt": "2026-07-28T11:04:00.923Z",
     "updatedBy": "derek",
     "createdAt": "2026-07-28T11:03:37.522Z",
-    "createdBy": "derek"
+    "createdBy": "derek",
+    "category": "Services"
   }
 ]
