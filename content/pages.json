@@ -355,5 +355,21 @@
     "createdAt": "2026-07-28T12:24:56.776Z",
     "createdBy": "derek",
     "category": "Locations"
+  },
+  {
+    "id": "pg-24",
+    "path": "/painter-ku-ring-gai",
+    "type": "location",
+    "title": "Painter Ku-ring-gai",
+    "seoTitle": "Painter Ku-ring-gai, North Shore | Sydney Paintmasters",
+    "seoDescription": "Painting for Ku-ring-gai's leafy homes, from Gordon to Wahroonga: interior, exterior, roof and more. Licensed and insured. Get a free quote.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": null,
+    "status": "published",
+    "updatedAt": "2026-07-28T12:33:26.495Z",
+    "updatedBy": "derek",
+    "createdAt": "2026-07-28T12:33:26.495Z",
+    "createdBy": "derek"
   }
 ]
