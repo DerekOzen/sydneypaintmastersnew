@@ -27,10 +27,11 @@
     "layout": "mockup",
     "headerPartId": "header-1",
     "footerPartId": "footer-1",
-    "status": "draft",
-    "updatedAt": "2026-07-28T10:18:40.501Z",
+    "status": "published",
+    "updatedAt": "2026-07-28T10:18:53.529Z",
     "updatedBy": "derek",
     "createdAt": "2026-07-28T10:18:40.501Z",
-    "createdBy": "derek"
+    "createdBy": "derek",
+    "category": "About"
   }
 ]
