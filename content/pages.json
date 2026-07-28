@@ -168,5 +168,21 @@
     "createdAt": "2026-07-28T11:15:09.291Z",
     "createdBy": "derek",
     "isHome": false
+  },
+  {
+    "id": "pg-11",
+    "path": "/pool-painting",
+    "type": "service",
+    "title": "Pool Painting",
+    "seoTitle": "Pool Painting Sydney, Epoxy Coatings | Sydney Paintmasters",
+    "seoDescription": "Swimming pool painting in Sydney with specialist coatings sealed for water, chlorine and sun. Prep done right, finish that lasts. Free quote today.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": "footer-1",
+    "status": "published",
+    "updatedAt": "2026-07-28T11:16:03.177Z",
+    "updatedBy": "derek",
+    "createdAt": "2026-07-28T11:16:03.177Z",
+    "createdBy": "derek"
   }
 ]
