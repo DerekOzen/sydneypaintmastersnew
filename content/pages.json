@@ -1,7 +1,7 @@
 [
   {
     "id": "pg-1",
-    "path": "/home",
+    "path": "/",
     "type": "page",
     "title": "Home",
     "seoTitle": "Painter Sydney - Professional Painters | Sydney Paintmasters",
@@ -9,10 +9,11 @@
     "layout": "mockup",
     "headerPartId": "header-1",
     "footerPartId": "footer-1",
-    "status": "draft",
-    "updatedAt": "2026-07-28T10:14:54.801Z",
+    "status": "published",
+    "updatedAt": "2026-07-28T10:15:06.431Z",
     "updatedBy": "derek",
     "createdAt": "2026-07-28T10:14:54.801Z",
-    "createdBy": "derek"
+    "createdBy": "derek",
+    "isHome": true
   }
 ]
