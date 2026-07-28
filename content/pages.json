@@ -236,5 +236,21 @@
     "createdAt": "2026-07-28T11:32:04.495Z",
     "createdBy": "derek",
     "category": "Services"
+  },
+  {
+    "id": "pg-15",
+    "path": "/service-locations",
+    "type": "location",
+    "title": "Service Locations",
+    "seoTitle": "Painters Across Sydney - Our Suburbs | Sydney Paintmasters",
+    "seoDescription": "See the Sydney suburbs Sydney Paintmasters covers, from the Eastern Suburbs to the North Shore and Inner West. Find your local painter and get a quote.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": "footer-1",
+    "status": "published",
+    "updatedAt": "2026-07-28T11:35:04.352Z",
+    "updatedBy": "derek",
+    "createdAt": "2026-07-28T11:35:04.352Z",
+    "createdBy": "derek"
   }
 ]
