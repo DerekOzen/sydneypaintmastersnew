@@ -100,5 +100,21 @@
     "createdAt": "2026-07-28T11:03:37.522Z",
     "createdBy": "derek",
     "category": "Services"
+  },
+  {
+    "id": "pg-7",
+    "path": "/house-painting",
+    "type": "service",
+    "title": "House Painting",
+    "seoTitle": "House Painters Sydney, Homes & Units | Sydney Paintmasters",
+    "seoDescription": "Premium house painting in Sydney, inside and out, with low-VOC paints and a spotless finish. Licensed team, free fixed-price quote. Call 0423 019 087.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": "footer-1",
+    "status": "published",
+    "updatedAt": "2026-07-28T11:05:39.646Z",
+    "updatedBy": "derek",
+    "createdAt": "2026-07-28T11:05:39.646Z",
+    "createdBy": "derek"
   }
 ]
