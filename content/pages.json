@@ -304,5 +304,21 @@
     "createdAt": "2026-07-28T12:15:52.987Z",
     "createdBy": "derek",
     "category": "Locations"
+  },
+  {
+    "id": "pg-21",
+    "path": "/nsw/painter-hornsby",
+    "type": "location",
+    "title": "Painter Hornsby",
+    "seoTitle": "Painter Hornsby - Upper North Shore | Sydney Paintmasters",
+    "seoDescription": "Hornsby 2077 painter for brick and rendered family homes across the Upper North Shore. Licensed, insured, no call-out fee. Call 0423 019 087.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": null,
+    "status": "published",
+    "updatedAt": "2026-07-28T12:19:58.421Z",
+    "updatedBy": "derek",
+    "createdAt": "2026-07-28T12:19:58.421Z",
+    "createdBy": "derek"
   }
 ]
