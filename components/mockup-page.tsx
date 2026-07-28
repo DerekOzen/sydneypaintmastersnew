@@ -38,6 +38,61 @@ hr{border:revert;height:revert;color:revert}
 // page's own inline header/footer from the mockup).
 const PART_NONE = "__none__";
 
+// Client script shipped on every mockup page. It makes the site's enquiry form(s)
+// actually submit to the Nifty leads inbox, then either redirect to the Thank-you
+// page (returned by the dashboard) or show an inline thank-you. Any <form> that has
+// an email field is treated as an enquiry form; add `data-nifty-ignore` to opt a
+// form out. The dashboard identifies which site the lead belongs to from the page's
+// domain, so no site ID needs to be embedded. Common field-name variants are mapped
+// to name/email/phone/suburb/service/message, and any extra fields are passed too.
+const NIFTY_FORM_SCRIPT = `
+(function(){
+  var EP = "https://nifty-websites-dashboard.web-528.workers.dev/admin/api/lead";
+  function norm(k){ return String(k||"").toLowerCase().replace(/[^a-z0-9]/g,""); }
+  var MAP = {
+    name:["name","fullname","yourname","contactname","firstname"],
+    email:["email","emailaddress","youremail","mail","contactemail"],
+    phone:["phone","tel","telephone","mobile","yourphone","phonenumber","contactnumber"],
+    suburb:["suburb","location","city","town","postcode","area"],
+    service:["service","subject","enquirytype","interestedin","reason"],
+    message:["message","comments","comment","enquiry","yourmessage","details","notes"]
+  };
+  function pick(f, keys){ for (var i=0;i<keys.length;i++){ if (f[keys[i]]) return f[keys[i]]; } return ""; }
+  function isEnquiry(f){
+    if (!f || (f.hasAttribute && f.hasAttribute("data-nifty-ignore"))) return false;
+    return !!(f.querySelector && f.querySelector('input[type="email"], input[name="email" i], [name*="mail" i]'));
+  }
+  document.addEventListener("submit", function(e){
+    var form = e.target;
+    if (!form || form.tagName !== "FORM" || !isEnquiry(form)) return;
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"], input[type="submit"], button');
+    var orig = btn ? (btn.tagName === "INPUT" ? btn.value : btn.innerHTML) : "";
+    if (btn){ btn.disabled = true; if (btn.tagName === "INPUT") btn.value = "Sending..."; else btn.innerHTML = "Sending..."; }
+    var raw = {}, nm = {};
+    new FormData(form).forEach(function(v,k){ raw[k]=String(v); nm[norm(k)]=String(v); });
+    var data = { name:pick(nm,MAP.name), email:pick(nm,MAP.email), phone:pick(nm,MAP.phone), suburb:pick(nm,MAP.suburb), service:pick(nm,MAP.service), message:pick(nm,MAP.message) };
+    for (var k in raw){ if (!(k in data)) data[k]=raw[k]; }
+    var t = form.querySelector('[name="cf-turnstile-response"]'); if (t && t.value) data["cf-turnstile-response"]=t.value;
+    fetch(EP, { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(data) })
+      .then(function(r){ return r.json().catch(function(){ return { ok:true }; }); })
+      .then(function(res){
+        if (res && res.redirect){ window.location.href = res.redirect; return; }
+        var d = document.createElement("div");
+        d.setAttribute("style","padding:28px;text-align:center;font-family:inherit");
+        d.innerHTML = '<div style="font-size:42px;line-height:1">&#10004;</div><h3 style="margin:10px 0 6px;font-size:20px">Thank you &mdash; enquiry received!</h3><p style="color:#64748b;margin:0">We will be in touch shortly.</p>';
+        if (form.parentNode) form.parentNode.replaceChild(d, form);
+      })
+      .catch(function(){
+        if (btn){ btn.disabled=false; if (btn.tagName==="INPUT") btn.value=orig; else btn.innerHTML=orig; }
+        var er = form.querySelector(".nifty-form-error");
+        if (!er){ er = document.createElement("p"); er.className="nifty-form-error"; er.setAttribute("style","color:#dc2626;margin-top:10px;font-size:14px"); form.appendChild(er); }
+        er.textContent = "Sorry, something went wrong. Please try again or call us directly.";
+      });
+  }, true);
+})();
+`;
+
 export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[] }) {
   const byId = (id?: string | null) => (id && id !== PART_NONE ? parts.find((p) => p.id === id) : undefined);
   const headerPart = byId(page.headerPartId);
@@ -77,6 +132,7 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
       )}
       <style dangerouslySetInnerHTML={{ __html: styleText }} />
       <div className="nifty-mockup" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+      <script dangerouslySetInnerHTML={{ __html: NIFTY_FORM_SCRIPT }} />
     </>
   );
 }
