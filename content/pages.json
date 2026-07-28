@@ -372,5 +372,21 @@
     "createdAt": "2026-07-28T12:33:26.495Z",
     "createdBy": "derek",
     "category": "Locations"
+  },
+  {
+    "id": "pg-25",
+    "path": "/nsw/painter-lane-cove",
+    "type": "location",
+    "title": "Painter Lane Cove",
+    "seoTitle": "Lane Cove Painters, Lower North Shore | Sydney Paintmasters",
+    "seoDescription": "Painter in Lane Cove 2066 for bushland family homes and units on the Lower North Shore. Fixed-price quotes, clean sites. Call 0423 019 087.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": null,
+    "status": "published",
+    "updatedAt": "2026-07-28T12:36:24.890Z",
+    "updatedBy": "derek",
+    "createdAt": "2026-07-28T12:36:24.890Z",
+    "createdBy": "derek"
   }
 ]
