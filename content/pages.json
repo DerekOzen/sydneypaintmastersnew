@@ -814,5 +814,21 @@
     "createdAt": "2026-07-29T01:11:54.007Z",
     "createdBy": "vipin",
     "isHome": false
+  },
+  {
+    "id": "pg-52",
+    "path": "/contact",
+    "type": "page",
+    "title": "Contact Us",
+    "seoTitle": "Contact Sydney Paintmasters - Free Painting Quote",
+    "seoDescription": "Get in touch with Sydney Paintmasters for a free, no-obligation painting quote. Fast reply, fixed pricing, no call-out fee. Call 0423 019 087.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": "footer-1",
+    "status": "draft",
+    "updatedAt": "2026-07-29T09:56:43.955Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-07-29T09:56:43.955Z",
+    "createdBy": "vipin"
   }
 ]
