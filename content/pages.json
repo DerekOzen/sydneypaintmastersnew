@@ -619,5 +619,21 @@
     "updatedBy": "vipin",
     "createdAt": "2026-07-29T00:37:34.651Z",
     "createdBy": "vipin"
+  },
+  {
+    "id": "pg-40",
+    "path": "/blogs",
+    "type": "page",
+    "title": "Blogs",
+    "seoTitle": "Painting Tips & Colour Ideas - Blog | Sydney Paintmasters",
+    "seoDescription": "Painting tips, colour trends and expert advice for Sydney homes and businesses, from the Sydney Paintmasters team. Read the latest guides.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": "footer-1",
+    "status": "draft",
+    "updatedAt": "2026-07-29T00:39:07.002Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-07-29T00:39:07.002Z",
+    "createdBy": "vipin"
   }
 ]
