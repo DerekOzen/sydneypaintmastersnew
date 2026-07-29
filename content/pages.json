@@ -555,5 +555,21 @@
     "updatedBy": "vipin",
     "createdAt": "2026-07-29T00:31:41.342Z",
     "createdBy": "vipin"
+  },
+  {
+    "id": "pg-36",
+    "path": "/nsw/painter-the-rocks",
+    "type": "location",
+    "title": "Painter The Rocks",
+    "seoTitle": "The Rocks Painters - Heritage | Sydney Paintmasters",
+    "seoDescription": "Sensitive painting for The Rocks' historic sandstone and heritage buildings, done to a careful, high standard. Free quote. Call 0423 019 087.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": null,
+    "status": "draft",
+    "updatedAt": "2026-07-29T00:32:57.756Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-07-29T00:32:57.756Z",
+    "createdBy": "vipin"
   }
 ]
