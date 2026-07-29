@@ -731,5 +731,21 @@
     "updatedBy": "vipin",
     "createdAt": "2026-07-29T00:47:44.341Z",
     "createdBy": "vipin"
+  },
+  {
+    "id": "pg-47",
+    "path": "/faq",
+    "type": "page",
+    "title": "Frequently Asked Questions",
+    "seoTitle": "Painting FAQs - Costs, Prep & Timing | Sydney Paintmasters",
+    "seoDescription": "Answers to common Sydney painting questions: costs, prep, paint types, timing and warranties, from the Sydney Paintmasters team. Still unsure? Call us.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": "footer-1",
+    "status": "draft",
+    "updatedAt": "2026-07-29T00:49:00.014Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-07-29T00:49:00.014Z",
+    "createdBy": "vipin"
   }
 ]
