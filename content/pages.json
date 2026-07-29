@@ -571,5 +571,21 @@
     "updatedBy": "vipin",
     "createdAt": "2026-07-29T00:32:57.756Z",
     "createdBy": "vipin"
+  },
+  {
+    "id": "pg-37",
+    "path": "/nsw/painter-waverley",
+    "type": "location",
+    "title": "Painter Waverley",
+    "seoTitle": "Waverley Painters, Eastern Suburbs Hub | Sydney Paintmasters",
+    "seoDescription": "Painter in Waverley 2024 for established Eastern Suburbs homes, interior refreshes and full exterior repaints. Fixed-price quotes, tidy work.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": null,
+    "status": "draft",
+    "updatedAt": "2026-07-29T00:35:16.614Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-07-29T00:35:16.614Z",
+    "createdBy": "vipin"
   }
 ]
