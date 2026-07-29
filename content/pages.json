@@ -587,5 +587,21 @@
     "updatedBy": "vipin",
     "createdAt": "2026-07-29T00:35:16.614Z",
     "createdBy": "vipin"
+  },
+  {
+    "id": "pg-38",
+    "path": "/nsw/painter-willoughby",
+    "type": "location",
+    "title": "Painter Willoughby",
+    "seoTitle": "Painter Willoughby - Lower North Shore | Sydney Paintmasters",
+    "seoDescription": "Willoughby 2068 painter for Federation and family homes on the Lower North Shore, inside and out. Licensed and insured. Call 0423 019 087.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": null,
+    "status": "draft",
+    "updatedAt": "2026-07-29T00:36:17.593Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-07-29T00:36:17.593Z",
+    "createdBy": "vipin"
   }
 ]
