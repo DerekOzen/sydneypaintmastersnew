@@ -763,5 +763,21 @@
     "updatedBy": "vipin",
     "createdAt": "2026-07-29T00:51:10.236Z",
     "createdBy": "vipin"
+  },
+  {
+    "id": "pg-49",
+    "path": "/terms",
+    "type": "page",
+    "title": "Terms of Service",
+    "seoTitle": "Terms & Conditions | Sydney Paintmasters (40)",
+    "seoDescription": "The terms and conditions covering quotes, work and website use with Sydney Paintmasters. Read the details before booking your painting project.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": "footer-1",
+    "status": "draft",
+    "updatedAt": "2026-07-29T00:52:28.893Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-07-29T00:52:28.893Z",
+    "createdBy": "vipin"
   }
 ]
