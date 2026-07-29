@@ -64,8 +64,21 @@ const NIFTY_FORM_SCRIPT = `
   };
   function pick(f, keys){ for (var i=0;i<keys.length;i++){ if (f[keys[i]]) return f[keys[i]]; } return ""; }
   function isEnquiry(f){
-    if (!f || (f.hasAttribute && f.hasAttribute("data-nifty-ignore"))) return false;
-    return !!(f.querySelector && f.querySelector('input[type="email"], input[name="email" i], [name*="mail" i]'));
+    if (!f || !f.querySelector) return false;
+    if (f.hasAttribute && f.hasAttribute("data-nifty-ignore")) return false;
+    // Explicit opt-outs: a search form is never an enquiry.
+    var role = (f.getAttribute && (f.getAttribute("role")||"").toLowerCase()) || "";
+    if (role === "search") return false;
+    // Recognise a contact/enquiry form broadly — an email field is NOT required (many
+    // mockups collect only name/phone/message). A form counts as an enquiry if it has
+    // an email field, a message textarea, or any recognised contact field by name.
+    var hasEmail = f.querySelector('input[type="email"], input[name="email" i], [name*="mail" i]');
+    var hasTextarea = f.querySelector('textarea');
+    var hasContactField = f.querySelector('[name*="name" i],[name*="phone" i],[name*="tel" i],[name*="mobile" i],[name*="message" i],[name*="enquir" i],[name*="suburb" i],[name*="service" i],[name*="comment" i],[name*="subject" i]');
+    // A lone search box (only a search input, no contact fields/textarea) is not an enquiry.
+    var onlySearch = f.querySelector('input[type="search"]') && !hasContactField && !hasTextarea && !hasEmail;
+    if (onlySearch) return false;
+    return !!(hasEmail || hasTextarea || hasContactField);
   }
   document.addEventListener("submit", function(e){
     var form = e.target;
