@@ -779,5 +779,21 @@
     "updatedBy": "vipin",
     "createdAt": "2026-07-29T00:52:28.893Z",
     "createdBy": "vipin"
+  },
+  {
+    "id": "pg-50",
+    "path": "/privacy",
+    "type": "page",
+    "title": "Privacy Policy",
+    "seoTitle": "Privacy Policy | Sydney Paintmasters (36)",
+    "seoDescription": "How Sydney Paintmasters collects, uses and protects your personal information when you request a quote or use our website. Read our privacy policy.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": "footer-1",
+    "status": "draft",
+    "updatedAt": "2026-07-29T00:53:33.628Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-07-29T00:53:33.628Z",
+    "createdBy": "vipin"
   }
 ]
