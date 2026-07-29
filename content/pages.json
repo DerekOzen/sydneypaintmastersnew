@@ -807,8 +807,8 @@
     "layout": "mockup",
     "headerPartId": "header-1",
     "footerPartId": "footer-1",
-    "status": "draft",
-    "updatedAt": "2026-07-29T01:11:54.007Z",
+    "status": "published",
+    "updatedAt": "2026-07-29T01:12:36.083Z",
     "updatedBy": "vipin",
     "createdAt": "2026-07-29T01:11:54.007Z",
     "createdBy": "vipin"
