@@ -699,5 +699,21 @@
     "updatedBy": "vipin",
     "createdAt": "2026-07-29T00:44:29.536Z",
     "createdBy": "vipin"
+  },
+  {
+    "id": "pg-45",
+    "path": "/gallery",
+    "type": "page",
+    "title": "Our Gallery",
+    "seoTitle": "Painting Project Gallery - Our Work | Sydney Paintmasters",
+    "seoDescription": "Browse real Sydney Paintmasters projects: interiors, exteriors, strata and commercial repaints across Sydney. See the finish, then book your quote.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": "footer-1",
+    "status": "draft",
+    "updatedAt": "2026-07-29T00:46:29.642Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-07-29T00:46:29.642Z",
+    "createdBy": "vipin"
   }
 ]
