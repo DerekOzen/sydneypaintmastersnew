@@ -41,9 +41,21 @@ type Pg = {
   blocks?: Array<{ id?: string; type: string; props?: Record<string, any> }>;
   _schemas?: Array<{ type?: string; data?: Record<string, unknown> }>; status?: string;
 };
-type Part = { id: string; kind: string; name: string; html: string };
+type Part = { id: string; kind: string; name: string; html: string; css?: string; fonts?: string[] };
 
-const PARTS = (partsData as Part[]) || [];
+// A shared header/footer part must carry the CSS/fonts that style it, so it renders
+// identically on EVERY page that links it — not just the page it was imported from.
+// If a part has no CSS stored on it (older parts, saved before CSS was captured with
+// them), back-fill from a page that uses the part and does have CSS. This mirrors what
+// the dashboard's part editor does, and is what keeps the header consistent site-wide.
+function _enrichParts(rawParts: any[], pages: Pg[]): Part[] {
+  return (Array.isArray(rawParts) ? rawParts : []).map((p: any) => {
+    if (p?.css && String(p.css).trim() !== "") return p as Part;
+    const user = pages.find((pg) => (pg.headerPartId === p.id || pg.footerPartId === p.id) && pg.css && pg.css.trim() !== "");
+    return user ? { ...p, css: user.css, fonts: p.fonts || user.fonts || [] } : (p as Part);
+  });
+}
+const PARTS = _enrichParts(partsData as any[], pagesData as Pg[]);
 
 // The site home ("/") is owned by app/page.tsx (which renders the page flagged
 // "Set as Homepage"). Everything else routes through here. We exclude the home

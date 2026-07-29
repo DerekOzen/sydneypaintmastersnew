@@ -7,7 +7,12 @@
 import { JsonLd } from "@/components/schema";
 
 type Block = { id?: string; type: string; props?: Record<string, any> };
-type Part = { id: string; kind: string; name: string; html: string };
+// A shared header/footer part carries the design CSS + fonts captured when it was
+// imported. These MUST be injected on every page that links the part — otherwise the
+// part's HTML renders unstyled on any page whose own CSS doesn't already include the
+// header/footer rules (e.g. a location page imported from a different mockup). Injecting
+// the part's own CSS is what keeps the header/footer identical across every linked page.
+type Part = { id: string; kind: string; name: string; html: string; css?: string; fonts?: string[] };
 type MockupPg = {
   title: string;
   css?: string;
@@ -115,13 +120,31 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
     footerPart?.html || "",
   ].filter(Boolean).join("\n");
 
-  const fontImports = (page.fonts || [])
-    .filter((h) => /^https?:\/\//i.test(h))
-    .map((h) => `@import url("${h}");`)
-    .join("\n");
+  // Fonts: merge the page's own web/icon fonts with those the linked header/footer
+  // parts need (e.g. the icon font behind the header's phone/email icons), de-duped —
+  // so a header imported from another page still gets its fonts on THIS page.
+  const allFonts = Array.from(new Set([
+    ...(page.fonts || []),
+    ...(headerPart?.fonts || []),
+    ...(footerPart?.fonts || []),
+  ].filter((h) => /^https?:\/\//i.test(h))));
+  const fontImports = allFonts.map((h) => `@import url("${h}");`).join("\n");
 
-  // @import must come first, then the un-reset, then the mockup's own CSS.
-  const styleText = `${fontImports}\n${UNRESET}\n${page.css || ""}`;
+  // The linked parts' captured CSS. Placed BEFORE the page's own CSS so that header/
+  // footer styling is always present, while the host page's own rules still win on any
+  // shared selector (source order). De-duped: skip a part's CSS if it's identical to the
+  // page's CSS (same origin — already included) or to the other part's CSS.
+  const norm = (s?: string) => (s || "").trim();
+  const partCssBlocks: string[] = [];
+  for (const p of [headerPart, footerPart]) {
+    const c = norm(p?.css);
+    if (c && c !== norm(page.css) && !partCssBlocks.includes(c)) partCssBlocks.push(c);
+  }
+  const partCss = partCssBlocks.join("\n");
+
+  // @import must come first, then the un-reset, then the linked parts' CSS, then the
+  // mockup's own CSS (which wins on any conflict via source order).
+  const styleText = `${fontImports}\n${UNRESET}\n${partCss}\n${page.css || ""}`;
 
   return (
     <>

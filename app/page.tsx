@@ -39,6 +39,18 @@ type Pg = {
   _schemas?: Array<{ type?: string; data?: Record<string, unknown> }>;
 };
 
+// Shared header/footer parts must carry their own CSS/fonts so they render identically
+// everywhere. Back-fill a part's CSS from a page that uses it if the part has none
+// stored (mirrors the dashboard's part editor). See app/[...slug]/page.tsx.
+function _enrichParts(rawParts: any[], pages: Pg[]): any[] {
+  return (Array.isArray(rawParts) ? rawParts : []).map((p: any) => {
+    if (p?.css && String(p.css).trim() !== "") return p;
+    const user = pages.find((pg) => (pg.headerPartId === p.id || pg.footerPartId === p.id) && pg.css && pg.css.trim() !== "");
+    return user ? { ...p, css: user.css, fonts: p.fonts || user.fonts || [] } : p;
+  });
+}
+const PARTS = _enrichParts(partsData as any[], pagesData as Pg[]);
+
 // Prefer the page explicitly flagged "Set as Homepage"; but if that flag was ever
 // lost, fall back to any published page still sitting at "/" so the site never
 // goes blank ("No homepage set yet") while a home page clearly exists.
@@ -56,7 +68,7 @@ function isMockup(p: Pg): boolean {
 
 export default function Home() {
   if (HOME_PAGE) {
-    if (isMockup(HOME_PAGE)) return <MockupPage page={HOME_PAGE} parts={partsData as any} />;
+    if (isMockup(HOME_PAGE)) return <MockupPage page={HOME_PAGE} parts={PARTS as any} />;
     if (Array.isArray(HOME_PAGE.blocks) && HOME_PAGE.blocks.length) {
       return (
         <>
