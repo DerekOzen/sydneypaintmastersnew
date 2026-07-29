@@ -715,5 +715,21 @@
     "updatedBy": "vipin",
     "createdAt": "2026-07-29T00:46:29.642Z",
     "createdBy": "vipin"
+  },
+  {
+    "id": "pg-46",
+    "path": "/careers",
+    "type": "page",
+    "title": "Careers",
+    "seoTitle": "Painting Jobs in Sydney - Join Us | Sydney Paintmasters",
+    "seoDescription": "Experienced Sydney painter looking for steady, quality work? Join the Sydney Paintmasters crew. See current openings and apply today.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": "footer-1",
+    "status": "draft",
+    "updatedAt": "2026-07-29T00:47:44.341Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-07-29T00:47:44.341Z",
+    "createdBy": "vipin"
   }
 ]
