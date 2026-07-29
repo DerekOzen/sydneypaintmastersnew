@@ -742,8 +742,8 @@
     "layout": "mockup",
     "headerPartId": "header-1",
     "footerPartId": "footer-1",
-    "status": "draft",
-    "updatedAt": "2026-07-29T00:49:00.014Z",
+    "status": "published",
+    "updatedAt": "2026-07-29T00:50:00.982Z",
     "updatedBy": "vipin",
     "createdAt": "2026-07-29T00:49:00.014Z",
     "createdBy": "vipin"
