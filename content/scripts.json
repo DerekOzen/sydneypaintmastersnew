@@ -1,0 +1,5 @@
+{
+  "header": "<!-- Google tag (gtag.js) -->\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-XPG8EMM2TC\"></script>\n<script>\n  window.dataLayer = window.dataLayer || [];\n  function gtag(){dataLayer.push(arguments);}\n  gtag('js', new Date());\n\n  gtag('config', 'G-XPG8EMM2TC');\n</script>",
+  "body": "",
+  "footer": "<script>\n  window.addEventListener('load',function(){\n    var x = 0;\n    var timer=setInterval(function(){\n      if(jQuery('.forms-confirmation-container-full').is(\":visible\")){\n        if(x==0){\n          gtag('event','submit',{'event_category':'form','event_label':window.location.pathname})\n          x=1;\n        }\n        clearInterval(timer);\n      }\n    })\n    jQuery('[href*=\"tel:\"],[href*=\"Tel:\"]').click(function(){\n      gtag('event','click',{'event_category':'number','event_label':jQuery(this).attr('href')})\n    })\n  })\n</script>"
+}
