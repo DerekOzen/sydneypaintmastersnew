@@ -747,5 +747,21 @@
     "updatedBy": "vipin",
     "createdAt": "2026-07-29T00:49:00.014Z",
     "createdBy": "vipin"
+  },
+  {
+    "id": "pg-48",
+    "path": "/warranty",
+    "type": "page",
+    "title": "Our Warranty",
+    "seoTitle": "Our Painting Warranty & Guarantee | Sydney Paintmasters",
+    "seoDescription": "How the Sydney Paintmasters workmanship guarantee protects your painting investment. Licensed, insured and backed in writing. Ask us for details.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": "footer-1",
+    "status": "draft",
+    "updatedAt": "2026-07-29T00:51:10.236Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-07-29T00:51:10.236Z",
+    "createdBy": "vipin"
   }
 ]
