@@ -631,10 +631,11 @@
     "headerPartId": "header-1",
     "footerPartId": "footer-1",
     "status": "published",
-    "updatedAt": "2026-07-29T00:39:18.695Z",
+    "updatedAt": "2026-07-29T00:59:57.794Z",
     "updatedBy": "vipin",
     "createdAt": "2026-07-29T00:39:07.002Z",
-    "createdBy": "vipin"
+    "createdBy": "vipin",
+    "category": "Blog"
   },
   {
     "id": "pg-41",
