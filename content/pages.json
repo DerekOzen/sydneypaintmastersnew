@@ -523,5 +523,21 @@
     "updatedBy": "derek",
     "createdAt": "2026-07-28T21:49:01.857Z",
     "createdBy": "derek"
+  },
+  {
+    "id": "pg-34",
+    "path": "/nsw/painter-st-ives",
+    "type": "location",
+    "title": "Painter St Ives",
+    "seoTitle": "St Ives Painters, Leafy North Shore | Sydney Paintmasters",
+    "seoDescription": "Painter in St Ives 2075 for large family homes and gardens on the Upper North Shore. Careful prep, fixed-price quotes. Call 0423 019 087.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": null,
+    "status": "published",
+    "updatedAt": "2026-07-29T00:25:36.699Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-07-29T00:25:36.699Z",
+    "createdBy": "vipin"
   }
 ]
