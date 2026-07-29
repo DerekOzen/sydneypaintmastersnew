@@ -42,7 +42,7 @@
       "props": {
         "label": "Contact Us",
         "role": "section",
-        "html": "<section class=\"hero\"><div class=\"wrap\"><div><h1 class=\"h1 hh\">Contact Us</h1><p class=\"hbody\">Get in touch with Sydney Paintmasters today. We're here to answer your questions and provide a free quote for your painting project.</p><div class=\"hero-cta\"><button class=\"btn btn-primary\">Get Free Quote <i class=\"fas fa-arrow-right\"></i></button><a class=\"hero-phone-btn\" href=\"tel:0423 019 087\"><i aria-hidden=\"true\" class=\"fas fa-phone\"></i>0423 019 087</a></div></div><div class=\"hero-media\"><img alt=\"Contact Sydney Paintmasters\" src=\"https://sydneypaintmasters.com.au/images/contact-us.jpg\"><div class=\"hero-badge\"><div class=\"b-ic\"><i class=\"fas fa-phone\"></i></div><div><b>24/7 Available</b><small>Call anytime</small></div></div></div></div></section>"
+        "html": "<section class=\"hero\"><div class=\"wrap\"><div><h1 class=\"h1 hh\">Contact Us</h1><p class=\"hbody\">Get in touch with Sydney Paintmasters today. We're here to answer your questions and provide a free quote for your painting project.</p><div class=\"hero-cta\"><button class=\"btn btn-primary\"><a href=\"#contact\">Get Free Quote </a><i class=\"fas fa-arrow-right\"></i></button><a class=\"hero-phone-btn\" href=\"tel:0423 019 087\"><i aria-hidden=\"true\" class=\"fas fa-phone\"></i>0423 019 087</a></div></div><div class=\"hero-media\"><img alt=\"Contact Sydney Paintmasters\" src=\"https://sydneypaintmasters.com.au/images/contact-us.jpg\"><div class=\"hero-badge\"><div class=\"b-ic\"><i class=\"fas fa-phone\"></i></div><div><b>24/7 Available</b><small>Call anytime</small></div></div></div></div></section>"
       }
     },
     {
