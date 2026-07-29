@@ -539,5 +539,21 @@
     "updatedBy": "vipin",
     "createdAt": "2026-07-29T00:25:36.699Z",
     "createdBy": "vipin"
+  },
+  {
+    "id": "pg-35",
+    "path": "/nsw/painter-sydney-cbd",
+    "type": "location",
+    "title": "Painter Sydney CBD",
+    "seoTitle": "Painter Sydney CBD - Apartments | Sydney Paintmasters",
+    "seoDescription": "Sydney CBD painter for city apartments, high-rise units and commercial spaces, with flexible after-hours scheduling. Get a free fixed-price quote.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": null,
+    "status": "draft",
+    "updatedAt": "2026-07-29T00:31:41.342Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-07-29T00:31:41.342Z",
+    "createdBy": "vipin"
   }
 ]
