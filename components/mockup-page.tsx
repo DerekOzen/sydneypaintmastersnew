@@ -98,6 +98,108 @@ const NIFTY_FORM_SCRIPT = `
 })();
 `;
 
+// ---------------------------------------------------------------------------
+// CSS scoping. A reusable header/footer part carries the FULL stylesheet of the
+// page it was imported from. Injected raw onto another page, that stylesheet both
+// leaks into the host page's body AND collides with the host's own stylesheet —
+// so the header renders "funny". The fix: confine a part's captured CSS to a wrapper
+// that only contains that part, so it styles the part exactly as originally designed
+// and can neither leak out nor be overridden by the host page's generic rules.
+// (Self-contained, dependency-free — tokeniser-based so it's safe on real stylesheets:
+// keyframes/font-face are left intact, and commas inside [attr]/:is() aren't mis-split.)
+function _stripComments(css: string): string {
+  let out = "", i = 0, inStr = "";
+  while (i < css.length) {
+    const c = css[i];
+    if (inStr) { out += c; if (c === "\\") { out += css[i + 1] || ""; i += 2; continue; } if (c === inStr) inStr = ""; i++; continue; }
+    if (c === '"' || c === "'") { inStr = c; out += c; i++; continue; }
+    if (c === "/" && css[i + 1] === "*") { i += 2; while (i < css.length && !(css[i] === "*" && css[i + 1] === "/")) i++; i += 2; continue; }
+    out += c; i++;
+  }
+  return out;
+}
+function _readBraces(css: string, start: number): { block: string; next: number } {
+  let depth = 0, i = start, out = "", inStr = "";
+  for (; i < css.length; i++) {
+    const c = css[i];
+    if (inStr) { out += c; if (c === "\\") { i++; if (i < css.length) out += css[i]; continue; } if (c === inStr) inStr = ""; continue; }
+    if (c === '"' || c === "'") { inStr = c; out += c; continue; }
+    if (c === "{") { depth++; if (depth === 1) continue; out += c; continue; }
+    if (c === "}") { depth--; if (depth === 0) { i++; break; } out += c; continue; }
+    out += c;
+  }
+  return { block: out, next: i };
+}
+type CssNode = { type: string; prelude?: string; selector?: string; body?: string };
+function _parseBlocks(css: string): CssNode[] {
+  const nodes: CssNode[] = []; let i = 0; const n = css.length; let buf = ""; let inStr = "";
+  while (i < n) {
+    const c = css[i];
+    if (inStr) { buf += c; if (c === "\\") { buf += css[i + 1] || ""; i += 2; continue; } if (c === inStr) inStr = ""; i++; continue; }
+    if (c === '"' || c === "'") { inStr = c; buf += c; i++; continue; }
+    if (c === "@" && buf.trim() === "") {
+      let prelude = "";
+      while (i < n) {
+        const d = css[i];
+        if (d === "{" || d === ";") break;
+        if (d === '"' || d === "'") { const q = d; prelude += d; i++; while (i < n) { prelude += css[i]; if (css[i] === "\\") { prelude += css[i + 1] || ""; i += 2; continue; } if (css[i] === q) { i++; break; } i++; } continue; }
+        prelude += d; i++;
+      }
+      if (i < n && css[i] === ";") { i++; nodes.push({ type: "at-statement", prelude: prelude.trim() }); buf = ""; continue; }
+      if (i < n && css[i] === "{") { const r = _readBraces(css, i); i = r.next; nodes.push({ type: "at-block", prelude: prelude.trim(), body: r.block }); buf = ""; continue; }
+      nodes.push({ type: "at-statement", prelude: prelude.trim() }); buf = ""; break;
+    }
+    if (c === "{") { const r = _readBraces(css, i); i = r.next; nodes.push({ type: "style", selector: buf.trim(), body: r.block }); buf = ""; continue; }
+    if (c === "}") { i++; continue; }
+    buf += c; i++;
+  }
+  return nodes;
+}
+function _splitTopCommas(s: string): string[] {
+  const parts: string[] = []; let dp = 0, db = 0, inStr = "", buf = "";
+  for (let i = 0; i < s.length; i++) {
+    const c = s[i];
+    if (inStr) { buf += c; if (c === "\\") { buf += s[i + 1] || ""; i++; continue; } if (c === inStr) inStr = ""; continue; }
+    if (c === '"' || c === "'") { inStr = c; buf += c; continue; }
+    if (c === "(") dp++; else if (c === ")") dp--; else if (c === "[") db++; else if (c === "]") db--;
+    if (c === "," && dp === 0 && db === 0) { parts.push(buf); buf = ""; continue; }
+    buf += c;
+  }
+  if (buf.trim() !== "") parts.push(buf);
+  return parts;
+}
+function _scopeOne(sel: string, scope: string): string {
+  sel = sel.trim();
+  if (!sel) return sel;
+  const rootRe = /^(html|body|:root)\b/;
+  if (rootRe.test(sel)) { const rest = sel.replace(rootRe, ""); return (scope + rest).trim(); }
+  return scope + " " + sel;
+}
+function _renderScoped(node: CssNode, scope: string): string {
+  if (node.type === "at-statement") return (node.prelude || "") + ";";
+  if (node.type === "style") {
+    const sels = _splitTopCommas(node.selector || "").map((s) => _scopeOne(s, scope)).join(", ");
+    return sels + " {" + (node.body || "") + "}";
+  }
+  if (node.type === "at-block") {
+    const p = node.prelude || "";
+    const name = ((p.match(/^@([a-zA-Z-]+)/) || [])[1] || "").toLowerCase();
+    const passthrough = /^(keyframes|-webkit-keyframes|-moz-keyframes|font-face|page|property|counter-style|font-feature-values|viewport|charset|namespace)$/.test(name);
+    if (passthrough) return p + " {" + (node.body || "") + "}";
+    const inner = _parseBlocks(node.body || "").map((r) => _renderScoped(r, scope)).join("\n");
+    return p + " {" + inner + "}";
+  }
+  return "";
+}
+function scopeCss(css: string, scope: string): string {
+  if (!css || !scope) return css || "";
+  try { return _parseBlocks(_stripComments(css)).map((r) => _renderScoped(r, scope)).join("\n"); }
+  catch { return css; }
+}
+function scopeClass(id: string): string {
+  return "nifty-part-" + String(id || "x").replace(/[^A-Za-z0-9_-]/g, "-");
+}
+
 export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[] }) {
   const byId = (id?: string | null) => (id && id !== PART_NONE ? parts.find((p) => p.id === id) : undefined);
   const headerPart = byId(page.headerPartId);
@@ -114,11 +216,15 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
     return true;
   });
 
-  const bodyHtml = [
-    headerPart?.html || "",
-    ...bodyBlocks.map((b) => (b.props?.html as string) || ""),
-    footerPart?.html || "",
-  ].filter(Boolean).join("\n");
+  // Just the page's own body sections (a linked header/footer is rendered separately,
+  // each inside its own scoped wrapper below).
+  const bodyHtml = bodyBlocks.map((b) => (b.props?.html as string) || "").filter(Boolean).join("\n");
+
+  // Scope classes for the linked parts. Each part's captured CSS is confined to its own
+  // wrapper, and its HTML is rendered inside that wrapper — so it looks exactly as
+  // originally designed and cannot leak into (or be broken by) the host page's CSS.
+  const headerScope = headerPart ? scopeClass(headerPart.id) : "";
+  const footerScope = footerPart ? scopeClass(footerPart.id) : "";
 
   // Fonts: merge the page's own web/icon fonts with those the linked header/footer
   // parts need (e.g. the icon font behind the header's phone/email icons), de-duped —
@@ -130,20 +236,20 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
   ].filter((h) => /^https?:\/\//i.test(h))));
   const fontImports = allFonts.map((h) => `@import url("${h}");`).join("\n");
 
-  // The linked parts' captured CSS. Placed BEFORE the page's own CSS so that header/
-  // footer styling is always present, while the host page's own rules still win on any
-  // shared selector (source order). De-duped: skip a part's CSS if it's identical to the
-  // page's CSS (same origin — already included) or to the other part's CSS.
+  // Each linked part's captured CSS, scoped to that part's wrapper only. Skip a part's
+  // CSS when it's identical to the page's own CSS (same origin — already present).
   const norm = (s?: string) => (s || "").trim();
-  const partCssBlocks: string[] = [];
-  for (const p of [headerPart, footerPart]) {
-    const c = norm(p?.css);
-    if (c && c !== norm(page.css) && !partCssBlocks.includes(c)) partCssBlocks.push(c);
+  const pageNorm = norm(page.css);
+  const partCssPieces: string[] = [];
+  if (headerPart && norm(headerPart.css) && norm(headerPart.css) !== pageNorm) {
+    partCssPieces.push(scopeCss(headerPart.css as string, "." + headerScope));
   }
-  const partCss = partCssBlocks.join("\n");
+  if (footerPart && norm(footerPart.css) && norm(footerPart.css) !== pageNorm) {
+    partCssPieces.push(scopeCss(footerPart.css as string, "." + footerScope));
+  }
+  const partCss = partCssPieces.join("\n");
 
-  // @import must come first, then the un-reset, then the linked parts' CSS, then the
-  // mockup's own CSS (which wins on any conflict via source order).
+  // @import first, then the un-reset, then the scoped part CSS, then the page's own CSS.
   const styleText = `${fontImports}\n${UNRESET}\n${partCss}\n${page.css || ""}`;
 
   return (
@@ -154,7 +260,13 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
         ) : null
       )}
       <style dangerouslySetInnerHTML={{ __html: styleText }} />
+      {headerPart ? (
+        <div className={`nifty-part ${headerScope}`} dangerouslySetInnerHTML={{ __html: headerPart.html || "" }} />
+      ) : null}
       <div className="nifty-mockup" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+      {footerPart ? (
+        <div className={`nifty-part ${footerScope}`} dangerouslySetInnerHTML={{ __html: footerPart.html || "" }} />
+      ) : null}
       <script dangerouslySetInnerHTML={{ __html: NIFTY_FORM_SCRIPT }} />
     </>
   );
