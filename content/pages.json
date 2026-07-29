@@ -678,8 +678,8 @@
     "layout": "mockup",
     "headerPartId": "header-1",
     "footerPartId": "footer-1",
-    "status": "draft",
-    "updatedAt": "2026-07-29T00:43:12.454Z",
+    "status": "published",
+    "updatedAt": "2026-07-29T00:43:23.845Z",
     "updatedBy": "vipin",
     "createdAt": "2026-07-29T00:43:12.454Z",
     "createdBy": "vipin"
