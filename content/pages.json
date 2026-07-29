@@ -807,10 +807,11 @@
     "layout": "mockup",
     "headerPartId": "header-1",
     "footerPartId": "footer-1",
-    "status": "published",
-    "updatedAt": "2026-07-29T01:12:36.083Z",
+    "status": "deleted",
+    "updatedAt": "2026-07-29T01:15:43.919Z",
     "updatedBy": "vipin",
     "createdAt": "2026-07-29T01:11:54.007Z",
-    "createdBy": "vipin"
+    "createdBy": "vipin",
+    "isHome": false
   }
 ]
