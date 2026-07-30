@@ -12,7 +12,8 @@ type Block = { id?: string; type: string; props?: Record<string, any> };
 // part's HTML renders unstyled on any page whose own CSS doesn't already include the
 // header/footer rules (e.g. a location page imported from a different mockup). Injecting
 // the part's own CSS is what keeps the header/footer identical across every linked page.
-type Part = { id: string; kind: string; name: string; html: string; css?: string; fonts?: string[] };
+type HeaderSettings = { sticky?: boolean; autoHide?: boolean; scrollBreakpoint?: number; transparent?: boolean; shadow?: string; mobileMenu?: boolean; mobileBreakpoint?: number };
+type Part = { id: string; kind: string; name: string; html: string; css?: string; fonts?: string[]; settings?: HeaderSettings };
 type MockupPg = {
   title: string;
   css?: string;
@@ -108,6 +109,64 @@ const NIFTY_FORM_SCRIPT = `
         er.textContent = "Sorry, something went wrong. Please try again or call us directly.";
       });
   }, true);
+})();
+`;
+
+// Header behaviour (Phase 1 header designer). Reads the header's saved settings from a
+// data attribute and applies them at runtime: sticky, auto-hide on scroll, transparent-
+// over-hero, shadow, and a collapse-to-hamburger mobile menu. Everything is gated on a
+// setting being enabled, so a header with no settings is untouched.
+const NIFTY_HEADER_CSS = `
+.nifty-header.nifty-transparent, .nifty-header.nifty-transparent > * { background-color: transparent !important; box-shadow: none !important; }
+`;
+const NIFTY_HEADER_SCRIPT = `
+(function(){
+  var h = document.querySelector('.nifty-header[data-nifty-header]');
+  if(!h) return;
+  var cfg={}; try{ cfg=JSON.parse(h.getAttribute('data-nifty-header')||'{}'); }catch(e){ cfg={}; }
+  var bp = parseInt(cfg.scrollBreakpoint,10); if(isNaN(bp)) bp=60;
+  if(cfg.sticky){ h.style.position='sticky'; h.style.top='0'; h.style.zIndex='1000'; }
+  h.style.transition='transform .3s ease, box-shadow .3s ease, background-color .3s ease';
+  function shadowVal(){ return cfg.shadow==='wide' ? '0 8px 28px rgba(0,0,0,.16)' : (cfg.shadow==='thin' ? '0 1px 8px rgba(0,0,0,.12)' : ''); }
+  var lastY = window.pageYOffset||0;
+  function onScroll(){
+    var y = window.pageYOffset||0, past = y>bp;
+    if(cfg.transparent){ if(past){ h.classList.remove('nifty-transparent'); h.classList.add('nifty-solid'); } else { h.classList.add('nifty-transparent'); h.classList.remove('nifty-solid'); } }
+    var sv=shadowVal(); if(sv){ h.style.boxShadow = cfg.sticky ? (past?sv:'') : sv; }
+    if(cfg.autoHide && cfg.sticky){ if(y>bp && y>lastY+4){ h.style.transform='translateY(-100%)'; } else if(y<lastY-4 || y<=bp){ h.style.transform='translateY(0)'; } }
+    lastY=y;
+  }
+  if(cfg.transparent) h.classList.add('nifty-transparent');
+  onScroll();
+  window.addEventListener('scroll', onScroll, {passive:true});
+  if(cfg.mobileMenu){
+    var mbp = parseInt(cfg.mobileBreakpoint,10); if(isNaN(mbp)) mbp=900;
+    function findNav(){
+      var nav=h.querySelector('nav'); if(nav && nav.querySelectorAll('a').length) return nav;
+      var best=null,bestN=0,cand=h.querySelectorAll('ul,div');
+      for(var i=0;i<cand.length;i++){ var n=0,as=cand[i].children; for(var j=0;j<as.length;j++){ if(as[j].tagName==='A') n++; else if(as[j].querySelector && as[j].querySelector('a')) n++; } if(n>bestN){ bestN=n; best=cand[i]; } }
+      return bestN>=2 ? best : null;
+    }
+    var nav=findNav(), burger=null, panel=null;
+    function links(){ var out=[]; if(!nav) return out; var as=nav.querySelectorAll('a'); for(var i=0;i<as.length;i++){ var t=(as[i].textContent||'').trim(); if(t) out.push({t:t,href:as[i].getAttribute('href')||'#'}); } return out; }
+    function build(){
+      if(burger) return;
+      burger=document.createElement('button'); burger.type='button'; burger.setAttribute('aria-label','Menu'); burger.setAttribute('data-nifty-ui','1');
+      burger.innerHTML='<span></span><span></span><span></span>';
+      burger.style.cssText='display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:10px;background:transparent;border:0;cursor:pointer;margin-left:auto';
+      var bars=burger.querySelectorAll('span'); for(var i=0;i<bars.length;i++){ bars[i].style.cssText='display:block;height:2px;width:100%;background:currentColor;border-radius:2px'; }
+      panel=document.createElement('div'); panel.setAttribute('data-nifty-ui','1');
+      panel.style.cssText='display:none;position:absolute;left:0;right:0;top:100%;background:#fff;box-shadow:0 10px 24px rgba(0,0,0,.14);padding:6px 0;z-index:1001;max-height:75vh;overflow:auto';
+      var ls=links();
+      for(var j=0;j<ls.length;j++){ var a=document.createElement('a'); a.href=ls[j].href; a.textContent=ls[j].t; a.style.cssText='display:block;padding:13px 22px;color:#0f172a;text-decoration:none;font-family:inherit;font-size:16px;border-bottom:1px solid #f1f5f9'; panel.appendChild(a); }
+      burger.addEventListener('click',function(){ panel.style.display = panel.style.display==='block'?'none':'block'; });
+      if(getComputedStyle(h).position==='static') h.style.position='relative';
+      h.appendChild(burger); h.appendChild(panel);
+    }
+    function apply(){ if(!nav) return; build(); if(window.innerWidth<=mbp){ nav.style.display='none'; burger.style.display='flex'; } else { nav.style.display=''; if(burger) burger.style.display='none'; if(panel) panel.style.display='none'; } }
+    apply();
+    window.addEventListener('resize', apply, {passive:true});
+  }
 })();
 `;
 
@@ -262,8 +321,15 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
   }
   const partCss = partCssPieces.join("\n");
 
-  // @import first, then the un-reset, then the scoped part CSS, then the page's own CSS.
-  const styleText = `${fontImports}\n${UNRESET}\n${partCss}\n${page.css || ""}`;
+  // Header behaviour settings (Phase 1). Only "activate" the header wrapper + script when
+  // at least one behaviour is switched on, so a plain header is left completely untouched.
+  const hs = (headerPart?.settings || {}) as HeaderSettings;
+  const headerActive = !!(hs.sticky || hs.autoHide || hs.transparent || hs.mobileMenu || (hs.shadow && hs.shadow !== "none"));
+  const headerClass = `nifty-part ${headerScope}${headerActive ? " nifty-header" : ""}`;
+
+  // @import first, then the un-reset, then the scoped part CSS, then the page's own CSS,
+  // then (only if a header behaviour is on) the small header-behaviour CSS.
+  const styleText = `${fontImports}\n${UNRESET}\n${partCss}\n${page.css || ""}${headerActive ? "\n" + NIFTY_HEADER_CSS : ""}`;
 
   return (
     <>
@@ -274,13 +340,14 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
       )}
       <style dangerouslySetInnerHTML={{ __html: styleText }} />
       {headerPart ? (
-        <div className={`nifty-part ${headerScope}`} dangerouslySetInnerHTML={{ __html: headerPart.html || "" }} />
+        <div className={headerClass} {...(headerActive ? { "data-nifty-header": JSON.stringify(hs) } : {})} dangerouslySetInnerHTML={{ __html: headerPart.html || "" }} />
       ) : null}
       <div className="nifty-mockup" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
       {footerPart ? (
         <div className={`nifty-part ${footerScope}`} dangerouslySetInnerHTML={{ __html: footerPart.html || "" }} />
       ) : null}
       <script dangerouslySetInnerHTML={{ __html: NIFTY_FORM_SCRIPT }} />
+      {headerActive ? <script dangerouslySetInnerHTML={{ __html: NIFTY_HEADER_SCRIPT }} /> : null}
     </>
   );
 }

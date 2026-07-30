@@ -6,7 +6,18 @@ import SiteFooter from "@/components/site-footer";
 import { JsonLd } from "@/components/schema";
 import { Blocks } from "@/components/blocks";
 import { MockupPage } from "@/components/mockup-page";
+import { site } from "@/lib/site";
 import partsData from "@/content/parts.json";
+
+// Absolute canonical URL for a path, based on the site's configured address (which the
+// dashboard sets to the real domain once a custom domain is connected). Canonical tags
+// tell search + answer + generative engines that the real domain is authoritative — so
+// even if the .pages.dev is reached, signals consolidate onto the real domain.
+function canonicalFor(p: string): string | undefined {
+  const base = (site.siteUrl || "").replace(/\/+$/, "");
+  if (!base) return undefined;
+  return base + (p === "/" ? "" : "/" + p.replace(/^\/+/, ""));
+}
 
 // Build-time content loader. content/pages.json is a lightweight INDEX; each
 // page's heavy content lives in content/pages/<id>.json (the "split" format that
@@ -108,7 +119,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const page = findByParams(slug);
   if (!page) return {};
-  return { title: page.seoTitle || page.title, description: page.seoDescription || "" };
+  const canonical = canonicalFor(page.path);
+  return {
+    title: page.seoTitle || page.title,
+    description: page.seoDescription || "",
+    ...(canonical ? { alternates: { canonical } } : {}),
+  };
 }
 
 export default async function DynamicPage({ params }: { params: Promise<{ slug: string[] }> }) {

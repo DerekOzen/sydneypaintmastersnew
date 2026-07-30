@@ -8,6 +8,7 @@ import SiteFooter from "@/components/site-footer";
 import { JsonLd } from "@/components/schema";
 import { Blocks } from "@/components/blocks";
 import { MockupPage } from "@/components/mockup-page";
+import { site } from "@/lib/site";
 import partsData from "@/content/parts.json";
 
 // Build-time content loader (see app/[...slug]/page.tsx). content/pages.json is a
@@ -57,8 +58,12 @@ const PARTS = _enrichParts(partsData as any[], pagesData as Pg[]);
 const HOME_PAGE = (pagesData as Pg[]).find((p) => p.status === "published" && p.isHome)
   || (pagesData as Pg[]).find((p) => p.status === "published" && (p.path === "/" || p.path === ""));
 
+// Canonical for the homepage = the site's configured address (the real domain once a
+// custom domain is connected), so engines treat the real domain as authoritative.
+const HOME_CANONICAL = (site.siteUrl || "").replace(/\/+$/, "") || undefined;
+
 export const metadata = HOME_PAGE
-  ? { title: HOME_PAGE.seoTitle || HOME_PAGE.title, description: HOME_PAGE.seoDescription || "" }
+  ? { title: HOME_PAGE.seoTitle || HOME_PAGE.title, description: HOME_PAGE.seoDescription || "", ...(HOME_CANONICAL ? { alternates: { canonical: HOME_CANONICAL } } : {}) }
   : { title: "Your Business", description: "" };
 
 function isMockup(p: Pg): boolean {
