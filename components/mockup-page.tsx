@@ -87,28 +87,85 @@ const NIFTY_FORM_SCRIPT = `
     e.preventDefault();
     var btn = form.querySelector('button[type="submit"], input[type="submit"], button');
     var orig = btn ? (btn.tagName === "INPUT" ? btn.value : btn.innerHTML) : "";
-    if (btn){ btn.disabled = true; if (btn.tagName === "INPUT") btn.value = "Sending..."; else btn.innerHTML = "Sending..."; }
-    var raw = {}, nm = {};
-    new FormData(form).forEach(function(v,k){ raw[k]=String(v); nm[norm(k)]=String(v); });
-    var data = { name:pick(nm,MAP.name), email:pick(nm,MAP.email), phone:pick(nm,MAP.phone), suburb:pick(nm,MAP.suburb), service:pick(nm,MAP.service), message:pick(nm,MAP.message) };
-    for (var k in raw){ if (!(k in data)) data[k]=raw[k]; }
-    var t = form.querySelector('[name="cf-turnstile-response"]'); if (t && t.value) data["cf-turnstile-response"]=t.value;
-    fetch(EP, { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(data) })
-      .then(function(r){ return r.json().catch(function(){ return { ok:true }; }); })
-      .then(function(res){
-        if (res && res.redirect){ window.location.href = res.redirect; return; }
-        var d = document.createElement("div");
-        d.setAttribute("style","padding:28px;text-align:center;font-family:inherit");
-        d.innerHTML = '<div style="font-size:42px;line-height:1">&#10004;</div><h3 style="margin:10px 0 6px;font-size:20px">Thank you &mdash; enquiry received!</h3><p style="color:#64748b;margin:0">We will be in touch shortly.</p>';
-        if (form.parentNode) form.parentNode.replaceChild(d, form);
-      })
-      .catch(function(){
-        if (btn){ btn.disabled=false; if (btn.tagName==="INPUT") btn.value=orig; else btn.innerHTML=orig; }
-        var er = form.querySelector(".nifty-form-error");
-        if (!er){ er = document.createElement("p"); er.className="nifty-form-error"; er.setAttribute("style","color:#dc2626;margin-top:10px;font-size:14px"); form.appendChild(er); }
-        er.textContent = "Sorry, something went wrong. Please try again or call us directly.";
-      });
+    function setBtn(txt, dis){ if(!btn) return; btn.disabled = dis; if (btn.tagName === "INPUT") btn.value = txt; else btn.innerHTML = txt; }
+    function restoreBtn(){ setBtn(orig, false); }
+    function showError(msg){
+      restoreBtn();
+      var er = form.querySelector(".nifty-form-error");
+      if (!er){ er = document.createElement("p"); er.className="nifty-form-error"; er.setAttribute("style","color:#dc2626;margin-top:10px;font-size:14px"); form.appendChild(er); }
+      er.textContent = msg || "Sorry, something went wrong. Please try again or call us directly.";
+    }
+    function tsToken(){ var t = form.querySelector('[name="cf-turnstile-response"]'); return t && t.value ? t.value : ""; }
+    var hasWidget = !!form.querySelector(".cf-turnstile");
+    setBtn("Sending...", true);
+
+    function doSend(){
+      var raw = {}, nm = {};
+      new FormData(form).forEach(function(v,k){ raw[k]=String(v); nm[norm(k)]=String(v); });
+      var data = { name:pick(nm,MAP.name), email:pick(nm,MAP.email), phone:pick(nm,MAP.phone), suburb:pick(nm,MAP.suburb), service:pick(nm,MAP.service), message:pick(nm,MAP.message) };
+      for (var k in raw){ if (!(k in data)) data[k]=raw[k]; }
+      var tok = tsToken(); if (tok) data["cf-turnstile-response"]=tok;
+      fetch(EP, { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(data) })
+        .then(function(r){ return r.json().catch(function(){ return { ok:true }; }); })
+        .then(function(res){
+          if (res && res.redirect){ window.location.href = res.redirect; return; }
+          // A failure (e.g. CAPTCHA didn't verify) — show the real message and let them
+          // retry. Never show a "thank you" when it didn't actually go through.
+          if (res && res.ok === false){
+            if (hasWidget && window.turnstile){ try { window.turnstile.reset(form.querySelector(".cf-turnstile")); } catch(e){} }
+            showError(res.error || "Sorry, we couldn't send that just now. Please try again.");
+            return;
+          }
+          var d = document.createElement("div");
+          d.setAttribute("style","padding:28px;text-align:center;font-family:inherit");
+          d.innerHTML = '<div style="font-size:42px;line-height:1">&#10004;</div><h3 style="margin:10px 0 6px;font-size:20px">Thank you &mdash; enquiry received!</h3><p style="color:#64748b;margin:0">We will be in touch shortly.</p>';
+          if (form.parentNode) form.parentNode.replaceChild(d, form);
+        })
+        .catch(function(){ showError(); });
+    }
+
+    // If Turnstile is on this form but hasn't produced its token yet (Managed mode solves
+    // automatically within a second or two), wait briefly for it before sending — so a fast
+    // submit doesn't fail verification and lose the redirect. Only wait when a widget exists.
+    if (hasWidget && !tsToken()){
+      var waited = 0;
+      (function waitToken(){
+        if (tsToken()){ doSend(); return; }
+        waited += 250;
+        if (waited >= 8000){ showError("Please complete the verification above, then submit again."); return; }
+        setTimeout(waitToken, 250);
+      })();
+    } else {
+      doSend();
+    }
   }, true);
+
+  // CAPTCHA: if this site has Cloudflare Turnstile enabled in the dashboard, drop the
+  // widget into each enquiry form and load the Turnstile script. The widget writes a
+  // hidden "cf-turnstile-response" token that the submit handler above already forwards,
+  // and the lead endpoint verifies it. If Turnstile isn't enabled, this does nothing.
+  (function(){
+    var CAP = "https://nifty-websites-dashboard.web-528.workers.dev/admin/api/captcha";
+    fetch(CAP).then(function(r){ return r.json(); }).then(function(cfg){
+      if (!cfg || !cfg.enabled || !cfg.siteKey) return;
+      var forms = document.querySelectorAll("form"), added = false;
+      for (var i=0;i<forms.length;i++){
+        var f = forms[i];
+        if (!isEnquiry(f) || f.querySelector(".cf-turnstile")) continue;
+        var w = document.createElement("div");
+        w.className = "cf-turnstile"; w.setAttribute("data-sitekey", cfg.siteKey); w.style.margin = "12px 0";
+        var b = f.querySelector('button[type="submit"], input[type="submit"], button');
+        if (b && b.parentNode) b.parentNode.insertBefore(w, b); else f.appendChild(w);
+        added = true;
+      }
+      if (added && !document.querySelector('script[data-nifty-turnstile]')){
+        var s = document.createElement("script");
+        s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
+        s.async = true; s.defer = true; s.setAttribute("data-nifty-turnstile","1");
+        document.head.appendChild(s);
+      }
+    }).catch(function(){});
+  })();
 })();
 `;
 
