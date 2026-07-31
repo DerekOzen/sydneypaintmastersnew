@@ -125,15 +125,17 @@ const NIFTY_FORM_SCRIPT = `
         .catch(function(){ showError(); });
     }
 
-    // If Turnstile is on this form but hasn't produced its token yet (Managed mode solves
-    // automatically within a second or two), wait briefly for it before sending — so a fast
-    // submit doesn't fail verification and lose the redirect. Only wait when a widget exists.
+    // If a Turnstile widget is present but hasn't produced its token yet (Managed mode
+    // solves automatically in a second or two), wait BRIEFLY for it so a valid token is
+    // included — but then ALWAYS submit anyway. We never refuse client-side: the SERVER is
+    // the gatekeeper. If CAPTCHA is off the empty token is ignored (lead + email go through);
+    // if it's on, the server returns the fail message and the visitor can retry. This is
+    // what stops a stuck/stale widget from silently blocking every enquiry.
     if (hasWidget && !tsToken()){
       var waited = 0;
       (function waitToken(){
-        if (tsToken()){ doSend(); return; }
+        if (tsToken() || waited >= 3500){ doSend(); return; }
         waited += 250;
-        if (waited >= 8000){ showError("Please complete the verification above, then submit again."); return; }
         setTimeout(waitToken, 250);
       })();
     } else {
