@@ -1,14 +1,29 @@
-// Structured header ("zone builder", Phase 2) → HTML + CSS. Self-contained COPY of the
-// dashboard's lib/header-render.ts — keep the two in sync. Renders a header from three
-// zones (left/center/right) of elements instead of captured mockup HTML.
+// Structured header builder → HTML + CSS. Self-contained COPY of the dashboard's
+// lib/header-render.ts (render + css only) — keep the two in sync. Supports stacked rows.
 
 export type HeaderElementType = "logo" | "menu" | "phone" | "button" | "social" | "text";
 export type HeaderElement = { id: string; type: HeaderElementType; props: Record<string, any>; hideMobile?: boolean };
+export type HeaderRow = {
+  id: string;
+  left: HeaderElement[]; center: HeaderElement[]; right: HeaderElement[];
+  bg?: string; color?: string; height?: number; hideMobile?: boolean;
+};
 export type HeaderLayout = {
   enabled: boolean;
-  left: HeaderElement[]; center: HeaderElement[]; right: HeaderElement[];
-  bg?: string; color?: string; accent?: string; height?: number; maxWidth?: number;
+  rows?: HeaderRow[];
+  accent?: string; maxWidth?: number;
+  left?: HeaderElement[]; center?: HeaderElement[]; right?: HeaderElement[];
+  bg?: string; color?: string; height?: number;
 };
+
+export function normalizeRows(layout: HeaderLayout): HeaderRow[] {
+  if (layout && Array.isArray(layout.rows) && layout.rows.length) return layout.rows;
+  return [{
+    id: "row-1",
+    left: layout?.left || [], center: layout?.center || [], right: layout?.right || [],
+    bg: layout?.bg, color: layout?.color, height: layout?.height,
+  }];
+}
 
 function esc(s: any): string {
   return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -30,7 +45,7 @@ function renderEl(el: HeaderElement): string {
     }
     case "phone": {
       const label = p.label || p.number || "";
-      return `<a href="${esc(telHref(p.number))}" class="nifty-h-phone">${p.icon === false ? "" : '<span class="nifty-h-ico">☎</span>'}${esc(label)}</a>`;
+      return `<a href="${esc(telHref(p.number))}" class="nifty-h-phone">${p.icon === false ? "" : '<span class="nifty-h-ico">&#9742;</span>'}${esc(label)}</a>`;
     }
     case "button":
       return `<a href="${esc(p.href || "#")}" class="nifty-h-btn">${esc(p.label || "Button")}</a>`;
@@ -49,24 +64,23 @@ function zoneHtml(els: HeaderElement[]): string {
 }
 
 export function renderHeaderLayout(layout: HeaderLayout): string {
+  const rows = normalizeRows(layout);
   const mw = layout.maxWidth ? `max-width:${layout.maxWidth}px;margin:0 auto;` : "";
-  return (
-    `<div class="nifty-hbar"><div class="nifty-hrow" style="${mw}">` +
-    `<div class="nifty-hcell nifty-left">${zoneHtml(layout.left)}</div>` +
-    `<div class="nifty-hcell nifty-center">${zoneHtml(layout.center)}</div>` +
-    `<div class="nifty-hcell nifty-right">${zoneHtml(layout.right)}</div>` +
+  return rows.map((row, i) =>
+    `<div class="nifty-hbar nifty-hbar-${i}${row.hideMobile ? " nifty-hide-mobile" : ""}"><div class="nifty-hrow" style="${mw}">` +
+    `<div class="nifty-hcell nifty-left">${zoneHtml(row.left)}</div>` +
+    `<div class="nifty-hcell nifty-center">${zoneHtml(row.center)}</div>` +
+    `<div class="nifty-hcell nifty-right">${zoneHtml(row.right)}</div>` +
     `</div></div>`
-  );
+  ).join("");
 }
 
 export function headerLayoutCss(layout: HeaderLayout): string {
-  const bg = layout.bg || "#ffffff";
-  const color = layout.color || "#0f172a";
+  const rows = normalizeRows(layout);
   const accent = layout.accent || "#0f766e";
-  const h = parseInt(String(layout.height), 10) || 72;
-  return `
-.nifty-hbar{background:${bg};color:${color};width:100%;box-sizing:border-box}
-.nifty-hrow{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:${h}px;padding:0 24px;box-sizing:border-box}
+  let css = `
+.nifty-hbar{width:100%;box-sizing:border-box}
+.nifty-hrow{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:0 24px;box-sizing:border-box}
 .nifty-hcell{display:flex;align-items:center;gap:20px;min-width:0}
 .nifty-hcell.nifty-center{flex:1 1 auto;justify-content:center}
 .nifty-hcell.nifty-right{justify-content:flex-end}
@@ -81,9 +95,11 @@ export function headerLayoutCss(layout: HeaderLayout): string {
 .nifty-h-btn:hover{filter:brightness(.94)}
 .nifty-h-social{display:flex;gap:12px}
 .nifty-h-social a{color:inherit;text-decoration:none;font-weight:700}
-@media(max-width:820px){
-  .nifty-hrow{gap:12px;padding:0 16px}
-  .nifty-hide-mobile{display:none !important}
-}
 `;
+  rows.forEach((row, i) => {
+    const bg = row.bg || "#ffffff"; const color = row.color || "#0f172a"; const h = parseInt(String(row.height), 10) || 64;
+    css += `.nifty-hbar-${i}{background:${bg};color:${color}}\n.nifty-hbar-${i} .nifty-hrow{min-height:${h}px;font-size:${i === 0 && rows.length > 1 ? "13px" : "inherit"}}\n`;
+  });
+  css += `@media(max-width:820px){.nifty-hrow{gap:12px;padding:0 16px}.nifty-hide-mobile{display:none !important}}\n`;
+  return css;
 }
