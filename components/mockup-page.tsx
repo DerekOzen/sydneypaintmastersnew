@@ -7,6 +7,40 @@
 import { JsonLd } from "@/components/schema";
 import { renderHeaderLayout, headerLayoutCss, type HeaderLayout } from "@/components/header-layout";
 
+// --- Link normaliser -------------------------------------------------------
+// Some mockups were authored with local/relative links (href="landscape-design.html"),
+// which resolve to file:///…/Downloads/… when the mockup is opened from disk and were
+// captured verbatim into the header/footer/body. Rewrite them to clean site paths at
+// render time so every already-imported site is corrected on its next build. Kept in
+// sync with the dashboard's lib/link-normalize.ts.
+function normHref(raw: string): string {
+  let h = (raw || "").trim();
+  if (!h) return h;
+  const low = h.toLowerCase();
+  if (h.startsWith("#") || h.startsWith("//")) return h;
+  if (/^(https?:|tel:|mailto:|sms:|javascript:|data:)/.test(low)) return h;
+  let hash = "";
+  const hi = h.indexOf("#");
+  if (hi >= 0) { hash = h.slice(hi); h = h.slice(0, hi); }
+  const qi = h.indexOf("?");
+  if (qi >= 0) h = h.slice(0, qi);
+  const isLocalFile = /^file:/i.test(h) || h.includes("\\") || /^[a-zA-Z]:[\\/]/.test(h);
+  if (isLocalFile) { const parts = h.split(/[\\/]/); h = parts[parts.length - 1] || ""; }
+  h = h.replace(/^(\.\.?\/)+/, "");
+  h = h.replace(/\.html?$/i, "");
+  const base = (h.split("/").pop() || "").toLowerCase();
+  if (h === "" || h === "/" || base === "index" || base === "home") return "/" + hash;
+  if (!h.startsWith("/")) h = "/" + h;
+  return h + hash;
+}
+function normalizeSiteLinks(html: string): string {
+  if (!html) return html;
+  return html.replace(/(<a\b[^>]*?\shref\s*=\s*)("([^"]*)"|'([^']*)')/gi, (_m, pre, _q, dq, sq) => {
+    const val = dq !== undefined ? dq : (sq || "");
+    return pre + '"' + normHref(val) + '"';
+  });
+}
+
 type Block = { id?: string; type: string; props?: Record<string, any> };
 // A shared header/footer part carries the design CSS + fonts captured when it was
 // imported. These MUST be injected on every page that links the part — otherwise the
@@ -350,7 +384,7 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
 
   // Just the page's own body sections (a linked header/footer is rendered separately,
   // each inside its own scoped wrapper below).
-  const bodyHtml = bodyBlocks.map((b) => (b.props?.html as string) || "").filter(Boolean).join("\n");
+  const bodyHtml = normalizeSiteLinks(bodyBlocks.map((b) => (b.props?.html as string) || "").filter(Boolean).join("\n"));
 
   // Scope classes for the linked parts. Each part's captured CSS is confined to its own
   // wrapper, and its HTML is rendered inside that wrapper — so it looks exactly as
@@ -391,7 +425,7 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
   // instead of the captured mockup HTML, and inject its base CSS.
   const headerLayout = headerPart?.layout as HeaderLayout | undefined;
   const useLayout = !!(headerLayout && headerLayout.enabled);
-  const headerInnerHtml = useLayout ? renderHeaderLayout(headerLayout!) : (headerPart?.html || "");
+  const headerInnerHtml = useLayout ? renderHeaderLayout(headerLayout!) : normalizeSiteLinks(headerPart?.html || "");
   const layoutCss = useLayout ? headerLayoutCss(headerLayout!) : "";
 
   // @import first, then the un-reset, then the scoped part CSS, then the page's own CSS,
@@ -412,7 +446,7 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
       ) : null}
       <div className="nifty-mockup" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
       {footerPart ? (
-        <div className={`nifty-part ${footerScope}`} dangerouslySetInnerHTML={{ __html: footerPart.html || "" }} />
+        <div className={`nifty-part ${footerScope}`} dangerouslySetInnerHTML={{ __html: normalizeSiteLinks(footerPart.html || "") }} />
       ) : null}
       <script dangerouslySetInnerHTML={{ __html: NIFTY_FORM_SCRIPT }} />
       {headerActive ? <script dangerouslySetInnerHTML={{ __html: NIFTY_HEADER_SCRIPT }} /> : null}
