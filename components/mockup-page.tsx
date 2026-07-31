@@ -5,6 +5,7 @@
 // authored), then output the section HTML as-is. No site header/footer chrome —
 // the mockup carries its own. Header/footer may be shared "parts" wrapped here.
 import { JsonLd } from "@/components/schema";
+import { renderHeaderLayout, headerLayoutCss, type HeaderLayout } from "@/components/header-layout";
 
 type Block = { id?: string; type: string; props?: Record<string, any> };
 // A shared header/footer part carries the design CSS + fonts captured when it was
@@ -13,7 +14,7 @@ type Block = { id?: string; type: string; props?: Record<string, any> };
 // header/footer rules (e.g. a location page imported from a different mockup). Injecting
 // the part's own CSS is what keeps the header/footer identical across every linked page.
 type HeaderSettings = { sticky?: boolean; autoHide?: boolean; scrollBreakpoint?: number; transparent?: boolean; shadow?: string; mobileMenu?: boolean; mobileBreakpoint?: number };
-type Part = { id: string; kind: string; name: string; html: string; css?: string; fonts?: string[]; settings?: HeaderSettings };
+type Part = { id: string; kind: string; name: string; html: string; css?: string; fonts?: string[]; settings?: HeaderSettings; layout?: HeaderLayout };
 type MockupPg = {
   title: string;
   css?: string;
@@ -384,9 +385,17 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
   const headerActive = !!(hs.sticky || hs.autoHide || hs.transparent || hs.mobileMenu || (hs.shadow && hs.shadow !== "none"));
   const headerClass = `nifty-part ${headerScope}${headerActive ? " nifty-header" : ""}`;
 
+  // Phase 2 structured header: when the linked header uses a zone layout, render THAT
+  // instead of the captured mockup HTML, and inject its base CSS.
+  const headerLayout = headerPart?.layout as HeaderLayout | undefined;
+  const useLayout = !!(headerLayout && headerLayout.enabled);
+  const headerInnerHtml = useLayout ? renderHeaderLayout(headerLayout!) : (headerPart?.html || "");
+  const layoutCss = useLayout ? headerLayoutCss(headerLayout!) : "";
+
   // @import first, then the un-reset, then the scoped part CSS, then the page's own CSS,
-  // then (only if a header behaviour is on) the small header-behaviour CSS.
-  const styleText = `${fontImports}\n${UNRESET}\n${partCss}\n${page.css || ""}${headerActive ? "\n" + NIFTY_HEADER_CSS : ""}`;
+  // then (only if a header behaviour is on) the small header-behaviour CSS, then (for a
+  // structured header) its base CSS.
+  const styleText = `${fontImports}\n${UNRESET}\n${partCss}\n${page.css || ""}${headerActive ? "\n" + NIFTY_HEADER_CSS : ""}${layoutCss ? "\n" + layoutCss : ""}`;
 
   return (
     <>
@@ -397,7 +406,7 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
       )}
       <style dangerouslySetInnerHTML={{ __html: styleText }} />
       {headerPart ? (
-        <div className={headerClass} {...(headerActive ? { "data-nifty-header": JSON.stringify(hs) } : {})} dangerouslySetInnerHTML={{ __html: headerPart.html || "" }} />
+        <div className={headerClass} {...(headerActive ? { "data-nifty-header": JSON.stringify(hs) } : {})} dangerouslySetInnerHTML={{ __html: headerInnerHtml }} />
       ) : null}
       <div className="nifty-mockup" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
       {footerPart ? (
