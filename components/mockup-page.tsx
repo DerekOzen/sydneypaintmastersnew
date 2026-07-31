@@ -426,12 +426,21 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
   const headerLayout = headerPart?.layout as HeaderLayout | undefined;
   const useLayout = !!(headerLayout && headerLayout.enabled);
   const headerInnerHtml = useLayout ? renderHeaderLayout(headerLayout!) : normalizeSiteLinks(headerPart?.html || "");
-  const layoutCss = useLayout ? headerLayoutCss(headerLayout!) : "";
+  // Scope the structured layout's base CSS to the part's own wrapper, so a header
+  // layout and a footer layout (which share the same .nifty-hbar-N class names)
+  // can't bleed into each other.
+  const layoutCss = useLayout ? scopeCss(headerLayoutCss(headerLayout!), "." + headerScope) : "";
+
+  // Structured FOOTER: the same zone builder, rendered into the footer.
+  const footerLayout = footerPart?.layout as HeaderLayout | undefined;
+  const useFooterLayout = !!(footerLayout && footerLayout.enabled);
+  const footerInnerHtml = useFooterLayout ? renderHeaderLayout(footerLayout!) : normalizeSiteLinks(footerPart?.html || "");
+  const footerLayoutCss = useFooterLayout ? scopeCss(headerLayoutCss(footerLayout!), "." + footerScope) : "";
 
   // @import first, then the un-reset, then the scoped part CSS, then the page's own CSS,
   // then (only if a header behaviour is on) the small header-behaviour CSS, then (for a
-  // structured header) its base CSS.
-  const styleText = `${fontImports}\n${UNRESET}\n${partCss}\n${page.css || ""}${headerActive ? "\n" + NIFTY_HEADER_CSS : ""}${layoutCss ? "\n" + layoutCss : ""}`;
+  // structured header/footer) its base CSS.
+  const styleText = `${fontImports}\n${UNRESET}\n${partCss}\n${page.css || ""}${headerActive ? "\n" + NIFTY_HEADER_CSS : ""}${layoutCss ? "\n" + layoutCss : ""}${footerLayoutCss ? "\n" + footerLayoutCss : ""}`;
 
   return (
     <>
@@ -446,7 +455,7 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
       ) : null}
       <div className="nifty-mockup" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
       {footerPart ? (
-        <div className={`nifty-part ${footerScope}`} dangerouslySetInnerHTML={{ __html: normalizeSiteLinks(footerPart.html || "") }} />
+        <div className={`nifty-part ${footerScope}`} dangerouslySetInnerHTML={{ __html: footerInnerHtml }} />
       ) : null}
       <script dangerouslySetInnerHTML={{ __html: NIFTY_FORM_SCRIPT }} />
       {headerActive ? <script dangerouslySetInnerHTML={{ __html: NIFTY_HEADER_SCRIPT }} /> : null}
