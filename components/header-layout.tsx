@@ -30,7 +30,19 @@ function esc(s: any): string {
 }
 function telHref(n: any): string { return "tel:" + String(n || "").replace(/[^0-9+]/g, ""); }
 
-function renderEl(el: HeaderElement): string {
+// A reusable menu resolved by id → its items (with one level of children).
+type MenuLite = { id: string; name?: string; items?: any[] };
+
+function renderMenuNodes(items: any[]): string {
+  return (items || []).map((it) => {
+    const kids = Array.isArray(it.children) && it.children.length ? it.children : null;
+    const caret = kids ? '<span class="nifty-caret">&#9662;</span>' : "";
+    const sub = kids ? `<ul class="nifty-submenu">${kids.map((c: any) => `<li><a href="${esc(c.href || "#")}">${esc(c.label || "")}</a></li>`).join("")}</ul>` : "";
+    return `<li class="nifty-mitem${kids ? " nifty-has-sub" : ""}"><a href="${esc(it.href || "#")}">${esc(it.label || "")}${caret}</a>${sub}</li>`;
+  }).join("");
+}
+
+function renderEl(el: HeaderElement, menus?: MenuLite[]): string {
   const p = el.props || {};
   switch (el.type) {
     case "logo": {
@@ -40,6 +52,11 @@ function renderEl(el: HeaderElement): string {
       return `<a href="${esc(p.href || "/")}" class="nifty-h-logo">${inner}</a>`;
     }
     case "menu": {
+      if (p.menuId && Array.isArray(menus)) {
+        const m = menus.find((x) => x.id === p.menuId);
+        const items = m && Array.isArray(m.items) ? m.items : [];
+        if (items.length) return `<nav class="nifty-h-menu nifty-h-menu-tree"><ul class="nifty-menu">${renderMenuNodes(items)}</ul></nav>`;
+      }
       const links: any[] = Array.isArray(p.links) ? p.links : [];
       return `<nav class="nifty-h-menu">${links.map((l) => `<a href="${esc(l.href || "#")}">${esc(l.label || "")}</a>`).join("")}</nav>`;
     }
@@ -59,18 +76,18 @@ function renderEl(el: HeaderElement): string {
       return "";
   }
 }
-function zoneHtml(els: HeaderElement[]): string {
-  return (els || []).filter(Boolean).map((e) => `<div class="nifty-h-item${e.hideMobile ? " nifty-hide-mobile" : ""}">${renderEl(e)}</div>`).join("");
+function zoneHtml(els: HeaderElement[], menus?: MenuLite[]): string {
+  return (els || []).filter(Boolean).map((e) => `<div class="nifty-h-item${e.hideMobile ? " nifty-hide-mobile" : ""}">${renderEl(e, menus)}</div>`).join("");
 }
 
-export function renderHeaderLayout(layout: HeaderLayout): string {
+export function renderHeaderLayout(layout: HeaderLayout, menus?: MenuLite[]): string {
   const rows = normalizeRows(layout);
   const mw = layout.maxWidth ? `max-width:${layout.maxWidth}px;margin:0 auto;` : "";
   return rows.map((row, i) =>
     `<div class="nifty-hbar nifty-hbar-${i}${row.hideMobile ? " nifty-hide-mobile" : ""}"><div class="nifty-hrow" style="${mw}">` +
-    `<div class="nifty-hcell nifty-left">${zoneHtml(row.left)}</div>` +
-    `<div class="nifty-hcell nifty-center">${zoneHtml(row.center)}</div>` +
-    `<div class="nifty-hcell nifty-right">${zoneHtml(row.right)}</div>` +
+    `<div class="nifty-hcell nifty-left">${zoneHtml(row.left, menus)}</div>` +
+    `<div class="nifty-hcell nifty-center">${zoneHtml(row.center, menus)}</div>` +
+    `<div class="nifty-hcell nifty-right">${zoneHtml(row.right, menus)}</div>` +
     `</div></div>`
   ).join("");
 }
@@ -95,6 +112,17 @@ export function headerLayoutCss(layout: HeaderLayout): string {
 .nifty-h-btn:hover{filter:brightness(.94)}
 .nifty-h-social{display:flex;gap:12px}
 .nifty-h-social a{color:inherit;text-decoration:none;font-weight:700}
+.nifty-h-menu-tree ul.nifty-menu{display:flex;gap:20px;align-items:center;list-style:none;margin:0;padding:0}
+.nifty-menu>li{position:relative}
+.nifty-menu a{color:inherit;text-decoration:none;font-weight:600;font-size:15px;white-space:nowrap;display:inline-flex;align-items:center;gap:5px}
+.nifty-menu a:hover{opacity:.7}
+.nifty-caret{font-size:10px;opacity:.7}
+.nifty-submenu{position:absolute;top:100%;left:0;min-width:190px;background:#fff;color:#0f172a;border-radius:10px;box-shadow:0 10px 28px rgba(0,0,0,.14);padding:6px 0;list-style:none;margin:8px 0 0;opacity:0;visibility:hidden;transform:translateY(6px);transition:.15s;z-index:60}
+.nifty-has-sub:hover>.nifty-submenu{opacity:1;visibility:visible;transform:translateY(0)}
+.nifty-submenu li{display:block}
+.nifty-submenu a{display:block;padding:9px 18px;white-space:nowrap;font-weight:500;font-size:14px}
+.nifty-submenu a:hover{background:#f1f5f9;opacity:1}
+@media(max-width:820px){.nifty-h-menu-tree ul.nifty-menu{flex-direction:column;align-items:flex-start;gap:6px}.nifty-submenu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;background:transparent;color:inherit;padding:2px 0 2px 14px;margin:4px 0;min-width:0}.nifty-submenu a{padding:4px 0}}
 `;
   rows.forEach((row, i) => {
     const bg = row.bg || "#ffffff"; const color = row.color || "#0f172a"; const h = parseInt(String(row.height), 10) || 64;

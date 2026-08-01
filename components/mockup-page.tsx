@@ -4,8 +4,17 @@
 // site's Tailwind reset would otherwise change (so the mockup looks exactly as
 // authored), then output the section HTML as-is. No site header/footer chrome —
 // the mockup carries its own. Header/footer may be shared "parts" wrapped here.
+import fs from "fs";
+import path from "path";
 import { JsonLd } from "@/components/schema";
 import { renderHeaderLayout, headerLayoutCss, type HeaderLayout } from "@/components/header-layout";
+
+// Reusable menus (content/menus.json), read at build. A header/footer's Menu element
+// references one of these by id; renderHeaderLayout resolves it to the real links.
+const SITE_MENUS: any[] = (() => {
+  try { const d = JSON.parse(fs.readFileSync(path.join(process.cwd(), "content/menus.json"), "utf8")); return Array.isArray(d) ? d : []; }
+  catch { return []; }
+})();
 
 // --- Link normaliser -------------------------------------------------------
 // Some mockups were authored with local/relative links (href="landscape-design.html"),
@@ -425,7 +434,7 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
   // instead of the captured mockup HTML, and inject its base CSS.
   const headerLayout = headerPart?.layout as HeaderLayout | undefined;
   const useLayout = !!(headerLayout && headerLayout.enabled);
-  const headerInnerHtml = useLayout ? renderHeaderLayout(headerLayout!) : normalizeSiteLinks(headerPart?.html || "");
+  const headerInnerHtml = useLayout ? renderHeaderLayout(headerLayout!, SITE_MENUS) : normalizeSiteLinks(headerPart?.html || "");
   // Scope the structured layout's base CSS to the part's own wrapper, so a header
   // layout and a footer layout (which share the same .nifty-hbar-N class names)
   // can't bleed into each other.
@@ -434,7 +443,7 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
   // Structured FOOTER: the same zone builder, rendered into the footer.
   const footerLayout = footerPart?.layout as HeaderLayout | undefined;
   const useFooterLayout = !!(footerLayout && footerLayout.enabled);
-  const footerInnerHtml = useFooterLayout ? renderHeaderLayout(footerLayout!) : normalizeSiteLinks(footerPart?.html || "");
+  const footerInnerHtml = useFooterLayout ? renderHeaderLayout(footerLayout!, SITE_MENUS) : normalizeSiteLinks(footerPart?.html || "");
   const footerLayoutCss = useFooterLayout ? scopeCss(headerLayoutCss(footerLayout!), "." + footerScope) : "";
 
   // @import first, then the un-reset, then the scoped part CSS, then the page's own CSS,
