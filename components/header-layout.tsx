@@ -52,13 +52,18 @@ function renderEl(el: HeaderElement, menus?: MenuLite[]): string {
       return `<a href="${esc(p.href || "/")}" class="nifty-h-logo">${inner}</a>`;
     }
     case "menu": {
-      if (p.menuId && Array.isArray(menus)) {
-        const m = menus.find((x) => x.id === p.menuId);
-        const items = m && Array.isArray(m.items) ? m.items : [];
-        if (items.length) return `<nav class="nifty-h-menu nifty-h-menu-tree"><ul class="nifty-menu">${renderMenuNodes(items)}</ul></nav>`;
+      let nav: string;
+      if (p.menuId && Array.isArray(menus) && (menus.find((x) => x.id === p.menuId)?.items || []).length) {
+        const items = menus.find((x) => x.id === p.menuId)!.items || [];
+        nav = `<nav class="nifty-h-menu nifty-h-menu-tree"><ul class="nifty-menu">${renderMenuNodes(items)}</ul></nav>`;
+      } else {
+        const links: any[] = Array.isArray(p.links) ? p.links : [];
+        nav = `<nav class="nifty-h-menu">${links.map((l) => `<a href="${esc(l.href || "#")}">${esc(l.label || "")}</a>`).join("")}</nav>`;
       }
-      const links: any[] = Array.isArray(p.links) ? p.links : [];
-      return `<nav class="nifty-h-menu">${links.map((l) => `<a href="${esc(l.href || "#")}">${esc(l.label || "")}</a>`).join("")}</nav>`;
+      // Responsive: horizontal on desktop/laptop; hamburger dropdown on tablet/mobile
+      // (pure-CSS checkbox toggle — works with no JS on the static site).
+      const mid = "mnav-" + esc(el.id || "m");
+      return `<span class="nifty-menu-wrap"><input type="checkbox" class="nifty-mnav-toggle" id="${mid}"><label for="${mid}" class="nifty-mnav-burger" aria-label="Menu">&#9776;</label>${nav}</span>`;
     }
     case "phone": {
       const label = p.label || p.number || "";
@@ -122,7 +127,20 @@ export function headerLayoutCss(layout: HeaderLayout): string {
 .nifty-submenu li{display:block}
 .nifty-submenu a{display:block;padding:9px 18px;white-space:nowrap;font-weight:500;font-size:14px}
 .nifty-submenu a:hover{background:#f1f5f9;opacity:1}
-@media(max-width:820px){.nifty-h-menu-tree ul.nifty-menu{flex-direction:column;align-items:flex-start;gap:6px}.nifty-submenu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;background:transparent;color:inherit;padding:2px 0 2px 14px;margin:4px 0;min-width:0}.nifty-submenu a{padding:4px 0}}
+.nifty-menu-wrap{display:inline-flex;align-items:center}
+.nifty-mnav-toggle{position:absolute;opacity:0;width:0;height:0;pointer-events:none}
+.nifty-mnav-burger{display:none;cursor:pointer;font-size:26px;line-height:1;user-select:none;padding:2px 6px;color:inherit}
+@media(max-width:980px){
+.nifty-hbar{position:relative}
+.nifty-mnav-burger{display:inline-flex}
+.nifty-menu-wrap>nav.nifty-h-menu{display:none;position:absolute;top:100%;left:0;right:0;z-index:70;flex-direction:column;align-items:stretch;gap:0;background:#fff;color:#0f172a;box-shadow:0 12px 28px rgba(0,0,0,.16);padding:8px 0;border-radius:0 0 12px 12px}
+.nifty-mnav-toggle:checked~nav.nifty-h-menu{display:flex}
+.nifty-menu-wrap nav.nifty-h-menu>a{display:block;padding:11px 20px}
+.nifty-menu-wrap ul.nifty-menu{flex-direction:column;align-items:stretch;gap:0}
+.nifty-menu-wrap .nifty-menu>li>a{padding:11px 20px}
+.nifty-menu-wrap .nifty-submenu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;background:transparent;color:inherit;padding:0 0 6px 34px;margin:0;min-width:0}
+.nifty-menu-wrap .nifty-submenu a{padding:7px 0}
+}
 `;
   rows.forEach((row, i) => {
     const bg = row.bg || "#ffffff"; const color = row.color || "#0f172a"; const h = parseInt(String(row.height), 10) || 64;
