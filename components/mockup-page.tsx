@@ -50,13 +50,18 @@ function _secOverlay(hex: string, op: number): string {
 }
 function sectionBgCss(bg: any): string {
   if (!bg || typeof bg !== "object") return "";
+  const t = bg.type || (bg.image ? "image" : (bg.gradFrom || bg.gradTo) ? "gradient" : "color");
   const d: string[] = [];
-  if (bg.color) d.push("background-color:" + bg.color);
-  if (bg.image) {
+  if (t === "gradient") {
+    d.push("background-image:linear-gradient(" + (bg.gradDir || "to bottom") + "," + (bg.gradFrom || "#0f766e") + "," + (bg.gradTo || "#0b3b36") + ")");
+  } else if (t === "image" && bg.image) {
+    if (bg.color) d.push("background-color:" + bg.color);
     const img = 'url("' + String(bg.image).replace(/["\\]/g, "") + '")';
     const ov = _secOverlay(bg.overlayColor, bg.overlayOpacity);
     d.push("background-image:" + (ov ? "linear-gradient(" + ov + "," + ov + ")," + img : img));
     d.push("background-size:" + (bg.size || "cover") + ";background-position:" + (bg.position || "center") + ";background-repeat:" + (bg.repeat || "no-repeat"));
+  } else if (bg.color) {
+    d.push("background-color:" + bg.color);
   }
   return d.join(";");
 }
