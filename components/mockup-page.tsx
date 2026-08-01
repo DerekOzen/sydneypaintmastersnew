@@ -459,12 +459,18 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
   // Just the page's own body sections (a linked header/footer is rendered separately,
   // each inside its own scoped wrapper below). A section may carry a background
   // (props.bg) set in the Live Editor — wrap it in a styled div when it does.
+  const secBgRules: string[] = [];
   const bodyHtml = normalizeSiteLinks(bodyBlocks.map((b) => {
     const html = (b.props?.html as string) || "";
     if (!html) return "";
-    const s = sectionBgCss((b.props as any)?.bg);
-    return s ? `<div style="${s}">${html}</div>` : html;
+    const bg = (b.props as any)?.bg;
+    const s = sectionBgCss(bg);
+    if (!s) return html;
+    const replace = bg && bg.mode === "replace";
+    if (replace) secBgRules.push(`.nifty-secbg-${b.id} > *{background-image:none !important;background-color:transparent !important}`);
+    return `<div${replace ? ` class="nifty-secbg-${b.id}"` : ""} style="${s}">${html}</div>`;
   }).filter(Boolean).join("\n"));
+  const secBgCss = secBgRules.join("\n");
 
   // Scope classes for the linked parts. Each part's captured CSS is confined to its own
   // wrapper, and its HTML is rendered inside that wrapper — so it looks exactly as
@@ -520,7 +526,7 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
   // @import first, then the un-reset, then the scoped part CSS, then the page's own CSS,
   // then (only if a header behaviour is on) the small header-behaviour CSS, then (for a
   // structured header/footer) its base CSS.
-  const styleText = `${fontImports}\n${UNRESET}\n${THEME_CSS ? THEME_CSS + "\n" : ""}${partCss}\n${page.css || ""}${headerActive ? "\n" + NIFTY_HEADER_CSS : ""}${layoutCss ? "\n" + layoutCss : ""}${footerLayoutCss ? "\n" + footerLayoutCss : ""}`;
+  const styleText = `${fontImports}\n${UNRESET}\n${THEME_CSS ? THEME_CSS + "\n" : ""}${partCss}\n${page.css || ""}${headerActive ? "\n" + NIFTY_HEADER_CSS : ""}${layoutCss ? "\n" + layoutCss : ""}${footerLayoutCss ? "\n" + footerLayoutCss : ""}${secBgCss ? "\n" + secBgCss : ""}`;
 
   return (
     <>
