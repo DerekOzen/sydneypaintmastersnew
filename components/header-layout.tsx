@@ -34,11 +34,21 @@ function telHref(n: any): string { return "tel:" + String(n || "").replace(/[^0-
 type MenuLite = { id: string; name?: string; items?: any[] };
 
 function renderMenuNodes(items: any[]): string {
-  return (items || []).map((it) => {
+  return (items || []).map((it, i) => {
     const kids = Array.isArray(it.children) && it.children.length ? it.children : null;
-    const caret = kids ? '<span class="nifty-caret">&#9662;</span>' : "";
-    const sub = kids ? `<ul class="nifty-submenu">${kids.map((c: any) => `<li><a href="${esc(c.href || "#")}">${esc(c.label || "")}</a></li>`).join("")}</ul>` : "";
-    return `<li class="nifty-mitem${kids ? " nifty-has-sub" : ""}"><a href="${esc(it.href || "#")}">${esc(it.label || "")}${caret}</a>${sub}</li>`;
+    if (!kids) return `<li class="nifty-mitem"><a href="${esc(it.href || "#")}">${esc(it.label || "")}</a></li>`;
+    // A parent with children opens its dropdown on TAP/CLICK (a hidden checkbox +
+    // <label>, so it works on mobile and desktop with no JS) and also on hover on
+    // desktop. If the parent has no real link of its own (href "#"/empty) the whole
+    // label toggles; if it does link somewhere, the caret toggles and the text links.
+    const sid = "nsub-" + esc(it.id || ("i" + i));
+    const href = String(it.href || "").trim();
+    const toggleOnly = href === "" || href === "#";
+    const sub = `<ul class="nifty-submenu">${kids.map((c: any) => `<li><a href="${esc(c.href || "#")}">${esc(c.label || "")}</a></li>`).join("")}</ul>`;
+    const parent = toggleOnly
+      ? `<label for="${sid}" class="nifty-mparent">${esc(it.label || "")}<span class="nifty-caret">&#9662;</span></label>`
+      : `<a href="${esc(href)}" class="nifty-mparent-link">${esc(it.label || "")}</a><label for="${sid}" class="nifty-caret-toggle" aria-label="Open submenu"><span class="nifty-caret">&#9662;</span></label>`;
+    return `<li class="nifty-mitem nifty-has-sub"><input type="checkbox" class="nifty-sub-toggle" id="${sid}">${parent}${sub}</li>`;
   }).join("");
 }
 
@@ -119,11 +129,14 @@ export function headerLayoutCss(layout: HeaderLayout): string {
 .nifty-h-social a{color:inherit;text-decoration:none;font-weight:700}
 .nifty-h-menu-tree ul.nifty-menu{display:flex;gap:20px;align-items:center;list-style:none;margin:0;padding:0}
 .nifty-menu>li{position:relative}
-.nifty-menu a{color:inherit;text-decoration:none;font-weight:600;font-size:15px;white-space:nowrap;display:inline-flex;align-items:center;gap:5px}
-.nifty-menu a:hover{opacity:.7}
+.nifty-menu a,.nifty-mparent,.nifty-mparent-link{color:inherit;text-decoration:none;font-weight:600;font-size:15px;white-space:nowrap;display:inline-flex;align-items:center;gap:5px}
+.nifty-menu a:hover,.nifty-mparent:hover,.nifty-mparent-link:hover{opacity:.7}
+.nifty-mparent,.nifty-caret-toggle{cursor:pointer;user-select:none}
+.nifty-caret-toggle{display:inline-flex;align-items:center;padding:0 2px}
+.nifty-sub-toggle{position:absolute;opacity:0;width:0;height:0;pointer-events:none}
 .nifty-caret{font-size:10px;opacity:.7}
-.nifty-submenu{position:absolute;top:100%;left:0;min-width:190px;background:#fff;color:#0f172a;border-radius:10px;box-shadow:0 10px 28px rgba(0,0,0,.14);padding:6px 0;list-style:none;margin:8px 0 0;opacity:0;visibility:hidden;transform:translateY(6px);transition:.15s;z-index:60}
-.nifty-has-sub:hover>.nifty-submenu{opacity:1;visibility:visible;transform:translateY(0)}
+.nifty-submenu{position:absolute;top:100%;left:0;min-width:190px;background:#fff;color:#0f172a;border-radius:10px;box-shadow:0 10px 28px rgba(0,0,0,.14);padding:6px 0;list-style:none;margin:2px 0 0;opacity:0;visibility:hidden;transform:translateY(6px);transition:.15s;z-index:60}
+.nifty-has-sub:hover>.nifty-submenu,.nifty-sub-toggle:checked~.nifty-submenu{opacity:1;visibility:visible;transform:translateY(0)}
 .nifty-submenu li{display:block}
 .nifty-submenu a{display:block;padding:9px 18px;white-space:nowrap;font-weight:500;font-size:14px}
 .nifty-submenu a:hover{background:#f1f5f9;opacity:1}
@@ -137,8 +150,12 @@ export function headerLayoutCss(layout: HeaderLayout): string {
 .nifty-mnav-toggle:checked~nav.nifty-h-menu{display:flex}
 .nifty-menu-wrap nav.nifty-h-menu>a{display:block;padding:11px 20px}
 .nifty-menu-wrap ul.nifty-menu{flex-direction:column;align-items:stretch;gap:0}
-.nifty-menu-wrap .nifty-menu>li>a{padding:11px 20px}
-.nifty-menu-wrap .nifty-submenu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;background:transparent;color:inherit;padding:0 0 6px 34px;margin:0;min-width:0}
+.nifty-menu-wrap .nifty-menu>li>a,.nifty-menu-wrap .nifty-mparent,.nifty-menu-wrap .nifty-mparent-link{padding:11px 20px}
+.nifty-menu-wrap .nifty-mitem.nifty-has-sub{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.nifty-menu-wrap .nifty-mparent{flex:1 1 auto;justify-content:space-between}
+.nifty-menu-wrap .nifty-caret-toggle{padding:11px 20px}
+.nifty-menu-wrap .nifty-submenu{position:static;display:none;opacity:1;visibility:visible;transform:none;box-shadow:none;background:transparent;color:inherit;padding:0 0 6px 34px;margin:0;min-width:0;width:100%}
+.nifty-menu-wrap .nifty-sub-toggle:checked~.nifty-submenu{display:block}
 .nifty-menu-wrap .nifty-submenu a{padding:7px 0}
 }
 `;
