@@ -2,7 +2,8 @@
 // lib/header-render.ts (render + css only) — keep the two in sync. Supports stacked rows.
 
 export type HeaderElementType = "logo" | "menu" | "phone" | "button" | "social" | "text";
-export type HeaderElement = { id: string; type: HeaderElementType; props: Record<string, any>; hideMobile?: boolean };
+export type ElementPad = { t?: number; r?: number; b?: number; l?: number };
+export type HeaderElement = { id: string; type: HeaderElementType; props: Record<string, any>; hideMobile?: boolean; pad?: ElementPad };
 export type HeaderRow = {
   id: string;
   left: HeaderElement[]; center: HeaderElement[]; right: HeaderElement[];
@@ -117,8 +118,15 @@ function renderEl(el: HeaderElement, menus?: MenuLite[], idScope = ""): string {
       return "";
   }
 }
+function padStyle(pad?: ElementPad): string {
+  if (!pad) return "";
+  const n = (v: any) => (Number.isFinite(+v) && +v ? +v : 0);
+  const t = n(pad.t), r = n(pad.r), b = n(pad.b), l = n(pad.l);
+  if (!t && !r && !b && !l) return "";
+  return ` style="padding:${t}px ${r}px ${b}px ${l}px"`;
+}
 function zoneHtml(els: HeaderElement[], menus?: MenuLite[], idScope = ""): string {
-  return (els || []).filter(Boolean).map((e) => `<div class="nifty-h-item${e.hideMobile ? " nifty-hide-mobile" : ""}">${renderEl(e, menus, idScope)}</div>`).join("");
+  return (els || []).filter(Boolean).map((e) => `<div class="nifty-h-item${e.hideMobile ? " nifty-hide-mobile" : ""}"${padStyle(e.pad)}>${renderEl(e, menus, idScope)}</div>`).join("");
 }
 
 export function renderHeaderLayout(layout: HeaderLayout, menus?: MenuLite[], idScope = ""): string {
