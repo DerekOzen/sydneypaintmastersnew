@@ -7,7 +7,7 @@
 import fs from "fs";
 import path from "path";
 import { JsonLd } from "@/components/schema";
-import { renderHeaderLayout, headerLayoutCss, type HeaderLayout } from "@/components/header-layout";
+import { renderHeaderLayout, headerLayoutCss, hasDeviceOverrides, deviceLayout, deviceVisibilityCss, type HeaderLayout } from "@/components/header-layout";
 
 // Reusable menus (content/menus.json), read at build. A header/footer's Menu element
 // references one of these by id; renderHeaderLayout resolves it to the real links.
@@ -375,6 +375,26 @@ function scopeClass(id: string): string {
   return "nifty-part-" + String(id || "x").replace(/[^A-Za-z0-9_-]/g, "-");
 }
 
+// ── Responsive (per-device) header/footer ───────────────────────────────────
+// A structured layout may carry per-device overrides (Desktop is the base; Laptop/
+// Tablet/Mobile either follow it or hold their own layout). When none are set we
+// render exactly as before (single layout). When some are set we render one wrapper
+// per device — each with a unique id scope so menu toggles don't collide — and show
+// exactly one per breakpoint via CSS. The per-device CSS is scoped under its wrapper
+// so device-specific colours/rows can't bleed across breakpoints.
+const _DEV: { key: "desktop" | "laptop" | "tablet" | "mobile"; scope: string }[] = [
+  { key: "desktop", scope: "d" }, { key: "laptop", scope: "l" }, { key: "tablet", scope: "t" }, { key: "mobile", scope: "m" },
+];
+function responsivePartHtml(layout: HeaderLayout): string {
+  if (!hasDeviceOverrides(layout)) return renderHeaderLayout(layout, SITE_MENUS);
+  return _DEV.map((d) => `<div class="nifty-hdev nifty-hdev-${d.key}">${renderHeaderLayout(deviceLayout(layout, d.key), SITE_MENUS, d.scope)}</div>`).join("");
+}
+function responsivePartCss(layout: HeaderLayout, scope: string): string {
+  if (!hasDeviceOverrides(layout)) return scopeCss(headerLayoutCss(layout), scope);
+  const per = _DEV.map((d) => scopeCss(headerLayoutCss(deviceLayout(layout, d.key)), `${scope} .nifty-hdev-${d.key}`)).join("\n");
+  return per + "\n" + scopeCss(deviceVisibilityCss(), scope);
+}
+
 export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[] }) {
   const byId = (id?: string | null) => (id && id !== PART_NONE ? parts.find((p) => p.id === id) : undefined);
   const headerPart = byId(page.headerPartId);
@@ -434,17 +454,17 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
   // instead of the captured mockup HTML, and inject its base CSS.
   const headerLayout = headerPart?.layout as HeaderLayout | undefined;
   const useLayout = !!(headerLayout && headerLayout.enabled);
-  const headerInnerHtml = useLayout ? renderHeaderLayout(headerLayout!, SITE_MENUS) : normalizeSiteLinks(headerPart?.html || "");
-  // Scope the structured layout's base CSS to the part's own wrapper, so a header
-  // layout and a footer layout (which share the same .nifty-hbar-N class names)
-  // can't bleed into each other.
-  const layoutCss = useLayout ? scopeCss(headerLayoutCss(headerLayout!), "." + headerScope) : "";
+  const headerInnerHtml = useLayout ? responsivePartHtml(headerLayout!) : normalizeSiteLinks(headerPart?.html || "");
+  // Scope the structured layout's CSS to the part's own wrapper, so a header layout
+  // and a footer layout (which share the same .nifty-hbar-N class names) can't bleed
+  // into each other. Per-device variants are further scoped under their own wrapper.
+  const layoutCss = useLayout ? responsivePartCss(headerLayout!, "." + headerScope) : "";
 
   // Structured FOOTER: the same zone builder, rendered into the footer.
   const footerLayout = footerPart?.layout as HeaderLayout | undefined;
   const useFooterLayout = !!(footerLayout && footerLayout.enabled);
-  const footerInnerHtml = useFooterLayout ? renderHeaderLayout(footerLayout!, SITE_MENUS) : normalizeSiteLinks(footerPart?.html || "");
-  const footerLayoutCss = useFooterLayout ? scopeCss(headerLayoutCss(footerLayout!), "." + footerScope) : "";
+  const footerInnerHtml = useFooterLayout ? responsivePartHtml(footerLayout!) : normalizeSiteLinks(footerPart?.html || "");
+  const footerLayoutCss = useFooterLayout ? responsivePartCss(footerLayout!, "." + footerScope) : "";
 
   // @import first, then the un-reset, then the scoped part CSS, then the page's own CSS,
   // then (only if a header behaviour is on) the small header-behaviour CSS, then (for a

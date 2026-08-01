@@ -8,13 +8,39 @@ export type HeaderRow = {
   left: HeaderElement[]; center: HeaderElement[]; right: HeaderElement[];
   bg?: string; color?: string; height?: number; hideMobile?: boolean;
 };
+export type DeviceKey = "laptop" | "tablet" | "mobile";
+export type DeviceOverrides = { laptop?: HeaderLayout | null; tablet?: HeaderLayout | null; mobile?: HeaderLayout | null };
 export type HeaderLayout = {
   enabled: boolean;
   rows?: HeaderRow[];
   accent?: string; maxWidth?: number;
+  devices?: DeviceOverrides;   // per-device overrides of the desktop (base) layout
   left?: HeaderElement[]; center?: HeaderElement[]; right?: HeaderElement[];
   bg?: string; color?: string; height?: number;
 };
+
+export const DEVICE_KEYS: DeviceKey[] = ["laptop", "tablet", "mobile"];
+export function stripDevices(layout: HeaderLayout): HeaderLayout {
+  const { devices, ...base } = layout || ({} as HeaderLayout);
+  return base as HeaderLayout;
+}
+export function deviceLayout(layout: HeaderLayout, dev: "desktop" | DeviceKey): HeaderLayout {
+  if (dev === "desktop") return stripDevices(layout);
+  const o = layout.devices?.[dev];
+  return o ? o : stripDevices(layout);
+}
+export function hasDeviceOverrides(layout: HeaderLayout): boolean {
+  const d = layout?.devices;
+  return !!(d && (d.laptop || d.tablet || d.mobile));
+}
+export function deviceVisibilityCss(): string {
+  return `.nifty-hdev{display:none}
+@media(min-width:1200px){.nifty-hdev-desktop{display:block}}
+@media(min-width:992px) and (max-width:1199.98px){.nifty-hdev-laptop{display:block}}
+@media(min-width:768px) and (max-width:991.98px){.nifty-hdev-tablet{display:block}}
+@media(max-width:767.98px){.nifty-hdev-mobile{display:block}}
+`;
+}
 
 export function normalizeRows(layout: HeaderLayout): HeaderRow[] {
   if (layout && Array.isArray(layout.rows) && layout.rows.length) return layout.rows;
@@ -33,7 +59,7 @@ function telHref(n: any): string { return "tel:" + String(n || "").replace(/[^0-
 // A reusable menu resolved by id → its items (with one level of children).
 type MenuLite = { id: string; name?: string; items?: any[] };
 
-function renderMenuNodes(items: any[]): string {
+function renderMenuNodes(items: any[], idScope = ""): string {
   return (items || []).map((it, i) => {
     const kids = Array.isArray(it.children) && it.children.length ? it.children : null;
     if (!kids) return `<li class="nifty-mitem"><a href="${esc(it.href || "#")}">${esc(it.label || "")}</a></li>`;
@@ -41,7 +67,7 @@ function renderMenuNodes(items: any[]): string {
     // <label>, so it works on mobile and desktop with no JS) and also on hover on
     // desktop. If the parent has no real link of its own (href "#"/empty) the whole
     // label toggles; if it does link somewhere, the caret toggles and the text links.
-    const sid = "nsub-" + esc(it.id || ("i" + i));
+    const sid = "nsub-" + idScope + esc(it.id || ("i" + i));
     const href = String(it.href || "").trim();
     const toggleOnly = href === "" || href === "#";
     const sub = `<ul class="nifty-submenu">${kids.map((c: any) => `<li><a href="${esc(c.href || "#")}">${esc(c.label || "")}</a></li>`).join("")}</ul>`;
@@ -52,7 +78,7 @@ function renderMenuNodes(items: any[]): string {
   }).join("");
 }
 
-function renderEl(el: HeaderElement, menus?: MenuLite[]): string {
+function renderEl(el: HeaderElement, menus?: MenuLite[], idScope = ""): string {
   const p = el.props || {};
   switch (el.type) {
     case "logo": {
@@ -65,14 +91,14 @@ function renderEl(el: HeaderElement, menus?: MenuLite[]): string {
       let nav: string;
       if (p.menuId && Array.isArray(menus) && (menus.find((x) => x.id === p.menuId)?.items || []).length) {
         const items = menus.find((x) => x.id === p.menuId)!.items || [];
-        nav = `<nav class="nifty-h-menu nifty-h-menu-tree"><ul class="nifty-menu">${renderMenuNodes(items)}</ul></nav>`;
+        nav = `<nav class="nifty-h-menu nifty-h-menu-tree"><ul class="nifty-menu">${renderMenuNodes(items, idScope)}</ul></nav>`;
       } else {
         const links: any[] = Array.isArray(p.links) ? p.links : [];
         nav = `<nav class="nifty-h-menu">${links.map((l) => `<a href="${esc(l.href || "#")}">${esc(l.label || "")}</a>`).join("")}</nav>`;
       }
       // Responsive: horizontal on desktop/laptop; hamburger dropdown on tablet/mobile
       // (pure-CSS checkbox toggle — works with no JS on the static site).
-      const mid = "mnav-" + esc(el.id || "m");
+      const mid = "mnav-" + idScope + esc(el.id || "m");
       return `<span class="nifty-menu-wrap"><input type="checkbox" class="nifty-mnav-toggle" id="${mid}"><label for="${mid}" class="nifty-mnav-burger" aria-label="Menu">&#9776;</label>${nav}</span>`;
     }
     case "phone": {
@@ -91,18 +117,18 @@ function renderEl(el: HeaderElement, menus?: MenuLite[]): string {
       return "";
   }
 }
-function zoneHtml(els: HeaderElement[], menus?: MenuLite[]): string {
-  return (els || []).filter(Boolean).map((e) => `<div class="nifty-h-item${e.hideMobile ? " nifty-hide-mobile" : ""}">${renderEl(e, menus)}</div>`).join("");
+function zoneHtml(els: HeaderElement[], menus?: MenuLite[], idScope = ""): string {
+  return (els || []).filter(Boolean).map((e) => `<div class="nifty-h-item${e.hideMobile ? " nifty-hide-mobile" : ""}">${renderEl(e, menus, idScope)}</div>`).join("");
 }
 
-export function renderHeaderLayout(layout: HeaderLayout, menus?: MenuLite[]): string {
+export function renderHeaderLayout(layout: HeaderLayout, menus?: MenuLite[], idScope = ""): string {
   const rows = normalizeRows(layout);
   const mw = layout.maxWidth ? `max-width:${layout.maxWidth}px;margin:0 auto;` : "";
   return rows.map((row, i) =>
     `<div class="nifty-hbar nifty-hbar-${i}${row.hideMobile ? " nifty-hide-mobile" : ""}"><div class="nifty-hrow" style="${mw}">` +
-    `<div class="nifty-hcell nifty-left">${zoneHtml(row.left, menus)}</div>` +
-    `<div class="nifty-hcell nifty-center">${zoneHtml(row.center, menus)}</div>` +
-    `<div class="nifty-hcell nifty-right">${zoneHtml(row.right, menus)}</div>` +
+    `<div class="nifty-hcell nifty-left">${zoneHtml(row.left, menus, idScope)}</div>` +
+    `<div class="nifty-hcell nifty-center">${zoneHtml(row.center, menus, idScope)}</div>` +
+    `<div class="nifty-hcell nifty-right">${zoneHtml(row.right, menus, idScope)}</div>` +
     `</div></div>`
   ).join("");
 }
