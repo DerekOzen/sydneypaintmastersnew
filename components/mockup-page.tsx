@@ -39,6 +39,28 @@ function themeCss(theme: any): string {
 }
 const THEME_CSS = themeCss(SITE_THEME);
 
+// Per-section background (set in the Live Editor, stored on the block's props.bg):
+// a colour and/or image behind the section, with sizing/position/repeat and a colour
+// overlay tint over the image.
+function _secOverlay(hex: string, op: number): string {
+  const m = /^#?([0-9a-fA-F]{6})$/.exec(String(hex || "").trim());
+  if (!m || !op) return "";
+  const i = parseInt(m[1], 16);
+  return "rgba(" + ((i >> 16) & 255) + "," + ((i >> 8) & 255) + "," + (i & 255) + "," + Math.max(0, Math.min(1, op)) + ")";
+}
+function sectionBgCss(bg: any): string {
+  if (!bg || typeof bg !== "object") return "";
+  const d: string[] = [];
+  if (bg.color) d.push("background-color:" + bg.color);
+  if (bg.image) {
+    const img = 'url("' + String(bg.image).replace(/["\\]/g, "") + '")';
+    const ov = _secOverlay(bg.overlayColor, bg.overlayOpacity);
+    d.push("background-image:" + (ov ? "linear-gradient(" + ov + "," + ov + ")," + img : img));
+    d.push("background-size:" + (bg.size || "cover") + ";background-position:" + (bg.position || "center") + ";background-repeat:" + (bg.repeat || "no-repeat"));
+  }
+  return d.join(";");
+}
+
 // --- Link normaliser -------------------------------------------------------
 // Some mockups were authored with local/relative links (href="landscape-design.html"),
 // which resolve to file:///…/Downloads/… when the mockup is opened from disk and were
@@ -435,8 +457,14 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
   });
 
   // Just the page's own body sections (a linked header/footer is rendered separately,
-  // each inside its own scoped wrapper below).
-  const bodyHtml = normalizeSiteLinks(bodyBlocks.map((b) => (b.props?.html as string) || "").filter(Boolean).join("\n"));
+  // each inside its own scoped wrapper below). A section may carry a background
+  // (props.bg) set in the Live Editor — wrap it in a styled div when it does.
+  const bodyHtml = normalizeSiteLinks(bodyBlocks.map((b) => {
+    const html = (b.props?.html as string) || "";
+    if (!html) return "";
+    const s = sectionBgCss((b.props as any)?.bg);
+    return s ? `<div style="${s}">${html}</div>` : html;
+  }).filter(Boolean).join("\n"));
 
   // Scope classes for the linked parts. Each part's captured CSS is confined to its own
   // wrapper, and its HTML is rendered inside that wrapper — so it looks exactly as
