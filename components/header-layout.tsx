@@ -22,7 +22,36 @@ export type HeaderRow = {
   id: string;
   left: HeaderElement[]; center: HeaderElement[]; right: HeaderElement[];
   bg?: string; color?: string; height?: number; hideMobile?: boolean;
+  bgImage?: string;
+  bgSize?: "cover" | "contain" | "auto";
+  bgPos?: string;
+  bgRepeat?: "no-repeat" | "repeat" | "repeat-x" | "repeat-y";
+  parallax?: boolean;
+  overlayColor?: string;
+  overlayOpacity?: number;
 };
+
+export function overlayRgba(hex?: string, op?: number): string {
+  if (!hex || !op) return "";
+  const m = /^#?([0-9a-fA-F]{6})$/.exec(String(hex).trim());
+  if (!m) return "";
+  const int = parseInt(m[1], 16);
+  const r = (int >> 16) & 255, g = (int >> 8) & 255, b = int & 255;
+  const a = Math.max(0, Math.min(1, op));
+  return `rgba(${r},${g},${b},${a})`;
+}
+export function rowBgCss(row: HeaderRow): string {
+  const bg = row.bg || "#ffffff";
+  let out = `background-color:${bg}`;
+  if (row.bgImage) {
+    const img = `url("${String(row.bgImage).replace(/["\\]/g, "")}")`;
+    const ov = overlayRgba(row.overlayColor, row.overlayOpacity);
+    out += `;background-image:${ov ? `linear-gradient(${ov},${ov}),${img}` : img}`;
+    out += `;background-size:${row.bgSize || "cover"};background-position:${row.bgPos || "center"};background-repeat:${row.bgRepeat || "no-repeat"}`;
+    if (row.parallax) out += `;background-attachment:fixed`;
+  }
+  return out;
+}
 export type DeviceKey = "laptop" | "tablet" | "mobile";
 export type DeviceOverrides = { laptop?: HeaderLayout | null; tablet?: HeaderLayout | null; mobile?: HeaderLayout | null };
 export type HeaderLayout = {
@@ -245,8 +274,8 @@ export function headerLayoutCss(layout: HeaderLayout): string {
 }
 `;
   rows.forEach((row, i) => {
-    const bg = row.bg || "#ffffff"; const color = row.color || "#0f172a"; const h = parseInt(String(row.height), 10) || 64;
-    css += `.nifty-hbar-${i}{background:${bg};color:${color}}\n.nifty-hbar-${i} .nifty-hrow{min-height:${h}px;font-size:${i === 0 && rows.length > 1 ? "13px" : "inherit"}}\n`;
+    const color = row.color || "#0f172a"; const h = parseInt(String(row.height), 10) || 64;
+    css += `.nifty-hbar-${i}{${rowBgCss(row)};color:${color}}\n.nifty-hbar-${i} .nifty-hrow{min-height:${h}px;font-size:${i === 0 && rows.length > 1 ? "13px" : "inherit"}}\n`;
   });
   css += `@media(max-width:820px){.nifty-hrow{gap:12px;padding:0 16px}.nifty-hide-mobile{display:none !important}}\n`;
   return css;
