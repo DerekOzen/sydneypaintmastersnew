@@ -16,6 +16,29 @@ const SITE_MENUS: any[] = (() => {
   catch { return []; }
 })();
 
+// Global theme (content/theme.json): named colours + fonts published as CSS variables
+// so var(--nifty-c-<id>) / var(--nifty-font-*) resolve site-wide. Read once at build.
+const SITE_THEME: any = (() => {
+  try { const d = JSON.parse(fs.readFileSync(path.join(process.cwd(), "content/theme.json"), "utf8")); return (d && typeof d === "object" && !Array.isArray(d)) ? d : {}; }
+  catch { return {}; }
+})();
+function _normHex(v: string): string { const s = String(v || "").trim(); let m = /^#?([0-9a-fA-F]{6})$/.exec(s); if (m) return "#" + m[1]; m = /^#?([0-9a-fA-F]{3})$/.exec(s); if (m) return "#" + m[1].split("").map((c) => c + c).join(""); return ""; }
+function _fontStack(name: string): string { const n = String(name || "").trim(); if (!n) return ""; const q = /\s/.test(n) ? '"' + n.replace(/"/g, "") + '"' : n; return q + ",system-ui,-apple-system,Segoe UI,Roboto,sans-serif"; }
+function themeCss(theme: any): string {
+  const vars: string[] = [];
+  for (const c of (theme.colors || [])) { const hex = _normHex(c.value); if (hex && c.id != null) vars.push("--nifty-c-" + c.id + ":" + hex); }
+  const f = theme.fonts || {};
+  if (f.heading) vars.push("--nifty-font-heading:" + _fontStack(f.heading));
+  if (f.body) vars.push("--nifty-font-body:" + _fontStack(f.body));
+  if (f.button) vars.push("--nifty-font-button:" + _fontStack(f.button));
+  let css = vars.length ? ":root{" + vars.join(";") + "}" : "";
+  if (f.body) css += "\nbody{font-family:var(--nifty-font-body)}";
+  if (f.heading) css += "\nh1,h2,h3,h4,h5,h6{font-family:var(--nifty-font-heading)}";
+  if (f.button) css += "\n.nifty-h-btn{font-family:var(--nifty-font-button)}";
+  return css;
+}
+const THEME_CSS = themeCss(SITE_THEME);
+
 // --- Link normaliser -------------------------------------------------------
 // Some mockups were authored with local/relative links (href="landscape-design.html"),
 // which resolve to file:///…/Downloads/… when the mockup is opened from disk and were
@@ -469,7 +492,7 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
   // @import first, then the un-reset, then the scoped part CSS, then the page's own CSS,
   // then (only if a header behaviour is on) the small header-behaviour CSS, then (for a
   // structured header/footer) its base CSS.
-  const styleText = `${fontImports}\n${UNRESET}\n${partCss}\n${page.css || ""}${headerActive ? "\n" + NIFTY_HEADER_CSS : ""}${layoutCss ? "\n" + layoutCss : ""}${footerLayoutCss ? "\n" + footerLayoutCss : ""}`;
+  const styleText = `${fontImports}\n${UNRESET}\n${THEME_CSS ? THEME_CSS + "\n" : ""}${partCss}\n${page.css || ""}${headerActive ? "\n" + NIFTY_HEADER_CSS : ""}${layoutCss ? "\n" + layoutCss : ""}${footerLayoutCss ? "\n" + footerLayoutCss : ""}`;
 
   return (
     <>
