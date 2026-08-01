@@ -150,7 +150,7 @@ function renderEl(el: HeaderElement, menus?: MenuLite[], idScope = ""): string {
       return `<a href="${esc(telHref(p.number))}" class="nifty-h-phone">${p.icon === false ? "" : '<span class="nifty-h-ico">&#9742;</span>'}${esc(label)}</a>`;
     }
     case "button":
-      return `<a href="${esc(p.href || "#")}" class="nifty-h-btn">${esc(p.label || "Button")}</a>`;
+      return `<a href="${esc(p.href || "#")}" class="nifty-h-btn"${buttonInline(el.style || {})}>${esc(p.label || "Button")}</a>`;
     case "social": {
       const items: any[] = Array.isArray(p.items) ? p.items : [];
       return `<span class="nifty-h-social">${items.map((i) => `<a href="${esc(i.href || "#")}" aria-label="${esc(i.network || "")}">${esc((i.network || "?").slice(0, 2))}</a>`).join("")}</span>`;
@@ -164,13 +164,8 @@ function renderEl(el: HeaderElement, menus?: MenuLite[], idScope = ""): string {
 const n0 = (v: any) => (Number.isFinite(+v) && +v ? +v : 0);
 function safeCls(s?: string): string { return String(s || "").replace(/[^a-zA-Z0-9_\- ]/g, "").trim(); }
 function safeId(s?: string): string { return String(s || "").replace(/[^a-zA-Z0-9_\-]/g, ""); }
-function wrapInline(el: HeaderElement): string {
-  const pad = el.pad || {}; const s = el.style || {};
+function visualDecls(s: ElementStyle): string[] {
   const d: string[] = [];
-  const p = [n0(pad.t), n0(pad.r), n0(pad.b), n0(pad.l)];
-  if (p.some(Boolean)) d.push(`padding:${p[0]}px ${p[1]}px ${p[2]}px ${p[3]}px`);
-  const m = [n0(s.mt), n0(s.mr), n0(s.mb), n0(s.ml)];
-  if (m.some(Boolean)) d.push(`margin:${m[0]}px ${m[1]}px ${m[2]}px ${m[3]}px`);
   if (s.bg) d.push(`background-color:${esc(s.bg)}`);
   if (s.bgImage) d.push(`background-image:url("${String(s.bgImage).replace(/["\\]/g, "")}");background-size:cover;background-position:center`);
   if (s.color) d.push(`color:${esc(s.color)}`);
@@ -178,6 +173,24 @@ function wrapInline(el: HeaderElement): string {
   if (n0(s.radius)) d.push(`border-radius:${n0(s.radius)}px`);
   if (s.shadow && BOX_SHADOWS[s.shadow]) d.push(`box-shadow:${BOX_SHADOWS[s.shadow]}`);
   if (s.textShadow && TEXT_SHADOWS[s.textShadow]) d.push(`text-shadow:${TEXT_SHADOWS[s.textShadow]}`);
+  return d;
+}
+function spacingDecls(el: HeaderElement): string[] {
+  const pad = el.pad || {}; const s = el.style || {}; const d: string[] = [];
+  const p = [n0(pad.t), n0(pad.r), n0(pad.b), n0(pad.l)];
+  if (p.some(Boolean)) d.push(`padding:${p[0]}px ${p[1]}px ${p[2]}px ${p[3]}px`);
+  const m = [n0(s.mt), n0(s.mr), n0(s.mb), n0(s.ml)];
+  if (m.some(Boolean)) d.push(`margin:${m[0]}px ${m[1]}px ${m[2]}px ${m[3]}px`);
+  return d;
+}
+function wrapInline(el: HeaderElement): string {
+  const s = el.style || {};
+  const d = spacingDecls(el);
+  if (el.type !== "button") d.push(...visualDecls(s));
+  return d.length ? ` style="${d.join(";")}"` : "";
+}
+function buttonInline(s: ElementStyle): string {
+  const d = visualDecls(s);
   return d.length ? ` style="${d.join(";")}"` : "";
 }
 function wrapClass(el: HeaderElement): string {
