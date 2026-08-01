@@ -3,7 +3,21 @@
 
 export type HeaderElementType = "logo" | "menu" | "phone" | "button" | "social" | "text";
 export type ElementPad = { t?: number; r?: number; b?: number; l?: number };
-export type HeaderElement = { id: string; type: HeaderElementType; props: Record<string, any>; hideMobile?: boolean; pad?: ElementPad };
+export type ElementStyle = {
+  bg?: string; bgImage?: string; color?: string;
+  radius?: number; borderWidth?: number; borderStyle?: "solid" | "dashed" | "dotted" | "double"; borderColor?: string;
+  shadow?: "none" | "sm" | "md" | "lg" | "xl"; textShadow?: "none" | "soft" | "strong";
+  mt?: number; mr?: number; mb?: number; ml?: number;
+  hover?: "none" | "lift" | "grow" | "fade" | "shadow"; anim?: "none" | "fade" | "up" | "zoom";
+  cls?: string; eid?: string;
+};
+export type HeaderElement = { id: string; type: HeaderElementType; props: Record<string, any>; hideMobile?: boolean; pad?: ElementPad; style?: ElementStyle };
+
+const BOX_SHADOWS: Record<string, string> = {
+  sm: "0 1px 3px rgba(0,0,0,.12)", md: "0 4px 12px rgba(0,0,0,.15)",
+  lg: "0 10px 28px rgba(0,0,0,.18)", xl: "0 20px 48px rgba(0,0,0,.22)",
+};
+const TEXT_SHADOWS: Record<string, string> = { soft: "0 1px 2px rgba(0,0,0,.25)", strong: "0 2px 6px rgba(0,0,0,.45)" };
 export type HeaderRow = {
   id: string;
   left: HeaderElement[]; center: HeaderElement[]; right: HeaderElement[];
@@ -118,15 +132,41 @@ function renderEl(el: HeaderElement, menus?: MenuLite[], idScope = ""): string {
       return "";
   }
 }
-function padStyle(pad?: ElementPad): string {
-  if (!pad) return "";
-  const n = (v: any) => (Number.isFinite(+v) && +v ? +v : 0);
-  const t = n(pad.t), r = n(pad.r), b = n(pad.b), l = n(pad.l);
-  if (!t && !r && !b && !l) return "";
-  return ` style="padding:${t}px ${r}px ${b}px ${l}px"`;
+const n0 = (v: any) => (Number.isFinite(+v) && +v ? +v : 0);
+function safeCls(s?: string): string { return String(s || "").replace(/[^a-zA-Z0-9_\- ]/g, "").trim(); }
+function safeId(s?: string): string { return String(s || "").replace(/[^a-zA-Z0-9_\-]/g, ""); }
+function wrapInline(el: HeaderElement): string {
+  const pad = el.pad || {}; const s = el.style || {};
+  const d: string[] = [];
+  const p = [n0(pad.t), n0(pad.r), n0(pad.b), n0(pad.l)];
+  if (p.some(Boolean)) d.push(`padding:${p[0]}px ${p[1]}px ${p[2]}px ${p[3]}px`);
+  const m = [n0(s.mt), n0(s.mr), n0(s.mb), n0(s.ml)];
+  if (m.some(Boolean)) d.push(`margin:${m[0]}px ${m[1]}px ${m[2]}px ${m[3]}px`);
+  if (s.bg) d.push(`background-color:${esc(s.bg)}`);
+  if (s.bgImage) d.push(`background-image:url("${String(s.bgImage).replace(/["\\]/g, "")}");background-size:cover;background-position:center`);
+  if (s.color) d.push(`color:${esc(s.color)}`);
+  if (n0(s.borderWidth) && s.borderStyle) d.push(`border:${n0(s.borderWidth)}px ${esc(s.borderStyle)} ${esc(s.borderColor || "#000000")}`);
+  if (n0(s.radius)) d.push(`border-radius:${n0(s.radius)}px`);
+  if (s.shadow && BOX_SHADOWS[s.shadow]) d.push(`box-shadow:${BOX_SHADOWS[s.shadow]}`);
+  if (s.textShadow && TEXT_SHADOWS[s.textShadow]) d.push(`text-shadow:${TEXT_SHADOWS[s.textShadow]}`);
+  return d.length ? ` style="${d.join(";")}"` : "";
+}
+function wrapClass(el: HeaderElement): string {
+  const s = el.style || {};
+  const c = ["nifty-h-item"];
+  if (el.hideMobile) c.push("nifty-hide-mobile");
+  if (s.hover && s.hover !== "none") c.push("nifty-fx-" + s.hover);
+  if (s.anim && s.anim !== "none") c.push("nifty-anim-" + s.anim);
+  const extra = safeCls(s.cls);
+  if (extra) c.push(extra);
+  return c.join(" ");
 }
 function zoneHtml(els: HeaderElement[], menus?: MenuLite[], idScope = ""): string {
-  return (els || []).filter(Boolean).map((e) => `<div class="nifty-h-item${e.hideMobile ? " nifty-hide-mobile" : ""}"${padStyle(e.pad)}>${renderEl(e, menus, idScope)}</div>`).join("");
+  return (els || []).filter(Boolean).map((e) => {
+    const eid = safeId(e.style?.eid);
+    const idAttr = eid ? ` id="${esc(idScope + eid)}"` : "";
+    return `<div class="${wrapClass(e)}"${idAttr}${wrapInline(e)}>${renderEl(e, menus, idScope)}</div>`;
+  }).join("");
 }
 
 export function renderHeaderLayout(layout: HeaderLayout, menus?: MenuLite[], idScope = ""): string {
@@ -150,6 +190,17 @@ export function headerLayoutCss(layout: HeaderLayout): string {
 .nifty-hcell{display:flex;align-items:center;gap:20px;min-width:0}
 .nifty-hcell.nifty-center{flex:1 1 auto;justify-content:center}
 .nifty-hcell.nifty-right{justify-content:flex-end}
+.nifty-h-item{transition:transform .2s ease,box-shadow .2s ease,opacity .2s ease}
+.nifty-fx-lift:hover{transform:translateY(-3px)}
+.nifty-fx-grow:hover{transform:scale(1.06)}
+.nifty-fx-fade:hover{opacity:.7}
+.nifty-fx-shadow:hover{box-shadow:0 10px 28px rgba(0,0,0,.18)}
+@keyframes niftyAnimFade{from{opacity:0}to{opacity:1}}
+@keyframes niftyAnimUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes niftyAnimZoom{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:none}}
+.nifty-anim-fade{animation:niftyAnimFade .5s ease both}
+.nifty-anim-up{animation:niftyAnimUp .5s ease both}
+.nifty-anim-zoom{animation:niftyAnimZoom .5s ease both}
 .nifty-h-logo{display:inline-flex;align-items:center;text-decoration:none;color:inherit}
 .nifty-h-logotext{font-weight:800;font-size:20px}
 .nifty-h-menu{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
