@@ -48,6 +48,17 @@ function _secOverlay(hex: string, op: number): string {
   const i = parseInt(m[1], 16);
   return "rgba(" + ((i >> 16) & 255) + "," + ((i >> 8) & 255) + "," + (i & 255) + "," + Math.max(0, Math.min(1, op)) + ")";
 }
+// The overlay painted over an image: flat tint, or a two-colour directional gradient
+// tint (both stops at the chosen opacity). Mirrors the dashboard's sectionOverlayLayer.
+function _secOverlayLayer(bg: any): string {
+  const a = _secOverlay(bg.overlayColor, bg.overlayOpacity);
+  if (!a) return "";
+  if (bg.overlayType === "gradient") {
+    const b = _secOverlay(bg.overlayColor2 || bg.overlayColor, bg.overlayOpacity) || a;
+    return "linear-gradient(" + (bg.overlayDir || "to bottom") + "," + a + "," + b + ")";
+  }
+  return "linear-gradient(" + a + "," + a + ")";
+}
 function sectionBgCss(bg: any): string {
   if (!bg || typeof bg !== "object") return "";
   const t = bg.type || (bg.image ? "image" : (bg.gradFrom || bg.gradTo) ? "gradient" : "color");
@@ -57,8 +68,8 @@ function sectionBgCss(bg: any): string {
   } else if (t === "image" && bg.image) {
     if (bg.color) d.push("background-color:" + bg.color);
     const img = 'url("' + String(bg.image).replace(/["\\]/g, "") + '")';
-    const ov = _secOverlay(bg.overlayColor, bg.overlayOpacity);
-    d.push("background-image:" + (ov ? "linear-gradient(" + ov + "," + ov + ")," + img : img));
+    const ov = _secOverlayLayer(bg);
+    d.push("background-image:" + (ov ? ov + "," + img : img));
     d.push("background-size:" + (bg.size || "cover") + ";background-position:" + (bg.position || "center") + ";background-repeat:" + (bg.repeat || "no-repeat"));
   } else if (bg.color) {
     d.push("background-color:" + bg.color);
