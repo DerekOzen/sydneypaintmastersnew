@@ -483,7 +483,7 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
     const s = sectionBgCss(bg);
     if (!s) return html;
     const replace = bg && bg.mode === "replace";
-    if (replace) secBgRules.push(`.nifty-secbg-${b.id} > *{background-image:none !important;background-color:transparent !important}`);
+    if (replace) secBgRules.push(`.nifty-secbg-${b.id} *{background-image:none !important}.nifty-secbg-${b.id} > *{background-color:transparent !important}`);
     return `<div${replace ? ` class="nifty-secbg-${b.id}"` : ""} style="${s}">${html}</div>`;
   }).filter(Boolean).join("\n"));
   const secBgCss = secBgRules.join("\n");
