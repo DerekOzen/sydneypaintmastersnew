@@ -37,7 +37,7 @@
         "bg": {
           "mode": "replace",
           "type": "image",
-          "image": "/uploads/sydney-paintmasters-hero-5cb794bd.jpg",
+          "image": "",
           "overlayColor": "#2f4ca2",
           "overlayOpacity": 0.09
         }
