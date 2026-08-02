@@ -37,9 +37,12 @@
         "bg": {
           "mode": "replace",
           "type": "image",
-          "image": "",
+          "image": "/uploads/sydney-paintmasters-hero-093284ba.jpg",
           "overlayColor": "#2f4ca2",
-          "overlayOpacity": 0.09
+          "overlayOpacity": 0.54,
+          "position": "left top",
+          "overlayType": "gradient",
+          "overlayDir": "to left"
         }
       }
     },
