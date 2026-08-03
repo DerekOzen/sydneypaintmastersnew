@@ -67,7 +67,9 @@ function sectionBgCss(bg: any): string {
     d.push("background-image:linear-gradient(" + (bg.gradDir || "to bottom") + "," + (bg.gradFrom || "#0f766e") + "," + (bg.gradTo || "#0b3b36") + ")");
   } else if (t === "image" && bg.image) {
     if (bg.color) d.push("background-color:" + bg.color);
-    const img = 'url("' + String(bg.image).replace(/["\\]/g, "") + '")';
+    // SINGLE quotes: this is embedded into an HTML style="…" attribute, so double quotes
+    // inside url("…") would close the attribute and drop the image.
+    const img = "url('" + String(bg.image).replace(/['"\\]/g, "") + "')";
     const ov = _secOverlayLayer(bg);
     d.push("background-image:" + (ov ? ov + "," + img : img));
     d.push("background-size:" + (bg.size || "cover") + ";background-position:" + (bg.position || "center") + ";background-repeat:" + (bg.repeat || "no-repeat"));

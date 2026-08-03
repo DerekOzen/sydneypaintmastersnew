@@ -44,7 +44,7 @@ export function rowBgCss(row: HeaderRow): string {
   const bg = row.bg || "#ffffff";
   let out = `background-color:${bg}`;
   if (row.bgImage) {
-    const img = `url("${String(row.bgImage).replace(/["\\]/g, "")}")`;
+    const img = `url('${String(row.bgImage).replace(/['"\\]/g, "")}')`;
     const ov = overlayRgba(row.overlayColor, row.overlayOpacity);
     out += `;background-image:${ov ? `linear-gradient(${ov},${ov}),${img}` : img}`;
     out += `;background-size:${row.bgSize || "cover"};background-position:${row.bgPos || "center"};background-repeat:${row.bgRepeat || "no-repeat"}`;
@@ -167,7 +167,7 @@ function safeId(s?: string): string { return String(s || "").replace(/[^a-zA-Z0-
 function visualDecls(s: ElementStyle): string[] {
   const d: string[] = [];
   if (s.bg) d.push(`background-color:${esc(s.bg)}`);
-  if (s.bgImage) d.push(`background-image:url("${String(s.bgImage).replace(/["\\]/g, "")}");background-size:cover;background-position:center`);
+  if (s.bgImage) d.push(`background-image:url('${String(s.bgImage).replace(/['"\\]/g, "")}');background-size:cover;background-position:center`);
   if (s.color) d.push(`color:${esc(s.color)}`);
   if (n0(s.borderWidth) && s.borderStyle) d.push(`border:${n0(s.borderWidth)}px ${esc(s.borderStyle)} ${esc(s.borderColor || "#000000")}`);
   if (n0(s.radius)) d.push(`border-radius:${n0(s.radius)}px`);
