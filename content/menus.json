@@ -5,32 +5,62 @@
     "items": [
       {
         "id": "iv8fm5zu",
-        "label": "New item",
+        "label": "Home",
         "href": "/"
-      },
-      {
-        "id": "ifldu06g",
-        "label": "New item",
-        "href": "s/about-us",
-        "children": [
-          {
-            "id": "ij8igrw1",
-            "label": "New sub-item",
-            "href": "/house-painting"
-          }
-        ]
-      },
-      {
-        "id": "icrm6ln1",
-        "label": "New item",
-        "href": "/about-us"
       },
       {
         "id": "inoheor6",
-        "label": "New item",
-        "href": "/"
+        "label": "Services",
+        "href": "",
+        "children": [
+          {
+            "id": "idqovx93",
+            "label": "House Painting",
+            "href": "/house-painting"
+          },
+          {
+            "id": "ifzyamz4",
+            "label": "Interior Painting",
+            "href": "/interior-painting"
+          },
+          {
+            "id": "iz203k0t",
+            "label": "Exterior Painting",
+            "href": "/exterior-painting"
+          },
+          {
+            "id": "is08jx97",
+            "label": "Office Painting",
+            "href": "/office-painting"
+          },
+          {
+            "id": "i2ba4rjd",
+            "label": "Strata Painting",
+            "href": "/strata-painting"
+          },
+          {
+            "id": "idx58gzf",
+            "label": "Commercial Painting",
+            "href": "/commercial-painting"
+          },
+          {
+            "id": "i6h6pjrr",
+            "label": "Epoxy Flooring",
+            "href": "/epoxy-flooring"
+          },
+          {
+            "id": "ikvkjfkn",
+            "label": "Pool Painting",
+            "href": "/pool-painting"
+          },
+          {
+            "id": "ixiah3l3",
+            "label": "Roof Painting",
+            "href": "/roof-painting"
+          }
+        ]
       }
     ],
-    "updatedAt": "2026-08-04T00:17:45.146Z"
+    "updatedAt": "2026-08-04T00:30:11.587Z"
   }
 ]
