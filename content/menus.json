@@ -59,8 +59,30 @@
             "href": "/roof-painting"
           }
         ]
+      },
+      {
+        "id": "i7fwxz76",
+        "label": "About Us",
+        "href": "/about-us"
+      },
+      {
+        "id": "iy0qa0wa",
+        "label": "Reviews",
+        "href": "/#reviews"
+      },
+      {
+        "id": "iy029lg6",
+        "label": "Service Locations",
+        "href": "/service-locations",
+        "children": [
+          {
+            "id": "izk8h9dx",
+            "label": "Painter Alexandria",
+            "href": "/nsw/painter-alexandria"
+          }
+        ]
       }
     ],
-    "updatedAt": "2026-08-04T00:30:11.587Z"
+    "updatedAt": "2026-08-04T00:40:10.780Z"
   }
 ]
