@@ -62,9 +62,15 @@ const HOME_PAGE = (pagesData as Pg[]).find((p) => p.status === "published" && p.
 // custom domain is connected), so engines treat the real domain as authoritative.
 const HOME_CANONICAL = (() => { const b = (site.siteUrl || "").replace(/\/+$/, ""); return b ? b + "/" : undefined; })();
 
-export const metadata = HOME_PAGE
-  ? { title: HOME_PAGE.seoTitle || HOME_PAGE.title, description: HOME_PAGE.seoDescription || "", ...(HOME_CANONICAL ? { alternates: { canonical: HOME_CANONICAL } } : {}) }
-  : { title: "Your Business", description: "" };
+const HOME_T = HOME_PAGE ? (HOME_PAGE.seoTitle || HOME_PAGE.title) : ((site as any).name || "Home");
+const HOME_D = HOME_PAGE ? (HOME_PAGE.seoDescription || "") : "";
+export const metadata = {
+  title: HOME_T,
+  description: HOME_D,
+  ...(HOME_CANONICAL ? { alternates: { canonical: HOME_CANONICAL } } : {}),
+  openGraph: { title: HOME_T, description: HOME_D, type: "website", ...(HOME_CANONICAL ? { url: HOME_CANONICAL } : {}) },
+  twitter: { card: "summary_large_image", title: HOME_T, description: HOME_D },
+};
 
 function isMockup(p: Pg): boolean {
   return p.layout === "mockup" ||

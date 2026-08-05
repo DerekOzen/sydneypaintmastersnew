@@ -16,26 +16,17 @@ function readScripts(): { header: string; body: string; footer: string } {
   }
 }
 
+// Site-wide DEFAULT metadata — a FALLBACK only. Every page sets its own title,
+// description and Open Graph via generateMetadata, which override these. Derived from the
+// site's own settings so a page can never leak another site's content (e.g. the template's).
+const _SITE_NAME = (site as any).name || "Website";
+const _SITE_DESC = (site as any).description || (site as any).tagline || "";
 export const metadata: Metadata = {
   metadataBase: new URL(site.siteUrl || "https://nifty-site.pages.dev"),
-  title: "Your Business | NDIS Registered Provider — Melbourne & Sydney",
-  description:
-    "Your Business is a registered NDIS provider delivering compassionate, person-centred support across Melbourne & Sydney. Personal care, community participation, household tasks and more. Call 1300 617 775.",
-  keywords: [
-    "NDIS provider",
-    "NDIS support Melbourne",
-    "NDIS support Sydney",
-    "disability support",
-    "personal care",
-    "community participation",
-  ],
-  openGraph: {
-    title: "Your Business — Registered NDIS Provider",
-    description:
-      "Compassionate, person-centred NDIS support across Melbourne & Sydney.",
-    type: "website",
-    locale: "en_AU",
-  },
+  title: _SITE_NAME,
+  description: _SITE_DESC,
+  openGraph: { title: _SITE_NAME, description: _SITE_DESC, type: "website", locale: "en_AU" },
+  twitter: { card: "summary_large_image", title: _SITE_NAME, description: _SITE_DESC },
   robots: { index: true, follow: true },
 };
 

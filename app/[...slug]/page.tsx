@@ -124,10 +124,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const page = findByParams(slug);
   if (!page) return {};
   const canonical = canonicalFor(page.path);
+  const t = page.seoTitle || page.title;
+  const d = page.seoDescription || "";
+  // Open Graph + Twitter mirror THIS page's own title/description (not the site-wide
+  // default), so social / link-preview cards match the page. Set per page.
   return {
-    title: page.seoTitle || page.title,
-    description: page.seoDescription || "",
+    title: t,
+    description: d,
     ...(canonical ? { alternates: { canonical } } : {}),
+    openGraph: { title: t, description: d, type: "website", ...(canonical ? { url: canonical } : {}) },
+    twitter: { card: "summary_large_image", title: t, description: d },
   };
 }
 
