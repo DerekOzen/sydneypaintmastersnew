@@ -103,10 +103,15 @@ function telHref(n: any): string { return "tel:" + String(n || "").replace(/[^0-
 // A reusable menu resolved by id → its items (with one level of children).
 type MenuLite = { id: string; name?: string; items?: any[] };
 
+// Inject a stored icon (our own <svg…> markup) before a label; ignores anything else.
+function hIco(svg: any): string {
+  return (typeof svg === "string" && svg.trim().startsWith("<svg")) ? `<span class="nifty-h-ico">${svg}</span>` : "";
+}
+
 function renderMenuNodes(items: any[], idScope = ""): string {
   return (items || []).map((it, i) => {
     const kids = Array.isArray(it.children) && it.children.length ? it.children : null;
-    if (!kids) return `<li class="nifty-mitem"><a href="${esc(it.href || "#")}">${esc(it.label || "")}</a></li>`;
+    if (!kids) return `<li class="nifty-mitem"><a href="${esc(it.href || "#")}">${hIco(it.icon)}${esc(it.label || "")}</a></li>`;
     // A parent with children opens its dropdown on TAP/CLICK (a hidden checkbox +
     // <label>, so it works on mobile and desktop with no JS) and also on hover on
     // desktop. If the parent has no real link of its own (href "#"/empty) the whole
@@ -114,10 +119,10 @@ function renderMenuNodes(items: any[], idScope = ""): string {
     const sid = "nsub-" + idScope + esc(it.id || ("i" + i));
     const href = String(it.href || "").trim();
     const toggleOnly = href === "" || href === "#";
-    const sub = `<ul class="nifty-submenu">${kids.map((c: any) => `<li><a href="${esc(c.href || "#")}">${esc(c.label || "")}</a></li>`).join("")}</ul>`;
+    const sub = `<ul class="nifty-submenu">${kids.map((c: any) => `<li><a href="${esc(c.href || "#")}">${hIco(c.icon)}${esc(c.label || "")}</a></li>`).join("")}</ul>`;
     const parent = toggleOnly
-      ? `<label for="${sid}" class="nifty-mparent">${esc(it.label || "")}<span class="nifty-caret">&#9662;</span></label>`
-      : `<a href="${esc(href)}" class="nifty-mparent-link">${esc(it.label || "")}</a><label for="${sid}" class="nifty-caret-toggle" aria-label="Open submenu"><span class="nifty-caret">&#9662;</span></label>`;
+      ? `<label for="${sid}" class="nifty-mparent">${hIco(it.icon)}${esc(it.label || "")}<span class="nifty-caret">&#9662;</span></label>`
+      : `<a href="${esc(href)}" class="nifty-mparent-link">${hIco(it.icon)}${esc(it.label || "")}</a><label for="${sid}" class="nifty-caret-toggle" aria-label="Open submenu"><span class="nifty-caret">&#9662;</span></label>`;
     return `<li class="nifty-mitem nifty-has-sub"><input type="checkbox" class="nifty-sub-toggle" id="${sid}">${parent}${sub}</li>`;
   }).join("");
 }
@@ -147,16 +152,19 @@ function renderEl(el: HeaderElement, menus?: MenuLite[], idScope = ""): string {
     }
     case "phone": {
       const label = p.label || p.number || "";
-      return `<a href="${esc(telHref(p.number))}" class="nifty-h-phone">${p.icon === false ? "" : '<span class="nifty-h-ico">&#9742;</span>'}${esc(label)}</a>`;
+      const ico = (typeof p.icon === "string" && p.icon.trim().startsWith("<svg"))
+        ? `<span class="nifty-h-ico">${p.icon}</span>`
+        : (p.icon === false ? "" : '<span class="nifty-h-ico">&#9742;</span>');
+      return `<a href="${esc(telHref(p.number))}" class="nifty-h-phone">${ico}${esc(label)}</a>`;
     }
     case "button":
-      return `<a href="${esc(p.href || "#")}" class="nifty-h-btn"${buttonInline(el.style || {})}>${esc(p.label || "Button")}</a>`;
+      return `<a href="${esc(p.href || "#")}" class="nifty-h-btn"${buttonInline(el.style || {})}>${hIco(p.icon)}${esc(p.label || "Button")}</a>`;
     case "social": {
       const items: any[] = Array.isArray(p.items) ? p.items : [];
-      return `<span class="nifty-h-social">${items.map((i) => `<a href="${esc(i.href || "#")}" aria-label="${esc(i.network || "")}">${esc((i.network || "?").slice(0, 2))}</a>`).join("")}</span>`;
+      return `<span class="nifty-h-social">${items.map((i) => `<a href="${esc(i.href || "#")}" aria-label="${esc(i.network || "")}">${(typeof i.icon === "string" && i.icon.trim().startsWith("<svg")) ? `<span class="nifty-h-ico">${i.icon}</span>` : esc((i.network || "?").slice(0, 2))}</a>`).join("")}</span>`;
     }
     case "text":
-      return `<div class="nifty-h-text">${p.html != null ? String(p.html) : esc(p.text || "")}</div>`;
+      return `<div class="nifty-h-text">${hIco(p.icon)}${p.html != null ? String(p.html) : esc(p.text || "")}</div>`;
     default:
       return "";
   }
@@ -250,8 +258,11 @@ export function headerLayoutCss(layout: HeaderLayout): string {
 .nifty-h-menu a:hover{opacity:.7}
 .nifty-h-phone{color:inherit;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
 .nifty-h-phone .nifty-h-ico{opacity:.8}
-.nifty-h-btn{background:${accent};color:#fff;padding:11px 20px;border-radius:9px;text-decoration:none;font-weight:700;white-space:nowrap;line-height:1}
+.nifty-h-btn{background:${accent};color:#fff;padding:11px 20px;border-radius:9px;text-decoration:none;font-weight:700;white-space:nowrap;line-height:1;display:inline-flex;align-items:center;gap:.5em}
 .nifty-h-btn:hover{filter:brightness(.94)}
+.nifty-h-ico{display:inline-flex;align-items:center;line-height:0;vertical-align:middle}
+.nifty-h-text .nifty-h-ico{margin-right:.4em}
+.nifty-submenu a{display:inline-flex;align-items:center;gap:8px}
 .nifty-h-social{display:flex;gap:12px}
 .nifty-h-social a{color:inherit;text-decoration:none;font-weight:700}
 .nifty-h-menu-tree ul.nifty-menu{display:flex;gap:20px;align-items:center;list-style:none;margin:0;padding:0}
