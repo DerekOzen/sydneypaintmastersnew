@@ -874,10 +874,11 @@
     "layout": "mockup",
     "headerPartId": "header-4",
     "footerPartId": "footer-3",
-    "status": "draft",
-    "updatedAt": "2026-08-05T08:48:17.514Z",
+    "status": "deleted",
+    "updatedAt": "2026-08-05T09:22:12.467Z",
     "updatedBy": "derek",
     "createdAt": "2026-08-05T08:48:17.514Z",
-    "createdBy": "derek"
+    "createdBy": "derek",
+    "isHome": false
   }
 ]
