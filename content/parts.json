@@ -321,7 +321,7 @@
       "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css",
       "https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
     ],
-    "updatedAt": "2026-08-05T05:43:29.802Z",
+    "updatedAt": "2026-08-05T09:06:46.378Z",
     "settings": {
       "sticky": false,
       "autoHide": false,
@@ -347,7 +347,8 @@
       ],
       "accent": "#0f766e",
       "maxWidth": 1200
-    }
+    },
+    "deleted": true
   },
   {
     "id": "header-4",
