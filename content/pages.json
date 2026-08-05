@@ -841,9 +841,9 @@
     "layout": "mockup",
     "headerPartId": "header-1",
     "footerPartId": "footer-1",
-    "status": "published",
-    "updatedAt": "2026-08-05T02:22:24.925Z",
-    "updatedBy": "vipin",
+    "status": "draft",
+    "updatedAt": "2026-08-05T04:20:47.077Z",
+    "updatedBy": "sebastian",
     "createdAt": "2026-08-05T01:26:57.947Z",
     "createdBy": "joshua",
     "category": "Home"
