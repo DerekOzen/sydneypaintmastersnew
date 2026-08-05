@@ -842,9 +842,10 @@
     "headerPartId": "header-1",
     "footerPartId": "footer-1",
     "status": "draft",
-    "updatedAt": "2026-08-05T01:26:57.947Z",
+    "updatedAt": "2026-08-05T01:29:58.176Z",
     "updatedBy": "joshua",
     "createdAt": "2026-08-05T01:26:57.947Z",
-    "createdBy": "joshua"
+    "createdBy": "joshua",
+    "category": "Home"
   }
 ]
