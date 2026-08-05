@@ -78,7 +78,7 @@
       "https://fonts.googleapis.com/css2?family=Fustat:wght@400;500;600;700;800&display=swap",
       "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     ],
-    "updatedAt": "2026-08-05T09:03:50.242Z",
+    "updatedAt": "2026-08-05T09:05:12.614Z",
     "settings": {
       "sticky": false,
       "autoHide": false,
@@ -90,8 +90,6 @@
     },
     "layout": {
       "enabled": true,
-      "accent": "#0f766e",
-      "maxWidth": 1200,
       "rows": [
         {
           "id": "row-56640452",
@@ -155,7 +153,9 @@
           "height": 64,
           "hideMobile": false
         }
-      ]
+      ],
+      "accent": "#0f766e",
+      "maxWidth": 1200
     }
   },
   {
