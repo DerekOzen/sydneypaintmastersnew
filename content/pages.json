@@ -1,7 +1,7 @@
 [
   {
     "id": "pg-1",
-    "path": "/",
+    "path": "/home",
     "type": "page",
     "title": "Home",
     "seoTitle": "Painter Sydney - Professional Painters | Sydney Paintmasters",
@@ -10,11 +10,11 @@
     "headerPartId": "header-1",
     "footerPartId": "footer-1",
     "status": "published",
-    "updatedAt": "2026-08-04T00:52:18.032Z",
-    "updatedBy": "kim",
+    "updatedAt": "2026-08-05T10:00:21.616Z",
+    "updatedBy": "derek",
     "createdAt": "2026-07-28T10:14:54.801Z",
     "createdBy": "derek",
-    "isHome": true,
+    "isHome": false,
     "category": "Home"
   },
   {
@@ -833,7 +833,7 @@
   },
   {
     "id": "pg-53",
-    "path": "/home-page",
+    "path": "/",
     "type": "page",
     "title": "Home Page",
     "seoTitle": "Professional Painters in Sydney | Sydney Paintmasters",
@@ -842,11 +842,12 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-1",
     "status": "published",
-    "updatedAt": "2026-08-05T09:58:07.199Z",
+    "updatedAt": "2026-08-05T10:00:21.616Z",
     "updatedBy": "derek",
     "createdAt": "2026-08-05T01:26:57.947Z",
     "createdBy": "joshua",
-    "category": "Home"
+    "category": "Home",
+    "isHome": true
   },
   {
     "id": "pg-54",
