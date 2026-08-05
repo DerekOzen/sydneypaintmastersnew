@@ -1,23 +1,5 @@
 [
   {
-    "id": "pg-1",
-    "path": "/home",
-    "type": "page",
-    "title": "Home",
-    "seoTitle": "Painter Sydney - Professional Painters | Sydney Paintmasters",
-    "seoDescription": "Sydney Paintmasters: your local painter for homes, strata and business across Sydney. 20+ years, licensed, fixed-price quotes. Call 0423 019 087.",
-    "layout": "mockup",
-    "headerPartId": "header-1",
-    "footerPartId": "footer-1",
-    "status": "deleted",
-    "updatedAt": "2026-08-05T10:01:02.433Z",
-    "updatedBy": "derek",
-    "createdAt": "2026-07-28T10:14:54.801Z",
-    "createdBy": "derek",
-    "isHome": false,
-    "category": "Home"
-  },
-  {
     "id": "pg-2",
     "path": "/about-us",
     "type": "page",
