@@ -78,7 +78,7 @@
       "https://fonts.googleapis.com/css2?family=Fustat:wght@400;500;600;700;800&display=swap",
       "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     ],
-    "updatedAt": "2026-08-05T09:05:36.833Z",
+    "updatedAt": "2026-08-05T09:06:08.588Z",
     "settings": {
       "sticky": false,
       "autoHide": false,
@@ -158,6 +158,75 @@
       "maxWidth": 1200,
       "devices": {
         "mobile": {
+          "enabled": true,
+          "rows": [
+            {
+              "id": "row-56640452",
+              "left": [
+                {
+                  "id": "el-ac329a21",
+                  "type": "logo",
+                  "hideMobile": false,
+                  "props": {
+                    "src": "/uploads/logo-6a3b85fb.webp",
+                    "alt": "Logo",
+                    "href": "/",
+                    "height": 80
+                  }
+                }
+              ],
+              "center": [
+                {
+                  "id": "el-d58d38a3",
+                  "type": "button",
+                  "hideMobile": false,
+                  "props": {
+                    "label": "0423 019 087",
+                    "href": "tel: 0423 019 087"
+                  },
+                  "style": {
+                    "bg": "#226add"
+                  }
+                }
+              ],
+              "right": [
+                {
+                  "id": "el-984dad40",
+                  "type": "menu",
+                  "hideMobile": false,
+                  "props": {
+                    "links": [
+                      {
+                        "label": "Home",
+                        "href": "/"
+                      },
+                      {
+                        "label": "About",
+                        "href": "/about"
+                      },
+                      {
+                        "label": "Services",
+                        "href": "/services"
+                      },
+                      {
+                        "label": "Contact",
+                        "href": "/contact"
+                      }
+                    ],
+                    "menuId": "menu-1"
+                  }
+                }
+              ],
+              "bg": "#ffffff",
+              "color": "#0f172a",
+              "height": 64,
+              "hideMobile": false
+            }
+          ],
+          "accent": "#0f766e",
+          "maxWidth": 1200
+        },
+        "tablet": {
           "enabled": true,
           "rows": [
             {
