@@ -73,16 +73,19 @@
       {
         "id": "iy029lg6",
         "label": "Service Locations",
-        "href": "/service-locations",
-        "children": [
-          {
-            "id": "izk8h9dx",
-            "label": "Painter Alexandria",
-            "href": "/nsw/painter-alexandria"
-          }
-        ]
+        "href": "/service-locations"
+      },
+      {
+        "id": "iaykf5fm",
+        "label": "Blog",
+        "href": "/blogs"
+      },
+      {
+        "id": "ib5y01pw",
+        "label": "Contact",
+        "href": "/contact"
       }
     ],
-    "updatedAt": "2026-08-04T00:40:33.149Z"
+    "updatedAt": "2026-08-05T10:02:48.994Z"
   }
 ]
