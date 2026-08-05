@@ -350,6 +350,7 @@ function _stripComments(css: string): string {
   while (i < css.length) {
     const c = css[i];
     if (inStr) { out += c; if (c === "\\") { out += css[i + 1] || ""; i += 2; continue; } if (c === inStr) inStr = ""; i++; continue; }
+    if (c === "\\") { out += c + (css[i + 1] || ""); i += 2; continue; }
     if (c === '"' || c === "'") { inStr = c; out += c; i++; continue; }
     if (c === "/" && css[i + 1] === "*") { i += 2; while (i < css.length && !(css[i] === "*" && css[i + 1] === "/")) i++; i += 2; continue; }
     out += c; i++;
@@ -361,6 +362,7 @@ function _readBraces(css: string, start: number): { block: string; next: number 
   for (; i < css.length; i++) {
     const c = css[i];
     if (inStr) { out += c; if (c === "\\") { i++; if (i < css.length) out += css[i]; continue; } if (c === inStr) inStr = ""; continue; }
+    if (c === "\\") { out += c; i++; if (i < css.length) out += css[i]; continue; }
     if (c === '"' || c === "'") { inStr = c; out += c; continue; }
     if (c === "{") { depth++; if (depth === 1) continue; out += c; continue; }
     if (c === "}") { depth--; if (depth === 0) { i++; break; } out += c; continue; }
@@ -374,12 +376,14 @@ function _parseBlocks(css: string): CssNode[] {
   while (i < n) {
     const c = css[i];
     if (inStr) { buf += c; if (c === "\\") { buf += css[i + 1] || ""; i += 2; continue; } if (c === inStr) inStr = ""; i++; continue; }
+    if (c === "\\") { buf += c + (css[i + 1] || ""); i += 2; continue; }
     if (c === '"' || c === "'") { inStr = c; buf += c; i++; continue; }
     if (c === "@" && buf.trim() === "") {
       let prelude = "";
       while (i < n) {
         const d = css[i];
         if (d === "{" || d === ";") break;
+        if (d === "\\") { prelude += d + (css[i + 1] || ""); i += 2; continue; }
         if (d === '"' || d === "'") { const q = d; prelude += d; i++; while (i < n) { prelude += css[i]; if (css[i] === "\\") { prelude += css[i + 1] || ""; i += 2; continue; } if (css[i] === q) { i++; break; } i++; } continue; }
         prelude += d; i++;
       }
@@ -398,6 +402,7 @@ function _splitTopCommas(s: string): string[] {
   for (let i = 0; i < s.length; i++) {
     const c = s[i];
     if (inStr) { buf += c; if (c === "\\") { buf += s[i + 1] || ""; i++; continue; } if (c === inStr) inStr = ""; continue; }
+    if (c === "\\") { buf += c + (s[i + 1] || ""); i++; continue; }
     if (c === '"' || c === "'") { inStr = c; buf += c; continue; }
     if (c === "(") dp++; else if (c === ")") dp--; else if (c === "[") db++; else if (c === "]") db--;
     if (c === "," && dp === 0 && db === 0) { parts.push(buf); buf = ""; continue; }

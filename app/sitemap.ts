@@ -56,10 +56,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const clean = "/" + p.path.replace(/^\/+|\/+$/g, "");
     if (clean !== "/") paths.add(clean);
   }
-  return Array.from(paths).map((r) => ({
-    url: `${base}${r === "/" ? "" : r}`,
-    lastModified: new Date("2026-07-01"),
-    changeFrequency: "monthly",
-    priority: r === "/" ? 1 : 0.8,
-  }));
+  return Array.from(paths).map((r) => {
+    // Trailing slash on every URL (home = base + "/") to match the canonical form.
+    const slug = r.replace(/^\/+|\/+$/g, "");
+    return {
+      url: slug ? `${base}/${slug}/` : `${base}/`,
+      lastModified: new Date("2026-07-01"),
+      changeFrequency: "monthly" as const,
+      priority: r === "/" ? 1 : 0.8,
+    };
+  });
 }

@@ -16,7 +16,11 @@ import partsData from "@/content/parts.json";
 function canonicalFor(p: string): string | undefined {
   const base = (site.siteUrl || "").replace(/\/+$/, "");
   if (!base) return undefined;
-  return base + (p === "/" ? "" : "/" + p.replace(/^\/+/, ""));
+  // Trailing slash on every canonical URL (home = base + "/") — self-referencing, and the
+  // single indexable form (the non-slash version 301/308-redirects to it). Matches
+  // trailingSlash: true in next.config.mjs and the sitemap.
+  const slug = p.replace(/^\/+|\/+$/g, "");
+  return slug ? `${base}/${slug}/` : `${base}/`;
 }
 
 // Build-time content loader. content/pages.json is a lightweight INDEX; each

@@ -60,7 +60,7 @@ const HOME_PAGE = (pagesData as Pg[]).find((p) => p.status === "published" && p.
 
 // Canonical for the homepage = the site's configured address (the real domain once a
 // custom domain is connected), so engines treat the real domain as authoritative.
-const HOME_CANONICAL = (site.siteUrl || "").replace(/\/+$/, "") || undefined;
+const HOME_CANONICAL = (() => { const b = (site.siteUrl || "").replace(/\/+$/, ""); return b ? b + "/" : undefined; })();
 
 export const metadata = HOME_PAGE
   ? { title: HOME_PAGE.seoTitle || HOME_PAGE.title, description: HOME_PAGE.seoDescription || "", ...(HOME_CANONICAL ? { alternates: { canonical: HOME_CANONICAL } } : {}) }
