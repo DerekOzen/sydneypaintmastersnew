@@ -1,0 +1,31 @@
+# robots.txt for https://sydneypaintmasters.com.au/
+# Last updated: 2026-08-05
+
+User-agent: *
+
+Sitemap: https://sydneypaintmasters.com.au/sitemap.xml
+
+# ---------------------------
+# END YOAST BLOCK
+
+# --- AI / LLM crawler rules ---
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
