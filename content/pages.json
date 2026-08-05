@@ -795,22 +795,5 @@
     "createdBy": "joshua",
     "category": "Home",
     "isHome": true
-  },
-  {
-    "id": "pg-55",
-    "path": "/homey",
-    "type": "page",
-    "title": "HOMEY",
-    "seoTitle": "Professional Painters in Sydney | Sydney Paintmasters",
-    "seoDescription": "Licensed and insured Sydney painters with over 20 years of experience. House, interior, exterior, strata, commercial, roof and epoxy work across Sydney. Free quotes.",
-    "layout": "mockup",
-    "headerPartId": "header-4",
-    "footerPartId": "footer-3",
-    "status": "deleted",
-    "updatedAt": "2026-08-05T09:22:12.467Z",
-    "updatedBy": "derek",
-    "createdAt": "2026-08-05T08:48:17.514Z",
-    "createdBy": "derek",
-    "isHome": false
   }
 ]
