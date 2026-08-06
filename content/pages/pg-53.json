@@ -18,9 +18,9 @@
   "body": "",
   "_schemas": [
     {
-      "type": "Organization",
+      "type": "BreadcrumbList",
       "data": {
-        "@type": "Organization",
+        "@type": "BreadcrumbList",
         "name": "Sydney Paintmasters",
         "url": "https://sydneypaintmasters.com.au/",
         "logo": "https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp",
@@ -40,7 +40,8 @@
           "https://www.facebook.com/sydneypaintmasters",
           "https://www.instagram.com/sydneypaintmasters",
           "https://www.linkedin.com/company/sydneypaintmasters"
-        ]
+        ],
+        "@context": "https://schema.org"
       }
     },
     {
