@@ -484,10 +484,11 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-1",
     "status": "published",
-    "updatedAt": "2026-08-05T10:14:32.061Z",
+    "updatedAt": "2026-08-06T21:32:52.571Z",
     "updatedBy": "derek",
     "createdAt": "2026-07-28T21:49:01.857Z",
-    "createdBy": "derek"
+    "createdBy": "derek",
+    "noindex": true
   },
   {
     "id": "pg-34",
