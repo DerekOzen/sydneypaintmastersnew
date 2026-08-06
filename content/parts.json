@@ -78,7 +78,7 @@
       "https://fonts.googleapis.com/css2?family=Fustat:wght@400;500;600;700;800&display=swap",
       "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     ],
-    "updatedAt": "2026-08-05T09:19:46.776Z",
+    "updatedAt": "2026-08-06T00:15:12.656Z",
     "settings": {
       "sticky": false,
       "autoHide": false,
@@ -143,7 +143,7 @@
               "hideMobile": false,
               "props": {
                 "label": "0423 019 087",
-                "href": "tel: 0423 019 087",
+                "href": "tel:0423019087",
                 "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" style=\"width:1em;height:1em;display:inline-block;vertical-align:middle\"><path d=\"M13 2a9 9 0 0 1 9 9\" /> <path d=\"M13 6a5 5 0 0 1 5 5\" /> <path d=\"M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384\" /></svg>"
               },
               "style": {
