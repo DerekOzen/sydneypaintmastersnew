@@ -136,67 +136,12 @@
   "body": "",
   "_schemas": [
     {
-      "type": "HousePainter",
-      "data": {
-        "@type": [
-          "HousePainter",
-          "HomeAndConstructionBusiness"
-        ],
-        "name": "Sydney Paintmasters",
-        "description": "Professional painting services for residential, commercial, and industrial properties in Sydney. Quality, precision, reliability.",
-        "url": "https://sydneypaintmasters.com.au/office-painting",
-        "telephone": "+61423019087",
-        "email": "info@sydneypaintmasters.com.au",
-        "priceRange": "$$",
-        "image": "https://sydneypaintmasters.com.au/images/hero-sydney.jpg",
-        "logo": "https://sydneypaintmasters.com.au/logo.webp",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "10 Sanctuary Point Rd,",
-          "addressLocality": "West Pennant Hills",
-          "addressRegion": "NSW",
-          "postalCode": "2125",
-          "addressCountry": "AU"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": -33.7483,
-          "longitude": 151.0336
-        },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday",
-              "Saturday"
-            ],
-            "opens": "06:00",
-            "closes": "18:00"
-          }
-        ],
-        "sameAs": [
-          "https://www.facebook.com/sydneypaintmasters",
-          "https://www.instagram.com/sydneypaintmasters",
-          "https://www.google.com/maps/place/Sydney+Paintmasters/data=!4m2!3m1!1s0x0:0xa0c99ac68d8c3e86?sa=X&ved=1t:2428&ictx=111"
-        ],
-        "hasCredential": {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "Painter Decorator Licence",
-          "identifier": "315254C"
-        }
-      }
-    },
-    {
       "type": "Service",
       "data": {
         "@type": "Service",
         "name": "Office Painting",
-        "description": "Opt our superior office painting services in Sydney to revitalise your corporate meeting room. Request quotes from office painters at Sydney Paintmasters!",
-        "url": "https://sydneypaintmasters.com.au/office-painting",
+        "description": "Sydney Paintmasters provides corporate office painting service in Sydney. ☎️ 0423019087 our office painters near you for hallway, stairwell and wall decor!",
+        "url": "https://sydneypaintmasters.com.au/office-painting/",
         "provider": {
           "@type": "LocalBusiness",
           "name": "Sydney Paintmasters",
@@ -231,7 +176,7 @@
             "@type": "ListItem",
             "position": 2,
             "name": "Office Painting",
-            "item": "https://sydneypaintmasters.com.au/office-painting"
+            "item": "https://sydneypaintmasters.com.au/office-painting/"
           }
         ]
       }
