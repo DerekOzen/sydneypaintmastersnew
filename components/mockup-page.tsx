@@ -211,6 +211,29 @@ const NIFTY_FORM_SCRIPT = `
       new FormData(form).forEach(function(v,k){ raw[k]=String(v); nm[norm(k)]=String(v); });
       var data = { name:pick(nm,MAP.name), email:pick(nm,MAP.email), phone:pick(nm,MAP.phone), suburb:pick(nm,MAP.suburb), service:pick(nm,MAP.service), message:pick(nm,MAP.message) };
       for (var k in raw){ if (!(k in data)) data[k]=raw[k]; }
+      // Fallback for mockup forms whose fields have NO "name" attribute — FormData
+      // skips those, which would make the lead arrive blank. Read every control
+      // directly and infer its target from type / placeholder / label / autocomplete.
+      function _label(el){ try{ if(el.id){ var l=document.querySelector('label[for="'+el.id+'"]'); if(l) return l.textContent||""; } var p=el.closest?el.closest("label"):null; if(p) return p.textContent||""; }catch(_e){} return ""; }
+      var _ctrls = form.querySelectorAll("input, textarea, select"), _spare = [];
+      for (var _i=0; _i<_ctrls.length; _i++){
+        var _el=_ctrls[_i], _tag=_el.tagName.toLowerCase();
+        var _ty=String(_el.getAttribute("type")||_el.type||"").toLowerCase();
+        if (_ty==="hidden"||_ty==="submit"||_ty==="button"||_ty==="checkbox"||_ty==="radio"||_ty==="file"||_ty==="search") continue;
+        var _val=String(_el.value||"").trim(); if(!_val) continue;
+        var _h=norm((_el.getAttribute("placeholder")||"")+" "+(_el.getAttribute("aria-label")||"")+" "+(_el.getAttribute("name")||"")+" "+(_el.id||"")+" "+(_el.getAttribute("autocomplete")||"")+" "+_label(_el));
+        var _key="";
+        if (_ty==="email"||_h.indexOf("email")>=0||_h.indexOf("mail")>=0) _key="email";
+        else if (_ty==="tel"||_h.indexOf("phone")>=0||_h.indexOf("mobile")>=0||_h.indexOf("tel")>=0) _key="phone";
+        else if (_tag==="textarea"||_h.indexOf("message")>=0||_h.indexOf("enquir")>=0||_h.indexOf("comment")>=0||_h.indexOf("detail")>=0) _key="message";
+        else if (_tag==="select"||_h.indexOf("service")>=0||_h.indexOf("subject")>=0||_h.indexOf("interested")>=0||_h.indexOf("reason")>=0) _key="service";
+        else if (_h.indexOf("suburb")>=0||_h.indexOf("postcode")>=0||_h.indexOf("city")>=0||_h.indexOf("town")>=0||_h.indexOf("location")>=0||_h.indexOf("area")>=0) _key="suburb";
+        else if (_h.indexOf("name")>=0) _key="name";
+        if (_key){ if(!data[_key]) data[_key]=_val; }
+        else { _spare.push(_val); }
+      }
+      // Any unlabelled text inputs left over: fill name then suburb by position.
+      for (var _s=0; _s<_spare.length; _s++){ if(!data.name){ data.name=_spare[_s]; } else if(!data.suburb){ data.suburb=_spare[_s]; } }
       var tok = tsToken(); if (tok) data["cf-turnstile-response"]=tok;
       fetch(EP, { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(data) })
         .then(function(r){ return r.json().catch(function(){ return { ok:true }; }); })
