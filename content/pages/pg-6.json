@@ -136,67 +136,12 @@
   "body": "",
   "_schemas": [
     {
-      "type": "HousePainter",
-      "data": {
-        "@type": [
-          "HousePainter",
-          "HomeAndConstructionBusiness"
-        ],
-        "name": "Sydney Paintmasters",
-        "description": "Professional painting services for residential, commercial, and industrial properties in Sydney. Quality, precision, reliability.",
-        "url": "https://sydneypaintmasters.com.au/exterior-painting",
-        "telephone": "+61423019087",
-        "email": "info@sydneypaintmasters.com.au",
-        "priceRange": "$$",
-        "image": "https://sydneypaintmasters.com.au/images/hero-sydney.jpg",
-        "logo": "https://sydneypaintmasters.com.au/logo.webp",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "10 Sanctuary Point Rd,",
-          "addressLocality": "West Pennant Hills",
-          "addressRegion": "NSW",
-          "postalCode": "2125",
-          "addressCountry": "AU"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": -33.7483,
-          "longitude": 151.0336
-        },
-        "openingHoursSpecification": [
-          {
-            "@type": "OpeningHoursSpecification",
-            "dayOfWeek": [
-              "Monday",
-              "Tuesday",
-              "Wednesday",
-              "Thursday",
-              "Friday",
-              "Saturday"
-            ],
-            "opens": "06:00",
-            "closes": "18:00"
-          }
-        ],
-        "sameAs": [
-          "https://www.facebook.com/sydneypaintmasters",
-          "https://www.instagram.com/sydneypaintmasters",
-          "https://www.google.com/maps/place/Sydney+Paintmasters/data=!4m2!3m1!1s0x0:0xa0c99ac68d8c3e86?sa=X&ved=1t:2428&ictx=111"
-        ],
-        "hasCredential": {
-          "@type": "EducationalOccupationalCredential",
-          "credentialCategory": "Painter Decorator Licence",
-          "identifier": "315254C"
-        }
-      }
-    },
-    {
       "type": "Service",
       "data": {
         "@type": "Service",
         "name": "Exterior Painting",
-        "description": "Need exterior painting in Sydney? Sydney Paintmasters' exterior wall painters provide affordable home exterior painting. Get $0 quote now!",
-        "url": "https://sydneypaintmasters.com.au/exterior-painting",
+        "description": "Sydney Paintmasters offers affordable exterior painting services in Sydney. Get exterior painters and contractors near you. ☎️ 0423019087 us today!",
+        "url": "https://sydneypaintmasters.com.au/exterior-painting/",
         "provider": {
           "@type": "LocalBusiness",
           "name": "Sydney Paintmasters",
@@ -231,7 +176,7 @@
             "@type": "ListItem",
             "position": 2,
             "name": "Exterior Painting",
-            "item": "https://sydneypaintmasters.com.au/exterior-painting"
+            "item": "https://sydneypaintmasters.com.au/exterior-painting/"
           }
         ]
       }
