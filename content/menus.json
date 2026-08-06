@@ -16,54 +16,54 @@
           {
             "id": "idqovx93",
             "label": "House Painting",
-            "href": "/house-painting"
+            "href": "/house-painting/"
           },
           {
             "id": "ifzyamz4",
             "label": "Interior Painting",
-            "href": "/interior-painting"
+            "href": "/interior-painting/"
           },
           {
             "id": "iz203k0t",
             "label": "Exterior Painting",
-            "href": "/exterior-painting"
+            "href": "/exterior-painting/"
           },
           {
             "id": "is08jx97",
             "label": "Office Painting",
-            "href": "/office-painting"
+            "href": "/office-painting/"
           },
           {
             "id": "i2ba4rjd",
             "label": "Strata Painting",
-            "href": "/strata-painting"
+            "href": "/strata-painting/"
           },
           {
             "id": "idx58gzf",
             "label": "Commercial Painting",
-            "href": "/commercial-painting"
+            "href": "/commercial-painting/"
           },
           {
             "id": "i6h6pjrr",
             "label": "Epoxy Flooring",
-            "href": "/epoxy-flooring"
+            "href": "/epoxy-flooring/"
           },
           {
             "id": "ikvkjfkn",
             "label": "Pool Painting",
-            "href": "/pool-painting"
+            "href": "/pool-painting/"
           },
           {
             "id": "ixiah3l3",
             "label": "Roof Painting",
-            "href": "/roof-painting"
+            "href": "/roof-painting/"
           }
         ]
       },
       {
         "id": "i7fwxz76",
         "label": "About Us",
-        "href": "/about-us"
+        "href": "/about-us/"
       },
       {
         "id": "iy0qa0wa",
@@ -73,19 +73,19 @@
       {
         "id": "iy029lg6",
         "label": "Service Locations",
-        "href": "/service-locations"
+        "href": "/service-locations/"
       },
       {
         "id": "iaykf5fm",
         "label": "Blog",
-        "href": "/blogs"
+        "href": "/blogs/"
       },
       {
         "id": "ib5y01pw",
         "label": "Contact",
-        "href": "/contact"
+        "href": "/contact/"
       }
     ],
-    "updatedAt": "2026-08-05T10:02:48.994Z"
+    "updatedAt": "2026-08-06T00:07:53.360Z"
   }
 ]
