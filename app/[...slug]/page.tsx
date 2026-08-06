@@ -50,7 +50,7 @@ const pagesData = _allPages();
 // Self-contained: no external dependencies, so a site build can't break on it.
 type Pg = {
   id: string; path: string; type: string; title: string;
-  seoTitle?: string; seoDescription?: string; body?: string;
+  seoTitle?: string; seoDescription?: string; noindex?: boolean; body?: string;
   layout?: string; css?: string; fonts?: string[]; isHome?: boolean;
   headerPartId?: string | null; footerPartId?: string | null;
   blocks?: Array<{ id?: string; type: string; props?: Record<string, any> }>;
@@ -131,6 +131,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: t,
     description: d,
+    // When the page is set to "no-index" in the dashboard, tell search engines not
+    // to index it (links are still followed). It's also dropped from the sitemap.
+    ...(page.noindex ? { robots: { index: false, follow: true } } : {}),
     ...(canonical ? { alternates: { canonical } } : {}),
     openGraph: { title: t, description: d, type: "website", ...(canonical ? { url: canonical } : {}) },
     twitter: { card: "summary_large_image", title: t, description: d },

@@ -36,7 +36,7 @@ function parseCustom(xml: string): MetadataRoute.Sitemap | null {
 // ── Source of truth #2: auto-generate from the dashboard-managed pages ───────
 // The sitemap only needs page metadata (path/status/isHome), which lives in the
 // content/pages.json index — no need to read the per-page body files.
-type Pg = { path: string; status?: string; isHome?: boolean };
+type Pg = { path: string; status?: string; isHome?: boolean; noindex?: boolean };
 const pagesData: any[] = (() => {
   try { const d = JSON.parse(readFileSafe("content/pages.json")); return Array.isArray(d) ? d : []; }
   catch { return []; }
@@ -49,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Otherwise generate from the pages that actually exist (never deleted ones).
   const base = (site.siteUrl || "https://nifty-site.pages.dev").replace(/\/$/, "");
-  const published = (pagesData as Pg[]).filter((p) => p.status === "published" && p.path);
+  const published = (pagesData as Pg[]).filter((p) => p.status === "published" && p.path && !p.noindex);
   const paths = new Set<string>(["/"]);
   for (const p of published) {
     if (p.isHome) continue;

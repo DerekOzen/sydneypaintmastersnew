@@ -34,7 +34,7 @@ const pagesData = _allPages();
 
 type Pg = {
   path: string; status?: string; layout?: string; title: string; isHome?: boolean;
-  seoTitle?: string; seoDescription?: string; css?: string; fonts?: string[];
+  seoTitle?: string; seoDescription?: string; noindex?: boolean; css?: string; fonts?: string[];
   headerPartId?: string | null; footerPartId?: string | null;
   blocks?: Array<{ id?: string; type: string; props?: Record<string, any> }>;
   _schemas?: Array<{ type?: string; data?: Record<string, unknown> }>;
@@ -67,6 +67,7 @@ const HOME_D = HOME_PAGE ? (HOME_PAGE.seoDescription || "") : "";
 export const metadata = {
   title: HOME_T,
   description: HOME_D,
+  ...(HOME_PAGE && HOME_PAGE.noindex ? { robots: { index: false, follow: true } } : {}),
   ...(HOME_CANONICAL ? { alternates: { canonical: HOME_CANONICAL } } : {}),
   openGraph: { title: HOME_T, description: HOME_D, type: "website", ...(HOME_CANONICAL ? { url: HOME_CANONICAL } : {}) },
   twitter: { card: "summary_large_image", title: HOME_T, description: HOME_D },
