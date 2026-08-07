@@ -10,7 +10,7 @@
       "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css",
       "https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
     ],
-    "updatedAt": "2026-08-02T02:34:16.943Z",
+    "updatedAt": "2026-08-07T21:45:06.661Z",
     "settings": {
       "sticky": false,
       "autoHide": false,
@@ -36,7 +36,8 @@
       ],
       "accent": "#0f766e",
       "maxWidth": 1200
-    }
+    },
+    "deleted": true
   },
   {
     "id": "footer-1",
