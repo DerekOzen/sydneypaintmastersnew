@@ -235,6 +235,10 @@ const NIFTY_FORM_SCRIPT = `
       // Any unlabelled text inputs left over: fill name then suburb by position.
       for (var _s=0; _s<_spare.length; _s++){ if(!data.name){ data.name=_spare[_s]; } else if(!data.suburb){ data.suburb=_spare[_s]; } }
       var tok = tsToken(); if (tok) data["cf-turnstile-response"]=tok;
+      // Record which page the form was submitted from → shows in the dashboard's
+      // Leads → Page column. The cross-origin POST reduces the Referer to just the
+      // domain, so we send the full page URL explicitly here.
+      try { data.page = String(window.location.href || "").split("#")[0]; } catch(_e){}
       fetch(EP, { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(data) })
         .then(function(r){ return r.json().catch(function(){ return { ok:true }; }); })
         .then(function(res){
