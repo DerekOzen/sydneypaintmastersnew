@@ -22,6 +22,9 @@ export type HeaderRow = {
   id: string;
   left: HeaderElement[]; center: HeaderElement[]; right: HeaderElement[];
   bg?: string; color?: string; height?: number; hideMobile?: boolean;
+  bgType?: "color" | "gradient" | "image";
+  bgOpacity?: number;
+  gradFrom?: string; gradTo?: string; gradDir?: string;
   bgImage?: string;
   bgSize?: "cover" | "contain" | "auto";
   bgPos?: string;
@@ -40,17 +43,30 @@ export function overlayRgba(hex?: string, op?: number): string {
   const a = Math.max(0, Math.min(1, op));
   return `rgba(${r},${g},${b},${a})`;
 }
+export function withAlpha(color: string, op?: number): string {
+  if (op == null || op >= 1) return color;
+  const m = /^#?([0-9a-fA-F]{6})$/.exec(String(color || "").trim());
+  if (!m) return color;
+  const int = parseInt(m[1], 16);
+  return `rgba(${(int >> 16) & 255},${(int >> 8) & 255},${int & 255},${Math.max(0, Math.min(1, op))})`;
+}
 export function rowBgCss(row: HeaderRow): string {
-  const bg = row.bg || "#ffffff";
-  let out = `background-color:${bg}`;
-  if (row.bgImage) {
+  const type = row.bgType || (row.bgImage ? "image" : (row.gradFrom || row.gradTo) ? "gradient" : "color");
+  if (type === "gradient") {
+    const from = withAlpha(row.gradFrom || "#0f766e", row.bgOpacity);
+    const to = withAlpha(row.gradTo || "#0b3b36", row.bgOpacity);
+    return `background-image:linear-gradient(${row.gradDir || "to bottom"},${from},${to})`;
+  }
+  if (type === "image" && row.bgImage) {
     const img = `url('${String(row.bgImage).replace(/['"\\]/g, "")}')`;
     const ov = overlayRgba(row.overlayColor, row.overlayOpacity);
+    let out = `background-color:${row.bg || "#ffffff"}`;
     out += `;background-image:${ov ? `linear-gradient(${ov},${ov}),${img}` : img}`;
     out += `;background-size:${row.bgSize || "cover"};background-position:${row.bgPos || "center"};background-repeat:${row.bgRepeat || "no-repeat"}`;
     if (row.parallax) out += `;background-attachment:fixed`;
+    return out;
   }
-  return out;
+  return `background-color:${withAlpha(row.bg || "#ffffff", row.bgOpacity)}`;
 }
 export type DeviceKey = "laptop" | "tablet" | "mobile";
 export type DeviceOverrides = { laptop?: HeaderLayout | null; tablet?: HeaderLayout | null; mobile?: HeaderLayout | null };
