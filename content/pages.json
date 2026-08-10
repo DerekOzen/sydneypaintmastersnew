@@ -149,12 +149,13 @@
     "layout": "mockup",
     "headerPartId": "header-2",
     "footerPartId": "footer-1",
-    "status": "published",
-    "updatedAt": "2026-08-06T10:59:53.391Z",
-    "updatedBy": "joshua",
+    "status": "deleted",
+    "updatedAt": "2026-08-10T05:57:23.401Z",
+    "updatedBy": "vipin",
     "createdAt": "2026-07-28T11:25:45.979Z",
     "createdBy": "derek",
-    "category": "Services"
+    "category": "Services",
+    "isHome": false
   },
   {
     "id": "pg-14",
