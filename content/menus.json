@@ -57,6 +57,26 @@
             "id": "ixiah3l3",
             "label": "Roof Painting",
             "href": "/roof-painting/"
+          },
+          {
+            "id": "ijrno78h",
+            "label": "Decorative Finish",
+            "href": "/decorative-finishes/"
+          },
+          {
+            "id": "i1gmt2mw",
+            "label": "Retail Fit-out Painting",
+            "href": "/retail-fit-out-painting/"
+          },
+          {
+            "id": "irhtzcej",
+            "label": "Venetian Plaster",
+            "href": "/venetian-plaster/"
+          },
+          {
+            "id": "ij8sg4t4",
+            "label": "Warehouse Painting",
+            "href": "/warehouse-painting/"
           }
         ]
       },
@@ -86,6 +106,6 @@
         "href": "/contact/"
       }
     ],
-    "updatedAt": "2026-08-06T00:07:53.360Z"
+    "updatedAt": "2026-08-10T11:05:34.499Z"
   }
 ]
