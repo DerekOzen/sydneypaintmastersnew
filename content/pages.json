@@ -897,5 +897,21 @@
     "updatedBy": "vipin",
     "createdAt": "2026-08-10T05:54:27.399Z",
     "createdBy": "vipin"
+  },
+  {
+    "id": "pg-59",
+    "path": "/retail-fit-out-painting",
+    "type": "service",
+    "title": "Retail Fit Out Painting",
+    "seoTitle": "Retail Fit-Out Painting Sydney | Shopfront & After Hours Painters",
+    "seoDescription": "Retail and fit-out painting in Sydney by Sydney Paintmasters. Shopfronts, new fit-outs and refurbishments painted after hours and to programme, with minimal disruption. Licensed, insured, free quotes.",
+    "layout": "mockup",
+    "headerPartId": "header-2",
+    "footerPartId": "footer-1",
+    "status": "draft",
+    "updatedAt": "2026-08-10T05:56:22.966Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-08-10T05:56:22.966Z",
+    "createdBy": "vipin"
   }
 ]
