@@ -931,5 +931,21 @@
     "updatedBy": "vipin",
     "createdAt": "2026-08-10T05:57:55.556Z",
     "createdBy": "vipin"
+  },
+  {
+    "id": "pg-61",
+    "path": "/strata-painting",
+    "type": "service",
+    "title": "Strata Painting",
+    "seoTitle": "Strata Painting Sydney | Strata & Body Corporate Painters | Sydney Paintmasters",
+    "seoDescription": "Strata painting in Sydney by Sydney Paintmasters. Common property, facades, corridors, car parks and balconies painted for strata schemes and body corporates. Licensed, insured, free quotes.",
+    "layout": "mockup",
+    "headerPartId": "header-2",
+    "footerPartId": "footer-1",
+    "status": "draft",
+    "updatedAt": "2026-08-10T06:02:12.302Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-08-10T06:02:12.302Z",
+    "createdBy": "vipin"
   }
 ]
