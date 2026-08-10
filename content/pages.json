@@ -881,5 +881,21 @@
     "updatedBy": "vipin",
     "createdAt": "2026-08-10T05:53:08.782Z",
     "createdBy": "vipin"
+  },
+  {
+    "id": "pg-58",
+    "path": "/pool-painting",
+    "type": "service",
+    "title": "Pool Painting",
+    "seoTitle": "Pool Painting Sydney | Swimming Pool Painters | Sydney Paintmasters",
+    "seoDescription": "Pool painting in Sydney by Sydney Paintmasters. Concrete and fibreglass swimming pools repainted with specialist pool coatings, properly prepared and cured. Licensed, insured, free quotes.",
+    "layout": "mockup",
+    "headerPartId": "header-2",
+    "footerPartId": "footer-1",
+    "status": "draft",
+    "updatedAt": "2026-08-10T05:54:27.399Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-08-10T05:54:27.399Z",
+    "createdBy": "vipin"
   }
 ]
