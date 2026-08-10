@@ -914,5 +914,21 @@
     "updatedBy": "vipin",
     "createdAt": "2026-08-10T05:56:22.966Z",
     "createdBy": "vipin"
+  },
+  {
+    "id": "pg-60",
+    "path": "/roof-painting",
+    "type": "service",
+    "title": "Roof Painting",
+    "seoTitle": "Roof Painting Sydney | Roof Painters & Restoration | Sydney Paintmasters",
+    "seoDescription": "Roof painting in Sydney by Sydney Paintmasters. Colorbond, metal, tile and cement roofs cleaned, repaired and coated with roof grade products. Licensed, insured, free quotes.",
+    "layout": "mockup",
+    "headerPartId": "header-2",
+    "footerPartId": "footer-1",
+    "status": "draft",
+    "updatedAt": "2026-08-10T05:57:55.556Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-08-10T05:57:55.556Z",
+    "createdBy": "vipin"
   }
 ]
