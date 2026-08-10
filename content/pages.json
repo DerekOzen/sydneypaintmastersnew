@@ -813,5 +813,21 @@
     "updatedBy": "vipin",
     "createdAt": "2026-08-10T05:43:01.435Z",
     "createdBy": "vipin"
+  },
+  {
+    "id": "pg-54",
+    "path": "/decorative-finish",
+    "type": "service",
+    "title": "Decorative Finish",
+    "seoTitle": "Decorative Finishes Sydney | Limewash, Textured & Metallic | Sydney Paintmasters",
+    "seoDescription": "Decorative and specialty paint finishes in Sydney by Sydney Paintmasters. Limewash, metallic, faux concrete and textured feature walls, plus venetian plaster. Licensed, insured, free quotes.",
+    "layout": "mockup",
+    "headerPartId": "header-2",
+    "footerPartId": "footer-1",
+    "status": "draft",
+    "updatedAt": "2026-08-10T05:47:10.289Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-08-10T05:47:10.289Z",
+    "createdBy": "vipin"
   }
 ]
