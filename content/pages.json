@@ -847,5 +847,21 @@
     "updatedBy": "vipin",
     "createdAt": "2026-08-10T05:49:15.139Z",
     "createdBy": "vipin"
+  },
+  {
+    "id": "pg-56",
+    "path": "/exterior-painting",
+    "type": "service",
+    "title": "Exterior Painting",
+    "seoTitle": "Exterior Painting Sydney | Exterior House Painters | Sydney Paintmasters",
+    "seoDescription": "Exterior painting in Sydney by Sydney Paintmasters. Render, brick, weatherboard, eaves and fences prepared and coated with weather-durable products. Licensed, insured, free quotes.",
+    "layout": "mockup",
+    "headerPartId": "header-2",
+    "footerPartId": "footer-1",
+    "status": "draft",
+    "updatedAt": "2026-08-10T05:51:19.120Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-08-10T05:51:19.120Z",
+    "createdBy": "vipin"
   }
 ]
