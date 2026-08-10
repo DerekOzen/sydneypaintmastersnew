@@ -963,5 +963,21 @@
     "updatedBy": "vipin",
     "createdAt": "2026-08-10T06:03:29.460Z",
     "createdBy": "vipin"
+  },
+  {
+    "id": "pg-63",
+    "path": "/warehouse-painting",
+    "type": "service",
+    "title": "Warehouse Painting",
+    "seoTitle": "Warehouse & Industrial Painting Sydney | Factory & Protective Coatings",
+    "seoDescription": "Warehouse and industrial painting in Sydney by Sydney Paintmasters. Protective and anti corrosion coatings, intumescent, structural steel, high access and line marking for factories and facilities. Licensed, insured, free quotes.",
+    "layout": "mockup",
+    "headerPartId": "header-2",
+    "footerPartId": "footer-1",
+    "status": "draft",
+    "updatedAt": "2026-08-10T06:05:15.404Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-08-10T06:05:15.404Z",
+    "createdBy": "vipin"
   }
 ]
