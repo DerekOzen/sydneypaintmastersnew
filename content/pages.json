@@ -830,5 +830,21 @@
     "updatedBy": "vipin",
     "createdAt": "2026-08-10T05:47:10.289Z",
     "createdBy": "vipin"
+  },
+  {
+    "id": "pg-55",
+    "path": "/epoxy-flooring",
+    "type": "service",
+    "title": "Epoxy Flooring",
+    "seoTitle": "Epoxy Flooring Sydney | Garage & Commercial Floor Coatings | Sydney Paintmasters",
+    "seoDescription": "Epoxy flooring in Sydney by Sydney Paintmasters. Garage, flake, showroom, commercial and industrial epoxy floor coatings, mechanically prepared and sealed to last. Licensed, insured, free quotes.",
+    "layout": "mockup",
+    "headerPartId": "header-2",
+    "footerPartId": "footer-1",
+    "status": "draft",
+    "updatedAt": "2026-08-10T05:49:15.139Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-08-10T05:49:15.139Z",
+    "createdBy": "vipin"
   }
 ]
