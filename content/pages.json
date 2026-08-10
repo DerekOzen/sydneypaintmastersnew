@@ -864,5 +864,21 @@
     "updatedBy": "vipin",
     "createdAt": "2026-08-10T05:51:19.120Z",
     "createdBy": "vipin"
+  },
+  {
+    "id": "pg-57",
+    "path": "/interior-painting",
+    "type": "service",
+    "title": "Interior Painting",
+    "seoTitle": "Interior Painting Sydney | Interior Painters | Sydney Paintmasters",
+    "seoDescription": "Interior painting in Sydney by Sydney Paintmasters. Walls, ceilings, doors and trims repainted with careful prep and a clean, low-mess finish. Licensed, insured, free quotes.",
+    "layout": "mockup",
+    "headerPartId": "header-2",
+    "footerPartId": "footer-1",
+    "status": "draft",
+    "updatedAt": "2026-08-10T05:53:08.782Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-08-10T05:53:08.782Z",
+    "createdBy": "vipin"
   }
 ]
