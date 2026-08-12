@@ -1036,12 +1036,12 @@
     "seoTitle": "When Does Your Home Need a Fresh Coat of Paint?",
     "seoDescription": "Learn the warning signs your Sydney home needs repainting, from peeling paint and fading colours to moisture damage and surface wear.",
     "layout": "mockup",
-    "headerPartId": "header-5",
-    "footerPartId": null,
-    "status": "draft",
+    "headerPartId": "header-2",
+    "footerPartId": "footer-5",
+    "status": "published",
     "createdAt": "2026-08-12T07:45:45.631Z",
     "createdBy": "vipin",
-    "updatedAt": "2026-08-12T07:45:45.631Z",
+    "updatedAt": "2026-08-12T07:48:09.003Z",
     "updatedBy": "vipin"
   }
 ]
