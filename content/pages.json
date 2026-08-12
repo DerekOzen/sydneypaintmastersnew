@@ -1038,10 +1038,11 @@
     "layout": "mockup",
     "headerPartId": "header-2",
     "footerPartId": "footer-5",
-    "status": "published",
+    "status": "deleted",
     "createdAt": "2026-08-12T07:45:45.631Z",
     "createdBy": "vipin",
-    "updatedAt": "2026-08-12T08:08:17.468Z",
-    "updatedBy": "vipin"
+    "updatedAt": "2026-08-12T09:52:45.784Z",
+    "updatedBy": "vipin",
+    "isHome": false
   }
 ]
