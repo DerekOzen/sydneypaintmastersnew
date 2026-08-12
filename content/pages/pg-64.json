@@ -15,12 +15,12 @@
   "body": "",
   "_schemas": [
     {
-      "type": "BlogPosting",
+      "type": "Article",
       "data": {
-        "@type": "BlogPosting",
+        "@type": "Article",
         "headline": "What Makes a Professional Painting Team Stand Out in Sydney?",
         "description": "Discover what makes professional painting teams stand out in Sydney, from preparation and materials to communication, guarantees and quality finishes.",
-        "image": "https://sydneypaintmasters.com.au/wp-content/uploads/professional-painting-team-sydney.jpg",
+        "image": "https://sydneypaintmasters.com.au/wp-content/uploads/what-makes-a-professional-painting-team-stand-out.jpg",
         "author": {
           "@type": "Organization",
           "name": "Sydney Paintmasters",
@@ -39,7 +39,8 @@
         "mainEntityOfPage": {
           "@type": "WebPage",
           "@id": "https://sydneypaintmasters.com.au/blog/what-makes-a-professional-painting-team-stand-out-in-sydney/"
-        }
+        },
+        "@context": "https://schema.org"
       }
     },
     {
