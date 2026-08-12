@@ -1044,5 +1044,21 @@
     "updatedAt": "2026-08-12T09:52:45.784Z",
     "updatedBy": "vipin",
     "isHome": false
+  },
+  {
+    "id": "pg-68",
+    "path": "/blog/when-does-your-home-need-a-fresh-coat-of-paint",
+    "type": "post",
+    "title": "When Does Your Home Need a Fresh Coat of Paint?",
+    "seoTitle": "When Does Your Home Need a Fresh Coat of Paint?",
+    "seoDescription": "Learn the warning signs your Sydney home needs repainting, from peeling paint and fading colours to moisture damage and surface wear.",
+    "layout": "mockup",
+    "headerPartId": "header-1",
+    "footerPartId": null,
+    "status": "draft",
+    "updatedAt": "2026-08-12T09:54:13.947Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-08-12T09:54:13.947Z",
+    "createdBy": "vipin"
   }
 ]
