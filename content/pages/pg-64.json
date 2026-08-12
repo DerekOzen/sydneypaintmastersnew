@@ -1,0 +1,72 @@
+{
+  "blocks": [
+    {
+      "id": "b-1",
+      "type": "section",
+      "props": {
+        "label": "Spm Post",
+        "role": "section",
+        "html": "<article class=\"spm-post\">\n\n  <h1>What Makes a Professional Painting Team Stand Out in Sydney?</h1>\n\n  <!-- HERO IMAGE — REPLACE the src with your uploaded image URL in the builder.\n       Alt text and caption supplied from your brief. -->\n  <figure class=\"spm-hero\">\n    <img src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1200'%20height='630'%3E%3Crect%20width='1200'%20height='630'%20fill='rgb(221,231,239)'/%3E%3Ctext%20x='600'%20y='315'%20font-family='Arial,sans-serif'%20font-size='34'%20fill='rgb(90,114,136)'%20text-anchor='middle'%3EFeatured%20image%20%E2%80%94%20replace%20src%20in%20builder%3C/text%3E%3C/svg%3E\" alt=\"Professional painting preparation setup with tools and protective coverings inside a modern Sydney home\" width=\"1200\" height=\"630\" loading=\"lazy\">\n    <figcaption>A professional painting finish starts with careful planning, surface preparation and attention to detail before the first coat is applied.</figcaption>\n  </figure>\n\n  <h2>Beyond Brush Skills: Planning and Prep</h2>\n  <p>A crew earns the “professional” tag long before the first coat of colour touches the wall. Detailed site inspections, moisture readings, and substrate tests shape an accurate scope of work. Look for teams that produce a written schedule and a surface-preparation checklist rather than a quick verbal quote. That document should spell out repairs, gap filling, sanding grits, primer type and the order in which rooms will be tackled. When a painter walks you through that plan, you know they are thinking about the end result, not simply racing to roll on paint.</p>\n  <p>Homeowners who book early also gain flexibility in start dates, so it pays to shortlist reputable Sydney painters as soon as you have renovation timelines.</p>\n\n  <h2>Materials That Match Sydney Conditions</h2>\n  <p>Humidity, salt air and the city’s intense UV can shorten the life of a cheaper coating by years. High-grade, low-VOC acrylics are now formulated specifically for the coastal temperate zone. Reputable crews remain brand-agnostic; they propose products according to exposure, heritage requirements and budget rather than steering every client toward the same tin. Expect a written product schedule that lists not only the finish coat but also primers and putties. The aim is to treat each room or façade as its own micro-environment.</p>\n  <p>Internal wet areas need mould-inhibiting additives, while west-facing façades benefit from UV blockers and flexible membranes that tolerate thermal movement. The best operators will happily provide product data sheets, highlighting features such as washability ratings, scrub resistance and colour-retention data.</p>\n  <p>When comparing quotes, avoid fixating on per-square-metre rates; instead ask, “Why did you choose that system?” A crew that can justify its specification shows real technical know-how. For a deeper look at matching sheen levels to function, one of our popular reads is <a href=\"https://sydneypaintmasters.com.au/blog/choosing-the-right-paint-finish/\">this guide on choosing the right paint finish</a>.<!-- REPLACE href with the correct internal post URL --></p>\n\n  <h2>Communication and Site Etiquette</h2>\n  <p>A smooth repaint hinges on clear, courteous communication. Professional crews assign a single point of contact who responds promptly, confirms daily arrival times and flags any unforeseen delays. They also maintain tidy work zones: drop sheets taped down, masking removed the same day, tools stored safely out of the way of children and pets. Simple practices—labelled touch-up containers left on site, vacuuming sanding dust before leaving—signal a respect for your property.</p>\n  <p>Noise management matters too. Electric sanders fitted with extraction units cut airborne dust and keep neighbours on side. Responsible supervisors also factor in strata bylaws and public-way safety if scaffolding reaches the footpath. These touches rarely appear on the quote sheet, yet they define a stress-free client experience.</p>\n\n  <h2>Guarantees, Licences and Insurance</h2>\n  <p>In NSW, any residential painting project valued over $5,000 must be completed by a licence-holding painter. Ask for the licence number and cross-check it on the <a href=\"https://www.service.nsw.gov.au/transaction/check-a-builder-or-tradesperson-licence\" target=\"_blank\" rel=\"noopener\">Service NSW register</a>. Public liability and workers’ compensation policies protect you if the unexpected happens during the job. Professional outfits gladly supply current certificates rather than mumbling that “the office has them somewhere”.</p>\n  <p>Solid workmanship guarantees run to at least five years on exterior coatings, provided maintenance advice is followed. Those warranties will reference manufacturer guidelines, not vague promises. Independent reviews back up the paperwork: consistent five-star feedback mentioning punctuality, cleanliness and communication usually reflects authentic service, not marketing gloss. Fair Trading NSW outlines these consumer rights in its <a href=\"https://www.nsw.gov.au/departments-and-agencies/fair-trading\" target=\"_blank\" rel=\"noopener\">NSW Fair Trading guidelines</a>, a handy reference when vetting any contractor.</p>\n\n  <h2>Final Walk-Through and Ongoing Care</h2>\n  <p>A standout team never packs up until a joint inspection is complete. Together you’ll check light-critical angles, confirm crisp cut-ins and note any pinholes or roller misses. Minor touch-ups happen on the spot, and the site supervisor signs off only when you’re satisfied. Expect a maintenance sheet that explains cleaning methods, recommended repaint cycles and how to order additional paint in the exact batch colour should future touch-ups be needed.</p>\n  <p>Post-job courtesy follow-ups—an email a week later to ensure everything cured correctly, or a reminder card at the two-year mark—show a business geared toward long-term relationships, not one-off transactions. That level of after-care is often the difference between a merely competent painter and a truly professional team.</p>\n\n  <p>Professional Sydney painting crews stand out through rigorous planning, climate-matched materials, respectful site practice and transparent guarantees. Measure your shortlist against these markers and you’ll choose a partner who delivers not just fresh walls but genuine peace of mind.</p>\n\n</article>"
+      }
+    }
+  ],
+  "css": "body{margin:0;background:#eef1f4;padding:24px 12px}\n\n\n/* Scoped to .spm-post so it will not clash with your builder theme.\n   If your HTML block strips <style>, paste this into the page's Custom CSS. */\n.spm-post{--ink:#16283d;--body:#33475b;--accent:#1d6fa5;--accent-dk:#155a86;\n  --tint:#eef5fa;--muted:#6b7c8d;\n  max-width:820px;margin:0 auto;padding:8px 20px 40px;\n  font-family:-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Helvetica,Arial,sans-serif;\n  color:var(--body);line-height:1.72;font-size:17px;-webkit-font-smoothing:antialiased}\n.spm-post *{box-sizing:border-box}\n.spm-post h1{color:var(--ink);font-size:2.05rem;line-height:1.22;margin:.4em 0 .6em;letter-spacing:-.01em}\n.spm-post h2{color:var(--ink);font-size:1.42rem;line-height:1.3;margin:2.1em 0 .6em;\n  padding-bottom:.32em;border-bottom:2px solid var(--tint)}\n.spm-post p{margin:0 0 1.15em}\n.spm-post a{color:var(--accent);text-decoration:underline;text-underline-offset:2px;font-weight:600}\n.spm-post a:hover{color:var(--accent-dk)}\n.spm-hero{margin:0 0 1.6em}\n.spm-hero img{width:100%;height:auto;display:block;border-radius:12px}\n.spm-hero figcaption{font-size:.85rem;color:var(--muted);font-style:italic;margin-top:.6em;text-align:center}\n@media(max-width:640px){\n  .spm-post{font-size:16px;padding:8px 16px 32px}\n  .spm-post h1{font-size:1.65rem}\n  .spm-post h2{font-size:1.25rem}\n}\n",
+  "fonts": [],
+  "body": "",
+  "_schemas": [
+    {
+      "type": "BlogPosting",
+      "data": {
+        "@type": "BlogPosting",
+        "headline": "What Makes a Professional Painting Team Stand Out in Sydney?",
+        "description": "Discover what makes professional painting teams stand out in Sydney, from preparation and materials to communication, guarantees and quality finishes.",
+        "image": "https://sydneypaintmasters.com.au/wp-content/uploads/professional-painting-team-sydney.jpg",
+        "author": {
+          "@type": "Organization",
+          "name": "Sydney Paintmasters",
+          "url": "https://sydneypaintmasters.com.au/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Sydney Paintmasters",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://sydneypaintmasters.com.au/wp-content/uploads/logo.png"
+          }
+        },
+        "datePublished": "2026-08-12",
+        "dateModified": "2026-08-12",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://sydneypaintmasters.com.au/blog/what-makes-a-professional-painting-team-stand-out-in-sydney/"
+        }
+      }
+    },
+    {
+      "type": "BreadcrumbList",
+      "data": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://sydneypaintmasters.com.au/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://sydneypaintmasters.com.au/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "What Makes a Professional Painting Team Stand Out in Sydney?",
+            "item": "https://sydneypaintmasters.com.au/blog/what-makes-a-professional-painting-team-stand-out-in-sydney/"
+          }
+        ]
+      }
+    }
+  ]
+}
