@@ -24,7 +24,7 @@
       "props": {
         "label": "Mobile Cta Bar",
         "role": "section",
-        "html": "<div aria-label=\"Quick contact\" class=\"mobile-cta-bar\"><a class=\"mcta mcta-call\" href=\"tel:0423 019 087\"><i aria-hidden=\"true\" class=\"fas fa-phone\"></i> Call Now</a><a class=\"mcta mcta-quote\" href=\"#book\"><i aria-hidden=\"true\" class=\"fas fa-comment-dots\"></i> Get a Free Quote</a></div>"
+        "html": "<div aria-label=\"Quick contact\" class=\"mobile-cta-bar\"><a class=\"mcta mcta-call\" href=\"tel:0423 019 087\"><i aria-hidden=\"true\" class=\"fas fa-phone\"></i> Call Now</a><a class=\"mcta mcta-quote\" href=\"/contact/\"><i aria-hidden=\"true\" class=\"fas fa-comment-dots\"></i> Get a Free Quote</a></div>"
       }
     },
     {
