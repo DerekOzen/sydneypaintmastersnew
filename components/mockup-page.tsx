@@ -78,6 +78,30 @@ function sectionBgCss(bg: any): string {
   }
   return d.join(";");
 }
+// A YouTube URL → its embed id. Mirrors the dashboard's youTubeId().
+function _youTubeId(u: string): string {
+  const m = /(?:youtu\.be\/|youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|v\/|live\/))([A-Za-z0-9_-]{6,})/.exec(String(u || "").trim());
+  return m ? m[1] : "";
+}
+// The looping, muted video layer that sits behind a section (a YouTube embed or an
+// HTML5 <video> file) plus the optional colour overlay. Mirrors the dashboard's
+// sectionVideoLayer so the live site matches the editor preview exactly.
+function sectionVideoLayer(bg: any): string {
+  const url = String((bg && bg.videoUrl) || "").trim();
+  if (!url) return "";
+  const yt = _youTubeId(url);
+  let media = "";
+  if (yt) {
+    const q = ["autoplay=1", "mute=1", "loop=1", "playlist=" + yt, "controls=0", "showinfo=0", "modestbranding=1", "rel=0", "playsinline=1", "disablekb=1", "fs=0", "iv_load_policy=3"].join("&amp;");
+    media = '<iframe src="https://www.youtube.com/embed/' + yt + "?" + q + '" allow="autoplay; encrypted-media" frameborder="0" style="position:absolute;top:50%;left:50%;width:100vw;height:56.25vw;min-width:177.78vh;min-height:100%;transform:translate(-50%,-50%);border:0;pointer-events:none"></iframe>';
+  } else {
+    const src = String(url).replace(/["\\]/g, "");
+    media = '<video autoplay muted loop playsinline preload="auto" src="' + src + '" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0"></video>';
+  }
+  const ov = _secOverlayLayer(bg);
+  const overlay = ov ? '<div style="position:absolute;inset:0;z-index:1;background:' + ov + ';pointer-events:none"></div>' : "";
+  return '<div class="nifty-secvid" style="position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none">' + media + overlay + "</div>";
+}
 
 // --- Link normaliser -------------------------------------------------------
 // Some mockups were authored with local/relative links (href="landscape-design.html"),
@@ -514,6 +538,16 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
     const html = (b.props?.html as string) || "";
     if (!html) return "";
     const bg = (b.props as any)?.bg;
+    // Video background: a real <video>/YouTube layer behind the content (CSS can't do
+    // video). Wrapper becomes the positioning context; content is lifted above the video.
+    if (bg && bg.type === "video" && String(bg.videoUrl || "").trim()) {
+      const layer = sectionVideoLayer(bg);
+      const fill = bg.color ? `background-color:${bg.color};` : "";
+      secBgRules.push(`.nifty-secvidw-${b.id}{position:relative;overflow:hidden}.nifty-secvidw-${b.id}>*:not(.nifty-secvid){position:relative;z-index:2}`);
+      let cls = `nifty-secvidw-${b.id}`;
+      if (bg.mode === "replace") { secBgRules.push(`.nifty-secbg-${b.id} *{background-image:none !important}.nifty-secbg-${b.id} > *{background-color:transparent !important}`); cls += ` nifty-secbg-${b.id}`; }
+      return `<div class="${cls}"${fill ? ` style="${fill}"` : ""}>${layer}${html}</div>`;
+    }
     const s = sectionBgCss(bg);
     if (!s) return html;
     const replace = bg && bg.mode === "replace";

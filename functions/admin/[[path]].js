@@ -33,7 +33,12 @@ export async function onRequest(context) {
     redirect: "manual",
   };
   if (request.method !== "GET" && request.method !== "HEAD") {
-    init.body = request.body;
+    // Buffer the body before forwarding instead of streaming request.body straight
+    // into the subrequest. On Cloudflare, forwarding a streamed request body to a
+    // fetch() is unreliable for anything past a few KB — larger POSTs (like a
+    // base64 image upload) get dropped mid-flight. Reading it into an ArrayBuffer
+    // sends the whole payload as one complete request so uploads go through.
+    init.body = await request.arrayBuffer();
   }
 
   return fetch(target, init);
