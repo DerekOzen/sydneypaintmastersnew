@@ -8,6 +8,34 @@ import fs from "fs";
 import path from "path";
 import { JsonLd } from "@/components/schema";
 import { renderHeaderLayout, headerLayoutCss, hasDeviceOverrides, deviceLayout, deviceVisibilityCss, type HeaderLayout } from "@/components/header-layout";
+import { renderReusable, type Reusable } from "@/components/reusables";
+import { renderSidebar, type Sidebar } from "@/components/sidebars";
+
+// Reusable sections (content/reusables.json), read at build. A page block
+// { type: "reusable", props: { refId } } is resolved to one of these by id and
+// rendered through the shared renderer — so editing a section in the dashboard
+// updates every page that references it on the next rebuild.
+const SITE_REUSABLES: Reusable[] = (() => {
+  try { const d = JSON.parse(fs.readFileSync(path.join(process.cwd(), "content/reusables.json"), "utf8")); return Array.isArray(d) ? d : []; }
+  catch { return []; }
+})();
+
+// Sidebar Menus (content/sidebars.json), read at build. A page with a sidebar slot
+// (an element carrying data-nifty-sidebar) is filled with the sidebar template bound
+// to it — an explicit page.sidebarId, else the default template for the page's type —
+// so editing the template once updates every page of that type on the next rebuild.
+const SITE_SIDEBARS: Sidebar[] = (() => {
+  try { const d = JSON.parse(fs.readFileSync(path.join(process.cwd(), "content/sidebars.json"), "utf8")); return Array.isArray(d) ? d : []; }
+  catch { return []; }
+})();
+const SIDEBAR_NONE = "__none__";
+function resolveSidebar(page: any): Sidebar | null {
+  const explicit = (page && page.sidebarId) || "";
+  if (explicit === SIDEBAR_NONE) return null;
+  if (explicit) { const s = SITE_SIDEBARS.find((x) => x.id === explicit); if (s) return s; }
+  const t = (page && page.type) || "";
+  return t ? (SITE_SIDEBARS.find((x) => (x.forType || "") === t) || null) : null;
+}
 
 // Reusable menus (content/menus.json), read at build. A header/footer's Menu element
 // references one of these by id; renderHeaderLayout resolves it to the real links.
@@ -152,6 +180,8 @@ type MockupPg = {
   blocks?: Block[];
   headerPartId?: string | null;
   footerPartId?: string | null;
+  type?: string;               // page type (service/industry/location/…) — for sidebar binding
+  sidebarId?: string | null;   // explicit sidebar template, or "__none__" to force none
   _schemas?: Array<{ type?: string; data?: Record<string, unknown> }>;
 };
 
@@ -534,7 +564,18 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
   // each inside its own scoped wrapper below). A section may carry a background
   // (props.bg) set in the Live Editor — wrap it in a styled div when it does.
   const secBgRules: string[] = [];
+  const reuseCss: string[] = [];
   const bodyHtml = normalizeSiteLinks(bodyBlocks.map((b) => {
+    // Reusable section: resolve the reference to its current content at build time.
+    // Its own CSS is collected and injected below; a missing reference renders nothing.
+    if (b.type === "reusable") {
+      const rid = (b.props?.refId as string) || "";
+      const r = SITE_REUSABLES.find((x) => x.id === rid);
+      if (!r) return "";
+      const out = renderReusable(r);
+      if (out.css) reuseCss.push(out.css);
+      return out.html;
+    }
     const html = (b.props?.html as string) || "";
     if (!html) return "";
     const bg = (b.props as any)?.bg;
@@ -555,6 +596,24 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
     return `<div${replace ? ` class="nifty-secbg-${b.id}"` : ""} style="${s}">${html}</div>`;
   }).filter(Boolean).join("\n"));
   const secBgCss = secBgRules.join("\n");
+  const reuseCssText = reuseCss.join("\n");
+
+  // Sidebar Menus: fill a sidebar slot (an element with data-nifty-sidebar) with the
+  // template bound to this page. Only touches the slot's contents, so full-bleed page
+  // layouts are never disturbed. No slot / no bound template → nothing changes.
+  let bodyWithSidebar = bodyHtml;
+  let sidebarCssText = "";
+  if (/data-nifty-sidebar/.test(bodyHtml)) {
+    const sb = resolveSidebar(page);
+    if (sb) {
+      const out = renderSidebar(sb);
+      sidebarCssText = out.css || "";
+      bodyWithSidebar = bodyHtml.replace(
+        /(<([a-zA-Z][a-zA-Z0-9]*)\b[^>]*\bdata-nifty-sidebar\b[^>]*>)([\s\S]*?)(<\/\2>)/,
+        (_m, open, _tag, _inner, close) => open + out.html + close
+      );
+    }
+  }
 
   // Scope classes for the linked parts. Each part's captured CSS is confined to its own
   // wrapper, and its HTML is rendered inside that wrapper — so it looks exactly as
@@ -576,12 +635,18 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
   // CSS when it's identical to the page's own CSS (same origin — already present).
   const norm = (s?: string) => (s || "").trim();
   const pageNorm = norm(page.css);
+  // A shared part's captured CSS is the WHOLE page's stylesheet, which includes a
+  // `body{min-height:100vh}` rule. Scoping rewrites that onto the part's wrapper, which
+  // would make a header/footer wrapper a full-viewport-tall box (a huge blank band above
+  // the content). Neutralise it: a part wrapper always sizes to its own content. This
+  // must come AFTER the scoped CSS so it wins.
+  const partReset = (scope: string) => `.${scope}{min-height:0 !important;height:auto !important}`;
   const partCssPieces: string[] = [];
   if (headerPart && norm(headerPart.css) && norm(headerPart.css) !== pageNorm) {
-    partCssPieces.push(scopeCss(headerPart.css as string, "." + headerScope));
+    partCssPieces.push(scopeCss(headerPart.css as string, "." + headerScope) + "\n" + partReset(headerScope));
   }
   if (footerPart && norm(footerPart.css) && norm(footerPart.css) !== pageNorm) {
-    partCssPieces.push(scopeCss(footerPart.css as string, "." + footerScope));
+    partCssPieces.push(scopeCss(footerPart.css as string, "." + footerScope) + "\n" + partReset(footerScope));
   }
   const partCss = partCssPieces.join("\n");
 
@@ -610,7 +675,7 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
   // @import first, then the un-reset, then the scoped part CSS, then the page's own CSS,
   // then (only if a header behaviour is on) the small header-behaviour CSS, then (for a
   // structured header/footer) its base CSS.
-  const styleText = `${fontImports}\n${UNRESET}\n${THEME_CSS ? THEME_CSS + "\n" : ""}${partCss}\n${page.css || ""}${headerActive ? "\n" + NIFTY_HEADER_CSS : ""}${layoutCss ? "\n" + layoutCss : ""}${footerLayoutCss ? "\n" + footerLayoutCss : ""}${secBgCss ? "\n" + secBgCss : ""}`;
+  const styleText = `${fontImports}\n${UNRESET}\n${THEME_CSS ? THEME_CSS + "\n" : ""}${partCss}\n${page.css || ""}${headerActive ? "\n" + NIFTY_HEADER_CSS : ""}${layoutCss ? "\n" + layoutCss : ""}${footerLayoutCss ? "\n" + footerLayoutCss : ""}${secBgCss ? "\n" + secBgCss : ""}${reuseCssText ? "\n" + reuseCssText : ""}${sidebarCssText ? "\n" + sidebarCssText : ""}`;
 
   return (
     <>
@@ -623,7 +688,7 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
       {headerPart ? (
         <div className={headerClass} {...(headerActive ? { "data-nifty-header": JSON.stringify(hs) } : {})} dangerouslySetInnerHTML={{ __html: headerInnerHtml }} />
       ) : null}
-      <div className="nifty-mockup" dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+      <div className="nifty-mockup" dangerouslySetInnerHTML={{ __html: bodyWithSidebar }} />
       {footerPart ? (
         <div className={`nifty-part ${footerScope}`} dangerouslySetInnerHTML={{ __html: footerInnerHtml }} />
       ) : null}
