@@ -640,7 +640,10 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
   // would make a header/footer wrapper a full-viewport-tall box (a huge blank band above
   // the content). Neutralise it: a part wrapper always sizes to its own content. This
   // must come AFTER the scoped CSS so it wins.
-  const partReset = (scope: string) => `.${scope}{min-height:0 !important;height:auto !important}`;
+  // Also force overflow:visible: the scoped page `body` rule carries `overflow-x:hidden`,
+  // which on the (now content-height) wrapper clips anything the header/footer overflows —
+  // e.g. a mega dropdown that drops below the header (top:100%). The wrapper must never clip.
+  const partReset = (scope: string) => `.${scope}{min-height:0 !important;height:auto !important;overflow:visible !important}`;
   const partCssPieces: string[] = [];
   if (headerPart && norm(headerPart.css) && norm(headerPart.css) !== pageNorm) {
     partCssPieces.push(scopeCss(headerPart.css as string, "." + headerScope) + "\n" + partReset(headerScope));
