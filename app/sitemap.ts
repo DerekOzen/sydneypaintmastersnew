@@ -36,7 +36,15 @@ function parseCustom(xml: string): MetadataRoute.Sitemap | null {
 // ── Source of truth #2: auto-generate from the dashboard-managed pages ───────
 // The sitemap only needs page metadata (path/status/isHome), which lives in the
 // content/pages.json index — no need to read the per-page body files.
-type Pg = { path: string; status?: string; isHome?: boolean; noindex?: boolean };
+type Pg = { path: string; status?: string; isHome?: boolean; noindex?: boolean; updatedAt?: string; createdAt?: string };
+
+// Each URL's lastModified is that page's own last-edited time (updatedAt), so the sitemap
+// reflects when each page actually changed — not one shared date for the whole site.
+function lastmodOf(p?: Pg): Date {
+  const raw = p && (p.updatedAt || p.createdAt);
+  if (raw) { const d = new Date(raw); if (!isNaN(d.getTime())) return d; }
+  return new Date("2026-07-01");
+}
 const pagesData: any[] = (() => {
   try { const d = JSON.parse(readFileSafe("content/pages.json")); return Array.isArray(d) ? d : []; }
   catch { return []; }
@@ -50,20 +58,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Otherwise generate from the pages that actually exist (never deleted ones).
   const base = (site.siteUrl || "https://nifty-site.pages.dev").replace(/\/$/, "");
   const published = (pagesData as Pg[]).filter((p) => p.status === "published" && p.path && !p.noindex);
-  const paths = new Set<string>(["/"]);
+  const home = published.find((p) => p.isHome);
+  // Keep each path paired with its page so its own updatedAt drives lastModified.
+  const items: { slug: string; page?: Pg }[] = [{ slug: "", page: home }];
+  const seen = new Set<string>(["/"]);
   for (const p of published) {
     if (p.isHome) continue;
     const clean = "/" + p.path.replace(/^\/+|\/+$/g, "");
-    if (clean !== "/") paths.add(clean);
+    if (clean === "/" || seen.has(clean)) continue;
+    seen.add(clean);
+    items.push({ slug: clean.replace(/^\/+|\/+$/g, ""), page: p });
   }
-  return Array.from(paths).map((r) => {
+  return items.map((it) => ({
     // Trailing slash on every URL (home = base + "/") to match the canonical form.
-    const slug = r.replace(/^\/+|\/+$/g, "");
-    return {
-      url: slug ? `${base}/${slug}/` : `${base}/`,
-      lastModified: new Date("2026-07-01"),
-      changeFrequency: "monthly" as const,
-      priority: r === "/" ? 1 : 0.8,
-    };
-  });
+    url: it.slug ? `${base}/${it.slug}/` : `${base}/`,
+    lastModified: lastmodOf(it.page),
+    changeFrequency: "monthly" as const,
+    priority: it.slug ? 0.8 : 1,
+  }));
 }

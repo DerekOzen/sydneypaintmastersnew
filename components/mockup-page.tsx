@@ -644,9 +644,26 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
   // which on the (now content-height) wrapper clips anything the header/footer overflows —
   // e.g. a mega dropdown that drops below the header (top:100%). The wrapper must never clip.
   const partReset = (scope: string) => `.${scope}{min-height:0 !important;height:auto !important;overflow:visible !important}`;
+  // Header parts sit above the page body and can hold a slide-in mobile menu. Two failures
+  // that show up on imported mockups, both fixed here globally:
+  //  1) "Header behind the hero." A hero section's inner z-indexes (e.g. .hero-grid z-index:2)
+  //     leak into the root stacking context because the content region never isolates, so they
+  //     can paint over a sticky header. We contain them by isolating the body wrapper
+  //     (.nifty-mockup) and lift the whole header part above it (position:relative;z-index).
+  //  2) "Mobile menu doesn't open / opens as a tiny sliver." A backdrop-filter / filter /
+  //     transform / perspective on the <header> (a frosted-glass bar is the usual cause) makes
+  //     the header the containing block for the position:fixed mobile menu, trapping the menu
+  //     inside the short header box instead of filling the screen. We neutralise those triggers
+  //     on the header and its bars — but only below desktop, so a desktop header keeps its blur.
+  const HEADER_LIFT_CSS = ".nifty-mockup{isolation:isolate}";
+  const headerStack = (scope: string) =>
+    `.${scope}{position:relative;z-index:1000}` +
+    `@media (max-width:1200px){.${scope} header,.${scope} header>*{` +
+    `-webkit-backdrop-filter:none !important;backdrop-filter:none !important;` +
+    `filter:none !important;transform:none !important;perspective:none !important;will-change:auto !important}}`;
   const partCssPieces: string[] = [];
   if (headerPart && norm(headerPart.css) && norm(headerPart.css) !== pageNorm) {
-    partCssPieces.push(scopeCss(headerPart.css as string, "." + headerScope) + "\n" + partReset(headerScope));
+    partCssPieces.push(scopeCss(headerPart.css as string, "." + headerScope) + "\n" + partReset(headerScope) + "\n" + HEADER_LIFT_CSS + "\n" + headerStack(headerScope));
   }
   if (footerPart && norm(footerPart.css) && norm(footerPart.css) !== pageNorm) {
     partCssPieces.push(scopeCss(footerPart.css as string, "." + footerScope) + "\n" + partReset(footerScope));
