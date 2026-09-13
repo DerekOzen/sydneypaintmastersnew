@@ -5,7 +5,7 @@ import fs from "fs";
 import path from "path";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
-import { JsonLd } from "@/components/schema";
+import { JsonLd, customSchemaFor, CustomSchemaScript } from "@/components/schema";
 import { Blocks } from "@/components/blocks";
 import { MockupPage } from "@/components/mockup-page";
 import { site } from "@/lib/site";
@@ -80,11 +80,19 @@ function isMockup(p: Pg): boolean {
 
 export default function Home() {
   if (HOME_PAGE) {
-    if (isMockup(HOME_PAGE)) return <MockupPage page={HOME_PAGE} parts={PARTS as any} />;
+    // Custom Schema Generator record for the homepage (path "/").
+    const csg = customSchemaFor("/");
+    if (isMockup(HOME_PAGE)) return (
+      <>
+        {csg ? <CustomSchemaScript record={csg} /> : null}
+        <MockupPage page={HOME_PAGE} parts={PARTS as any} suppressSchema={!!csg?.suppress} />
+      </>
+    );
     if (Array.isArray(HOME_PAGE.blocks) && HOME_PAGE.blocks.length) {
       return (
         <>
-          {(HOME_PAGE._schemas || []).map((b, i) => (b && b.data && Object.keys(b.data).length ? <JsonLd key={i} data={{ "@context": "https://schema.org", ...b.data }} /> : null))}
+          {csg ? <CustomSchemaScript record={csg} /> : null}
+          {csg?.suppress ? null : (HOME_PAGE._schemas || []).map((b, i) => (b && b.data && Object.keys(b.data).length ? <JsonLd key={i} data={{ "@context": "https://schema.org", ...b.data }} /> : null))}
           <SiteHeader />
           <main><Blocks blocks={HOME_PAGE.blocks} /></main>
           <SiteFooter />

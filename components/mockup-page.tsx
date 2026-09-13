@@ -6,7 +6,7 @@
 // the mockup carries its own. Header/footer may be shared "parts" wrapped here.
 import fs from "fs";
 import path from "path";
-import { JsonLd } from "@/components/schema";
+import { JsonLd, stripJsonLd } from "@/components/schema";
 import { renderHeaderLayout, headerLayoutCss, hasDeviceOverrides, deviceLayout, deviceVisibilityCss, type HeaderLayout } from "@/components/header-layout";
 import { renderReusable, type Reusable } from "@/components/reusables";
 import { renderSidebar, type Sidebar } from "@/components/sidebars";
@@ -544,7 +544,7 @@ function responsivePartCss(layout: HeaderLayout, scope: string): string {
   return per + "\n" + scopeCss(deviceVisibilityCss(), scope);
 }
 
-export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[] }) {
+export function MockupPage({ page, parts = [], suppressSchema = false }: { page: MockupPg; parts?: Part[]; suppressSchema?: boolean }) {
   const byId = (id?: string | null) => (id && id !== PART_NONE ? parts.find((p) => p.id === id) : undefined);
   const headerPart = byId(page.headerPartId);
   const footerPart = byId(page.footerPartId);
@@ -697,20 +697,27 @@ export function MockupPage({ page, parts = [] }: { page: MockupPg; parts?: Part[
   // structured header/footer) its base CSS.
   const styleText = `${fontImports}\n${UNRESET}\n${THEME_CSS ? THEME_CSS + "\n" : ""}${partCss}\n${page.css || ""}${headerActive ? "\n" + NIFTY_HEADER_CSS : ""}${layoutCss ? "\n" + layoutCss : ""}${footerLayoutCss ? "\n" + footerLayoutCss : ""}${secBgCss ? "\n" + secBgCss : ""}${reuseCssText ? "\n" + reuseCssText : ""}${sidebarCssText ? "\n" + sidebarCssText : ""}`;
 
+  // When the page is suppressed (Custom Schema Generator), the dashboard's own page
+  // schema is skipped and any JSON-LD baked into the header/body/footer HTML is stripped,
+  // so only the injected custom graph remains on the page.
+  const headerOut = suppressSchema ? stripJsonLd(headerInnerHtml) : headerInnerHtml;
+  const bodyOut = suppressSchema ? stripJsonLd(bodyWithSidebar) : bodyWithSidebar;
+  const footerOut = suppressSchema ? stripJsonLd(footerInnerHtml) : footerInnerHtml;
+
   return (
     <>
-      {(page._schemas || []).map((b, i) =>
+      {suppressSchema ? null : (page._schemas || []).map((b, i) =>
         b && b.data && Object.keys(b.data).length ? (
           <JsonLd key={i} data={{ "@context": "https://schema.org", ...b.data }} />
         ) : null
       )}
       <style dangerouslySetInnerHTML={{ __html: styleText }} />
       {headerPart ? (
-        <div className={headerClass} {...(headerActive ? { "data-nifty-header": JSON.stringify(hs) } : {})} dangerouslySetInnerHTML={{ __html: headerInnerHtml }} />
+        <div className={headerClass} {...(headerActive ? { "data-nifty-header": JSON.stringify(hs) } : {})} dangerouslySetInnerHTML={{ __html: headerOut }} />
       ) : null}
-      <div className="nifty-mockup" dangerouslySetInnerHTML={{ __html: bodyWithSidebar }} />
+      <div className="nifty-mockup" dangerouslySetInnerHTML={{ __html: bodyOut }} />
       {footerPart ? (
-        <div className={`nifty-part ${footerScope}`} dangerouslySetInnerHTML={{ __html: footerInnerHtml }} />
+        <div className={`nifty-part ${footerScope}`} dangerouslySetInnerHTML={{ __html: footerOut }} />
       ) : null}
       <script dangerouslySetInnerHTML={{ __html: NIFTY_FORM_SCRIPT }} />
       {headerActive ? <script dangerouslySetInnerHTML={{ __html: NIFTY_HEADER_SCRIPT }} /> : null}

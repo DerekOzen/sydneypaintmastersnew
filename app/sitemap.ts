@@ -72,8 +72,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return items.map((it) => ({
     // Trailing slash on every URL (home = base + "/") to match the canonical form.
     url: it.slug ? `${base}/${it.slug}/` : `${base}/`,
+    // Only url + lastModified are emitted. changeFrequency and priority are omitted
+    // because Google ignores both — a leaner sitemap with just the URL and its real date.
     lastModified: lastmodOf(it.page),
-    changeFrequency: "monthly" as const,
-    priority: it.slug ? 0.8 : 1,
   }));
 }

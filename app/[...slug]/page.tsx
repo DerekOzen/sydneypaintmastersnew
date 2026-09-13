@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
-import { JsonLd } from "@/components/schema";
+import { JsonLd, customSchemaFor, CustomSchemaScript } from "@/components/schema";
 import { Blocks } from "@/components/blocks";
 import { MockupPage } from "@/components/mockup-page";
 import { site } from "@/lib/site";
@@ -149,11 +149,20 @@ export default async function DynamicPage({ params }: { params: Promise<{ slug: 
   // Detect by the layout flag OR by the tell-tale of imported content (section
   // blocks that carry raw HTML), so a page always renders its design even if the
   // layout flag is ever missing.
+  // Custom Schema Generator: an approved graph for this page (optionally suppressing
+  // all other JSON-LD on the page) managed from the dashboard.
+  const csg = customSchemaFor(page.path);
+
   const isMockup =
     page.layout === "mockup" ||
     (Array.isArray(page.blocks) && page.blocks.some((b) => b && b.props && typeof b.props.html === "string" && b.props.html.trim() !== ""));
   if (isMockup) {
-    return <MockupPage page={page} parts={PARTS} />;
+    return (
+      <>
+        {csg ? <CustomSchemaScript record={csg} /> : null}
+        <MockupPage page={page} parts={PARTS} suppressSchema={!!csg?.suppress} />
+      </>
+    );
   }
 
   const hasBlocks = Array.isArray(page.blocks) && page.blocks.length > 0;
@@ -161,7 +170,8 @@ export default async function DynamicPage({ params }: { params: Promise<{ slug: 
 
   return (
     <>
-      {(page._schemas || []).map((b, i) =>
+      {csg ? <CustomSchemaScript record={csg} /> : null}
+      {csg?.suppress ? null : (page._schemas || []).map((b, i) =>
         b && b.data && Object.keys(b.data).length ? (
           <JsonLd key={i} data={{ "@context": "https://schema.org", ...b.data }} />
         ) : null

@@ -1,4 +1,61 @@
+import fs from "fs";
+import path from "path";
 import { site } from "@/lib/site";
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Custom Schema Generator (CSG) — dashboard-managed, per-page JSON-LD.
+// The dashboard writes content/custom-schema.json (an approved graph per page,
+// optionally with "suppress" = this page renders ONLY this graph). At build time we
+// inject that graph, marked data-csg-record-id, and when suppress is on the page's
+// normal schema is skipped and any JSON-LD baked into the page HTML is stripped.
+// ─────────────────────────────────────────────────────────────────────────────
+export type CsgRecord = { recordId: string; path: string; jsonld: string; suppress?: boolean; status?: string };
+type CsgStore = { settings?: { inject?: "head" | "footer" }; records?: CsgRecord[] };
+
+function _csgRead(): CsgStore {
+  try { const d = JSON.parse(fs.readFileSync(path.join(process.cwd(), "content/custom-schema.json"), "utf8")); return (d && typeof d === "object") ? d : {}; }
+  catch { return {}; }
+}
+const _csgStore: CsgStore = _csgRead();
+
+// Normalise a path/URL to a comparable key: strip origin, force one leading slash,
+// no trailing slash, lowercased. "/" stays "/".
+export function csgNormPath(p: string): string {
+  let s = (p || "").trim();
+  s = s.replace(/^https?:\/\/[^/]+/i, "");      // drop origin if a full URL slipped in
+  s = "/" + s.replace(/^\/+|\/+$/g, "");
+  return s.toLowerCase();
+}
+
+/** The active custom-schema record for a page path, or null. */
+export function customSchemaFor(pagePath: string): CsgRecord | null {
+  const key = csgNormPath(pagePath);
+  const rec = (_csgStore.records || []).find((r) => r && (r.status === undefined || r.status === "active") && csgNormPath(r.path) === key);
+  return rec || null;
+}
+
+/** Where the custom graph should sit (head/footer). Cosmetic for JSON-LD; default head. */
+export function csgInjectLocation(): "head" | "footer" { return _csgStore.settings?.inject === "footer" ? "footer" : "head"; }
+
+/** Renders a page's approved custom JSON-LD graph verbatim, tagged so it's identifiable. */
+export function CustomSchemaScript({ record }: { record: CsgRecord }) {
+  const raw = (record.jsonld || "").trim();
+  if (!raw) return null;
+  return (
+    <script
+      type="application/ld+json"
+      data-csg-record-id={record.recordId}
+      dangerouslySetInnerHTML={{ __html: raw }}
+    />
+  );
+}
+
+/** Remove every <script type="application/ld+json"> block from an HTML string.
+ *  Used when a page is suppressed so no baked-in/theme JSON-LD survives. */
+export function stripJsonLd(html: string): string {
+  if (!html) return html;
+  return html.replace(/<script\b[^>]*type\s*=\s*["']application\/ld\+json["'][^>]*>[\s\S]*?<\/script>/gi, "");
+}
 
 /** Renders a JSON-LD <script> block. Safe for static export. */
 export function JsonLd({ data }: { data: Record<string, unknown> }) {
