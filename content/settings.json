@@ -1,10 +1,10 @@
 {
-  "name": "Your Business",
-  "tagline": "Quality you can trust",
-  "phone": "",
-  "email": "",
-  "areas": "",
-  "hoursWeek": "Mon–Fri 9am–5pm",
-  "hoursSat": "Closed",
-  "siteUrl": "https://sydneypaintmasters.com.au"
+  "name": "Sydney Paintmasters",
+  "tagline": "Professional Painters in Sydney",
+  "phone": "0423 019 087",
+  "email": "info@sydneypaintmasters.com.au",
+  "areas": "Sydney, NSW",
+  "hoursWeek": "Monday to Saturday 6am–6pm",
+  "hoursSat": "6am–6pm",
+  "siteUrl": "https://sydneypaintmasters.com.au/"
 }
