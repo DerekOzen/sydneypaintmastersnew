@@ -1,0 +1,207 @@
+{
+  "batches": [
+    {
+      "batchId": "csg-mu0ujew8-3ltv",
+      "at": "2026-09-14T06:12:54.440Z",
+      "count": 49,
+      "changes": [
+        {
+          "path": "/",
+          "newRecordId": "SCHEMA-6E825A03"
+        },
+        {
+          "path": "/house-painting",
+          "newRecordId": "SCHEMA-A8F46543"
+        },
+        {
+          "path": "/office-painting",
+          "newRecordId": "SCHEMA-5DF341FE"
+        },
+        {
+          "path": "/commercial-painting",
+          "newRecordId": "SCHEMA-2D65571C"
+        },
+        {
+          "path": "/interior-painting",
+          "newRecordId": "SCHEMA-B7EC210A"
+        },
+        {
+          "path": "/exterior-painting",
+          "newRecordId": "SCHEMA-CC4FCA97"
+        },
+        {
+          "path": "/decorative-finishes",
+          "newRecordId": "SCHEMA-1370C429"
+        },
+        {
+          "path": "/epoxy-flooring",
+          "newRecordId": "SCHEMA-A411F1FA"
+        },
+        {
+          "path": "/pool-painting",
+          "newRecordId": "SCHEMA-1D170649"
+        },
+        {
+          "path": "/retail-fit-out-painting",
+          "newRecordId": "SCHEMA-3F365F60"
+        },
+        {
+          "path": "/roof-painting",
+          "newRecordId": "SCHEMA-FA69CE6C"
+        },
+        {
+          "path": "/strata-painting",
+          "newRecordId": "SCHEMA-7035701B"
+        },
+        {
+          "path": "/venetian-plaster",
+          "newRecordId": "SCHEMA-DDB75910"
+        },
+        {
+          "path": "/warehouse-painting",
+          "newRecordId": "SCHEMA-66E09515"
+        },
+        {
+          "path": "/service-locations",
+          "newRecordId": "SCHEMA-F4B7D75F"
+        },
+        {
+          "path": "/nsw/painter-alexandria",
+          "newRecordId": "SCHEMA-6199E17D"
+        },
+        {
+          "path": "/nsw/painter-bondi",
+          "newRecordId": "SCHEMA-081ACB31"
+        },
+        {
+          "path": "/nsw/painter-bronte",
+          "newRecordId": "SCHEMA-D16646E4"
+        },
+        {
+          "path": "/nsw/painter-burwood",
+          "newRecordId": "SCHEMA-9A7A7747"
+        },
+        {
+          "path": "/nsw/painter-coogee",
+          "newRecordId": "SCHEMA-9C7F3271"
+        },
+        {
+          "path": "/nsw/painter-hornsby",
+          "newRecordId": "SCHEMA-40FE4443"
+        },
+        {
+          "path": "/nsw/painter-hunters-hill",
+          "newRecordId": "SCHEMA-CEA25EE4"
+        },
+        {
+          "path": "/nsw/painter-inner-west",
+          "newRecordId": "SCHEMA-8D958C1B"
+        },
+        {
+          "path": "/nsw/painter-ku-ring-gai",
+          "newRecordId": "SCHEMA-9634FBE1"
+        },
+        {
+          "path": "/nsw/painter-lane-cove",
+          "newRecordId": "SCHEMA-8C7A242F"
+        },
+        {
+          "path": "/nsw/painter-mosman",
+          "newRecordId": "SCHEMA-EF92A89F"
+        },
+        {
+          "path": "/nsw/painter-newport",
+          "newRecordId": "SCHEMA-645D8CB8"
+        },
+        {
+          "path": "/nsw/painter-northern-beaches",
+          "newRecordId": "SCHEMA-9C24291B"
+        },
+        {
+          "path": "/nsw/painter-north-sydney",
+          "newRecordId": "SCHEMA-633CD510"
+        },
+        {
+          "path": "/nsw/painter-palm-beach",
+          "newRecordId": "SCHEMA-D503D4D0"
+        },
+        {
+          "path": "/nsw/painter-randwick",
+          "newRecordId": "SCHEMA-46E32F32"
+        },
+        {
+          "path": "/nsw/painter-ryde",
+          "newRecordId": "SCHEMA-A1313D23"
+        },
+        {
+          "path": "/nsw/painter-st-ives",
+          "newRecordId": "SCHEMA-CD1CD5B2"
+        },
+        {
+          "path": "/nsw/painter-sydney-cbd",
+          "newRecordId": "SCHEMA-1A797697"
+        },
+        {
+          "path": "/nsw/painter-the-rocks",
+          "newRecordId": "SCHEMA-B50706A3"
+        },
+        {
+          "path": "/nsw/painter-waverley",
+          "newRecordId": "SCHEMA-9E8A7D6D"
+        },
+        {
+          "path": "/nsw/painter-willoughby",
+          "newRecordId": "SCHEMA-74C5AB80"
+        },
+        {
+          "path": "/nsw/painter-woollahra",
+          "newRecordId": "SCHEMA-B884D07B"
+        },
+        {
+          "path": "/blogs",
+          "newRecordId": "SCHEMA-E24846A2"
+        },
+        {
+          "path": "/blog/venetian-plaster-cost-sydney-2026",
+          "newRecordId": "SCHEMA-5D213DB0"
+        },
+        {
+          "path": "/blog/best-time-book-painting-2026",
+          "newRecordId": "SCHEMA-3616565C"
+        },
+        {
+          "path": "/blog/beyond-white-warm-neutrals",
+          "newRecordId": "SCHEMA-323A7762"
+        },
+        {
+          "path": "/blog/low-voc-vs-traditional-paints",
+          "newRecordId": "SCHEMA-BC3CB816"
+        },
+        {
+          "path": "/blog/when-does-your-home-need-a-fresh-coat-of-paint",
+          "newRecordId": "SCHEMA-5BFB933F"
+        },
+        {
+          "path": "/blog/what-sets-australia-best-painting-teams-apart",
+          "newRecordId": "SCHEMA-8CAB690A"
+        },
+        {
+          "path": "/blog/how-to-prevent-interior-painting-mistakes-in-2026",
+          "newRecordId": "SCHEMA-E22F2964"
+        },
+        {
+          "path": "/blog/interior-vs-exterior-painting-costs-in-sydney-explained",
+          "newRecordId": "SCHEMA-EE588517"
+        },
+        {
+          "path": "/about-us",
+          "newRecordId": "SCHEMA-D08769AB"
+        },
+        {
+          "path": "/contact",
+          "newRecordId": "SCHEMA-9021C933"
+        }
+      ]
+    }
+  ]
+}
