@@ -6,7 +6,7 @@
 // the mockup carries its own. Header/footer may be shared "parts" wrapped here.
 import fs from "fs";
 import path from "path";
-import { JsonLd, stripJsonLd } from "@/components/schema";
+import { stripJsonLd } from "@/components/schema";
 import { renderHeaderLayout, headerLayoutCss, hasDeviceOverrides, deviceLayout, deviceVisibilityCss, type HeaderLayout } from "@/components/header-layout";
 import { renderReusable, type Reusable } from "@/components/reusables";
 import { renderSidebar, type Sidebar } from "@/components/sidebars";
@@ -706,11 +706,9 @@ export function MockupPage({ page, parts = [], suppressSchema = false }: { page:
 
   return (
     <>
-      {suppressSchema ? null : (page._schemas || []).map((b, i) =>
-        b && b.data && Object.keys(b.data).length ? (
-          <JsonLd key={i} data={{ "@context": "https://schema.org", ...b.data }} />
-        ) : null
-      )}
+      {/* Per-page schema (_schemas) is retired — the Custom Schema Generator (Bulk Import)
+          is the single source of truth. Its graph is injected by the page wrapper; here we
+          only strip any JSON-LD baked into the mockup HTML when suppression is on. */}
       <style dangerouslySetInnerHTML={{ __html: styleText }} />
       {headerPart ? (
         <div className={headerClass} {...(headerActive ? { "data-nifty-header": JSON.stringify(hs) } : {})} dangerouslySetInnerHTML={{ __html: headerOut }} />

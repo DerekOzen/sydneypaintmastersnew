@@ -5,7 +5,7 @@ import fs from "fs";
 import path from "path";
 import SiteHeader from "@/components/site-header";
 import SiteFooter from "@/components/site-footer";
-import { JsonLd, customSchemaFor, CustomSchemaScript } from "@/components/schema";
+import { customSchemaFor, CustomSchemaScript } from "@/components/schema";
 import { Blocks } from "@/components/blocks";
 import { MockupPage } from "@/components/mockup-page";
 import { site } from "@/lib/site";
@@ -91,8 +91,8 @@ export default function Home() {
     if (Array.isArray(HOME_PAGE.blocks) && HOME_PAGE.blocks.length) {
       return (
         <>
+          {/* Schema is managed by the Custom Schema Generator (Bulk Import) only. */}
           {csg ? <CustomSchemaScript record={csg} /> : null}
-          {csg?.suppress ? null : (HOME_PAGE._schemas || []).map((b, i) => (b && b.data && Object.keys(b.data).length ? <JsonLd key={i} data={{ "@context": "https://schema.org", ...b.data }} /> : null))}
           <SiteHeader />
           <main><Blocks blocks={HOME_PAGE.blocks} /></main>
           <SiteFooter />
