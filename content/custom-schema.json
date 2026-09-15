@@ -4716,7 +4716,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#bobby-nojad\",\"@type\":\"Person\",\"description\":\"Owner of Sydney Paintmasters with more than 20 years of experience painting homes, strata and commercial properties across Sydney.\",\"jobTitle\":\"Owner\",\"name\":\"Bobby Nojad\",\"url\":\"https://sydneypaintmasters.com.au/about-us/\",\"worksFor\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"}},{\"@id\":\"https://sydneypaintmasters.com.au/#webpage\",\"@type\":\"WebPage\",\"about\":[{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},{\"@id\":\"https://sydneypaintmasters.com.au/#bobby-nojad\"}],\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"name\":\"Painter Sydney | Licensed Painters | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/\"}]}",
       "hash": "80de65906d187824c987a84ead7558ed882fef996d03b34ff2d6e663df49b3b7",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -4751,7 +4751,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:39.739Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-A8F46543",
@@ -4762,7 +4764,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/house-painting/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/house-painting/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/house-painting/#service\"},\"name\":\"House Painting Sydney | Professional Residential Painters\",\"url\":\"https://sydneypaintmasters.com.au/house-painting/\"},{\"@id\":\"https://sydneypaintmasters.com.au/house-painting/#service\",\"@type\":\"Service\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"description\":\"Sydney Paintmasters provides professional house painting services in Sydney.\",\"name\":\"House Painting Sydney\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"House Painting\",\"url\":\"https://sydneypaintmasters.com.au/house-painting/\"},{\"@id\":\"https://sydneypaintmasters.com.au/house-painting/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/house-painting/\",\"name\":\"House Painting\",\"position\":2}]}]}",
       "hash": "99b5066a310458cf6d57304c5a37af0f85304086dc7e8faeb565451bb5185632",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -4797,7 +4799,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:40.042Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-5DF341FE",
@@ -4808,7 +4812,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/office-painting/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/office-painting/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/office-painting/#service\"},\"name\":\"Office Painting Sydney | #1 Office Wall Painters Services\",\"url\":\"https://sydneypaintmasters.com.au/office-painting/\"},{\"@id\":\"https://sydneypaintmasters.com.au/office-painting/#service\",\"@type\":\"Service\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"description\":\"Sydney Paintmasters provides corporate office painting service in Sydney.\",\"name\":\"Office Painting Sydney\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Office Painting\",\"url\":\"https://sydneypaintmasters.com.au/office-painting/\"},{\"@id\":\"https://sydneypaintmasters.com.au/office-painting/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/office-painting/\",\"name\":\"Office Painting\",\"position\":2}]}]}",
       "hash": "fe936a3c16f72c42ec09fe04f90629bd1d02afd5e3d6ce4c4f0bf54a523c8298",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -4843,7 +4847,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:41.184Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-2D65571C",
@@ -4854,7 +4860,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/commercial-painting/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/commercial-painting/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/commercial-painting/#service\"},\"name\":\"Commercial Painting Sydney | Commercial Painters | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/commercial-painting/\"},{\"@id\":\"https://sydneypaintmasters.com.au/commercial-painting/#service\",\"@type\":\"Service\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"description\":\"Commercial painting in Sydney by Sydney Paintmasters. Offices, retail, strata, warehouses and commercial buildings painted around your operation with minimal disruption. Licensed, insured, free quotes.\",\"name\":\"Commercial Painting Sydney\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Commercial Painting\",\"url\":\"https://sydneypaintmasters.com.au/commercial-painting/\"},{\"@id\":\"https://sydneypaintmasters.com.au/commercial-painting/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/commercial-painting/\",\"name\":\"Commercial Painting\",\"position\":2}]}]}",
       "hash": "9f6436813b60bc948e2dc05b094ba61b3d276b9ff802ccbd1f6755b98fe8bd56",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -4889,7 +4895,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:41.576Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-B7EC210A",
@@ -4900,7 +4908,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/interior-painting/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/interior-painting/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/interior-painting/#service\"},\"name\":\"Interior Painting Sydney | Interior Painters | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/interior-painting/\"},{\"@id\":\"https://sydneypaintmasters.com.au/interior-painting/#service\",\"@type\":\"Service\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"description\":\"Interior painting in Sydney by Sydney Paintmasters. Walls, ceilings, doors and trims repainted with careful prep and a clean, low-mess finish. Licensed, insured, free quotes.\",\"name\":\"Interior Painting Sydney\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Interior Painting\",\"url\":\"https://sydneypaintmasters.com.au/interior-painting/\"},{\"@id\":\"https://sydneypaintmasters.com.au/interior-painting/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/interior-painting/\",\"name\":\"Interior Painting\",\"position\":2}]}]}",
       "hash": "09beb5f8f0b12394215e52c3948244c4240eefa6cacd15ad7bcbf0fb74e60d46",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -4935,7 +4943,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:42.112Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-CC4FCA97",
@@ -4946,7 +4956,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/exterior-painting/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/exterior-painting/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/exterior-painting/#service\"},\"name\":\"Exterior Painting Sydney | Exterior House Painters | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/exterior-painting/\"},{\"@id\":\"https://sydneypaintmasters.com.au/exterior-painting/#service\",\"@type\":\"Service\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"description\":\"Exterior painting in Sydney by Sydney Paintmasters. Render, brick, weatherboard, eaves and fences prepared and coated with weather-durable products. Licensed, insured, free quotes.\",\"name\":\"Exterior Painting Sydney\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Exterior Painting\",\"url\":\"https://sydneypaintmasters.com.au/exterior-painting/\"},{\"@id\":\"https://sydneypaintmasters.com.au/exterior-painting/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/exterior-painting/\",\"name\":\"Exterior Painting\",\"position\":2}]}]}",
       "hash": "853b8d8d0d47cf23db0f99dbdcfe2d9ee56fe497dbc9d95e0c4df8c1acd623f8",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -4981,7 +4991,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:42.359Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-1370C429",
@@ -4992,7 +5004,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/decorative-finishes/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/decorative-finishes/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/decorative-finishes/#service\"},\"name\":\"Decorative Finishes Sydney | Limewash, Textured & Metallic | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/decorative-finishes/\"},{\"@id\":\"https://sydneypaintmasters.com.au/decorative-finishes/#service\",\"@type\":\"Service\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"description\":\"Decorative and specialty paint finishes in Sydney by Sydney Paintmasters. Limewash, metallic, faux concrete and textured feature walls, plus venetian plaster. Licensed, insured, free quotes.\",\"name\":\"Decorative Finishes Sydney\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Decorative Finishes\",\"url\":\"https://sydneypaintmasters.com.au/decorative-finishes/\"},{\"@id\":\"https://sydneypaintmasters.com.au/decorative-finishes/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/decorative-finishes/\",\"name\":\"Decorative Finishes\",\"position\":2}]}]}",
       "hash": "1d948facd14c677b9bb64605df743aedecf03bcaf835ef0b4681ece6b951b03c",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -5027,7 +5039,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:42.745Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-A411F1FA",
@@ -5038,7 +5052,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/epoxy-flooring/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/epoxy-flooring/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/epoxy-flooring/#service\"},\"name\":\"Epoxy Flooring Sydney | Garage & Commercial Floor Coatings | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/epoxy-flooring/\"},{\"@id\":\"https://sydneypaintmasters.com.au/epoxy-flooring/#service\",\"@type\":\"Service\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"description\":\"Epoxy flooring in Sydney by Sydney Paintmasters. Garage, flake, showroom, commercial and industrial epoxy floor coatings, mechanically prepared and sealed to last. Licensed, insured, free quotes.\",\"name\":\"Epoxy Flooring Sydney\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Epoxy Flooring\",\"url\":\"https://sydneypaintmasters.com.au/epoxy-flooring/\"},{\"@id\":\"https://sydneypaintmasters.com.au/epoxy-flooring/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/epoxy-flooring/\",\"name\":\"Epoxy Flooring\",\"position\":2}]}]}",
       "hash": "f9cbd0fb74d8694dfe3a12bbd3dfc781affd19ed59bf13c1c89023170bd19588",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -5073,7 +5087,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:43.191Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-1D170649",
@@ -5084,7 +5100,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/pool-painting/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/pool-painting/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/pool-painting/#service\"},\"name\":\"Pool Painting Sydney | Swimming Pool Painters | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/pool-painting/\"},{\"@id\":\"https://sydneypaintmasters.com.au/pool-painting/#service\",\"@type\":\"Service\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"description\":\"Pool painting in Sydney by Sydney Paintmasters. Concrete and fibreglass swimming pools repainted with specialist pool coatings, properly prepared and cured. Licensed, insured, free quotes.\",\"name\":\"Pool Painting Sydney\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Pool Painting\",\"url\":\"https://sydneypaintmasters.com.au/pool-painting/\"},{\"@id\":\"https://sydneypaintmasters.com.au/pool-painting/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/pool-painting/\",\"name\":\"Pool Painting\",\"position\":2}]}]}",
       "hash": "fb7572500fe116657b4f592af93c9308009854997c9b3a0eab4661baaf92c255",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -5119,7 +5135,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:43.458Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-3F365F60",
@@ -5130,7 +5148,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/retail-fit-out-painting/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/retail-fit-out-painting/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/retail-fit-out-painting/#service\"},\"name\":\"Retail Fit-Out Painting Sydney | Shopfront & After Hours Painters\",\"url\":\"https://sydneypaintmasters.com.au/retail-fit-out-painting/\"},{\"@id\":\"https://sydneypaintmasters.com.au/retail-fit-out-painting/#service\",\"@type\":\"Service\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"description\":\"Retail and fit-out painting in Sydney by Sydney Paintmasters. Shopfronts, new fit-outs and refurbishments painted after hours and to programme, with minimal disruption. Licensed, insured, free quotes.\",\"name\":\"Retail & Fit-Out Painting Sydney\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Retail & Fit-Out Painting\",\"url\":\"https://sydneypaintmasters.com.au/retail-fit-out-painting/\"},{\"@id\":\"https://sydneypaintmasters.com.au/retail-fit-out-painting/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/retail-fit-out-painting/\",\"name\":\"Retail & Fit-Out Painting\",\"position\":2}]}]}",
       "hash": "1c526a77d3546d9348ee8cbbed5df546f5fcebe7d996c5c659654dbb1cd15d5c",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -5165,7 +5183,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:43.726Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-FA69CE6C",
@@ -5176,7 +5196,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/roof-painting/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/roof-painting/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/roof-painting/#service\"},\"name\":\"Roof Painting Sydney | Roof Painters & Restoration | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/roof-painting/\"},{\"@id\":\"https://sydneypaintmasters.com.au/roof-painting/#service\",\"@type\":\"Service\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"description\":\"Roof painting in Sydney by Sydney Paintmasters. Colorbond, metal, tile and cement roofs cleaned, repaired and coated with roof grade products. Licensed, insured, free quotes.\",\"name\":\"Roof Painting Sydney\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Roof Painting\",\"url\":\"https://sydneypaintmasters.com.au/roof-painting/\"},{\"@id\":\"https://sydneypaintmasters.com.au/roof-painting/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/roof-painting/\",\"name\":\"Roof Painting\",\"position\":2}]}]}",
       "hash": "054b9145322558a7434ef459f7ddd3de700a093a479d4fa5dd81265187e499a4",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -5211,7 +5231,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:43.985Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-7035701B",
@@ -5222,7 +5244,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/strata-painting/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/strata-painting/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/strata-painting/#service\"},\"name\":\"Strata Painting Sydney | Strata & Body Corporate Painters | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/strata-painting/\"},{\"@id\":\"https://sydneypaintmasters.com.au/strata-painting/#service\",\"@type\":\"Service\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"description\":\"Strata painting in Sydney by Sydney Paintmasters. Common property, facades, corridors, car parks and balconies painted for strata schemes and body corporates. Licensed, insured, free quotes.\",\"name\":\"Strata Painting Sydney\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Strata Painting\",\"url\":\"https://sydneypaintmasters.com.au/strata-painting/\"},{\"@id\":\"https://sydneypaintmasters.com.au/strata-painting/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/strata-painting/\",\"name\":\"Strata Painting\",\"position\":2}]}]}",
       "hash": "db129ef053ec11779cf7bbfc6d75bc07c9fea1556f5efae2419f900f32414c90",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -5257,7 +5279,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:44.452Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-DDB75910",
@@ -5268,7 +5292,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/venetian-plaster/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/venetian-plaster/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/venetian-plaster/#service\"},\"name\":\"Venetian Plaster Sydney | Marmorino & Polished Plaster | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/venetian-plaster/\"},{\"@id\":\"https://sydneypaintmasters.com.au/venetian-plaster/#service\",\"@type\":\"Service\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"description\":\"Venetian plaster in Sydney by Sydney Paintmasters. Hand applied polished plaster, marmorino and textured lime finishes for feature walls, bathrooms and commercial spaces. Licensed, insured, free quotes.\",\"name\":\"Venetian Plaster Sydney\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Venetian Plaster\",\"url\":\"https://sydneypaintmasters.com.au/venetian-plaster/\"},{\"@id\":\"https://sydneypaintmasters.com.au/venetian-plaster/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/venetian-plaster/\",\"name\":\"Venetian Plaster\",\"position\":2}]}]}",
       "hash": "9e3ac3b3e06778c7ef20af68f470e7c3748488a472660611a942ee1f3a397734",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -5303,7 +5327,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:44.723Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-66E09515",
@@ -5314,7 +5340,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/warehouse-painting/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/warehouse-painting/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/warehouse-painting/#service\"},\"name\":\"Warehouse & Industrial Painting Sydney | Factory & Protective Coatings\",\"url\":\"https://sydneypaintmasters.com.au/warehouse-painting/\"},{\"@id\":\"https://sydneypaintmasters.com.au/warehouse-painting/#service\",\"@type\":\"Service\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"description\":\"Warehouse and industrial painting in Sydney by Sydney Paintmasters. Protective and anti corrosion coatings, intumescent, structural steel, high access and line marking for factories and facilities. Licensed, insured, free quotes.\",\"name\":\"Warehouse & Industrial Painting Sydney\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Warehouse & Industrial Painting\",\"url\":\"https://sydneypaintmasters.com.au/warehouse-painting/\"},{\"@id\":\"https://sydneypaintmasters.com.au/warehouse-painting/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/warehouse-painting/\",\"name\":\"Warehouse & Industrial Painting\",\"position\":2}]}]}",
       "hash": "9e34e61c326240a1301192bd198235cb7be08b952aca54e5d7b65af954e2da2e",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -5349,7 +5375,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:44.972Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-F4B7D75F",
@@ -5360,7 +5388,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/service-locations/#webpage\",\"@type\":\"CollectionPage\",\"about\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/service-locations/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/service-locations/#itemlist\"},\"name\":\"Painters Across Sydney - Our Suburbs | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/service-locations/\"},{\"@id\":\"https://sydneypaintmasters.com.au/service-locations/#itemlist\",\"@type\":\"ItemList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"name\":\"Painter Alexandria\",\"position\":1,\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-alexandria/\"},{\"@type\":\"ListItem\",\"name\":\"Painter Bondi\",\"position\":2,\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-bondi/\"},{\"@type\":\"ListItem\",\"name\":\"Painter Bronte\",\"position\":3,\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-bronte/\"},{\"@type\":\"ListItem\",\"name\":\"Painter Burwood\",\"position\":4,\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-burwood/\"},{\"@type\":\"ListItem\",\"name\":\"Painter Coogee\",\"position\":5,\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-coogee/\"},{\"@type\":\"ListItem\",\"name\":\"Painter Hornsby\",\"position\":6,\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-hornsby/\"},{\"@type\":\"ListItem\",\"name\":\"Painter Hunters Hill\",\"position\":7,\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-hunters-hill/\"},{\"@type\":\"ListItem\",\"name\":\"Painter Inner West\",\"position\":8,\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-inner-west/\"},{\"@type\":\"ListItem\",\"name\":\"Painter Ku-ring-gai\",\"position\":9,\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-ku-ring-gai/\"},{\"@type\":\"ListItem\",\"name\":\"Painter Lane Cove\",\"position\":10,\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-lane-cove/\"},{\"@type\":\"ListItem\",\"name\":\"Painter Mosman\",\"position\":11,\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-mosman/\"},{\"@type\":\"ListItem\",\"name\":\"Painter Newport\",\"position\":12,\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-newport/\"},{\"@type\":\"ListItem\",\"name\":\"Painter Northern Beaches\",\"position\":13,\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-northern-beaches/\"},{\"@type\":\"ListItem\",\"name\":\"Painter North Sydney\",\"position\":14,\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-north-sydney/\"},{\"@type\":\"ListItem\",\"name\":\"Painter Palm Beach\",\"position\":15,\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-palm-beach/\"},{\"@type\":\"ListItem\",\"name\":\"Painter Randwick\",\"position\":16,\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-randwick/\"},{\"@type\":\"ListItem\",\"name\":\"Painter Ryde\",\"position\":17,\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-ryde/\"},{\"@type\":\"ListItem\",\"name\":\"Painter St Ives\",\"position\":18,\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-st-ives/\"},{\"@type\":\"ListItem\",\"name\":\"Painter Sydney CBD\",\"position\":19,\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-sydney-cbd/\"},{\"@type\":\"ListItem\",\"name\":\"Painter The Rocks\",\"position\":20,\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-the-rocks/\"},{\"@type\":\"ListItem\",\"name\":\"Painter Waverley\",\"position\":21,\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-waverley/\"},{\"@type\":\"ListItem\",\"name\":\"Painter Willoughby\",\"position\":22,\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-willoughby/\"},{\"@type\":\"ListItem\",\"name\":\"Painter Woollahra\",\"position\":23,\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-woollahra/\"}],\"name\":\"Sydney Painting Service Locations\"},{\"@id\":\"https://sydneypaintmasters.com.au/service-locations/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2}]}]}",
       "hash": "96e1741493e95105b0b88a73a42655fd650f1de61fdc2e9bb70d5cb0495ab395",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -5395,7 +5423,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:45.304Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-6199E17D",
@@ -5406,7 +5436,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-alexandria/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-alexandria/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-alexandria/#service\"},\"name\":\"Alexandria Painters, Inner-City Homes | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-alexandria/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-alexandria/#service\",\"@type\":\"Service\",\"areaServed\":{\"@type\":\"Place\",\"name\":\"Alexandria\"},\"description\":\"Professional interior and exterior painting in Alexandria and surrounding Sydney suburbs by Sydney Paintmasters.\",\"name\":\"Painting Services in Alexandria\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Painting\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-alexandria/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-alexandria/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/nsw/painter-alexandria/\",\"name\":\"Painter Alexandria\",\"position\":3}]}]}",
       "hash": "a4c738501db17559223243601d4a9ed7715ae93b7492768e6e2dc429d4a230e5",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -5441,7 +5471,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:45.819Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-081ACB31",
@@ -5452,7 +5484,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-bondi/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-bondi/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-bondi/#service\"},\"name\":\"Painter Bondi - Coastal Specialists | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-bondi/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-bondi/#service\",\"@type\":\"Service\",\"areaServed\":[{\"@type\":\"AdministrativeArea\",\"name\":\"Waverley Council\"},{\"@type\":\"City\",\"name\":\"Bondi\"},{\"@type\":\"City\",\"name\":\"Bronte\"},{\"@type\":\"City\",\"name\":\"Dover Heights\"},{\"@type\":\"City\",\"name\":\"Queens Park\"},{\"@type\":\"City\",\"name\":\"Tamarama\"},{\"@type\":\"City\",\"name\":\"Waverley\"}],\"description\":\"Professional interior and exterior painting in Bondi and surrounding Sydney suburbs by Sydney Paintmasters.\",\"name\":\"Painting Services in Bondi\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Painting\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-bondi/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-bondi/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/nsw/painter-bondi/\",\"name\":\"Painter Bondi\",\"position\":3}]}]}",
       "hash": "98e71aeca2c8e2dd097aa0ce96b5ecb6dcc4f755e6cf0a5154ddd7961a71bd3d",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -5487,7 +5519,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:46.268Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-D16646E4",
@@ -5498,7 +5532,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-bronte/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-bronte/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-bronte/#service\"},\"name\":\"Bronte Painters - Coastal & Heritage | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-bronte/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-bronte/#service\",\"@type\":\"Service\",\"areaServed\":{\"@type\":\"Place\",\"name\":\"Bronte\"},\"description\":\"Professional interior and exterior painting in Bronte and surrounding Sydney suburbs by Sydney Paintmasters.\",\"name\":\"Painting Services in Bronte\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Painting\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-bronte/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-bronte/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/nsw/painter-bronte/\",\"name\":\"Painter Bronte\",\"position\":3}]}]}",
       "hash": "11b31fdad13cb5bcbbec1477f21d1788f09c5fca41e1bfbba3647a7323d3a92a",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -5533,7 +5567,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:46.531Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-9A7A7747",
@@ -5544,7 +5580,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-burwood/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-burwood/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-burwood/#service\"},\"name\":\"Painter Burwood, Inner West Homes | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-burwood/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-burwood/#service\",\"@type\":\"Service\",\"areaServed\":{\"@type\":\"Place\",\"name\":\"Burwood\"},\"description\":\"Professional interior and exterior painting in Burwood and surrounding Sydney suburbs by Sydney Paintmasters.\",\"name\":\"Painting Services in Burwood\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Painting\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-burwood/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-burwood/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/nsw/painter-burwood/\",\"name\":\"Painter Burwood\",\"position\":3}]}]}",
       "hash": "56782a4bc7b808f0a849afab981eb222a81f5c72c4a96d359ce12efcd7aede78",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -5579,7 +5615,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:46.842Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-9C7F3271",
@@ -5590,7 +5628,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-coogee/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-coogee/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-coogee/#service\"},\"name\":\"Coogee Beachside Painters - Free Quote | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-coogee/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-coogee/#service\",\"@type\":\"Service\",\"areaServed\":{\"@type\":\"Place\",\"name\":\"Coogee\"},\"description\":\"Professional interior and exterior painting in Coogee and surrounding Sydney suburbs by Sydney Paintmasters.\",\"name\":\"Painting Services in Coogee\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Painting\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-coogee/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-coogee/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/nsw/painter-coogee/\",\"name\":\"Painter Coogee\",\"position\":3}]}]}",
       "hash": "5c77cde534fdd777c0d7412fc59c66fe59d6365c1dea54bbd7acd451280a83f9",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -5625,7 +5663,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:47.204Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-40FE4443",
@@ -5636,7 +5676,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-hornsby/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-hornsby/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-hornsby/#service\"},\"name\":\"Painter Hornsby - Upper North Shore | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-hornsby/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-hornsby/#service\",\"@type\":\"Service\",\"areaServed\":{\"@type\":\"Place\",\"name\":\"Hornsby\"},\"description\":\"Professional interior and exterior painting in Hornsby and surrounding Sydney suburbs by Sydney Paintmasters.\",\"name\":\"Painting Services in Hornsby\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Painting\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-hornsby/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-hornsby/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/nsw/painter-hornsby/\",\"name\":\"Painter Hornsby\",\"position\":3}]}]}",
       "hash": "95c4d2fa8ba10a87435c2665aa4c810ef9c7288c406775eab2b5fbf552ec0b46",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -5671,7 +5711,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:47.644Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-CEA25EE4",
@@ -5682,7 +5724,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-hunters-hill/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-hunters-hill/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-hunters-hill/#service\"},\"name\":\"Hunters Hill Heritage Painters | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-hunters-hill/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-hunters-hill/#service\",\"@type\":\"Service\",\"areaServed\":{\"@type\":\"Place\",\"name\":\"Hunters Hill\"},\"description\":\"Professional interior and exterior painting in Hunters Hill and surrounding Sydney suburbs by Sydney Paintmasters.\",\"name\":\"Painting Services in Hunters Hill\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Painting\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-hunters-hill/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-hunters-hill/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/nsw/painter-hunters-hill/\",\"name\":\"Painter Hunters Hill\",\"position\":3}]}]}",
       "hash": "2ca07376757c655d743b83d413a9a265d55f595fea8532afd688139f8f57542f",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -5717,7 +5759,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:47.933Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-8D958C1B",
@@ -5728,7 +5772,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-inner-west/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-inner-west/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-inner-west/#service\"},\"name\":\"Inner West Painters - Terraces | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-inner-west/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-inner-west/#service\",\"@type\":\"Service\",\"areaServed\":{\"@type\":\"Place\",\"name\":\"Inner West\"},\"description\":\"Professional interior and exterior painting in Inner West and surrounding Sydney suburbs by Sydney Paintmasters.\",\"name\":\"Painting Services in Inner West\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Painting\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-inner-west/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-inner-west/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/nsw/painter-inner-west/\",\"name\":\"Painter Inner West\",\"position\":3}]}]}",
       "hash": "37dcf5aeda61235976745a41446faf5596a0a8a2a02e4f4422f7f83399cbd3e6",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -5763,7 +5807,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:48.195Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-9634FBE1",
@@ -5774,7 +5820,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-ku-ring-gai/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-ku-ring-gai/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-ku-ring-gai/#service\"},\"name\":\"Painter Ku-ring-gai, North Shore | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-ku-ring-gai/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-ku-ring-gai/#service\",\"@type\":\"Service\",\"areaServed\":{\"@type\":\"Place\",\"name\":\"Ku Ring Gai\"},\"description\":\"Professional interior and exterior painting in Ku-ring-gai and surrounding Sydney suburbs by Sydney Paintmasters.\",\"name\":\"Painting Services in Ku-ring-gai\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Painting\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-ku-ring-gai/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-ku-ring-gai/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/nsw/painter-ku-ring-gai/\",\"name\":\"Painter Ku-ring-gai\",\"position\":3}]}]}",
       "hash": "63901b0d8168cd325b0ac4c219d22b4285966993f3c0da8c233ea16508de0691",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -5809,7 +5855,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:49.241Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-8C7A242F",
@@ -5820,7 +5868,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-lane-cove/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-lane-cove/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-lane-cove/#service\"},\"name\":\"Lane Cove Painters, Lower North Shore | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-lane-cove/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-lane-cove/#service\",\"@type\":\"Service\",\"areaServed\":{\"@type\":\"Place\",\"name\":\"Lane Cove\"},\"description\":\"Professional interior and exterior painting in Lane Cove and surrounding Sydney suburbs by Sydney Paintmasters.\",\"name\":\"Painting Services in Lane Cove\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Painting\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-lane-cove/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-lane-cove/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/nsw/painter-lane-cove/\",\"name\":\"Painter Lane Cove\",\"position\":3}]}]}",
       "hash": "a345036da9ea8dcd3797000813b135ae5e4398fc5b7bf331688cb3cbd7176af2",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -5855,7 +5903,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:49.665Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-EF92A89F",
@@ -5866,7 +5916,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-mosman/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-mosman/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-mosman/#service\"},\"name\":\"Painter Mosman - Harbourside Homes | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-mosman/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-mosman/#service\",\"@type\":\"Service\",\"areaServed\":[{\"@type\":\"City\",\"name\":\"Mosman\"},{\"@type\":\"City\",\"name\":\"Balmoral\"},{\"@type\":\"City\",\"name\":\"Beauty Point\"},{\"@type\":\"City\",\"name\":\"Clifton Gardens\"},{\"@type\":\"City\",\"name\":\"Georges Heights\"},{\"@type\":\"City\",\"name\":\"Spit Junction\"},{\"@type\":\"AdministrativeArea\",\"name\":\"Municipality of Mosman\"}],\"description\":\"Professional interior and exterior painting in Mosman and surrounding Sydney suburbs by Sydney Paintmasters.\",\"name\":\"Painting Services in Mosman\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Painting\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-mosman/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-mosman/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/nsw/painter-mosman/\",\"name\":\"Painter Mosman\",\"position\":3}]}]}",
       "hash": "96c85ac16a29eaf18d272e4b74bdb33e90cdfbfe2d9980b651d84dfe32dada1d",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -5901,7 +5951,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:49.971Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-645D8CB8",
@@ -5912,7 +5964,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-newport/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-newport/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-newport/#service\"},\"name\":\"Newport Painters - Northern Beaches | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-newport/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-newport/#service\",\"@type\":\"Service\",\"areaServed\":[{\"@type\":\"City\",\"name\":\"Newport\"},{\"@type\":\"City\",\"name\":\"Bilgola Beach\"},{\"@type\":\"City\",\"name\":\"Avalon Beach\"},{\"@type\":\"City\",\"name\":\"Clareville\"},{\"@type\":\"City\",\"name\":\"Bayview\"},{\"@type\":\"City\",\"name\":\"Mona Vale\"},{\"@type\":\"AdministrativeArea\",\"name\":\"Northern Beaches Council\"}],\"description\":\"Professional interior and exterior painting in Newport and surrounding Sydney suburbs by Sydney Paintmasters.\",\"name\":\"Painting Services in Newport\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Painting\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-newport/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-newport/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/nsw/painter-newport/\",\"name\":\"Painter Newport\",\"position\":3}]}]}",
       "hash": "5c57e6f289e30db9ca940a4f0b02f0a903652e7c1c9fcdd1a14f50a6899f51e5",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -5947,7 +5999,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:50.280Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-9C24291B",
@@ -5958,7 +6012,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-northern-beaches/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-northern-beaches/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-northern-beaches/#service\"},\"name\":\"Painter Northern Beaches, Coastal | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-northern-beaches/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-northern-beaches/#service\",\"@type\":\"Service\",\"areaServed\":[{\"@type\":\"AdministrativeArea\",\"name\":\"Northern Beaches\"},{\"@type\":\"City\",\"name\":\"Allambie Heights\"},{\"@type\":\"City\",\"name\":\"Avalon Beach\"},{\"@type\":\"City\",\"name\":\"Balgowlah\"},{\"@type\":\"City\",\"name\":\"Bayview\"},{\"@type\":\"City\",\"name\":\"Beacon Hill\"},{\"@type\":\"City\",\"name\":\"Belrose\"},{\"@type\":\"City\",\"name\":\"Bilgola Beach\"},{\"@type\":\"City\",\"name\":\"Brookvale\"},{\"@type\":\"City\",\"name\":\"Church Point\"},{\"@type\":\"City\",\"name\":\"Clareville\"},{\"@type\":\"City\",\"name\":\"Clontarf\"},{\"@type\":\"City\",\"name\":\"Collaroy\"},{\"@type\":\"City\",\"name\":\"Cromer\"},{\"@type\":\"City\",\"name\":\"Curl Curl\"},{\"@type\":\"City\",\"name\":\"Davidson\"},{\"@type\":\"City\",\"name\":\"Dee Why\"},{\"@type\":\"City\",\"name\":\"Duffys Forest\"},{\"@type\":\"City\",\"name\":\"Elanora Heights\"},{\"@type\":\"City\",\"name\":\"Fairlight\"},{\"@type\":\"City\",\"name\":\"Forestville\"},{\"@type\":\"City\",\"name\":\"Frenchs Forest\"},{\"@type\":\"City\",\"name\":\"Freshwater\"},{\"@type\":\"City\",\"name\":\"Ingleside\"},{\"@type\":\"City\",\"name\":\"Killarney Heights\"},{\"@type\":\"City\",\"name\":\"Manly\"},{\"@type\":\"City\",\"name\":\"Manly Vale\"},{\"@type\":\"City\",\"name\":\"Mona Vale\"},{\"@type\":\"City\",\"name\":\"Narrabeen\"},{\"@type\":\"City\",\"name\":\"Narraweena\"},{\"@type\":\"City\",\"name\":\"Newport\"},{\"@type\":\"City\",\"name\":\"Oxford Falls\"},{\"@type\":\"City\",\"name\":\"Palm Beach\"},{\"@type\":\"City\",\"name\":\"Queenscliff\"},{\"@type\":\"City\",\"name\":\"Scotland Island\"},{\"@type\":\"City\",\"name\":\"Seaforth\"},{\"@type\":\"City\",\"name\":\"Terrey Hills\"},{\"@type\":\"City\",\"name\":\"Warriewood\"},{\"@type\":\"City\",\"name\":\"Whale Beach\"},{\"@type\":\"City\",\"name\":\"Wheeler Heights\"}],\"description\":\"Professional interior and exterior painting in Northern Beaches and surrounding Sydney suburbs by Sydney Paintmasters.\",\"name\":\"Painting Services in Northern Beaches\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Painting\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-northern-beaches/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-northern-beaches/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/nsw/painter-northern-beaches/\",\"name\":\"Painter Northern Beaches\",\"position\":3}]}]}",
       "hash": "b6e927908869a440f07d7221224680710bc2d4969982c81b08b954bd405610f0",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -5993,7 +6047,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:50.649Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-633CD510",
@@ -6004,7 +6060,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-north-sydney/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-north-sydney/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-north-sydney/#service\"},\"name\":\"North Sydney Painters - Apartments | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-north-sydney/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-north-sydney/#service\",\"@type\":\"Service\",\"areaServed\":[{\"@type\":\"AdministrativeArea\",\"name\":\"North Sydney\"},{\"@type\":\"City\",\"name\":\"Cammeray\"},{\"@type\":\"City\",\"name\":\"Cremorne\"},{\"@type\":\"City\",\"name\":\"Cremorne Point\"},{\"@type\":\"City\",\"name\":\"Crows Nest\"},{\"@type\":\"City\",\"name\":\"Kirribilli\"},{\"@type\":\"City\",\"name\":\"Kurraba Point\"},{\"@type\":\"City\",\"name\":\"Lavender Bay\"},{\"@type\":\"City\",\"name\":\"McMahons Point\"},{\"@type\":\"City\",\"name\":\"Milsons Point\"},{\"@type\":\"City\",\"name\":\"Neutral Bay\"},{\"@type\":\"City\",\"name\":\"North Sydney\"},{\"@type\":\"City\",\"name\":\"St Leonards\"},{\"@type\":\"City\",\"name\":\"Waverton\"},{\"@type\":\"City\",\"name\":\"Wollstonecraft\"}],\"description\":\"Professional interior and exterior painting in North Sydney and surrounding Sydney suburbs by Sydney Paintmasters.\",\"name\":\"Painting Services in North Sydney\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Painting\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-north-sydney/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-north-sydney/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/nsw/painter-north-sydney/\",\"name\":\"Painter North Sydney\",\"position\":3}]}]}",
       "hash": "41c1cb4b40d5262b1024ec84abf698a139189fdbc9857465812891a9a4cd4e59",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -6039,7 +6095,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:52.177Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-D503D4D0",
@@ -6050,7 +6108,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-palm-beach/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-palm-beach/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-palm-beach/#service\"},\"name\":\"Palm Beach Painters - Beachfront Homes | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-palm-beach/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-palm-beach/#service\",\"@type\":\"Service\",\"areaServed\":[{\"@type\":\"City\",\"name\":\"Palm Beach\"},{\"@type\":\"City\",\"name\":\"Whale Beach\"},{\"@type\":\"City\",\"name\":\"Avalon Beach\"},{\"@type\":\"City\",\"name\":\"Clareville\"},{\"@type\":\"City\",\"name\":\"Bilgola Beach\"},{\"@type\":\"City\",\"name\":\"Newport\"},{\"@type\":\"City\",\"name\":\"Bayview\"},{\"@type\":\"City\",\"name\":\"Mona Vale\"},{\"@type\":\"AdministrativeArea\",\"name\":\"Northern Beaches Council\"}],\"description\":\"Professional interior and exterior painting in Palm Beach and surrounding Sydney suburbs by Sydney Paintmasters.\",\"name\":\"Painting Services in Palm Beach\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Painting\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-palm-beach/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-palm-beach/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/nsw/painter-palm-beach/\",\"name\":\"Painter Palm Beach\",\"position\":3}]}]}",
       "hash": "711dc688fe9007db71fabda6b3b2a5bb25887b8a43626237f16d82ce367bd764",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -6085,7 +6143,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:52.540Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-46E32F32",
@@ -6096,7 +6156,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-randwick/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-randwick/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-randwick/#service\"},\"name\":\"Randwick Painters, Eastern Suburbs | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-randwick/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-randwick/#service\",\"@type\":\"Service\",\"areaServed\":[{\"@type\":\"AdministrativeArea\",\"name\":\"Randwick City Council\"},{\"@type\":\"City\",\"name\":\"Randwick\"},{\"@type\":\"City\",\"name\":\"Coogee\"},{\"@type\":\"City\",\"name\":\"Clovelly\"},{\"@type\":\"City\",\"name\":\"Kensington\"},{\"@type\":\"City\",\"name\":\"Kingsford\"},{\"@type\":\"City\",\"name\":\"Maroubra\"},{\"@type\":\"City\",\"name\":\"Matraville\"},{\"@type\":\"City\",\"name\":\"Malabar\"},{\"@type\":\"City\",\"name\":\"Little Bay\"},{\"@type\":\"City\",\"name\":\"La Perouse\"},{\"@type\":\"City\",\"name\":\"Chifley\"},{\"@type\":\"City\",\"name\":\"Centennial Park\"},{\"@type\":\"City\",\"name\":\"Phillip Bay\"},{\"@type\":\"City\",\"name\":\"Port Botany\"}],\"description\":\"Professional interior and exterior painting in Randwick and surrounding Sydney suburbs by Sydney Paintmasters.\",\"name\":\"Painting Services in Randwick\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Painting\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-randwick/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-randwick/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/nsw/painter-randwick/\",\"name\":\"Painter Randwick\",\"position\":3}]}]}",
       "hash": "a0ed7ec15d7b5e1e8756bcfb8da6a8a754870d2358052f369a9136c5ca12bb1d",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -6131,7 +6191,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:52.901Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-A1313D23",
@@ -6142,7 +6204,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-ryde/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-ryde/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-ryde/#service\"},\"name\":\"Painter Ryde - Family Homes & Units | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-ryde/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-ryde/#service\",\"@type\":\"Service\",\"areaServed\":[{\"@type\":\"AdministrativeArea\",\"name\":\"City of Ryde\"},{\"@type\":\"City\",\"name\":\"Denistone\"},{\"@type\":\"City\",\"name\":\"Eastwood\"},{\"@type\":\"City\",\"name\":\"Macquarie Park\"},{\"@type\":\"City\",\"name\":\"Marsfield\"},{\"@type\":\"City\",\"name\":\"Meadowbank\"},{\"@type\":\"City\",\"name\":\"Melrose Park\"},{\"@type\":\"City\",\"name\":\"Putney\"},{\"@type\":\"City\",\"name\":\"Ryde\"},{\"@type\":\"City\",\"name\":\"Tennyson Point\"}],\"description\":\"Professional interior and exterior painting in Ryde and surrounding Sydney suburbs by Sydney Paintmasters.\",\"name\":\"Painting Services in Ryde\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Painting\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-ryde/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-ryde/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/nsw/painter-ryde/\",\"name\":\"Painter Ryde\",\"position\":3}]}]}",
       "hash": "b6d5183df9544cd25b50af71e109731bde6357ee7ce02997c4572e203028c0c8",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -6177,7 +6239,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:53.154Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-CD1CD5B2",
@@ -6188,7 +6252,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-st-ives/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-st-ives/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-st-ives/#service\"},\"name\":\"St Ives Painters, Leafy North Shore | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-st-ives/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-st-ives/#service\",\"@type\":\"Service\",\"areaServed\":[{\"@type\":\"AdministrativeArea\",\"name\":\"Ku-ring-gai\"},{\"@type\":\"City\",\"name\":\"St Ives\"},{\"@type\":\"City\",\"name\":\"Pymble\"},{\"@type\":\"City\",\"name\":\"Turramurra\"},{\"@type\":\"City\",\"name\":\"Wahroonga\"},{\"@type\":\"City\",\"name\":\"Gordon\"},{\"@type\":\"City\",\"name\":\"Killara\"},{\"@type\":\"City\",\"name\":\"Lindfield\"},{\"@type\":\"City\",\"name\":\"Roseville\"},{\"@type\":\"City\",\"name\":\"Warrawee\"}],\"description\":\"Professional interior and exterior painting in St Ives and surrounding Sydney suburbs by Sydney Paintmasters.\",\"name\":\"Painting Services in St Ives\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Painting\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-st-ives/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-st-ives/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/nsw/painter-st-ives/\",\"name\":\"Painter St Ives\",\"position\":3}]}]}",
       "hash": "a45cbf30bf8ead33c4da6fdf6852ec349a7cef63ccbdaf63040f955ac73604bd",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -6223,7 +6287,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:54.979Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-1A797697",
@@ -6234,7 +6300,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-sydney-cbd/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-sydney-cbd/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-sydney-cbd/#service\"},\"name\":\"Painter Sydney CBD - Apartments | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-sydney-cbd/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-sydney-cbd/#service\",\"@type\":\"Service\",\"areaServed\":[{\"@type\":\"AdministrativeArea\",\"name\":\"Sydney CBD\"},{\"@type\":\"City\",\"name\":\"Alexandria\"},{\"@type\":\"City\",\"name\":\"Barangaroo\"},{\"@type\":\"City\",\"name\":\"Beaconsfield\"},{\"@type\":\"City\",\"name\":\"Camperdown\"},{\"@type\":\"City\",\"name\":\"Chippendale\"},{\"@type\":\"City\",\"name\":\"Darlinghurst\"},{\"@type\":\"City\",\"name\":\"Darlington\"},{\"@type\":\"City\",\"name\":\"Dawes Point\"},{\"@type\":\"City\",\"name\":\"Elizabeth Bay\"},{\"@type\":\"City\",\"name\":\"Erskineville\"},{\"@type\":\"City\",\"name\":\"Eveleigh\"},{\"@type\":\"City\",\"name\":\"Forest Lodge\"},{\"@type\":\"City\",\"name\":\"Glebe\"},{\"@type\":\"City\",\"name\":\"Haymarket\"},{\"@type\":\"City\",\"name\":\"Millers Point\"},{\"@type\":\"City\",\"name\":\"Moore Park\"},{\"@type\":\"City\",\"name\":\"Paddington\"},{\"@type\":\"City\",\"name\":\"Potts Point\"},{\"@type\":\"City\",\"name\":\"Pyrmont\"},{\"@type\":\"City\",\"name\":\"Redfern\"},{\"@type\":\"City\",\"name\":\"Rosebery\"},{\"@type\":\"City\",\"name\":\"Rushcutters Bay\"},{\"@type\":\"City\",\"name\":\"Surry Hills\"},{\"@type\":\"City\",\"name\":\"The Rocks\"},{\"@type\":\"City\",\"name\":\"Ultimo\"},{\"@type\":\"City\",\"name\":\"Waterloo\"},{\"@type\":\"City\",\"name\":\"Woolloomooloo\"},{\"@type\":\"City\",\"name\":\"Zetland\"}],\"description\":\"Professional interior and exterior painting in Sydney CBD and surrounding Sydney suburbs by Sydney Paintmasters.\",\"name\":\"Painting Services in Sydney CBD\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Painting\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-sydney-cbd/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-sydney-cbd/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/nsw/painter-sydney-cbd/\",\"name\":\"Painter Sydney CBD\",\"position\":3}]}]}",
       "hash": "2dc74e6e559d2e751caa9e515d826e47470e33318a6084f031cb49d968a26202",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -6269,7 +6335,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:55.343Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-B50706A3",
@@ -6280,7 +6348,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-the-rocks/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-the-rocks/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-the-rocks/#service\"},\"name\":\"The Rocks Painters - Heritage | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-the-rocks/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-the-rocks/#service\",\"@type\":\"Service\",\"areaServed\":[{\"@type\":\"City\",\"name\":\"The Rocks\"},{\"@type\":\"City\",\"name\":\"Dawes Point\"}],\"description\":\"Professional interior and exterior painting in The Rocks and surrounding Sydney suburbs by Sydney Paintmasters.\",\"name\":\"Painting Services in The Rocks\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Painting\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-the-rocks/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-the-rocks/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/nsw/painter-the-rocks/\",\"name\":\"Painter The Rocks\",\"position\":3}]}]}",
       "hash": "5667b7c03bbf66c2d15dd9f7f49648e8ccc5b5c22ce21680e61fa8ab54cfa7a4",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -6315,7 +6383,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:56.168Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-9E8A7D6D",
@@ -6326,7 +6396,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-waverley/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-waverley/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-waverley/#service\"},\"name\":\"Waverley Painters, Eastern Suburbs Hub | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-waverley/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-waverley/#service\",\"@type\":\"Service\",\"areaServed\":[{\"@type\":\"AdministrativeArea\",\"name\":\"Waverley Council\"},{\"@type\":\"City\",\"name\":\"Bondi\"},{\"@type\":\"City\",\"name\":\"Bondi Beach\"},{\"@type\":\"City\",\"name\":\"Bondi Junction\"},{\"@type\":\"City\",\"name\":\"Bronte\"},{\"@type\":\"City\",\"name\":\"Dover Heights\"},{\"@type\":\"City\",\"name\":\"North Bondi\"},{\"@type\":\"City\",\"name\":\"Queens Park\"},{\"@type\":\"City\",\"name\":\"Tamarama\"},{\"@type\":\"City\",\"name\":\"Waverley\"}],\"description\":\"Professional interior and exterior painting in Waverley and surrounding Sydney suburbs by Sydney Paintmasters.\",\"name\":\"Painting Services in Waverley\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Painting\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-waverley/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-waverley/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/nsw/painter-waverley/\",\"name\":\"Painter Waverley\",\"position\":3}]}]}",
       "hash": "643c4bfa9df3b3d33d4f4db7b97ad2395fae1e742bb4387439e6ad2eaaddfd08",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -6361,7 +6431,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:56.797Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-74C5AB80",
@@ -6372,7 +6444,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-willoughby/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-willoughby/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-willoughby/#service\"},\"name\":\"Painter Willoughby - Lower North Shore | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-willoughby/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-willoughby/#service\",\"@type\":\"Service\",\"areaServed\":[{\"@type\":\"AdministrativeArea\",\"name\":\"Willoughby\"},{\"@type\":\"City\",\"name\":\"Willoughby\"},{\"@type\":\"City\",\"name\":\"Chatswood\"},{\"@type\":\"City\",\"name\":\"Artarmon\"},{\"@type\":\"City\",\"name\":\"Castlecrag\"},{\"@type\":\"City\",\"name\":\"Northbridge\"},{\"@type\":\"City\",\"name\":\"Naremburn\"},{\"@type\":\"City\",\"name\":\"Castle Cove\"},{\"@type\":\"City\",\"name\":\"Middle Cove\"}],\"description\":\"Professional interior and exterior painting in Willoughby and surrounding Sydney suburbs by Sydney Paintmasters.\",\"name\":\"Painting Services in Willoughby\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Painting\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-willoughby/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-willoughby/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/nsw/painter-willoughby/\",\"name\":\"Painter Willoughby\",\"position\":3}]}]}",
       "hash": "42fe3cf107e8065939f031bca0cf26934511a7cb002c5d7fbff720780c6b01d8",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -6407,7 +6479,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:57.090Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-B884D07B",
@@ -6418,7 +6492,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-woollahra/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-woollahra/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-woollahra/#service\"},\"name\":\"Woollahra Painters - Heritage Homes | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-woollahra/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-woollahra/#service\",\"@type\":\"Service\",\"areaServed\":{\"@type\":\"Place\",\"name\":\"Woollahra\"},\"description\":\"Professional interior and exterior painting in Woollahra and surrounding Sydney suburbs by Sydney Paintmasters.\",\"name\":\"Painting Services in Woollahra\",\"provider\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"serviceType\":\"Painting\",\"url\":\"https://sydneypaintmasters.com.au/nsw/painter-woollahra/\"},{\"@id\":\"https://sydneypaintmasters.com.au/nsw/painter-woollahra/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/service-locations/\",\"name\":\"Service Locations\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/nsw/painter-woollahra/\",\"name\":\"Painter Woollahra\",\"position\":3}]}]}",
       "hash": "3a65261292751fca6fe8d07905a2928adf30e9de24164f09c55eab214e33f115",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -6453,7 +6527,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:57.428Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-E24846A2",
@@ -6464,7 +6540,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blogs/#webpage\",\"@type\":\"CollectionPage\",\"about\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/blogs/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/blogs/#itemlist\"},\"name\":\"Blogs | Painting Tips and Guides | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/blogs/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blogs/#itemlist\",\"@type\":\"ItemList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"name\":\"How Much Does Venetian Plaster Cost in Sydney 2026?\",\"position\":1,\"url\":\"https://sydneypaintmasters.com.au/blog/venetian-plaster-cost-sydney-2026/\"},{\"@type\":\"ListItem\",\"name\":\"Best Time to Paint in 2026: Weather Guide\",\"position\":2,\"url\":\"https://sydneypaintmasters.com.au/blog/best-time-book-painting-2026/\"},{\"@type\":\"ListItem\",\"name\":\"Beyond White: Warm Neutrals Making Sydney Interiors Feel Brighter in 2026\",\"position\":3,\"url\":\"https://sydneypaintmasters.com.au/blog/beyond-white-warm-neutrals/\"},{\"@type\":\"ListItem\",\"name\":\"Low-VOC vs Traditional Paints: Is the Air in Your Sydney Home Safer in 2026?\",\"position\":4,\"url\":\"https://sydneypaintmasters.com.au/blog/low-voc-vs-traditional-paints/\"},{\"@type\":\"ListItem\",\"name\":\"When Does Your Home Need a Fresh Coat of Paint?\",\"position\":5,\"url\":\"https://sydneypaintmasters.com.au/blog/when-does-your-home-need-a-fresh-coat-of-paint/\"},{\"@type\":\"ListItem\",\"name\":\"What Sets Australia's Best Painting Teams Apart?\",\"position\":6,\"url\":\"https://sydneypaintmasters.com.au/blog/what-sets-australia-best-painting-teams-apart/\"},{\"@type\":\"ListItem\",\"name\":\"How to Prevent Interior Painting Mistakes in 2026\",\"position\":7,\"url\":\"https://sydneypaintmasters.com.au/blog/how-to-prevent-interior-painting-mistakes-in-2026/\"},{\"@type\":\"ListItem\",\"name\":\"Interior vs Exterior Painting Costs in Sydney Explained\",\"position\":8,\"url\":\"https://sydneypaintmasters.com.au/blog/interior-vs-exterior-painting-costs-in-sydney-explained/\"}],\"name\":\"Sydney Paintmasters Blog Articles\"},{\"@id\":\"https://sydneypaintmasters.com.au/blogs/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/blogs/\",\"name\":\"Blogs\",\"position\":2}]}]}",
       "hash": "0cbcde002c89e0ce2ff6841ef6a00e4a03509acd074c5ef5c285cc9e3de682bd",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -6499,7 +6575,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:57.742Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-5D213DB0",
@@ -6510,7 +6588,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/venetian-plaster-cost-sydney-2026/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/venetian-plaster-cost-sydney-2026/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/venetian-plaster-cost-sydney-2026/#article\"},\"name\":\"How Much Does Venetian Plaster Cost in Sydney 2026? | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/blog/venetian-plaster-cost-sydney-2026/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/venetian-plaster-cost-sydney-2026/#article\",\"@type\":\"BlogPosting\",\"author\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"description\":\"How much does Venetian plaster cost in Sydney? Explore 2026 price ranges, key cost factors, preparation needs and budgeting tips for renovators.\",\"headline\":\"How Much Does Venetian Plaster Cost in Sydney in 2026?\",\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntityOfPage\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/venetian-plaster-cost-sydney-2026/#webpage\"},\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/blog/venetian-plaster-cost-sydney-2026/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/venetian-plaster-cost-sydney-2026/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/blogs/\",\"name\":\"Blogs\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/blog/venetian-plaster-cost-sydney-2026/\",\"name\":\"How Much Does Venetian Plaster Cost in Sydney in 2026?\",\"position\":3}]}]}",
       "hash": "5f37c13db9046f9ac03903abd0a0777513e9a902259d7f64b86f8a4e4b4887c0",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -6545,7 +6623,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:58.077Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-3616565C",
@@ -6556,7 +6636,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/best-time-book-painting-2026/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/best-time-book-painting-2026/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/best-time-book-painting-2026/#article\"},\"name\":\"Best Time to Paint in 2026: Weather Guide | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/blog/best-time-book-painting-2026/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/best-time-book-painting-2026/#article\",\"@type\":\"BlogPosting\",\"author\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"description\":\"Learn about Sydney's weather patterns and optimal painting times. Expert guide on temperature, humidity, and seasonal considerations for 2026.\",\"headline\":\"The Best Time to Book a Painting Service in 2026: How Sydney's Shifting Weather Patterns Affect Drying Times\",\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntityOfPage\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/best-time-book-painting-2026/#webpage\"},\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/blog/best-time-book-painting-2026/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/best-time-book-painting-2026/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/blogs/\",\"name\":\"Blogs\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/blog/best-time-book-painting-2026/\",\"name\":\"The Best Time to Book a Painting Service in 2026: How Sydney's Shifting Weather Patterns Affect Drying Times\",\"position\":3}]}]}",
       "hash": "ddc415a34d1531fade2f0ac1335c9a4c158076d387bbe16c57f197ff9375c2bb",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -6591,7 +6671,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:58.433Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-323A7762",
@@ -6602,7 +6684,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/beyond-white-warm-neutrals/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/beyond-white-warm-neutrals/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/beyond-white-warm-neutrals/#article\"},\"name\":\"Beyond White: Warm Neutrals Making Sydney Interiors Feel Brighter in 2026 | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/blog/beyond-white-warm-neutrals/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/beyond-white-warm-neutrals/#article\",\"@type\":\"BlogPosting\",\"author\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"description\":\"Discover why warm neutrals are replacing stark white in Sydney homes. Expert guide on colour selection, Australian light, and interior painting trends for 2026.\",\"headline\":\"Beyond White: Warm Neutrals Making Sydney Interiors Feel Brighter in 2026\",\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntityOfPage\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/beyond-white-warm-neutrals/#webpage\"},\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/blog/beyond-white-warm-neutrals/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/beyond-white-warm-neutrals/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/blogs/\",\"name\":\"Blogs\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/blog/beyond-white-warm-neutrals/\",\"name\":\"Beyond White: Warm Neutrals Making Sydney Interiors Feel Brighter in 2026\",\"position\":3}]}]}",
       "hash": "e84edf158029cfeba279bd948dbc31d3dd1be0d5e105d93c94979d0eb400bf1c",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -6637,7 +6719,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:59.234Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-BC3CB816",
@@ -6648,7 +6732,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/low-voc-vs-traditional-paints/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/low-voc-vs-traditional-paints/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/low-voc-vs-traditional-paints/#article\"},\"name\":\"Low-VOC vs Traditional Paints: Is the Air in Your Sydney Home Safer in 2026? | Sydney Paintmasters\",\"url\":\"https://sydneypaintmasters.com.au/blog/low-voc-vs-traditional-paints/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/low-voc-vs-traditional-paints/#article\",\"@type\":\"BlogPosting\",\"author\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"description\":\"Compare low-VOC and traditional paints for Sydney homes. Expert guide on air quality, performance, cost and which paint to choose room by room in 2026.\",\"headline\":\"Low-VOC vs Traditional Paints: Is the Air in Your Sydney Home Safer in 2026?\",\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntityOfPage\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/low-voc-vs-traditional-paints/#webpage\"},\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/blog/low-voc-vs-traditional-paints/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/low-voc-vs-traditional-paints/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/blogs/\",\"name\":\"Blogs\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/blog/low-voc-vs-traditional-paints/\",\"name\":\"Low-VOC vs Traditional Paints: Is the Air in Your Sydney Home Safer in 2026?\",\"position\":3}]}]}",
       "hash": "28d3b34ec9955c22440a99a81ff41f28b4e647ccbdff72c1cb2303702ddbea5f",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -6683,7 +6767,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:59.519Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-5BFB933F",
@@ -6694,7 +6780,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/when-does-your-home-need-a-fresh-coat-of-paint/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/when-does-your-home-need-a-fresh-coat-of-paint/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/when-does-your-home-need-a-fresh-coat-of-paint/#article\"},\"name\":\"When Does Your Home Need a Fresh Coat of Paint?\",\"url\":\"https://sydneypaintmasters.com.au/blog/when-does-your-home-need-a-fresh-coat-of-paint/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/when-does-your-home-need-a-fresh-coat-of-paint/#article\",\"@type\":\"BlogPosting\",\"author\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"description\":\"Learn the warning signs your Sydney home needs repainting, from peeling paint and fading colours to moisture damage and surface wear.\",\"headline\":\"How Do You Know When Your Home Needs a New Paint Update?\",\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntityOfPage\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/when-does-your-home-need-a-fresh-coat-of-paint/#webpage\"},\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/blog/when-does-your-home-need-a-fresh-coat-of-paint/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/when-does-your-home-need-a-fresh-coat-of-paint/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/blogs/\",\"name\":\"Blogs\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/blog/when-does-your-home-need-a-fresh-coat-of-paint/\",\"name\":\"How Do You Know When Your Home Needs a New Paint Update?\",\"position\":3}]}]}",
       "hash": "36dcbefb11cb4985cff79758e0df1e9758bd758ba3db3e1ecfc63954949044ae",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -6729,7 +6815,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:35:59.780Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-8CAB690A",
@@ -6740,7 +6828,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/what-sets-australia-best-painting-teams-apart/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/what-sets-australia-best-painting-teams-apart/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/what-sets-australia-best-painting-teams-apart/#article\"},\"name\":\"What Sets Australia's Best Painting Teams Apart?\",\"url\":\"https://sydneypaintmasters.com.au/blog/what-sets-australia-best-painting-teams-apart/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/what-sets-australia-best-painting-teams-apart/#article\",\"@type\":\"BlogPosting\",\"author\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"description\":\"Discover what makes professional painting teams stand out in Australia, from preparation and materials to communication, guarantees and quality finishes.\",\"headline\":\"What Makes a Professional Painting Team Stand Out in Australia?\",\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntityOfPage\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/what-sets-australia-best-painting-teams-apart/#webpage\"},\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/blog/what-sets-australia-best-painting-teams-apart/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/what-sets-australia-best-painting-teams-apart/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/blogs/\",\"name\":\"Blogs\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/blog/what-sets-australia-best-painting-teams-apart/\",\"name\":\"What Makes a Professional Painting Team Stand Out in Australia?\",\"position\":3}]}]}",
       "hash": "4d7d6ce4a212cd500c8607f2f9382c9c0a3354c6737ae38e0cafc003f51ae60e",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -6775,7 +6863,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:36:00.069Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-E22F2964",
@@ -6786,7 +6876,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/how-to-prevent-interior-painting-mistakes-in-2026/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/how-to-prevent-interior-painting-mistakes-in-2026/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/how-to-prevent-interior-painting-mistakes-in-2026/#article\"},\"name\":\"How to Prevent Interior Painting Mistakes in 2026\",\"url\":\"https://sydneypaintmasters.com.au/blog/how-to-prevent-interior-painting-mistakes-in-2026/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/how-to-prevent-interior-painting-mistakes-in-2026/#article\",\"@type\":\"BlogPosting\",\"author\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"description\":\"Find out how poor preparation affects interior painting and the fixes that help Sydney homes achieve better results.\",\"headline\":\"Prep Mistakes That Ruin Interior Painting Jobs in 2026 (And the Simple Fixes Sydney Homeowners Miss)\",\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntityOfPage\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/how-to-prevent-interior-painting-mistakes-in-2026/#webpage\"},\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/blog/how-to-prevent-interior-painting-mistakes-in-2026/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/how-to-prevent-interior-painting-mistakes-in-2026/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/blogs/\",\"name\":\"Blogs\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/blog/how-to-prevent-interior-painting-mistakes-in-2026/\",\"name\":\"Prep Mistakes That Ruin Interior Painting Jobs in 2026 (And the Simple Fixes Sydney Homeowners Miss)\",\"position\":3}]}]}",
       "hash": "c692d168420a898c231392fb38192c3413b9dde6e0725d81d697be4826e065dd",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -6821,7 +6911,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:36:00.350Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-EE588517",
@@ -6832,7 +6924,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/interior-vs-exterior-painting-costs-in-sydney-explained/#webpage\",\"@type\":\"WebPage\",\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/interior-vs-exterior-painting-costs-in-sydney-explained/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/interior-vs-exterior-painting-costs-in-sydney-explained/#article\"},\"name\":\"Interior vs Exterior Painting Costs in Sydney Explained\",\"url\":\"https://sydneypaintmasters.com.au/blog/interior-vs-exterior-painting-costs-in-sydney-explained/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/interior-vs-exterior-painting-costs-in-sydney-explained/#article\",\"@type\":\"BlogPosting\",\"author\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"description\":\"Compare interior and exterior painting costs in Sydney, including labour, prep, access, materials and hidden factors that affect your final quote.\",\"headline\":\"Interior vs Exterior Painting Costs in Sydney Right Now\",\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntityOfPage\":{\"@id\":\"https://sydneypaintmasters.com.au/blog/interior-vs-exterior-painting-costs-in-sydney-explained/#webpage\"},\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/blog/interior-vs-exterior-painting-costs-in-sydney-explained/\"},{\"@id\":\"https://sydneypaintmasters.com.au/blog/interior-vs-exterior-painting-costs-in-sydney-explained/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/blogs/\",\"name\":\"Blogs\",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/blog/interior-vs-exterior-painting-costs-in-sydney-explained/\",\"name\":\"Interior vs Exterior Painting Costs in Sydney Right Now\",\"position\":3}]}]}",
       "hash": "e737458dc2ccdf49d03f4e6a3df5de393170ecbed41dcbc272b1624eea59bc9b",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -6867,7 +6959,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:36:01.042Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-D08769AB",
@@ -6878,7 +6972,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#bobby-nojad\",\"@type\":\"Person\",\"description\":\"Owner of Sydney Paintmasters with more than 20 years of experience painting homes, strata and commercial properties across Sydney.\",\"jobTitle\":\"Owner\",\"name\":\"Bobby Nojad\",\"url\":\"https://sydneypaintmasters.com.au/about-us/\",\"worksFor\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"}},{\"@id\":\"https://sydneypaintmasters.com.au/about-us/#webpage\",\"@type\":\"AboutPage\",\"about\":[{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},{\"@id\":\"https://sydneypaintmasters.com.au/#bobby-nojad\"}],\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/about-us/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"name\":\"About Sydney Paintmasters - 20+ Years Painting Sydney\",\"url\":\"https://sydneypaintmasters.com.au/about-us/\"},{\"@id\":\"https://sydneypaintmasters.com.au/about-us/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/about-us/\",\"name\":\"About Us\",\"position\":2}]}]}",
       "hash": "aedb185aeb4b46a01c2301a4d9d7d66ff9b9f9143594702e511d5ad703fbad43",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -6913,7 +7007,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:36:02.451Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     },
     {
       "recordId": "SCHEMA-9021C933",
@@ -6924,7 +7020,7 @@
       "jsonld": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@id\":\"https://sydneypaintmasters.com.au/#website\",\"@type\":\"WebSite\",\"inLanguage\":\"en-AU\",\"name\":\"Sydney Paintmasters\",\"publisher\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/#organization\",\"@type\":\"Organization\",\"areaServed\":{\"@type\":\"City\",\"containedInPlace\":{\"@type\":\"State\",\"name\":\"New South Wales\"},\"name\":\"Sydney\"},\"email\":\"info@sydneypaintmasters.com.au\",\"logo\":\"https://sydneypaintmasters.com.au/uploads/logo-6a3b85fb.webp\",\"name\":\"Sydney Paintmasters\",\"sameAs\":[\"https://www.facebook.com/sydneypaintmasters\",\"https://www.instagram.com/sydneypaintmasters\",\"https://www.linkedin.com/company/sydneypaintmasters\",\"https://maps.app.goo.gl/VuoV6kykp8vNyjf77\"],\"telephone\":\"+61423019087\",\"url\":\"https://sydneypaintmasters.com.au/\"},{\"@id\":\"https://sydneypaintmasters.com.au/contact/#webpage\",\"@type\":\"ContactPage\",\"about\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"breadcrumb\":{\"@id\":\"https://sydneypaintmasters.com.au/contact/#breadcrumb\"},\"inLanguage\":\"en-AU\",\"isPartOf\":{\"@id\":\"https://sydneypaintmasters.com.au/#website\"},\"mainEntity\":{\"@id\":\"https://sydneypaintmasters.com.au/#organization\"},\"name\":\"Contact Sydney Paintmasters - Free Painting Quote\",\"url\":\"https://sydneypaintmasters.com.au/contact/\"},{\"@id\":\"https://sydneypaintmasters.com.au/contact/#breadcrumb\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/\",\"name\":\"Home\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://sydneypaintmasters.com.au/contact/\",\"name\":\"Contact\",\"position\":2}]}]}",
       "hash": "a5a334c5028cdf792facf4c7708942f641e3e0485ab714f6abf1c9c6a27a496d",
       "suppress": true,
-      "suppressionStatus": "NOT_TESTED",
+      "suppressionStatus": "PASS",
       "issueSeverity": "WARNING",
       "issueCode": "EXISTING_SCHEMA_SUPPRESSION_NOT_TESTED",
       "schemaVersion": "1.1",
@@ -6959,7 +7055,9 @@
         "issue_reason": "Custom graph generated and structurally validated; WordPress suppression of the existing theme/plugin schema on this URL not yet verified in production.",
         "source_references": "niftyhub:6a2c94977b4977d782ce349e;live-page;project:sydney-paintmasters",
         "schema_version": "1.1"
-      }
+      },
+      "verifiedAt": "2026-09-15T06:36:02.836Z",
+      "verifyInfo": "1 total · 1 ours · 0 stray"
     }
   ]
 }
