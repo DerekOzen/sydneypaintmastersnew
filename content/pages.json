@@ -1144,5 +1144,53 @@
     "updatedBy": "joshua",
     "createdAt": "2026-09-15T23:43:06.292Z",
     "createdBy": "joshua"
+  },
+  {
+    "id": "pg-74",
+    "path": "/blog/house-painting-cost-sydney",
+    "type": "post",
+    "title": "House Painting Cost Sydney (2026 Price Guide) | Sydney Paintmasters",
+    "seoTitle": "House Painting Cost Sydney (2026 Price Guide) | Sydney Paintmasters",
+    "seoDescription": "How much does it cost to paint a house in Sydney? A 2026 price guide covering interior vs exterior, prep and per-square-metre ranges. Free quotes: 0423 019 087.",
+    "layout": "mockup",
+    "headerPartId": "header-2",
+    "footerPartId": "footer-5",
+    "status": "draft",
+    "createdAt": "2026-09-16T00:35:17.364Z",
+    "createdBy": "joshua",
+    "updatedAt": "2026-09-16T00:35:17.364Z",
+    "updatedBy": "joshua"
+  },
+  {
+    "id": "pg-75",
+    "path": "/blog/how-long-does-exterior-paint-last-sydney",
+    "type": "post",
+    "title": "How Long Does Exterior Paint Last in Sydney? | Sydney Paintmasters",
+    "seoTitle": "How Long Does Exterior Paint Last in Sydney? | Sydney Paintmasters",
+    "seoDescription": "How long does exterior house paint last in Sydney's climate? Lifespans by surface, what shortens it, and 6 signs it's time to repaint. Free quote: 0423 019 087.",
+    "layout": "mockup",
+    "headerPartId": "header-2",
+    "footerPartId": "footer-5",
+    "status": "draft",
+    "createdAt": "2026-09-16T00:35:17.364Z",
+    "createdBy": "joshua",
+    "updatedAt": "2026-09-16T00:35:17.364Z",
+    "updatedBy": "joshua"
+  },
+  {
+    "id": "pg-76",
+    "path": "/blog/roof-painting-cost-sydney",
+    "type": "post",
+    "title": "Roof Painting Cost Sydney - Is It Worth It? | Sydney Paintmasters",
+    "seoTitle": "Roof Painting Cost Sydney - Is It Worth It? | Sydney Paintmasters",
+    "seoDescription": "What does roof painting cost in Sydney and does it really extend roof life? Tile vs Colorbond, process and price ranges. Free quote: 0423 019 087.",
+    "layout": "mockup",
+    "headerPartId": "header-2",
+    "footerPartId": "footer-5",
+    "status": "draft",
+    "createdAt": "2026-09-16T00:35:17.364Z",
+    "createdBy": "joshua",
+    "updatedAt": "2026-09-16T00:35:17.364Z",
+    "updatedBy": "joshua"
   }
 ]
