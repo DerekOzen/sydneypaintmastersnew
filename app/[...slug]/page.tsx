@@ -66,7 +66,7 @@ const pagesData = _allPages();
 type Pg = {
   id: string; path: string; type: string; title: string;
   seoTitle?: string; seoDescription?: string; noindex?: boolean; body?: string;
-  featuredImage?: string; featuredImageAlt?: string;
+  featuredImage?: string; featuredImageAlt?: string; isBlogIndex?: boolean;
   layout?: string; css?: string; fonts?: string[]; isHome?: boolean;
   headerPartId?: string | null; footerPartId?: string | null;
   blocks?: Array<{ id?: string; type: string; props?: Record<string, any> }>;

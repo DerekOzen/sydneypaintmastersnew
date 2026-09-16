@@ -144,6 +144,53 @@ function autoInjectBlogGrid(html: string, posts: BlogPost[], listHtml: string): 
   return html.slice(0, best.contentStart) + listHtml + html.slice(best.contentEnd);
 }
 
+// Generic card-grid detector — for a blog page whose placeholder cards DON'T link to the
+// real posts (the common case on imported mockups). Finds the container whose direct
+// children are ≥3 repeated card-like elements that collectively carry images/links (a card
+// grid) and replaces its inner with the live list. Guards against wiping the page: it only
+// considers card-like child tags (article/div/a/li — never a section-list wrapper) and never
+// replaces a container larger than 70% of the body. Returns null if it finds no clean grid.
+const _BL_CARD_TAGS = new Set(["article", "div", "a", "li"]);
+function findCardGrid(html: string, listHtml: string): string | null {
+  const tagRe = /<(\/?)([a-zA-Z][\w-]*)\b[^>]*?(\/?)>/g;
+  const stack: { tag: string; contentStart: number; kids: Record<string, number> }[] = [];
+  let best: { score: number; start: number; end: number; len: number } | null = null;
+  let t: RegExpExecArray | null;
+  const cap = html.length * 0.7;
+  while ((t = tagRe.exec(html))) {
+    const closing = t[1] === "/"; const tag = t[2].toLowerCase(); const selfClose = t[3] === "/";
+    if (!closing) {
+      if (stack.length) { const top = stack[stack.length - 1]; top.kids[tag] = (top.kids[tag] || 0) + 1; }
+      if (_BL_VOID.has(tag) || selfClose) continue;
+      stack.push({ tag, contentStart: tagRe.lastIndex, kids: {} });
+    } else {
+      for (let i = stack.length - 1; i >= 0; i--) {
+        if (stack[i].tag === tag) {
+          const el = stack[i]; stack.length = i; const contentEnd = t.index;
+          let dom = 0, domTag = "";
+          for (const k in el.kids) { if (el.kids[k] > dom) { dom = el.kids[k]; domTag = k; } }
+          if (dom >= 3 && _BL_CARD_TAGS.has(domTag)) {
+            const len = contentEnd - el.contentStart;
+            if (len <= cap) {
+              const inner = html.slice(el.contentStart, contentEnd);
+              const imgs = (inner.match(/<img\b/gi) || []).length;
+              const links = (inner.match(/<a\b/gi) || []).length;
+              if (imgs >= 2 || links >= 3) {
+                // Image-bearing grids (real blog cards) always beat link-only lists.
+                const score = dom + (imgs >= 2 ? 1000 : 0);
+                if (!best || score > best.score || (score === best.score && len < best.len)) best = { score, start: el.contentStart, end: contentEnd, len };
+              }
+            }
+          }
+          break;
+        }
+      }
+    }
+  }
+  if (!best) return null;
+  return html.slice(0, best.start) + listHtml + html.slice(best.end);
+}
+
 // Global theme (content/theme.json): named colours + fonts published as CSS variables
 // so var(--nifty-c-<id>) / var(--nifty-font-*) resolve site-wide. Read once at build.
 const SITE_THEME: any = (() => {
@@ -282,6 +329,7 @@ type MockupPg = {
   footerPartId?: string | null;
   type?: string;               // page type (service/industry/location/post/…) — for sidebar binding + blog index detection
   path?: string;               // page path (e.g. "/blogs/") — used to auto-detect the blog index page
+  isBlogIndex?: boolean;       // explicitly flagged in the dashboard as THE blog listing page
   sidebarId?: string | null;   // explicit sidebar template, or "__none__" to force none
   _schemas?: Array<{ type?: string; data?: Record<string, unknown> }>;
 };
@@ -735,28 +783,44 @@ export function MockupPage({ page, parts = [], suppressSchema = false }: { page:
     }
   }
 
-  // Dynamic blog list: on the blog index page, render the live post grid (newest first,
-  // all posts). Two ways in, in priority order:
-  //  1) An explicit marker slot — an element carrying data-nifty-blog — has its contents
-  //     replaced with the grid. Works on ANY page, exactly like the sidebar slot.
-  //  2) Auto-detect — only on the blog index page (a non-post page whose path mentions
-  //     "blog"): find the existing post-card grid and swap its contents for the live one.
-  //     Fail-safe: if it can't cleanly isolate that grid it does nothing, so a page is
-  //     never broken. Adding a post makes it appear at the top on the next rebuild.
+  // Dynamic blog list: on the blog listing page, render the live post grid (every published
+  // post, newest first). A page counts as the blog listing page when ANY of these is true:
+  //   • it's flagged "This is the blog listing page" in the dashboard (page.isBlogIndex) —
+  //     the reliable, explicit signal;
+  //   • it carries a data-nifty-blog marker element (manual placement); or
+  //   • it auto-detects as one (a non-post page whose path is /blog or /blogs).
+  // Then the grid is placed by the first of these that works:
+  //   1) replace the inner of a data-nifty-blog marker element (exact, if present);
+  //   2) replace the card grid whose cards already link to real posts;
+  //   3) replace a generic repeated-card grid (placeholder cards that link nowhere real);
+  //   4) if the page is EXPLICITLY flagged, append the grid so posts always show even when
+  //      no existing grid could be found. Auto-detected/marker-less pages stay untouched if
+  //      nothing matched, so a page is never altered unexpectedly.
+  const isBlogIndex =
+    page.isBlogIndex === true ||
+    /data-nifty-blog/.test(bodyWithSidebar) ||
+    (page.type !== "post" && /(^|\/)blogs?(\/|$)/i.test(String(page.path || "")));
   let blogCssText = "";
-  if (SITE_POSTS.length) {
+  if (isBlogIndex && SITE_POSTS.length) {
     const bl = renderBlogList(SITE_POSTS);
     if (bl.html) {
+      let done = false;
       if (/data-nifty-blog/.test(bodyWithSidebar)) {
         bodyWithSidebar = bodyWithSidebar.replace(
           /(<([a-zA-Z][a-zA-Z0-9]*)\b[^>]*\bdata-nifty-blog\b[^>]*>)([\s\S]*?)(<\/\2>)/,
           (_m, open, _tag, _inner, close) => open + bl.html + close
         );
-        blogCssText = bl.css;
-      } else if (page.type !== "post" && /blog/i.test(String(page.path || ""))) {
-        const injected = autoInjectBlogGrid(bodyWithSidebar, SITE_POSTS, bl.html);
-        if (injected) { bodyWithSidebar = injected; blogCssText = bl.css; }
+        done = true;
       }
+      if (!done) { const inj = autoInjectBlogGrid(bodyWithSidebar, SITE_POSTS, bl.html); if (inj) { bodyWithSidebar = inj; done = true; } }
+      if (!done) { const inj = findCardGrid(bodyWithSidebar, bl.html); if (inj) { bodyWithSidebar = inj; done = true; } }
+      // Guaranteed fallback: an explicitly-flagged page always shows its posts, even if we
+      // couldn't find a grid to replace — append the list into the page body.
+      if (!done && page.isBlogIndex === true) {
+        bodyWithSidebar = bodyWithSidebar + `<section class="nifty-bloglist-wrap">${bl.html}</section>`;
+        done = true;
+      }
+      if (done) blogCssText = bl.css + `.nifty-bloglist-wrap{padding:40px 20px;max-width:1200px;margin:0 auto}`;
     }
   }
 
