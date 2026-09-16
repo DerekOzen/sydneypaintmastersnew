@@ -34,7 +34,7 @@ const pagesData = _allPages();
 
 type Pg = {
   path: string; status?: string; layout?: string; title: string; isHome?: boolean;
-  seoTitle?: string; seoDescription?: string; noindex?: boolean; css?: string; fonts?: string[];
+  seoTitle?: string; seoDescription?: string; noindex?: boolean; featuredImage?: string; featuredImageAlt?: string; css?: string; fonts?: string[];
   headerPartId?: string | null; footerPartId?: string | null;
   blocks?: Array<{ id?: string; type: string; props?: Record<string, any> }>;
   _schemas?: Array<{ type?: string; data?: Record<string, unknown> }>;
@@ -64,13 +64,27 @@ const HOME_CANONICAL = (() => { const b = (site.siteUrl || "").replace(/\/+$/, "
 
 const HOME_T = HOME_PAGE ? (HOME_PAGE.seoTitle || HOME_PAGE.title) : ((site as any).name || "Home");
 const HOME_D = HOME_PAGE ? (HOME_PAGE.seoDescription || "") : "";
+// Featured image → og:image / twitter:image for the homepage (absolute URL against the
+// real domain, or an already-absolute URL). Undefined when none is set.
+const HOME_OG_IMAGES = (() => {
+  const raw = (HOME_PAGE?.featuredImage || "").trim();
+  if (!raw) return undefined;
+  let url = raw;
+  if (!/^https?:\/\//i.test(raw)) {
+    const base = (site.siteUrl || "").replace(/\/+$/, "");
+    if (!base) return undefined;
+    url = base + "/" + raw.replace(/^\/+/, "");
+  }
+  const alt = (HOME_PAGE?.featuredImageAlt || HOME_T) as string;
+  return [{ url, ...(alt ? { alt } : {}) }];
+})();
 export const metadata = {
   title: HOME_T,
   description: HOME_D,
   ...(HOME_PAGE && HOME_PAGE.noindex ? { robots: { index: false, follow: true } } : {}),
   ...(HOME_CANONICAL ? { alternates: { canonical: HOME_CANONICAL } } : {}),
-  openGraph: { title: HOME_T, description: HOME_D, type: "website", ...(HOME_CANONICAL ? { url: HOME_CANONICAL } : {}) },
-  twitter: { card: "summary_large_image", title: HOME_T, description: HOME_D },
+  openGraph: { title: HOME_T, description: HOME_D, type: "website", ...(HOME_CANONICAL ? { url: HOME_CANONICAL } : {}), ...(HOME_OG_IMAGES ? { images: HOME_OG_IMAGES } : {}) },
+  twitter: { card: "summary_large_image", title: HOME_T, description: HOME_D, ...(HOME_OG_IMAGES ? { images: HOME_OG_IMAGES } : {}) },
 };
 
 function isMockup(p: Pg): boolean {

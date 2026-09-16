@@ -23,6 +23,21 @@ function canonicalFor(p: string): string | undefined {
   return slug ? `${base}/${slug}/` : `${base}/`;
 }
 
+// A page's featured image → an absolute og:image entry (array form Next expects), or
+// undefined when the page has none. An /uploads path is resolved against the real
+// domain; an already-absolute URL is used as-is. Search + social need an absolute URL.
+function ogImageFor(img?: string, alt?: string): Array<{ url: string; alt?: string }> | undefined {
+  const raw = (img || "").trim();
+  if (!raw) return undefined;
+  let url = raw;
+  if (!/^https?:\/\//i.test(raw)) {
+    const base = (site.siteUrl || "").replace(/\/+$/, "");
+    if (!base) return undefined;
+    url = base + "/" + raw.replace(/^\/+/, "");
+  }
+  return [{ url, ...(alt ? { alt } : {}) }];
+}
+
 // Build-time content loader. content/pages.json is a lightweight INDEX; each
 // page's heavy content lives in content/pages/<id>.json (the "split" format that
 // keeps the dashboard fast). Backward compatible: an index entry that still has
@@ -51,6 +66,7 @@ const pagesData = _allPages();
 type Pg = {
   id: string; path: string; type: string; title: string;
   seoTitle?: string; seoDescription?: string; noindex?: boolean; body?: string;
+  featuredImage?: string; featuredImageAlt?: string;
   layout?: string; css?: string; fonts?: string[]; isHome?: boolean;
   headerPartId?: string | null; footerPartId?: string | null;
   blocks?: Array<{ id?: string; type: string; props?: Record<string, any> }>;
@@ -126,6 +142,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const canonical = canonicalFor(page.path);
   const t = page.seoTitle || page.title;
   const d = page.seoDescription || "";
+  // Featured image → og:image / twitter:image, so the page shows its own picture in
+  // social shares and rich search results. Stored as an /uploads path (made absolute
+  // against the real domain) or an absolute URL already.
+  const ogImages = ogImageFor(page.featuredImage, page.featuredImageAlt || t);
   // Open Graph + Twitter mirror THIS page's own title/description (not the site-wide
   // default), so social / link-preview cards match the page. Set per page.
   return {
@@ -135,8 +155,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     // to index it (links are still followed). It's also dropped from the sitemap.
     ...(page.noindex ? { robots: { index: false, follow: true } } : {}),
     ...(canonical ? { alternates: { canonical } } : {}),
-    openGraph: { title: t, description: d, type: "website", ...(canonical ? { url: canonical } : {}) },
-    twitter: { card: "summary_large_image", title: t, description: d },
+    openGraph: { title: t, description: d, type: "website", ...(canonical ? { url: canonical } : {}), ...(ogImages ? { images: ogImages } : {}) },
+    twitter: { card: "summary_large_image", title: t, description: d, ...(ogImages ? { images: ogImages } : {}) },
   };
 }
 
