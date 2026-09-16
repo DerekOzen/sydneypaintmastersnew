@@ -44,6 +44,106 @@ const SITE_MENUS: any[] = (() => {
   catch { return []; }
 })();
 
+// ── Dynamic blog list ────────────────────────────────────────────────────────
+// The list of published blog posts (type "post"), newest first, read at build time.
+// The blog index page renders these as cards — so adding a post makes it appear at the
+// top automatically on the next rebuild, and every post is shown. Card data is fully
+// automatic: image = the post's first image, date = its publish/edit date, excerpt =
+// the SEO meta description (else the first line of text), category = its category.
+type BlogPost = { title: string; href: string; date: number; dateLabel: string; excerpt: string; category: string; image: string };
+function _blFmtDate(iso: string): string {
+  const d = new Date(iso); if (isNaN(d.getTime())) return "";
+  try { return d.toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" }); } catch { return ""; }
+}
+function _blFirstImg(html: string): string { const m = /<img\b[^>]*\bsrc\s*=\s*["']([^"']+)["']/i.exec(html || ""); return m ? m[1] : ""; }
+function _blText(html: string): string { return String(html || "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim(); }
+function _blBodyHtml(p: any): string {
+  if (Array.isArray(p.blocks) && p.blocks.length) return p.blocks.map((b: any) => (b && b.props && b.props.html) || "").join(" ");
+  try { const b = JSON.parse(fs.readFileSync(path.join(process.cwd(), "content/pages/" + p.id + ".json"), "utf8")); return Array.isArray(b.blocks) ? b.blocks.map((x: any) => (x && x.props && x.props.html) || "").join(" ") : ""; }
+  catch { return ""; }
+}
+const SITE_POSTS: BlogPost[] = (() => {
+  try {
+    const idx = JSON.parse(fs.readFileSync(path.join(process.cwd(), "content/pages.json"), "utf8"));
+    const arr = Array.isArray(idx) ? idx : [];
+    const posts = arr.filter((p: any) => p && p.type === "post" && p.status === "published" && !p.isHome && p.path && !p.noindex);
+    const out: BlogPost[] = posts.map((p: any) => {
+      const bodyHtml = _blBodyHtml(p);
+      const iso = p.updatedAt || p.createdAt || "";
+      const slug = String(p.path).replace(/^\/+|\/+$/g, "");
+      const excerpt = (p.seoDescription && String(p.seoDescription).trim()) ? String(p.seoDescription).trim() : _blText(bodyHtml).slice(0, 160);
+      return { title: p.seoTitle || p.title || "Untitled", href: slug ? "/" + slug + "/" : "/", date: iso ? (Date.parse(iso) || 0) : 0, dateLabel: _blFmtDate(iso), excerpt, category: p.category || "Blog", image: _blFirstImg(bodyHtml) };
+    });
+    out.sort((a, b) => b.date - a.date);
+    return out;
+  } catch { return []; }
+})();
+function _blEsc(s: string): string { return String(s || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+function renderBlogList(posts: BlogPost[]): { html: string; css: string } {
+  if (!posts.length) return { html: "", css: "" };
+  const cards = posts.map((p) =>
+    `<a class="nifty-bl-card" href="${_blEsc(p.href)}">` +
+      `<span class="nifty-bl-imgwrap">${p.image ? `<img class="nifty-bl-img" src="${_blEsc(p.image)}" alt="${_blEsc(p.title)}" loading="lazy">` : ""}</span>` +
+      `<span class="nifty-bl-body">` +
+        (p.category ? `<span class="nifty-bl-cat">${_blEsc(p.category)}</span>` : "") +
+        `<span class="nifty-bl-title">${_blEsc(p.title)}</span>` +
+        (p.dateLabel ? `<span class="nifty-bl-date">${_blEsc(p.dateLabel)}</span>` : "") +
+        (p.excerpt ? `<span class="nifty-bl-excerpt">${_blEsc(p.excerpt)}</span>` : "") +
+        `<span class="nifty-bl-more">Read more &rarr;</span>` +
+      `</span>` +
+    `</a>`
+  ).join("");
+  const css =
+    `.nifty-bloglist{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:26px;width:100%;margin:0}` +
+    `.nifty-bl-card{display:flex;flex-direction:column;overflow:hidden;border-radius:16px;background:#fff;border:1px solid rgba(0,0,0,.08);text-decoration:none;color:inherit;box-shadow:0 6px 22px rgba(0,0,0,.06);transition:transform .18s ease,box-shadow .18s ease}` +
+    `.nifty-bl-card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.12)}` +
+    `.nifty-bl-imgwrap{display:block;aspect-ratio:16/10;overflow:hidden;background:#eef1f5}` +
+    `.nifty-bl-img{width:100%;height:100%;object-fit:cover;display:block}` +
+    `.nifty-bl-body{display:flex;flex-direction:column;gap:8px;padding:18px 20px 22px}` +
+    `.nifty-bl-cat{align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.02em;color:#1d4ed8;background:rgba(29,78,216,.10);padding:3px 10px;border-radius:999px}` +
+    `.nifty-bl-title{font-size:19px;font-weight:700;line-height:1.3;color:#0f172a}` +
+    `.nifty-bl-date{font-size:13px;color:#64748b}` +
+    `.nifty-bl-excerpt{font-size:14.5px;line-height:1.6;color:#475569;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}` +
+    `.nifty-bl-more{margin-top:6px;font-weight:600;color:#1d4ed8}`;
+  return { html: `<div class="nifty-bloglist">${cards}</div>`, css };
+}
+function _blNormHref(h: string): string { let s = String(h || "").trim().split(/[?#]/)[0]; s = s.replace(/^https?:\/\/[^/]+/i, ""); s = "/" + s.replace(/^\/+|\/+$/g, ""); return s.toLowerCase(); }
+const _BL_VOID = new Set(["img", "br", "hr", "input", "meta", "link", "source", "area", "base", "col", "embed", "param", "track", "wbr"]);
+// Best-effort: find the existing post-card grid (the smallest element enclosing the anchors
+// that link to real posts) and replace its contents with the live list. Returns null if it
+// can't isolate a clean container — so a page is NEVER broken; the marker slot remains the
+// guaranteed path. Only called for the blog INDEX page (gated by the caller).
+function autoInjectBlogGrid(html: string, posts: BlogPost[], listHtml: string): string | null {
+  const postPaths = new Set(posts.map((p) => _blNormHref(p.href)));
+  if (postPaths.size < 2) return null;
+  const aRe = /<a\b[^>]*\bhref\s*=\s*["']([^"']+)["'][^>]*>/gi;
+  let m: RegExpExecArray | null; const anchorIdx: number[] = []; const distinct = new Set<string>();
+  while ((m = aRe.exec(html))) { const np = _blNormHref(m[1]); if (postPaths.has(np)) { anchorIdx.push(m.index); distinct.add(np); } }
+  if (distinct.size < 2) return null;
+  const firstA = anchorIdx[0], lastA = anchorIdx[anchorIdx.length - 1];
+  const tagRe = /<(\/?)([a-zA-Z][\w-]*)\b[^>]*?(\/?)>/g;
+  const stack: { tag: string; contentStart: number }[] = [];
+  let best: { contentStart: number; contentEnd: number } | null = null;
+  let t: RegExpExecArray | null;
+  while ((t = tagRe.exec(html))) {
+    const closing = t[1] === "/"; const tag = t[2].toLowerCase(); const selfClose = t[3] === "/";
+    if (!closing) { if (_BL_VOID.has(tag) || selfClose) continue; stack.push({ tag, contentStart: tagRe.lastIndex }); }
+    else {
+      for (let i = stack.length - 1; i >= 0; i--) {
+        if (stack[i].tag === tag) {
+          const el = stack[i]; stack.length = i; const contentEnd = t.index;
+          if (el.contentStart <= firstA && contentEnd >= lastA) {
+            if (!best || el.contentStart > best.contentStart) best = { contentStart: el.contentStart, contentEnd };
+          }
+          break;
+        }
+      }
+    }
+  }
+  if (!best) return null;
+  return html.slice(0, best.contentStart) + listHtml + html.slice(best.contentEnd);
+}
+
 // Global theme (content/theme.json): named colours + fonts published as CSS variables
 // so var(--nifty-c-<id>) / var(--nifty-font-*) resolve site-wide. Read once at build.
 const SITE_THEME: any = (() => {
@@ -180,7 +280,8 @@ type MockupPg = {
   blocks?: Block[];
   headerPartId?: string | null;
   footerPartId?: string | null;
-  type?: string;               // page type (service/industry/location/…) — for sidebar binding
+  type?: string;               // page type (service/industry/location/post/…) — for sidebar binding + blog index detection
+  path?: string;               // page path (e.g. "/blogs/") — used to auto-detect the blog index page
   sidebarId?: string | null;   // explicit sidebar template, or "__none__" to force none
   _schemas?: Array<{ type?: string; data?: Record<string, unknown> }>;
 };
@@ -634,6 +735,31 @@ export function MockupPage({ page, parts = [], suppressSchema = false }: { page:
     }
   }
 
+  // Dynamic blog list: on the blog index page, render the live post grid (newest first,
+  // all posts). Two ways in, in priority order:
+  //  1) An explicit marker slot — an element carrying data-nifty-blog — has its contents
+  //     replaced with the grid. Works on ANY page, exactly like the sidebar slot.
+  //  2) Auto-detect — only on the blog index page (a non-post page whose path mentions
+  //     "blog"): find the existing post-card grid and swap its contents for the live one.
+  //     Fail-safe: if it can't cleanly isolate that grid it does nothing, so a page is
+  //     never broken. Adding a post makes it appear at the top on the next rebuild.
+  let blogCssText = "";
+  if (SITE_POSTS.length) {
+    const bl = renderBlogList(SITE_POSTS);
+    if (bl.html) {
+      if (/data-nifty-blog/.test(bodyWithSidebar)) {
+        bodyWithSidebar = bodyWithSidebar.replace(
+          /(<([a-zA-Z][a-zA-Z0-9]*)\b[^>]*\bdata-nifty-blog\b[^>]*>)([\s\S]*?)(<\/\2>)/,
+          (_m, open, _tag, _inner, close) => open + bl.html + close
+        );
+        blogCssText = bl.css;
+      } else if (page.type !== "post" && /blog/i.test(String(page.path || ""))) {
+        const injected = autoInjectBlogGrid(bodyWithSidebar, SITE_POSTS, bl.html);
+        if (injected) { bodyWithSidebar = injected; blogCssText = bl.css; }
+      }
+    }
+  }
+
   // Scope classes for the linked parts. Each part's captured CSS is confined to its own
   // wrapper, and its HTML is rendered inside that wrapper — so it looks exactly as
   // originally designed and cannot leak into (or be broken by) the host page's CSS.
@@ -714,7 +840,7 @@ export function MockupPage({ page, parts = [], suppressSchema = false }: { page:
   // @import first, then the un-reset, then the scoped part CSS, then the page's own CSS,
   // then (only if a header behaviour is on) the small header-behaviour CSS, then (for a
   // structured header/footer) its base CSS.
-  const styleText = `${fontImports}\n${UNRESET}\n${THEME_CSS ? THEME_CSS + "\n" : ""}${partCss}\n${page.css || ""}${headerActive ? "\n" + NIFTY_HEADER_CSS : ""}${layoutCss ? "\n" + layoutCss : ""}${footerLayoutCss ? "\n" + footerLayoutCss : ""}${secBgCss ? "\n" + secBgCss : ""}${reuseCssText ? "\n" + reuseCssText : ""}${sidebarCssText ? "\n" + sidebarCssText : ""}`;
+  const styleText = `${fontImports}\n${UNRESET}\n${THEME_CSS ? THEME_CSS + "\n" : ""}${partCss}\n${page.css || ""}${headerActive ? "\n" + NIFTY_HEADER_CSS : ""}${layoutCss ? "\n" + layoutCss : ""}${footerLayoutCss ? "\n" + footerLayoutCss : ""}${secBgCss ? "\n" + secBgCss : ""}${reuseCssText ? "\n" + reuseCssText : ""}${sidebarCssText ? "\n" + sidebarCssText : ""}${blogCssText ? "\n" + blogCssText : ""}`;
 
   // When the page is suppressed (Custom Schema Generator), the dashboard's own page
   // schema is skipped and any JSON-LD baked into the header/body/footer HTML is stripped,
