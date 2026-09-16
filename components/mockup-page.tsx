@@ -293,7 +293,26 @@ const NIFTY_FORM_SCRIPT = `
       // Leads → Page column. The cross-origin POST reduces the Referer to just the
       // domain, so we send the full page URL explicitly here.
       try { data.page = String(window.location.href || "").split("#")[0]; } catch(_e){}
-      fetch(EP, { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(data) })
+      // If the visitor attached a file, send everything as multipart so the file reaches
+      // the dashboard (and shows on the lead). Otherwise send compact JSON exactly as
+      // before. Any problem building the multipart request falls back to JSON, so a lead
+      // is NEVER blocked by an attachment issue.
+      var req = null;
+      try {
+        var _files = form.querySelectorAll('input[type="file"]'); var _hasFile = false;
+        for (var _fi=0; _fi<_files.length; _fi++){ if (_files[_fi].files && _files[_fi].files.length){ _hasFile = true; break; } }
+        if (_hasFile){
+          var _fd = new FormData();
+          for (var _dk in data){ if (String(data[_dk])!=="[object File]") _fd.append(_dk, data[_dk]); }
+          for (var _fj=0; _fj<_files.length; _fj++){
+            var _inp=_files[_fj], _fn=_inp.getAttribute("name")||"attachment";
+            for (var _fk=0; _fk<_inp.files.length; _fk++){ _fd.append(_fn, _inp.files[_fk], _inp.files[_fk].name); }
+          }
+          req = fetch(EP, { method:"POST", body: _fd }); // browser sets the multipart boundary
+        }
+      } catch(_e){ req = null; }
+      if (!req){ req = fetch(EP, { method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(data) }); }
+      req
         .then(function(r){ return r.json().catch(function(){ return { ok:true }; }); })
         .then(function(res){
           if (res && res.redirect){ window.location.href = res.redirect; return; }
