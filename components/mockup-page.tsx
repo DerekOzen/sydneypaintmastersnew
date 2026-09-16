@@ -234,6 +234,20 @@ function _secOverlayLayer(bg: any): string {
   }
   return "linear-gradient(" + a + "," + a + ")";
 }
+// Per-device visibility for a section (props.hide, set in the Live editor's Show/Hide).
+// display:none on the published page for each hidden device's screen range. Breakpoints are
+// kept identical to the dashboard's sectionHideCss so preview and live match exactly.
+function sectionHideCss(cls: string, hide: any): string {
+  if (!hide || typeof hide !== "object") return "";
+  const out: string[] = [];
+  if (hide.mobile) out.push("@media (max-width:640px){." + cls + "{display:none!important}}");
+  if (hide.tablet) out.push("@media (min-width:641px) and (max-width:1024px){." + cls + "{display:none!important}}");
+  if (hide.desktop) out.push("@media (min-width:1025px){." + cls + "{display:none!important}}");
+  return out.join("");
+}
+function anyDeviceHidden(hide: any): boolean {
+  return !!(hide && typeof hide === "object" && (hide.desktop || hide.tablet || hide.mobile));
+}
 function sectionBgCss(bg: any): string {
   if (!bg || typeof bg !== "object") return "";
   const t = bg.type || (bg.image ? "image" : (bg.gradFrom || bg.gradTo) ? "gradient" : "color");
@@ -747,6 +761,12 @@ export function MockupPage({ page, parts = [], suppressSchema = false }: { page:
     const html = (b.props?.html as string) || "";
     if (!html) return "";
     const bg = (b.props as any)?.bg;
+    // Per-device visibility: hide this section on the chosen devices' screen sizes. Needs a
+    // stable class on the section wrapper to target — so a hidden section is always wrapped.
+    const hide = (b.props as any)?.hide;
+    const hidden = anyDeviceHidden(hide);
+    const hideCls = hidden ? ` nifty-hide-${b.id}` : "";
+    if (hidden) secBgRules.push(sectionHideCss(`nifty-hide-${b.id}`, hide));
     // Video background: a real <video>/YouTube layer behind the content (CSS can't do
     // video). Wrapper becomes the positioning context; content is lifted above the video.
     if (bg && bg.type === "video" && String(bg.videoUrl || "").trim()) {
@@ -755,13 +775,18 @@ export function MockupPage({ page, parts = [], suppressSchema = false }: { page:
       secBgRules.push(`.nifty-secvidw-${b.id}{position:relative;overflow:hidden}.nifty-secvidw-${b.id}>*:not(.nifty-secvid){position:relative;z-index:2}`);
       let cls = `nifty-secvidw-${b.id}`;
       if (bg.mode === "replace") { secBgRules.push(`.nifty-secbg-${b.id} *{background-image:none !important}.nifty-secbg-${b.id} > *{background-color:transparent !important}`); cls += ` nifty-secbg-${b.id}`; }
-      return `<div class="${cls}"${fill ? ` style="${fill}"` : ""}>${layer}${html}</div>`;
+      return `<div class="${cls}${hideCls}"${fill ? ` style="${fill}"` : ""}>${layer}${html}</div>`;
     }
     const s = sectionBgCss(bg);
-    if (!s) return html;
     const replace = bg && bg.mode === "replace";
+    if (!s) {
+      // No background. Still wrap in a hideable element when the section is hidden on a
+      // device; otherwise return the raw html unchanged (no extra wrapper).
+      return hidden ? `<div class="nifty-hide-${b.id}">${html}</div>` : html;
+    }
     if (replace) secBgRules.push(`.nifty-secbg-${b.id} *{background-image:none !important}.nifty-secbg-${b.id} > *{background-color:transparent !important}`);
-    return `<div${replace ? ` class="nifty-secbg-${b.id}"` : ""} style="${s}">${html}</div>`;
+    const bgCls = ((replace ? `nifty-secbg-${b.id}` : "") + hideCls).trim();
+    return `<div${bgCls ? ` class="${bgCls}"` : ""} style="${s}">${html}</div>`;
   }).filter(Boolean).join("\n"));
   const secBgCss = secBgRules.join("\n");
   const reuseCssText = reuseCss.join("\n");
