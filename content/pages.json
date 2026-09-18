@@ -1015,8 +1015,9 @@
     "status": "published",
     "createdAt": "2026-09-18T04:51:41.027Z",
     "createdBy": "joshua",
-    "updatedAt": "2026-09-18T04:53:10.771Z",
+    "updatedAt": "2026-09-18T04:53:47.916Z",
     "updatedBy": "joshua",
-    "category": "Blog"
+    "category": "Blog",
+    "isBlogIndex": true
   }
 ]
