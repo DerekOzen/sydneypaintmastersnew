@@ -994,12 +994,13 @@
     "layout": "mockup",
     "headerPartId": "header-2",
     "footerPartId": "footer-1",
-    "status": "published",
-    "updatedAt": "2026-09-16T04:45:23.241Z",
+    "status": "deleted",
+    "updatedAt": "2026-09-18T04:52:22.416Z",
     "updatedBy": "joshua",
     "createdAt": "2026-09-16T01:37:34.182Z",
     "createdBy": "derek",
-    "isBlogIndex": true
+    "isBlogIndex": true,
+    "isHome": false
   },
   {
     "id": "pg-65",
