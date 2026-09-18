@@ -1004,7 +1004,7 @@
   },
   {
     "id": "pg-65",
-    "path": "/blogs-painting-tips-and-guides-sydney-paintmasters",
+    "path": "/blogs",
     "type": "page",
     "title": "Blogs | Painting Tips and Guides | Sydney Paintmasters",
     "seoTitle": "Blogs | Painting Tips and Guides | Sydney Paintmasters",
@@ -1012,10 +1012,11 @@
     "layout": "mockup",
     "headerPartId": "header-2",
     "footerPartId": "footer-5",
-    "status": "draft",
+    "status": "published",
     "createdAt": "2026-09-18T04:51:41.027Z",
     "createdBy": "joshua",
-    "updatedAt": "2026-09-18T04:51:41.027Z",
-    "updatedBy": "joshua"
+    "updatedAt": "2026-09-18T04:53:10.771Z",
+    "updatedBy": "joshua",
+    "category": "Blog"
   }
 ]
