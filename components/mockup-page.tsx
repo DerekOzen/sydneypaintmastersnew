@@ -377,7 +377,7 @@ const PART_NONE = "__none__";
 // to name/email/phone/suburb/service/message, and any extra fields are passed too.
 const NIFTY_FORM_SCRIPT = `
 (function(){
-  var EP = "https://nifty-websites-dashboard.web-528.workers.dev/admin/api/lead";
+  var EP = "https://portal.niftywebsites.ai/admin/api/lead";
   function norm(k){ return String(k||"").toLowerCase().replace(/[^a-z0-9]/g,""); }
   var MAP = {
     name:["name","fullname","yourname","contactname","firstname"],
@@ -517,7 +517,7 @@ const NIFTY_FORM_SCRIPT = `
   // hidden "cf-turnstile-response" token that the submit handler above already forwards,
   // and the lead endpoint verifies it. If Turnstile isn't enabled, this does nothing.
   (function(){
-    var CAP = "https://nifty-websites-dashboard.web-528.workers.dev/admin/api/captcha";
+    var CAP = "https://portal.niftywebsites.ai/admin/api/captcha";
     fetch(CAP).then(function(r){ return r.json(); }).then(function(cfg){
       if (!cfg || !cfg.enabled || !cfg.siteKey) return;
       var forms = document.querySelectorAll("form"), added = false;
@@ -596,6 +596,86 @@ const NIFTY_HEADER_SCRIPT = `
     apply();
     window.addEventListener('resize', apply, {passive:true});
   }
+})();
+`;
+
+// A slide-out / off-canvas panel imported with the original site (e.g. a "Get a Free
+// Quote" / "Quick Enquiry" sidebar) lives INSIDE the page body (.nifty-mockup). To keep a
+// hero's inner z-indexes off the sticky header we isolate .nifty-mockup (see HEADER_LIFT_CSS),
+// but that same isolation traps any position:fixed overlay in the body BELOW the header —
+// so at the top of the page (header visible) the panel appears stuck under the header bar,
+// while lower down (header auto-hidden) it looks fine. This is a pure stacking-context trap,
+// not a per-site HTML problem, so it's fixed here once for every page of every site.
+//
+// The fix, when such an overlay is open, drops the header beneath the body so the panel (and
+// its dimming backdrop) paint over everything — exactly "pop up over the top". The header is
+// restored the instant the overlay closes. A small runtime watcher decides when an overlay is
+// "open" so we never disturb the header for normal scrolling; it only reacts to large, edge-
+// anchored or full-screen fixed overlays (slide-outs and their backdrops), never to small
+// persistent widgets (chat bubbles, back-to-top) or anything already showing at page load.
+const NIFTY_OVERLAY_LIFT_CSS = `
+html.nifty-overlay-open .nifty-hpart{z-index:auto !important}
+`;
+const NIFTY_OVERLAY_LIFT_SCRIPT = `
+(function(){
+  var doc = document.documentElement;
+  var mockup = document.querySelector('.nifty-mockup');
+  if(!mockup) return;
+  if(!document.querySelector('.nifty-hpart')) return;
+  var CLS = 'nifty-overlay-open';
+  var cands = [];
+  var baseIgnore = [];
+  var scheduled = false;
+  function vw(){ return window.innerWidth || doc.clientWidth || 0; }
+  function vh(){ return window.innerHeight || doc.clientHeight || 0; }
+  function isFixed(el){ try{ return getComputedStyle(el).position === 'fixed'; }catch(e){ return false; } }
+  function has(list, el){ for(var i=0;i<list.length;i++){ if(list[i]===el) return true; } return false; }
+  function pushCand(el){ if(!has(cands, el)) cands.push(el); }
+  function collect(root){
+    if(!root || root.nodeType !== 1) return;
+    if(isFixed(root)) pushCand(root);
+    var all = root.querySelectorAll ? root.querySelectorAll('*') : [];
+    for(var i=0;i<all.length;i++){ if(isFixed(all[i])) pushCand(all[i]); }
+  }
+  function isActive(el){
+    var cs; try{ cs = getComputedStyle(el); }catch(e){ return false; }
+    if(cs.position !== 'fixed') return false;
+    if(cs.display === 'none' || cs.visibility === 'hidden') return false;
+    if(parseFloat(cs.opacity || '1') < 0.05) return false;
+    var r = el.getBoundingClientRect();
+    if(r.width < 2 || r.height < 2) return false;
+    var W = vw(), H = vh();
+    if(r.right <= 0 || r.bottom <= 0 || r.left >= W || r.top >= H) return false;
+    var bigBoth = (r.width >= W*0.5) && (r.height >= H*0.5);
+    var tallEdge = (r.height >= H*0.6) && (r.left <= 2 || r.right >= W-2);
+    return bigBoth || tallEdge;
+  }
+  function anyOpen(){
+    for(var i=0;i<cands.length;i++){
+      var el = cands[i];
+      if(!el || !document.contains(el)) continue;
+      if(has(baseIgnore, el)) continue;
+      if(isActive(el)) return true;
+    }
+    return false;
+  }
+  function apply(){ scheduled = false; if(anyOpen()) doc.classList.add(CLS); else doc.classList.remove(CLS); }
+  function raf(fn){ if(window.requestAnimationFrame){ window.requestAnimationFrame(fn); } else { setTimeout(fn, 16); } }
+  function schedule(){ if(scheduled) return; scheduled = true; raf(apply); }
+  collect(mockup);
+  for(var i=0;i<cands.length;i++){ if(isActive(cands[i])) baseIgnore.push(cands[i]); }
+  if(window.MutationObserver){
+    var mo = new MutationObserver(function(muts){
+      for(var i=0;i<muts.length;i++){ var m = muts[i]; if(m.addedNodes){ for(var j=0;j<m.addedNodes.length;j++){ collect(m.addedNodes[j]); } } }
+      schedule();
+    });
+    try{ mo.observe(document.body || doc, {subtree:true, childList:true, attributes:true, attributeFilter:['class','style','hidden','aria-hidden','open']}); }catch(e){}
+  }
+  window.addEventListener('click', schedule, true);
+  window.addEventListener('hashchange', schedule, false);
+  window.addEventListener('transitionend', schedule, true);
+  window.addEventListener('resize', schedule, {passive:true});
+  schedule();
 })();
 `;
 
@@ -908,7 +988,7 @@ export function MockupPage({ page, parts = [], suppressSchema = false }: { page:
   // at least one behaviour is switched on, so a plain header is left completely untouched.
   const hs = (headerPart?.settings || {}) as HeaderSettings;
   const headerActive = !!(hs.sticky || hs.autoHide || hs.transparent || hs.mobileMenu || (hs.shadow && hs.shadow !== "none"));
-  const headerClass = `nifty-part ${headerScope}${headerActive ? " nifty-header" : ""}`;
+  const headerClass = `nifty-part nifty-hpart ${headerScope}${headerActive ? " nifty-header" : ""}`;
 
   // Phase 2 structured header: when the linked header uses a zone layout, render THAT
   // instead of the captured mockup HTML, and inject its base CSS.
@@ -929,7 +1009,7 @@ export function MockupPage({ page, parts = [], suppressSchema = false }: { page:
   // @import first, then the un-reset, then the scoped part CSS, then the page's own CSS,
   // then (only if a header behaviour is on) the small header-behaviour CSS, then (for a
   // structured header/footer) its base CSS.
-  const styleText = `${fontImports}\n${UNRESET}\n${THEME_CSS ? THEME_CSS + "\n" : ""}${partCss}\n${page.css || ""}${headerActive ? "\n" + NIFTY_HEADER_CSS : ""}${layoutCss ? "\n" + layoutCss : ""}${footerLayoutCss ? "\n" + footerLayoutCss : ""}${secBgCss ? "\n" + secBgCss : ""}${reuseCssText ? "\n" + reuseCssText : ""}${sidebarCssText ? "\n" + sidebarCssText : ""}${blogCssText ? "\n" + blogCssText : ""}`;
+  const styleText = `${fontImports}\n${UNRESET}\n${THEME_CSS ? THEME_CSS + "\n" : ""}${partCss}\n${page.css || ""}${headerActive ? "\n" + NIFTY_HEADER_CSS : ""}${headerPart ? "\n" + NIFTY_OVERLAY_LIFT_CSS : ""}${layoutCss ? "\n" + layoutCss : ""}${footerLayoutCss ? "\n" + footerLayoutCss : ""}${secBgCss ? "\n" + secBgCss : ""}${reuseCssText ? "\n" + reuseCssText : ""}${sidebarCssText ? "\n" + sidebarCssText : ""}${blogCssText ? "\n" + blogCssText : ""}`;
 
   // When the page is suppressed (Custom Schema Generator), the dashboard's own page
   // schema is skipped and any JSON-LD baked into the header/body/footer HTML is stripped,
@@ -953,6 +1033,7 @@ export function MockupPage({ page, parts = [], suppressSchema = false }: { page:
       ) : null}
       <script dangerouslySetInnerHTML={{ __html: NIFTY_FORM_SCRIPT }} />
       {headerActive ? <script dangerouslySetInnerHTML={{ __html: NIFTY_HEADER_SCRIPT }} /> : null}
+      {headerPart ? <script dangerouslySetInnerHTML={{ __html: NIFTY_OVERLAY_LIFT_SCRIPT }} /> : null}
     </>
   );
 }

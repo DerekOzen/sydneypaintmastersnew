@@ -9,7 +9,7 @@
 // which client's branding to show, and so Next Server Actions pass their
 // same-origin (CSRF) check.
 
-const DASHBOARD = "https://nifty-websites-dashboard.web-528.workers.dev";
+const DASHBOARD = "https://portal.niftywebsites.ai";
 
 export async function onRequest(context) {
   const { request } = context;
