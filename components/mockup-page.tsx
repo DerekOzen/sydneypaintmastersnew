@@ -377,7 +377,7 @@ const PART_NONE = "__none__";
 // to name/email/phone/suburb/service/message, and any extra fields are passed too.
 const NIFTY_FORM_SCRIPT = `
 (function(){
-  var EP = "https://portal.niftywebsites.ai/admin/api/lead";
+  var EP = "https://nifty-websites-dashboard.web-528.workers.dev/admin/api/lead";
   function norm(k){ return String(k||"").toLowerCase().replace(/[^a-z0-9]/g,""); }
   var MAP = {
     name:["name","fullname","yourname","contactname","firstname"],
@@ -517,7 +517,7 @@ const NIFTY_FORM_SCRIPT = `
   // hidden "cf-turnstile-response" token that the submit handler above already forwards,
   // and the lead endpoint verifies it. If Turnstile isn't enabled, this does nothing.
   (function(){
-    var CAP = "https://portal.niftywebsites.ai/admin/api/captcha";
+    var CAP = "https://nifty-websites-dashboard.web-528.workers.dev/admin/api/captcha";
     fetch(CAP).then(function(r){ return r.json(); }).then(function(cfg){
       if (!cfg || !cfg.enabled || !cfg.siteKey) return;
       var forms = document.querySelectorAll("form"), added = false;
