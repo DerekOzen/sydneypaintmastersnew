@@ -141,11 +141,13 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-10",
     "status": "published",
-    "updatedAt": "2026-08-25T05:25:15.122Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-23T23:15:40.530Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-07-28T11:59:34.861Z",
     "createdBy": "derek",
-    "category": "Locations"
+    "category": "Locations",
+    "featuredImage": "/uploads/painter-burwood-federation-verandah-repa-6c177f96.webp",
+    "featuredImageAlt": "Professional house painter restoring exterior window trim on a Burwood Inner West property."
   },
   {
     "id": "pg-20",
