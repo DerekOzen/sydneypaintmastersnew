@@ -805,10 +805,12 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-5",
     "status": "published",
-    "updatedAt": "2026-08-12T01:21:19.252Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-23T22:58:43.104Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-08-10T05:56:22.966Z",
-    "createdBy": "vipin"
+    "createdBy": "vipin",
+    "featuredImage": "/uploads/retail-and-fit-out-painting-sydney-eca5356a.jpg",
+    "featuredImageAlt": "Commercial painters applying interior paint to walls inside a modern retail store fit-out in Sydney."
   },
   {
     "id": "pg-60",
