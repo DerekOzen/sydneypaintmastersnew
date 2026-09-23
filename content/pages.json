@@ -27,11 +27,13 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-5",
     "status": "published",
-    "updatedAt": "2026-09-09T00:57:56.639Z",
-    "updatedBy": "ruzgar",
+    "updatedAt": "2026-09-23T03:09:20.227Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-07-28T11:06:37.781Z",
     "createdBy": "derek",
-    "category": "Services"
+    "category": "Services",
+    "featuredImage": "/uploads/house-painters-3496b1ac.jpg",
+    "featuredImageAlt": "Freshly painted modern house exterior in Sydney with beige render finish, dark brown garage door, and stone pillars."
   },
   {
     "id": "pg-12",
