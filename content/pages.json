@@ -769,10 +769,12 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-5",
     "status": "published",
-    "updatedAt": "2026-08-11T07:40:55.473Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-23T22:54:15.303Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-08-10T05:53:08.782Z",
-    "createdBy": "vipin"
+    "createdBy": "vipin",
+    "featuredImage": "/uploads/interior-painting-sydney-b2f64439.jpg",
+    "featuredImageAlt": "Freshly painted sage green interior living room and hallway walls in a Sydney home."
   },
   {
     "id": "pg-58",
