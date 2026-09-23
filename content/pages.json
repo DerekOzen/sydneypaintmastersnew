@@ -160,11 +160,13 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-11",
     "status": "published",
-    "updatedAt": "2026-08-25T05:26:02.224Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-23T23:17:00.874Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-07-28T12:15:52.987Z",
     "createdBy": "derek",
-    "category": "Locations"
+    "category": "Locations",
+    "featuredImage": "/uploads/painter-coogee-coastal-exterior-repaint--7e817f38.webp",
+    "featuredImageAlt": "Professional coastal painter completing exterior balcony painting on a Coogee oceanfront property."
   },
   {
     "id": "pg-21",
