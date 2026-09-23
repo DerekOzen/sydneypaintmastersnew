@@ -236,11 +236,13 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-15",
     "status": "published",
-    "updatedAt": "2026-08-25T05:30:03.813Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-23T23:22:49.343Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-07-28T12:33:26.495Z",
     "createdBy": "derek",
-    "category": "Locations"
+    "category": "Locations",
+    "featuredImage": "/uploads/painter-ku-ring-gai-heritage-home-exteri-81552683.jpg",
+    "featuredImageAlt": "Professional house painters completing exterior wall repainting on a Ku-ring-gai home in Sydney's Upper North Shore."
   },
   {
     "id": "pg-25",
