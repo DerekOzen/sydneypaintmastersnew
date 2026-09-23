@@ -350,11 +350,13 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-21",
     "status": "published",
-    "updatedAt": "2026-08-25T05:37:05.155Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-23T23:32:59.934Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-07-28T12:52:08.836Z",
     "createdBy": "derek",
-    "category": "Locations"
+    "category": "Locations",
+    "featuredImage": "/uploads/painter-palm-beach-coastal-exterior-repa-e8196628.jpg",
+    "featuredImageAlt": "Professional painters applying weather-resistant trim paint to the eaves and window frames of a luxury Palm Beach beachfront home overlooking the ocean."
   },
   {
     "id": "pg-31",
