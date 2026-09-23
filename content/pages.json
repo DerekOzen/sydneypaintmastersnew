@@ -312,11 +312,13 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-19",
     "status": "published",
-    "updatedAt": "2026-08-25T05:35:12.886Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-23T23:28:56.544Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-07-28T12:47:09.585Z",
     "createdBy": "derek",
-    "category": "Locations"
+    "category": "Locations",
+    "featuredImage": "/uploads/painter-northern-beaches-coastal-exterio-9072102d.jpg",
+    "featuredImageAlt": "Professional painters applying weather-resistant paint to eaves and rendered exterior walls on a Northern Beaches coastal home overlooking the ocean."
   },
   {
     "id": "pg-29",
