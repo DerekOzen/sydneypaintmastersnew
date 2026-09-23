@@ -673,12 +673,14 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-5",
     "status": "published",
-    "updatedAt": "2026-08-25T04:51:18.334Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-23T03:05:30.336Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-08-05T01:26:57.947Z",
     "createdBy": "joshua",
     "category": "Home",
-    "isHome": true
+    "isHome": true,
+    "featuredImage": "/uploads/reliable-painting-company-in-sydney.jpg",
+    "featuredImageAlt": "Professional Sydney painter team using rollers to paint house exterior walls and window frames."
   },
   {
     "id": "pg-51",
