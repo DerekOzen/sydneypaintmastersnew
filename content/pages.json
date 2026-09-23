@@ -46,11 +46,13 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-5",
     "status": "published",
-    "updatedAt": "2026-08-25T04:58:30.522Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-23T03:11:05.733Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-07-28T11:23:42.054Z",
     "createdBy": "derek",
-    "category": "Services"
+    "category": "Services",
+    "featuredImage": "/uploads/office-painting.jpg",
+    "featuredImageAlt": "Professional commercial painters painting interior walls and glass partition frames inside a modern Sydney office."
   },
   {
     "id": "pg-15",
