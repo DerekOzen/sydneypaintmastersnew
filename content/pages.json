@@ -84,11 +84,13 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-7",
     "status": "published",
-    "updatedAt": "2026-08-25T05:18:19.890Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-23T23:10:48.815Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-07-28T11:36:28.956Z",
     "createdBy": "derek",
-    "category": "Locations"
+    "category": "Locations",
+    "featuredImage": "/uploads/painter-alexandria-2b966eff.webp",
+    "featuredImageAlt": "Professional painters applying off-white paint to the exterior entrance and architectural pillars of an Alexandria inner-city home."
   },
   {
     "id": "pg-17",
