@@ -293,11 +293,13 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-18",
     "status": "published",
-    "updatedAt": "2026-08-25T05:33:19.146Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-23T23:27:30.786Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-07-28T12:44:39.546Z",
     "createdBy": "derek",
-    "category": "Locations"
+    "category": "Locations",
+    "featuredImage": "/uploads/painter-newport-coastal-exterior-repaint-f08099cb.jpg",
+    "featuredImageAlt": "Professional painters applying weatherboard coating and trim paint to the exterior of a Newport Northern Beaches home overlooking Pittwater."
   },
   {
     "id": "pg-28",
