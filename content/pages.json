@@ -423,10 +423,12 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-24",
     "status": "published",
-    "updatedAt": "2026-08-25T05:43:13.614Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-23T23:36:35.288Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-07-29T00:25:36.699Z",
-    "createdBy": "vipin"
+    "createdBy": "vipin",
+    "featuredImage": "/uploads/painter-st-ives-exterior-repaint-hero-c82d4665.jpg",
+    "featuredImageAlt": "Professional house painter presenting a newly painted exterior facade and rendered pillars on a St Ives Upper North Shore home."
   },
   {
     "id": "pg-35",
