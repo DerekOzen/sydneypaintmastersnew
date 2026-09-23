@@ -441,10 +441,12 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-25",
     "status": "published",
-    "updatedAt": "2026-08-25T05:44:12.793Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-23T23:38:23.589Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-07-29T00:31:41.342Z",
-    "createdBy": "vipin"
+    "createdBy": "vipin",
+    "featuredImage": "/uploads/painter-sydney-cbd-heritage-facade-hero-4836ef58.jpg",
+    "featuredImageAlt": "Professional painters using an extension roller to apply exterior paint on a high-rise apartment balcony overlooking the Sydney CBD skyline and Sydney Tower Eye."
   },
   {
     "id": "pg-36",
