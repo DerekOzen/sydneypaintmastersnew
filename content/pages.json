@@ -217,11 +217,13 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-14",
     "status": "published",
-    "updatedAt": "2026-08-25T05:29:00.916Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-23T23:21:37.057Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-07-28T12:24:56.776Z",
     "createdBy": "derek",
-    "category": "Locations"
+    "category": "Locations",
+    "featuredImage": "/uploads/painter-inner-west-victorian-terrace-ext-e5a9e6f6.jpg",
+    "featuredImageAlt": "Professional house painter restoring front door trim on a terrace home in Sydney's Inner West."
   },
   {
     "id": "pg-24",
