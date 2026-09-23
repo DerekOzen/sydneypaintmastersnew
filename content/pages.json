@@ -697,10 +697,12 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-5",
     "status": "published",
-    "updatedAt": "2026-09-09T00:53:14.278Z",
-    "updatedBy": "ruzgar",
+    "updatedAt": "2026-09-23T22:46:49.457Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-08-10T05:43:01.435Z",
-    "createdBy": "vipin"
+    "createdBy": "vipin",
+    "featuredImage": "/uploads/commercial-painting-c6c4276e.jpg",
+    "featuredImageAlt": "Commercial painters painting a business building exterior in Sydney."
   },
   {
     "id": "pg-54",
