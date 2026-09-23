@@ -198,11 +198,13 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-13",
     "status": "published",
-    "updatedAt": "2026-08-25T05:28:11.117Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-23T23:19:43.237Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-07-28T12:23:25.146Z",
     "createdBy": "derek",
-    "category": "Locations"
+    "category": "Locations",
+    "featuredImage": "/uploads/painter-hunters-hill-heritage-exterior-r-f4e63776.jpg",
+    "featuredImageAlt": "Professional painters completing exterior heritage painting on a waterfront home in Hunters Hill, Sydney."
   },
   {
     "id": "pg-23",
