@@ -387,11 +387,13 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-23",
     "status": "published",
-    "updatedAt": "2026-08-25T05:42:32.244Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-23T23:35:29.976Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-07-28T12:58:30.675Z",
     "createdBy": "derek",
-    "category": "Locations"
+    "category": "Locations",
+    "featuredImage": "/uploads/painter-ryde-exterior-repaint-hero-c884843e.jpg",
+    "featuredImageAlt": "Professional painters applying light grey exterior paint to weatherboard siding and white trim on a Ryde family home."
   },
   {
     "id": "pg-33",
