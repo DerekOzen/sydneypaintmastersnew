@@ -274,11 +274,13 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-17",
     "status": "published",
-    "updatedAt": "2026-08-25T05:32:16.073Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-23T23:26:20.371Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-07-28T12:42:48.216Z",
     "createdBy": "derek",
-    "category": "Locations"
+    "category": "Locations",
+    "featuredImage": "/uploads/painter-mosman-heritage-home-exterior-fr-778940e8.jpg",
+    "featuredImageAlt": "Professional painters applying premium weather-resistant paint to architectural moldings and entrance pillars on a Mosman harbourside home with ocean views."
   },
   {
     "id": "pg-27",
