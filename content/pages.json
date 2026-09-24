@@ -587,10 +587,12 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-5",
     "status": "published",
-    "updatedAt": "2026-08-25T05:59:25.026Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-24T00:46:27.400Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-07-29T00:43:12.454Z",
-    "createdBy": "vipin"
+    "createdBy": "vipin",
+    "featuredImage": "/uploads/blog-hero-beyond-white-d2510120.jpg",
+    "featuredImageAlt": "Warm neutral painted Sydney interior with natural light"
   },
   {
     "id": "pg-44",
