@@ -513,10 +513,12 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-29",
     "status": "published",
-    "updatedAt": "2026-08-25T05:47:29.687Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-24T00:33:35.814Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-07-29T00:37:34.651Z",
-    "createdBy": "vipin"
+    "createdBy": "vipin",
+    "featuredImage": "/uploads/painter-woollahra-heritage-terrace-exter-4fa9c454.jpg",
+    "featuredImageAlt": "Professional painters in front of a restored heritage home in Woollahra, Eastern Suburbs."
   },
   {
     "id": "pg-40",
