@@ -955,10 +955,12 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-5",
     "status": "published",
-    "updatedAt": "2026-08-12T22:51:50.835Z",
-    "updatedBy": "sebastian",
+    "updatedAt": "2026-09-24T00:52:58.023Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-08-12T09:54:13.947Z",
-    "createdBy": "vipin"
+    "createdBy": "vipin",
+    "featuredImage": "/uploads/how-do-you-know-when-your-home-needs-a-n-c7102157.jpg",
+    "featuredImageAlt": "Weathered exterior paint on a Sydney home showing signs that it may need an update"
   },
   {
     "id": "pg-69",
