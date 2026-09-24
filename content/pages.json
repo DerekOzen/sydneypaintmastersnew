@@ -687,10 +687,12 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-5",
     "status": "published",
-    "updatedAt": "2026-08-25T06:04:25.608Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-24T01:23:03.737Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-07-29T00:52:28.893Z",
-    "createdBy": "vipin"
+    "createdBy": "vipin",
+    "featuredImage": "/uploads/logo-2-b7f49542.jpg",
+    "featuredImageAlt": "Sydney Paintmasters Pty Ltd official business logo - Professional painting services in Sydney"
   },
   {
     "id": "pg-50",
