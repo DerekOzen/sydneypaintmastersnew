@@ -1009,10 +1009,12 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-5",
     "status": "published",
-    "updatedAt": "2026-08-12T22:56:02.903Z",
-    "updatedBy": "sebastian",
+    "updatedAt": "2026-09-24T01:02:35.602Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-08-12T10:03:19.618Z",
-    "createdBy": "vipin"
+    "createdBy": "vipin",
+    "featuredImage": "/uploads/interior-vs-exterior-painting-costs-in-s-c5b6553d.jpg",
+    "featuredImageAlt": "Interior and exterior house painting surfaces with tools and materials showing cost comparison factors"
   },
   {
     "id": "pg-73",
