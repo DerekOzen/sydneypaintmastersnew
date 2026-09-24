@@ -973,10 +973,12 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-5",
     "status": "published",
-    "updatedAt": "2026-08-12T22:52:20.434Z",
-    "updatedBy": "sebastian",
+    "updatedAt": "2026-09-24T00:57:44.928Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-08-12T09:58:30.823Z",
-    "createdBy": "vipin"
+    "createdBy": "vipin",
+    "featuredImage": "/uploads/what-makes-a-professional-painting-team-stand-out.jpg",
+    "featuredImageAlt": "Professional painting preparation setup with tools and protective coverings inside a modern Sydney home"
   },
   {
     "id": "pg-70",
