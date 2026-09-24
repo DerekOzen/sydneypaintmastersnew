@@ -551,10 +551,12 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-5",
     "status": "published",
-    "updatedAt": "2026-08-25T05:56:12.311Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-24T00:40:16.983Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-07-29T00:40:52.360Z",
-    "createdBy": "vipin"
+    "createdBy": "vipin",
+    "featuredImage": "/uploads/blog-hero-venetian-plaster-2a9fa5ba.jpg",
+    "featuredImageAlt": "Polished Venetian plaster feature wall in a modern Sydney living room"
   },
   {
     "id": "pg-42",
