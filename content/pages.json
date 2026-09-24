@@ -569,10 +569,12 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-5",
     "status": "published",
-    "updatedAt": "2026-08-25T05:58:45.599Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-24T00:42:19.152Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-07-29T00:42:11.281Z",
-    "createdBy": "vipin"
+    "createdBy": "vipin",
+    "featuredImage": "/uploads/blog-hero-weather-painting-a4b31453.jpg",
+    "featuredImageAlt": "Professional painting equipment and weather monitoring for optimal painting conditions"
   },
   {
     "id": "pg-43",
