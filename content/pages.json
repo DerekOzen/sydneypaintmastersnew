@@ -1083,8 +1083,10 @@
     "status": "published",
     "createdAt": "2026-09-16T00:35:17.364Z",
     "createdBy": "joshua",
-    "updatedAt": "2026-09-16T23:41:08.184Z",
-    "updatedBy": "gabriel"
+    "updatedAt": "2026-09-24T01:09:52.698Z",
+    "updatedBy": "gabriel",
+    "featuredImage": "/uploads/roof-painting-in-sydney-cost-and-does-it-3c361095.jpg",
+    "featuredImageAlt": "Roof painting in progress on a Sydney tile roof"
   },
   {
     "id": "pg-64",
