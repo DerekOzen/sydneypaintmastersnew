@@ -1,6 +1,298 @@
 {
   "batches": [
     {
+      "batchId": "csg-muf000td-q94x",
+      "at": "2026-09-24T03:54:33.889Z",
+      "count": 59,
+      "changes": [
+        {
+          "path": "/",
+          "oldRecordId": "SCHEMA-6E825A03",
+          "newRecordId": "SCHEMA-6E825A03"
+        },
+        {
+          "path": "/house-painting",
+          "oldRecordId": "SCHEMA-A8F46543",
+          "newRecordId": "SCHEMA-A8F46543"
+        },
+        {
+          "path": "/office-painting",
+          "oldRecordId": "SCHEMA-5DF341FE",
+          "newRecordId": "SCHEMA-5DF341FE"
+        },
+        {
+          "path": "/commercial-painting",
+          "oldRecordId": "SCHEMA-2D65571C",
+          "newRecordId": "SCHEMA-2D65571C"
+        },
+        {
+          "path": "/interior-painting",
+          "oldRecordId": "SCHEMA-B7EC210A",
+          "newRecordId": "SCHEMA-B7EC210A"
+        },
+        {
+          "path": "/exterior-painting",
+          "oldRecordId": "SCHEMA-CC4FCA97",
+          "newRecordId": "SCHEMA-CC4FCA97"
+        },
+        {
+          "path": "/decorative-finishes",
+          "oldRecordId": "SCHEMA-1370C429",
+          "newRecordId": "SCHEMA-1370C429"
+        },
+        {
+          "path": "/epoxy-flooring",
+          "oldRecordId": "SCHEMA-A411F1FA",
+          "newRecordId": "SCHEMA-A411F1FA"
+        },
+        {
+          "path": "/pool-painting",
+          "oldRecordId": "SCHEMA-1D170649",
+          "newRecordId": "SCHEMA-1D170649"
+        },
+        {
+          "path": "/retail-fit-out-painting",
+          "oldRecordId": "SCHEMA-3F365F60",
+          "newRecordId": "SCHEMA-3F365F60"
+        },
+        {
+          "path": "/roof-painting",
+          "oldRecordId": "SCHEMA-FA69CE6C",
+          "newRecordId": "SCHEMA-FA69CE6C"
+        },
+        {
+          "path": "/strata-painting",
+          "oldRecordId": "SCHEMA-7035701B",
+          "newRecordId": "SCHEMA-7035701B"
+        },
+        {
+          "path": "/venetian-plaster",
+          "oldRecordId": "SCHEMA-DDB75910",
+          "newRecordId": "SCHEMA-DDB75910"
+        },
+        {
+          "path": "/warehouse-painting",
+          "oldRecordId": "SCHEMA-66E09515",
+          "newRecordId": "SCHEMA-66E09515"
+        },
+        {
+          "path": "/service-locations",
+          "oldRecordId": "SCHEMA-F4B7D75F",
+          "newRecordId": "SCHEMA-F4B7D75F"
+        },
+        {
+          "path": "/nsw/painter-alexandria",
+          "oldRecordId": "SCHEMA-6199E17D",
+          "newRecordId": "SCHEMA-6199E17D"
+        },
+        {
+          "path": "/nsw/painter-bondi",
+          "oldRecordId": "SCHEMA-081ACB31",
+          "newRecordId": "SCHEMA-081ACB31"
+        },
+        {
+          "path": "/nsw/painter-bronte",
+          "oldRecordId": "SCHEMA-D16646E4",
+          "newRecordId": "SCHEMA-D16646E4"
+        },
+        {
+          "path": "/nsw/painter-burwood",
+          "oldRecordId": "SCHEMA-9A7A7747",
+          "newRecordId": "SCHEMA-9A7A7747"
+        },
+        {
+          "path": "/nsw/painter-coogee",
+          "oldRecordId": "SCHEMA-9C7F3271",
+          "newRecordId": "SCHEMA-9C7F3271"
+        },
+        {
+          "path": "/nsw/painter-hornsby",
+          "oldRecordId": "SCHEMA-40FE4443",
+          "newRecordId": "SCHEMA-40FE4443"
+        },
+        {
+          "path": "/nsw/painter-hunters-hill",
+          "oldRecordId": "SCHEMA-CEA25EE4",
+          "newRecordId": "SCHEMA-CEA25EE4"
+        },
+        {
+          "path": "/nsw/painter-inner-west",
+          "oldRecordId": "SCHEMA-8D958C1B",
+          "newRecordId": "SCHEMA-8D958C1B"
+        },
+        {
+          "path": "/nsw/painter-ku-ring-gai",
+          "oldRecordId": "SCHEMA-9634FBE1",
+          "newRecordId": "SCHEMA-9634FBE1"
+        },
+        {
+          "path": "/nsw/painter-lane-cove",
+          "oldRecordId": "SCHEMA-8C7A242F",
+          "newRecordId": "SCHEMA-8C7A242F"
+        },
+        {
+          "path": "/nsw/painter-mosman",
+          "oldRecordId": "SCHEMA-EF92A89F",
+          "newRecordId": "SCHEMA-EF92A89F"
+        },
+        {
+          "path": "/nsw/painter-newport",
+          "oldRecordId": "SCHEMA-645D8CB8",
+          "newRecordId": "SCHEMA-645D8CB8"
+        },
+        {
+          "path": "/nsw/painter-northern-beaches",
+          "oldRecordId": "SCHEMA-9C24291B",
+          "newRecordId": "SCHEMA-9C24291B"
+        },
+        {
+          "path": "/nsw/painter-north-sydney",
+          "oldRecordId": "SCHEMA-633CD510",
+          "newRecordId": "SCHEMA-633CD510"
+        },
+        {
+          "path": "/nsw/painter-palm-beach",
+          "oldRecordId": "SCHEMA-D503D4D0",
+          "newRecordId": "SCHEMA-D503D4D0"
+        },
+        {
+          "path": "/nsw/painter-randwick",
+          "oldRecordId": "SCHEMA-46E32F32",
+          "newRecordId": "SCHEMA-46E32F32"
+        },
+        {
+          "path": "/nsw/painter-ryde",
+          "oldRecordId": "SCHEMA-A1313D23",
+          "newRecordId": "SCHEMA-A1313D23"
+        },
+        {
+          "path": "/nsw/painter-st-ives",
+          "oldRecordId": "SCHEMA-CD1CD5B2",
+          "newRecordId": "SCHEMA-CD1CD5B2"
+        },
+        {
+          "path": "/nsw/painter-sydney-cbd",
+          "oldRecordId": "SCHEMA-1A797697",
+          "newRecordId": "SCHEMA-1A797697"
+        },
+        {
+          "path": "/nsw/painter-the-rocks",
+          "oldRecordId": "SCHEMA-B50706A3",
+          "newRecordId": "SCHEMA-B50706A3"
+        },
+        {
+          "path": "/nsw/painter-waverley",
+          "oldRecordId": "SCHEMA-9E8A7D6D",
+          "newRecordId": "SCHEMA-9E8A7D6D"
+        },
+        {
+          "path": "/nsw/painter-willoughby",
+          "oldRecordId": "SCHEMA-74C5AB80",
+          "newRecordId": "SCHEMA-74C5AB80"
+        },
+        {
+          "path": "/nsw/painter-woollahra",
+          "oldRecordId": "SCHEMA-B884D07B",
+          "newRecordId": "SCHEMA-B884D07B"
+        },
+        {
+          "path": "/blogs",
+          "oldRecordId": "SCHEMA-E24846A2",
+          "newRecordId": "SCHEMA-E24846A2"
+        },
+        {
+          "path": "/blog/venetian-plaster-cost-sydney-2026",
+          "oldRecordId": "SCHEMA-5D213DB0",
+          "newRecordId": "SCHEMA-5D213DB0"
+        },
+        {
+          "path": "/blog/best-time-book-painting-2026",
+          "oldRecordId": "SCHEMA-3616565C",
+          "newRecordId": "SCHEMA-3616565C"
+        },
+        {
+          "path": "/blog/beyond-white-warm-neutrals",
+          "oldRecordId": "SCHEMA-323A7762",
+          "newRecordId": "SCHEMA-323A7762"
+        },
+        {
+          "path": "/blog/low-voc-vs-traditional-paints",
+          "oldRecordId": "SCHEMA-BC3CB816",
+          "newRecordId": "SCHEMA-BC3CB816"
+        },
+        {
+          "path": "/blog/when-does-your-home-need-a-fresh-coat-of-paint",
+          "oldRecordId": "SCHEMA-5BFB933F",
+          "newRecordId": "SCHEMA-5BFB933F"
+        },
+        {
+          "path": "/blog/what-sets-australia-best-painting-teams-apart",
+          "oldRecordId": "SCHEMA-8CAB690A",
+          "newRecordId": "SCHEMA-8CAB690A"
+        },
+        {
+          "path": "/blog/how-to-prevent-interior-painting-mistakes-in-2026",
+          "oldRecordId": "SCHEMA-E22F2964",
+          "newRecordId": "SCHEMA-E22F2964"
+        },
+        {
+          "path": "/blog/interior-vs-exterior-painting-costs-in-sydney-explained",
+          "oldRecordId": "SCHEMA-EE588517",
+          "newRecordId": "SCHEMA-EE588517"
+        },
+        {
+          "path": "/blog/house-painting-cost-sydney",
+          "newRecordId": "SCHEMA-A8ABBC3D"
+        },
+        {
+          "path": "/blog/how-long-does-exterior-paint-last-sydney",
+          "newRecordId": "SCHEMA-90193C3F"
+        },
+        {
+          "path": "/blog/how-much-does-it-cost-to-paint-a-house-in-sydney",
+          "newRecordId": "SCHEMA-CEBE9090"
+        },
+        {
+          "path": "/blog/roof-painting-cost-sydney",
+          "newRecordId": "SCHEMA-10CC36DA"
+        },
+        {
+          "path": "/about-us",
+          "oldRecordId": "SCHEMA-D08769AB",
+          "newRecordId": "SCHEMA-D08769AB"
+        },
+        {
+          "path": "/contact",
+          "oldRecordId": "SCHEMA-9021C933",
+          "newRecordId": "SCHEMA-9021C933"
+        },
+        {
+          "path": "/careers",
+          "newRecordId": "SCHEMA-3F66B335"
+        },
+        {
+          "path": "/faq",
+          "newRecordId": "SCHEMA-4015403E"
+        },
+        {
+          "path": "/gallery",
+          "newRecordId": "SCHEMA-46C4AB21"
+        },
+        {
+          "path": "/warranty",
+          "newRecordId": "SCHEMA-AF9356BC"
+        },
+        {
+          "path": "/terms",
+          "newRecordId": "SCHEMA-DDE32414"
+        },
+        {
+          "path": "/privacy",
+          "newRecordId": "SCHEMA-FA84A0CA"
+        }
+      ]
+    },
+    {
       "batchId": "csg-mu2aqemr-urbc",
       "at": "2026-09-15T06:34:00.723Z",
       "count": 49,
