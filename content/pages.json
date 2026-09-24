@@ -477,10 +477,12 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-27",
     "status": "published",
-    "updatedAt": "2026-08-25T05:45:38.073Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-24T00:25:40.071Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-07-29T00:35:16.614Z",
-    "createdBy": "vipin"
+    "createdBy": "vipin",
+    "featuredImage": "/uploads/painter-waverley-eastern-suburbs-exterio-067f1ad2.jpg",
+    "featuredImageAlt": "Professional painters in front of a freshly painted modern family home in Waverley, Eastern Suburbs."
   },
   {
     "id": "pg-38",
