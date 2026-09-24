@@ -1027,10 +1027,12 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-5",
     "status": "published",
-    "updatedAt": "2026-09-16T23:30:06.299Z",
+    "updatedAt": "2026-09-24T01:04:37.122Z",
     "updatedBy": "gabriel",
     "createdAt": "2026-09-15T23:43:06.292Z",
-    "createdBy": "joshua"
+    "createdBy": "joshua",
+    "featuredImage": "/uploads/how-much-does-commercial-painting-cost-i-d3f9563b.jpg",
+    "featuredImageAlt": "Commercial painters repainting a Sydney office after hours"
   },
   {
     "id": "pg-74",
