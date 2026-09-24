@@ -605,10 +605,12 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-5",
     "status": "published",
-    "updatedAt": "2026-08-25T06:00:44.857Z",
-    "updatedBy": "vipin",
+    "updatedAt": "2026-09-24T00:51:32.244Z",
+    "updatedBy": "gabriel",
     "createdAt": "2026-07-29T00:44:29.536Z",
-    "createdBy": "vipin"
+    "createdBy": "vipin",
+    "featuredImage": "/uploads/blog-hero-low-voc-fa6b6950.jpg",
+    "featuredImageAlt": "Paint cans and colour swatches for low-VOC paint selection in Sydney home"
   },
   {
     "id": "pg-45",
