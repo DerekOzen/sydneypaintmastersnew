@@ -1133,10 +1133,10 @@
     "status": "published",
     "createdAt": "2026-09-18T04:51:41.027Z",
     "createdBy": "joshua",
-    "updatedAt": "2026-09-24T01:12:55.327Z",
-    "updatedBy": "gabriel",
+    "updatedAt": "2026-09-28T03:15:50.334Z",
+    "updatedBy": "joshua",
     "category": "Blog",
-    "isBlogIndex": true,
+    "isBlogIndex": false,
     "featuredImage": "/uploads/logo-2-b7f49542.jpg",
     "featuredImageAlt": "Sydney Paintmasters Pty Ltd official business logo - Professional painting services in Sydney"
   }
