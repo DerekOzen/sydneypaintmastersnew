@@ -37,21 +37,21 @@
       }
     },
     {
-      "id": "b-4",
-      "type": "section",
-      "props": {
-        "label": "Section 4",
-        "role": "section",
-        "html": "<nav aria-label=\"Breadcrumb\" style=\"padding:20px 0;margin-bottom:20px\"><div style=\"max-width:1200px;margin:0 auto;padding-left:20px;padding-right:20px\"><ol style=\"list-style:none;padding:0;margin:0;display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:0.9rem\"><li style=\"display: flex; align-items: center; gap: 8px;\"><a href=\"/\" style=\"color:#016EDC;text-decoration:none;font-weight:500\">Home</a><span style=\"color:#9ca3af\">»</span></li><li style=\"display: flex; align-items: center; gap: 8px;\"><a href=\"/service-locations/\" style=\"color:#016EDC;text-decoration:none;font-weight:500\">NSW</a><span style=\"color:#9ca3af\">»</span></li><li style=\"display:flex;align-items:center;gap:8px\"><span style=\"color:#1c293f;font-weight:600\">Painter North Sydney</span></li></ol></div></nav>"
-      }
-    },
-    {
       "id": "b-6",
       "type": "section",
       "props": {
         "label": "Section 6",
         "role": "section",
         "html": "<section style=\"background:#1c293f;padding:26px 0\"><div class=\"wrap\"><div style=\"display:grid;grid-template-columns:repeat(auto-fit, minmax(160px, 1fr));gap:16px\"><div style=\"text-align:center\"><div class=\"hh\" style=\"font-weight:800;font-size:1.9rem;color:#FFA800;line-height:1\">20+</div><div style=\"font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;color:#c9d6e5;margin-top:6px\">Years Painting</div></div><div style=\"text-align:center\"><div class=\"hh\" style=\"font-weight:800;font-size:1.9rem;color:#FFA800;line-height:1\">14</div><div style=\"font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;color:#c9d6e5;margin-top:6px\">Suburbs Covered</div></div><div style=\"text-align:center\"><div class=\"hh\" style=\"font-weight:800;font-size:1.9rem;color:#FFA800;line-height:1\">6 days</div><div style=\"font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;color:#c9d6e5;margin-top:6px\">Mon to Sat</div></div><div style=\"text-align:center\"><div class=\"hh\" style=\"font-weight:800;font-size:1.9rem;color:#FFA800;line-height:1\">$0</div><div style=\"font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;color:#c9d6e5;margin-top:6px\">Call-Out Fee</div></div></div></div></section>"
+      }
+    },
+    {
+      "id": "b-4",
+      "type": "section",
+      "props": {
+        "label": "Section 4",
+        "role": "section",
+        "html": "<nav aria-label=\"Breadcrumb\" style=\"padding:20px 0;margin-bottom:20px\"><div style=\"max-width:1200px;margin:0 auto;padding-left:20px;padding-right:20px\"><ol style=\"list-style:none;padding:0;margin:0;display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:0.9rem\"><li style=\"display: flex; align-items: center; gap: 8px;\"><a href=\"/\" style=\"color:#016EDC;text-decoration:none;font-weight:500\">Home</a><span style=\"color:#9ca3af\">»</span></li><li style=\"display: flex; align-items: center; gap: 8px;\"><a href=\"/service-locations/\" style=\"color:#016EDC;text-decoration:none;font-weight:500\">NSW</a><span style=\"color:#9ca3af\">»</span></li><li style=\"display:flex;align-items:center;gap:8px\"><span style=\"color:#1c293f;font-weight:600\">Painter North Sydney</span></li></ol></div></nav>"
       }
     },
     {
