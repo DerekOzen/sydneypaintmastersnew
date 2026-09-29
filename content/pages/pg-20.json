@@ -28,21 +28,21 @@
       }
     },
     {
-      "id": "b-4",
-      "type": "section",
-      "props": {
-        "label": "Section 4",
-        "role": "section",
-        "html": "<nav aria-label=\"Breadcrumb\" style=\"padding:20px 0;margin-bottom:20px\"><div style=\"max-width:1200px;margin:0 auto;padding-left:20px;padding-right:20px\"><ol style=\"list-style:none;padding:0;margin:0;display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:0.9rem\"><li style=\"display:flex;align-items:center;gap:8px\"><a href=\"/\" style=\"color:#016EDC;text-decoration:none;font-weight:500\">Home</a><span style=\"color:#9ca3af\">»</span></li><li style=\"display:flex;align-items:center;gap:8px\"><a href=\"/nsw/painter-randwick\" style=\"color:#016EDC;text-decoration:none;font-weight:500\">Painter Randwick</a><span style=\"color:#9ca3af\">»</span></li><li style=\"display:flex;align-items:center;gap:8px\"><span style=\"color:#1c293f;font-weight:600\">Painter Coogee</span></li></ol></div></nav>"
-      }
-    },
-    {
       "id": "b-5",
       "type": "section",
       "props": {
         "label": "Painter Coogee",
         "role": "section",
         "html": "<section class=\"hero\"><div class=\"wrap\"><div style=\"\"><p class=\"eyebrow\">Painter in the Eastern Suburbs NSW</p><h1 class=\"h1 hh\">Painter Coogee</h1><p class=\"hero-tagline\">Coastal Finish Experts</p><p class=\"hbody\">Painter in Coogee 2034. Interior, exterior, strata and roof painting built to beat salt air, sea spray and harsh coastal sun. Fixed-price quotes. No call-out fee.</p><ul class=\"hchecks\"><li><i class=\"fas fa-check\"></i> 20+ Years</li><li><i class=\"fas fa-check\"></i> Licensed &amp; Insured</li><li><i class=\"fas fa-check\"></i> 6 Days a Week</li><li><i class=\"fas fa-check\"></i> $0 Call-Out</li></ul><div class=\"hero-cta\"><a class=\"hero-phone-btn\" href=\"tel:0423 019 087\"><i aria-hidden=\"true\" class=\"fas fa-phone\"></i>0423 019 087</a><a class=\"btn btn-outline\" href=\"#contact\">Get a free quote <i class=\"fas fa-arrow-right\"></i></a></div><p style=\"display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-weight:600;color:#e5ecf7\"><i class=\"fas fa-check-circle\" style=\"color:var(--accent)\"></i> Licence 315254C · Fully insured · 5-star reviewed by Sydney clients</p></div><div class=\"hero-media\"><img alt=\"Painter finishing a weather-resistant exterior repaint on a Coogee beachside home\" src=\"/uploads/painter-coogee-coastal-exterior-repaint--7e817f38.webp\"><div class=\"hero-badge\"><div class=\"b-ic\"><i class=\"fas fa-star\"></i></div><div><b>5-Star</b><small>Google Reviews</small></div></div></div></div></section>"
+      }
+    },
+    {
+      "id": "b-4",
+      "type": "section",
+      "props": {
+        "label": "Section 4",
+        "role": "section",
+        "html": "<nav aria-label=\"Breadcrumb\" style=\"padding:20px 0;margin-bottom:20px\"><div style=\"max-width:1200px;margin:0 auto;padding-left:20px;padding-right:20px\"><ol style=\"list-style:none;padding:0;margin:0;display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:0.9rem\"><li style=\"display:flex;align-items:center;gap:8px\"><a href=\"/\" style=\"color:#016EDC;text-decoration:none;font-weight:500\">Home</a><span style=\"color:#9ca3af\">»</span></li><li style=\"display:flex;align-items:center;gap:8px\"><a href=\"/nsw/painter-randwick\" style=\"color:#016EDC;text-decoration:none;font-weight:500\">Painter Randwick</a><span style=\"color:#9ca3af\">»</span></li><li style=\"display:flex;align-items:center;gap:8px\"><span style=\"color:#1c293f;font-weight:600\">Painter Coogee</span></li></ol></div></nav>"
       }
     },
     {
