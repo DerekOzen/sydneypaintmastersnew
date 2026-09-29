@@ -28,21 +28,21 @@
       }
     },
     {
-      "id": "b-4",
-      "type": "section",
-      "props": {
-        "label": "Section 4",
-        "role": "section",
-        "html": "<nav aria-label=\"Breadcrumb\" style=\"padding:20px 0;margin-bottom:20px\"><div style=\"max-width:1200px;margin:0 auto;padding-left:20px;padding-right:20px\"><ol style=\"list-style:none;padding:0;margin:0;display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:0.9rem\"><li style=\"display: flex; align-items: center; gap: 8px;\"><a href=\"/\" style=\"color:#016EDC;text-decoration:none;font-weight:500\">Home</a><span style=\"color:#9ca3af\">»</span></li><li style=\"display: flex; align-items: center; gap: 8px;\"><a href=\"/service-locations/\" style=\"color:#016EDC;text-decoration:none;font-weight:500\">NSW</a><span style=\"color:#9ca3af\">»</span></li><li style=\"display: flex; align-items: center; gap: 8px;\"><span style=\"color:#1c293f;font-weight:600\">Painter Inner West</span></li></ol></div></nav>"
-      }
-    },
-    {
       "id": "b-5",
       "type": "section",
       "props": {
         "label": "Painter Inner West",
         "role": "section",
         "html": "<section class=\"hero\"><div class=\"wrap\"><div><p class=\"eyebrow\">Inner West NSW · Heritage and Terrace Specialists</p><h1 class=\"h1 hh\">Painter Inner West</h1><p class=\"hero-tagline\">Prepared. Painted. Protected.</p><p class=\"hbody\">Painter Inner West, covering all 20 suburbs from Balmain 2041 to Tempe 2044. We repaint terraces, Federation cottages, apartments, strata blocks and shopfronts. Licensed, insured, fixed price.</p><div class=\"hero-trust-pills\" style=\"display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 20px\"><span style=\"background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);padding:6px 13px;border-radius:30px;font-weight:600;font-size:0.85rem;color:#e5ecf7\">Licence 315254C</span><span style=\"background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);padding:6px 13px;border-radius:30px;font-weight:600;font-size:0.85rem;color:#e5ecf7\">20+ years painting</span><span style=\"background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);padding:6px 13px;border-radius:30px;font-weight:600;font-size:0.85rem;color:#e5ecf7\">No call-out fee</span><span style=\"background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.22);padding:6px 13px;border-radius:30px;font-weight:600;font-size:0.85rem;color:#e5ecf7\">Fixed-price quotes</span></div><div class=\"hero-cta\"><a class=\"hero-phone-btn\" href=\"tel:0423 019 087\"><i aria-hidden=\"true\" class=\"fas fa-phone\"></i>0423 019 087</a><a class=\"btn btn-outline\" href=\"#contact\">Get a free quote <i class=\"fas fa-arrow-right\"></i></a></div><div style=\"display:grid;grid-template-columns:repeat(4, 1fr);gap:0;margin-top:28px;border-top:1px solid rgba(255,255,255,0.18);padding-top:20px\"><div style=\"padding-right:14px\"><strong style=\"font-family:Georgia, serif;font-size:1.75rem;font-weight:700;color:var(--accent);display:block;line-height:1\">20+</strong><span style=\"font-size:0.7rem;letter-spacing:1.6px;text-transform:uppercase;color:#c3ccd8;font-weight:600\">Years painting</span></div><div style=\"padding-right:14px\"><strong style=\"font-family:Georgia, serif;font-size:1.75rem;font-weight:700;color:var(--accent);display:block;line-height:1\">20</strong><span style=\"font-size:0.7rem;letter-spacing:1.6px;text-transform:uppercase;color:#c3ccd8;font-weight:600\">Inner West suburbs</span></div><div style=\"padding-right:14px\"><strong style=\"font-family:Georgia, serif;font-size:1.75rem;font-weight:700;color:var(--accent);display:block;line-height:1\">6</strong><span style=\"font-size:0.7rem;letter-spacing:1.6px;text-transform:uppercase;color:#c3ccd8;font-weight:600\">Days a week</span></div><div style=\"padding-right:14px\"><strong style=\"font-family:Georgia, serif;font-size:1.75rem;font-weight:700;color:var(--accent);display:block;line-height:1\">$0</strong><span style=\"font-size:0.7rem;letter-spacing:1.6px;text-transform:uppercase;color:#c3ccd8;font-weight:600\">Call-out fee</span></div></div></div><div class=\"hero-media\"><img alt=\"Painter cutting in the trim on a Victorian terrace facade in the Inner West of Sydney\" src=\"/uploads/painter-inner-west-victorian-terrace-ext-e5a9e6f6.jpg\"><div class=\"hero-badge\"><div class=\"b-ic\"><i class=\"fas fa-star\"></i></div><div><b>5-Star</b><small>Google Reviews</small></div></div></div></div></section>"
+      }
+    },
+    {
+      "id": "b-4",
+      "type": "section",
+      "props": {
+        "label": "Section 4",
+        "role": "section",
+        "html": "<nav aria-label=\"Breadcrumb\" style=\"padding:20px 0;margin-bottom:20px\"><div style=\"max-width:1200px;margin:0 auto;padding-left:20px;padding-right:20px\"><ol style=\"list-style:none;padding:0;margin:0;display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:0.9rem\"><li style=\"display: flex; align-items: center; gap: 8px;\"><a href=\"/\" style=\"color:#016EDC;text-decoration:none;font-weight:500\">Home</a><span style=\"color:#9ca3af\">»</span></li><li style=\"display: flex; align-items: center; gap: 8px;\"><a href=\"/service-locations/\" style=\"color:#016EDC;text-decoration:none;font-weight:500\">NSW</a><span style=\"color:#9ca3af\">»</span></li><li style=\"display: flex; align-items: center; gap: 8px;\"><span style=\"color:#1c293f;font-weight:600\">Painter Inner West</span></li></ol></div></nav>"
       }
     },
     {
