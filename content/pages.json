@@ -1139,5 +1139,53 @@
     "isBlogIndex": false,
     "featuredImage": "/uploads/logo-2-b7f49542.jpg",
     "featuredImageAlt": "Sydney Paintmasters Pty Ltd official business logo - Professional painting services in Sydney"
+  },
+  {
+    "id": "pg-66",
+    "path": "/which-exterior-surfaces-need-which-paint-in-sydney",
+    "type": "post",
+    "title": "Which Exterior Surfaces Need Which Paint in Sydney | Sydney Paintmasters",
+    "seoTitle": "Which Exterior Surfaces Need Which Paint in Sydney | Sydney Paintmasters",
+    "seoDescription": "Render, brick, weatherboard and fibro each need different preparation and coatings. A surface-by-surface guide for Sydney exteriors, including coastal exposure.",
+    "layout": "mockup",
+    "headerPartId": "header-2",
+    "footerPartId": "footer-5",
+    "status": "draft",
+    "createdAt": "2026-10-13T23:43:45.168Z",
+    "createdBy": "gabriel",
+    "updatedAt": "2026-10-13T23:43:45.168Z",
+    "updatedBy": "gabriel"
+  },
+  {
+    "id": "pg-67",
+    "path": "/epoxy-or-painted-concrete-for-a-garage-floor",
+    "type": "post",
+    "title": "Epoxy or Painted Concrete for a Garage Floor | Sydney Paintmasters",
+    "seoTitle": "Epoxy or Painted Concrete for a Garage Floor | Sydney Paintmasters",
+    "seoDescription": "How an epoxy coating and concrete floor paint really compare for a Sydney garage, why preparation decides the outcome, and which suits which kind of use.",
+    "layout": "mockup",
+    "headerPartId": "header-2",
+    "footerPartId": "footer-5",
+    "status": "draft",
+    "createdAt": "2026-10-13T23:43:45.168Z",
+    "createdBy": "gabriel",
+    "updatedAt": "2026-10-13T23:43:45.168Z",
+    "updatedBy": "gabriel"
+  },
+  {
+    "id": "pg-72",
+    "path": "/what-to-do-before-the-painters-arrive",
+    "type": "post",
+    "title": "What to Do Before the Painters Arrive | Sydney Paintmasters",
+    "seoTitle": "What to Do Before the Painters Arrive | Sydney Paintmasters",
+    "seoDescription": "A room-by-room checklist of what to move, remove and arrange before painters start work on your Sydney home, and what your painter should handle instead.",
+    "layout": "mockup",
+    "headerPartId": "header-2",
+    "footerPartId": "footer-5",
+    "status": "draft",
+    "createdAt": "2026-10-13T23:43:45.168Z",
+    "createdBy": "gabriel",
+    "updatedAt": "2026-10-13T23:43:45.168Z",
+    "updatedBy": "gabriel"
   }
 ]
