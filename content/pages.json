@@ -1148,13 +1148,15 @@
     "seoTitle": "Which Exterior Surfaces Need Which Paint in Sydney | Sydney Paintmasters",
     "seoDescription": "Render, brick, weatherboard and fibro each need different preparation and coatings. A surface-by-surface guide for Sydney exteriors, including coastal exposure.",
     "layout": "mockup",
-    "headerPartId": "header-2",
+    "headerPartId": null,
     "footerPartId": "footer-5",
-    "status": "draft",
+    "status": "published",
     "createdAt": "2026-10-13T23:43:45.168Z",
     "createdBy": "gabriel",
-    "updatedAt": "2026-10-13T23:43:45.168Z",
-    "updatedBy": "gabriel"
+    "updatedAt": "2026-10-13T23:48:18.156Z",
+    "updatedBy": "gabriel",
+    "featuredImage": "/uploads/which-exterior-surfaces-need-which-paint-bab2e13b.jpg",
+    "featuredImageAlt": "Exterior house surfaces including rendered walls, brickwork, weatherboards and fibre cement cladding."
   },
   {
     "id": "pg-67",
