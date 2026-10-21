@@ -1232,5 +1232,21 @@
     "category": "Services",
     "featuredImageAlt": "Professional house painters applying grey and white paint to the exterior facade and porch archway of a Sydney residence.",
     "featuredImage": "/uploads/professional-exterior-painting-sydney-se-ae541a69.webp"
+  },
+  {
+    "id": "pg-79",
+    "path": "/epoxy-flooring-2",
+    "type": "service",
+    "title": "Epoxy Flooring",
+    "seoTitle": "Epoxy Flooring Sydney | Garage & Commercial Floor Coatings | Sydney Paintmasters",
+    "seoDescription": "Epoxy flooring in Sydney by Sydney Paintmasters. Garage, flake, showroom, commercial and industrial epoxy floor coatings, mechanically prepared and sealed to last. Licensed, insured, free quotes.",
+    "layout": "mockup",
+    "headerPartId": null,
+    "footerPartId": null,
+    "status": "draft",
+    "updatedAt": "2026-10-21T07:53:01.838Z",
+    "updatedBy": "vipin",
+    "createdAt": "2026-10-21T07:53:01.838Z",
+    "createdBy": "vipin"
   }
 ]
