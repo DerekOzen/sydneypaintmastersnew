@@ -1225,10 +1225,12 @@
     "headerPartId": "header-2",
     "footerPartId": "footer-5",
     "status": "published",
-    "updatedAt": "2026-10-21T07:29:39.423Z",
+    "updatedAt": "2026-10-21T07:30:50.425Z",
     "updatedBy": "vipin",
     "createdAt": "2026-10-21T07:26:45.044Z",
     "createdBy": "vipin",
-    "category": "Services"
+    "category": "Services",
+    "featuredImageAlt": "Professional house painters applying grey and white paint to the exterior facade and porch archway of a Sydney residence.",
+    "featuredImage": "/uploads/professional-exterior-painting-sydney-se-ae541a69.webp"
   }
 ]
