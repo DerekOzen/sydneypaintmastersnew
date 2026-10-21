@@ -1216,7 +1216,7 @@
   },
   {
     "id": "pg-78",
-    "path": "/exterior-painting-2",
+    "path": "/exterior-painting",
     "type": "page",
     "title": "Exterior Painting",
     "seoTitle": "Exterior Painting Sydney | Exterior House Painters | Sydney Paintmasters",
@@ -1224,10 +1224,11 @@
     "layout": "mockup",
     "headerPartId": "header-2",
     "footerPartId": "footer-5",
-    "status": "draft",
-    "updatedAt": "2026-10-21T07:28:42.042Z",
+    "status": "published",
+    "updatedAt": "2026-10-21T07:29:39.423Z",
     "updatedBy": "vipin",
     "createdAt": "2026-10-21T07:26:45.044Z",
-    "createdBy": "vipin"
+    "createdBy": "vipin",
+    "category": "Services"
   }
 ]
