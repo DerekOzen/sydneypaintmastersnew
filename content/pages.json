@@ -806,13 +806,14 @@
     "layout": "mockup",
     "headerPartId": "header-2",
     "footerPartId": "footer-5",
-    "status": "published",
-    "updatedAt": "2026-09-23T22:50:06.462Z",
-    "updatedBy": "gabriel",
+    "status": "deleted",
+    "updatedAt": "2026-10-21T07:57:25.816Z",
+    "updatedBy": "vipin",
     "createdAt": "2026-08-10T05:49:15.139Z",
     "createdBy": "vipin",
     "featuredImage": "/uploads/epoxy-flooring-sydney-d700b275.webp",
-    "featuredImageAlt": "Professional floor specialists applying a high-gloss clear epoxy floor coating inside a modern Sydney residential interior."
+    "featuredImageAlt": "Professional floor specialists applying a high-gloss clear epoxy floor coating inside a modern Sydney residential interior.",
+    "isHome": false
   },
   {
     "id": "pg-56",
