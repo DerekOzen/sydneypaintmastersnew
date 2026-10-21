@@ -1221,10 +1221,10 @@
     "seoTitle": "Exterior Painting Sydney | Exterior House Painters | Sydney Paintmasters",
     "seoDescription": "Exterior painting in Sydney by Sydney Paintmasters. Render, brick, weatherboard, eaves and fences prepared and coated with weather-durable products. Licensed, insured, free quotes.",
     "layout": "mockup",
-    "headerPartId": null,
-    "footerPartId": null,
+    "headerPartId": "header-2",
+    "footerPartId": "footer-5",
     "status": "draft",
-    "updatedAt": "2026-10-21T07:26:45.044Z",
+    "updatedAt": "2026-10-21T07:28:42.042Z",
     "updatedBy": "vipin",
     "createdAt": "2026-10-21T07:26:45.044Z",
     "createdBy": "vipin"
