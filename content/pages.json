@@ -1252,5 +1252,21 @@
     "createdBy": "vipin",
     "featuredImageAlt": "Professional floor specialists applying a high-gloss clear epoxy floor coating inside a modern Sydney residential interior.",
     "featuredImage": "/uploads/epoxy-flooring-sydney-d700b275.webp"
+  },
+  {
+    "id": "pg-80",
+    "path": "/blogs",
+    "type": "page",
+    "title": "Blogs | Painting Tips and Guides | Sydney Paintmasters",
+    "seoTitle": "Blogs | Painting Tips and Guides | Sydney Paintmasters",
+    "seoDescription": "Painting tips and guides for Sydney homes and businesses, covering costs, preparation, timing, finishes and how to choose a licensed painting team.",
+    "layout": "mockup",
+    "headerPartId": "header-2",
+    "footerPartId": "footer-5",
+    "status": "draft",
+    "createdAt": "2026-10-25T22:16:48.413Z",
+    "createdBy": "gabriel",
+    "updatedAt": "2026-10-25T22:16:48.413Z",
+    "updatedBy": "gabriel"
   }
 ]
