@@ -1132,15 +1132,16 @@
     "layout": "mockup",
     "headerPartId": "header-2",
     "footerPartId": "footer-5",
-    "status": "published",
+    "status": "deleted",
     "createdAt": "2026-09-18T04:51:41.027Z",
     "createdBy": "joshua",
-    "updatedAt": "2026-09-28T03:15:50.334Z",
-    "updatedBy": "joshua",
+    "updatedAt": "2026-10-25T22:15:12.228Z",
+    "updatedBy": "gabriel",
     "category": "Blog",
     "isBlogIndex": false,
     "featuredImage": "/uploads/logo-2-b7f49542.jpg",
-    "featuredImageAlt": "Sydney Paintmasters Pty Ltd official business logo - Professional painting services in Sydney"
+    "featuredImageAlt": "Sydney Paintmasters Pty Ltd official business logo - Professional painting services in Sydney",
+    "isHome": false
   },
   {
     "id": "pg-66",
