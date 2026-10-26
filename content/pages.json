@@ -1266,8 +1266,9 @@
     "status": "published",
     "createdAt": "2026-10-25T22:16:48.413Z",
     "createdBy": "gabriel",
-    "updatedAt": "2026-10-25T22:17:58.345Z",
-    "updatedBy": "gabriel",
-    "category": "Blog"
+    "updatedAt": "2026-10-26T23:24:48.779Z",
+    "updatedBy": "joshua",
+    "category": "Blog",
+    "isBlogIndex": true
   }
 ]
