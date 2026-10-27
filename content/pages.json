@@ -1299,10 +1299,10 @@
     "layout": "mockup",
     "headerPartId": "header-2",
     "footerPartId": "footer-5",
-    "status": "draft",
+    "status": "published",
     "createdAt": "2026-10-27T01:30:20.486Z",
     "createdBy": "joshua",
-    "updatedAt": "2026-10-27T01:30:20.486Z",
+    "updatedAt": "2026-10-27T01:32:52.684Z",
     "updatedBy": "joshua"
   }
 ]
