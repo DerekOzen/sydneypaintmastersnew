@@ -1171,13 +1171,14 @@
     "layout": "mockup",
     "headerPartId": null,
     "footerPartId": "footer-5",
-    "status": "published",
+    "status": "deleted",
     "createdAt": "2026-10-13T23:43:45.168Z",
     "createdBy": "gabriel",
-    "updatedAt": "2026-10-25T22:24:38.564Z",
-    "updatedBy": "gabriel",
+    "updatedAt": "2026-10-27T02:11:15.619Z",
+    "updatedBy": "joshua",
     "featuredImage": "/uploads/epoxy-or-painted-concrete-for-a-garage-f-82b2c687.jpg",
-    "featuredImageAlt": "Epoxy flooring and painted concrete garage floor comparison in a modern garage."
+    "featuredImageAlt": "Epoxy flooring and painted concrete garage floor comparison in a modern garage.",
+    "isHome": false
   },
   {
     "id": "pg-72",
