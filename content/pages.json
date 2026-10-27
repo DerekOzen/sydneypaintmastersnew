@@ -1282,12 +1282,13 @@
     "layout": "mockup",
     "headerPartId": "header-2",
     "footerPartId": "footer-5",
-    "status": "published",
+    "status": "deleted",
     "createdAt": "2026-10-27T00:20:51.190Z",
     "createdBy": "joshua",
-    "updatedAt": "2026-10-27T00:49:03.070Z",
+    "updatedAt": "2026-10-27T01:33:57.868Z",
     "updatedBy": "joshua",
-    "category": "Blog"
+    "category": "Blog",
+    "isHome": false
   },
   {
     "id": "pg-82",
