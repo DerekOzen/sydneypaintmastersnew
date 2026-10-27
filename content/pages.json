@@ -1208,13 +1208,14 @@
     "layout": "mockup",
     "headerPartId": null,
     "footerPartId": "footer-5",
-    "status": "published",
+    "status": "deleted",
     "createdAt": "2026-10-14T00:25:31.442Z",
     "createdBy": "gabriel",
-    "updatedAt": "2026-10-25T22:24:00.256Z",
-    "updatedBy": "gabriel",
+    "updatedAt": "2026-10-27T01:53:40.518Z",
+    "updatedBy": "joshua",
     "featuredImage": "/uploads/what-to-do-before-the-painters-arrive-cd3054c1.jpg",
-    "featuredImageAlt": "Interior painting preparation with covered furniture, floor protection and painting supplies."
+    "featuredImageAlt": "Interior painting preparation with covered furniture, floor protection and painting supplies.",
+    "isHome": false
   },
   {
     "id": "pg-78",
