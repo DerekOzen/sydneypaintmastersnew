@@ -1263,13 +1263,14 @@
     "layout": "mockup",
     "headerPartId": null,
     "footerPartId": "footer-5",
-    "status": "published",
+    "status": "deleted",
     "createdAt": "2026-10-25T22:16:48.413Z",
     "createdBy": "gabriel",
-    "updatedAt": "2026-10-26T23:24:48.779Z",
+    "updatedAt": "2026-10-27T00:48:14.057Z",
     "updatedBy": "joshua",
     "category": "Blog",
-    "isBlogIndex": true
+    "isBlogIndex": true,
+    "isHome": false
   },
   {
     "id": "pg-81",
