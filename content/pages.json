@@ -1270,5 +1270,21 @@
     "updatedBy": "joshua",
     "category": "Blog",
     "isBlogIndex": true
+  },
+  {
+    "id": "pg-81",
+    "path": "/sydney-paintmasters-blogs-page",
+    "type": "page",
+    "title": "Sydney Paintmasters Blogs Page",
+    "seoTitle": "Sydney Paintmasters Blogs Page",
+    "seoDescription": "",
+    "layout": "mockup",
+    "headerPartId": "header-2",
+    "footerPartId": "footer-5",
+    "status": "draft",
+    "createdAt": "2026-10-27T00:20:51.190Z",
+    "createdBy": "joshua",
+    "updatedAt": "2026-10-27T00:20:51.190Z",
+    "updatedBy": "joshua"
   }
 ]
