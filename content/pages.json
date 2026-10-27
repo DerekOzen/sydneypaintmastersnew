@@ -1292,7 +1292,7 @@
   },
   {
     "id": "pg-82",
-    "path": "/sydney-paintmasters-blogs-page",
+    "path": "/blogs",
     "type": "page",
     "title": "Blogs | Painting Tips and Guides | Sydney Paintmasters",
     "seoTitle": "Blogs | Painting Tips and Guides | Sydney Paintmasters",
@@ -1303,7 +1303,7 @@
     "status": "published",
     "createdAt": "2026-10-27T01:30:20.486Z",
     "createdBy": "joshua",
-    "updatedAt": "2026-10-27T01:33:41.478Z",
+    "updatedAt": "2026-10-27T01:34:16.561Z",
     "updatedBy": "joshua"
   }
 ]
